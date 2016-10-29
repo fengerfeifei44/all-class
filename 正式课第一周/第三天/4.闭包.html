@@ -40,6 +40,7 @@
         window.aa=prev;//想让外面拿到闭包中封装的方法，必须通过window.xxx把这个方法变成全局方法；
     })();
     alert(aa(aDiv[2]).innerHTML);
+
     /*(function(){
         function prev(){
 
@@ -53,10 +54,10 @@
             prev:prev,
             aa:aa,
             cc:cc,
-            dd:dd
+            a1:dd
         };
     })();
-    $.dd(3);*/
+    $.a1(3);*/
 
 
 </script>
