@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 1260px;
+            margin: 0 auto;
+        }
+        #box ul{
+            float: left;
+            margin: 5px;
+            width: 200px;
+           /* height: 200px;
+            background: red;*/
+        }
+        #box ul li{
+            margin-bottom: 10px;
+            width: 100%;
+            background: url("img2/default.gif") no-repeat center #cccccc;
+        }
+        #box ul li img{
+            width: 100%;
+        }
+        a{
+            display: none;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            background: red;
+            text-decoration: none;
+            text-align: center;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<a href="javaScript:;">top</a>
+<script src="js/utils1.js"></script>
+<script>
+    var oBox=document.getElementById('box');
+    var aUl=document.getElementsByTagName('ul');
+    var aImg=document.getElementsByTagName('img');
+    var oBtn=document.getElementsByTagName('a')[0];
+    var timer=null;
+    var flag=false;
+    var data=[
+        {imgSrc:"img2/1.jpg"},
+        {imgSrc:"img2/2.jpg"},
+        {imgSrc:"img2/3.jpg"},
+        {imgSrc:"img2/4.jpg"},
+        {imgSrc:"img2/5.jpg"},
+        {imgSrc:"img2/6.jpg"},
+        {imgSrc:"img2/7.jpg"},
+        {imgSrc:"img2/8.jpg"},
+        {imgSrc:"img2/9.jpg"},
+        {imgSrc:"img2/10.jpg"}
+    ]
+    function createLi(){
+        var oLi=document.createElement('li');
+        oLi.innerHTML='<img src="" realImg="'+data[utils.rnd(0,9)].imgSrc+'" alt=""/>';
+        oLi.style.height=utils.rnd(80,200)+'px';
+        return oLi;
+    }
+    //aUl[0].appendChild(createLi())
+    function li50(){
+       for(var i=0;i<50;i++){
+           var oLi=createLi();
+           var ary=utils.makeArray(aUl);
+           ary.sort(function(a,b){
+               return a.offsetHeight- b.offsetHeight;
+           })
+           ary[0].appendChild(oLi);
+       }
+    }
+    function showImg(){
+        var scrollBottom=utils.win('scrollTop')+utils.win("clientHeight");
+        for(var i=0;i<aImg.length;i++){
+            var curPos=aImg[i].offsetTop+aImg[i].offsetHeight;
+            if(curPos<scrollBottom){
+                lazyImg(aImg[i]);
+            }
+        }
+    }
+    function lazyImg(img){
+        if(img.loaded)return;
+        var tmpImg=new Image;
+        tmpImg.src=img.getAttribute('realImg');
+        tmpImg.onload=function(){
+            img.src=this.src;
+            tmpImg=null;
+            img.loaded=true;
+            img.parentNode.style.height=img.offsetHeight+'px';
+        }
+    }
+    window.onscroll=function(){
+        var scrollBottom=utils.win('scrollTop')+utils.win("clientHeight");
+        if(flag) clearInterval(timer);
+        flag=true;
+        if(utils.win('scrollTop')>utils.win("clientHeight")){
+            oBtn.style.display='block';
+        }else{
+            oBtn.style.display='none';
+        }
+        showImg();
+        if(scrollBottom+100>=document.body.scrollHeight){
+            li50();
+        }
+    }
+    li50();
+    showImg();
+    oBtn.onclick=function(){
+        var target=utils.win('scrollTop');
+        var duration=1000;
+        var interval=30;
+        var step=target/duration*interval;
+        timer=setInterval(function(){
+            var curTop=utils.win('scrollTop');
+            if(curTop<=0){
+                clearInterval(timer);
+                return;
+            }
+            curTop-=step;
+            utils.win('scrollTop',curTop);
+            flag=false;
+        },interval)
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .div2{
+            position: absolute;
+            left: 150px;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: yellow;
+        }
+        .div3{
+            position: absolute;
+            left: 300px;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+        .div4{
+            position: absolute;
+            left: 450px;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: palevioletred;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+<div class="div4"></div>
+<script src="js/utils.js"></script>
+<script src="js/simpleInheritance.js"></script>
+<script src="js/event.js"></script>
+<script src="js/move.js"></script>
+<script src="js/Drag.js"></script>
+<script>
+    var aDiv=document.getElementsByTagName('div');
+    for(var i=0;i<aDiv.length;i++){
+        if(i==1){
+           var drag=new Drag(aDiv[i]);
+        }
+    }
+    console.log(drag)
+
+
+
+</script>
+</body>
+</html>

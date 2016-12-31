@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var ary=[10,30,40];
+
+    Array.prototype.myMap=function(callback,context){
+        context=context||window;
+        if("map" in Array){
+            return this.map(callback,context);
+        }
+        var ary=[];
+        for(var i=0;i<this.length;i++){
+            var res=callback.call(context,this[i],i,this);
+            ary.push(res);
+        }
+        return ary;
+    }
+    var res=ary.myMap(function(item,index,input){
+        console.log(this);
+        return 10;
+    })
+    console.log(res);
+</script>
+
+</body>
+</html>

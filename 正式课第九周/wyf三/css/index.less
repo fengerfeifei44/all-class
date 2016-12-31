@@ -1,0 +1,297 @@
+@import (reference) 'public';
+html,body{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #F4F4F4;
+}
+.header{
+  @h: 63px;
+  height:@h;
+  background: @color-white;
+  border-bottom: 1px solid darken(@color-border,10%);
+ /* overflow: hidden;*/
+
+  .content{
+    margin: 0 auto;
+    padding: 0 10px;
+    width: unit((@con-width)-20,px);
+    /*logo*/
+    .logo{
+      float: left;
+      width: 160px;
+      a{
+        display: block;
+        height: @h ;
+        background: url("../img/kbs-logo.png") no-repeat center center;
+        font-size: 0;
+      }
+    }
+    /*nav*/
+    .nav{
+      float: left;
+      margin-left: 50px;
+      li{
+        float: left;
+        a{
+          display: block;
+          width: 90px;
+          height: unit(unit(@h,px)-4,px);
+          line-height: unit(unit(@h,px)-4,px);
+          text-align: center;
+          font-size: 16px;
+          color: @color-text;
+          font-weight: bold;
+          border-top: 4px solid transparent;
+          &:hover{
+            border-top-color: @color-blue;
+          }
+          &.bg{
+            color: @color-white;
+            background: @color-blue;
+          }
+          &.liveQQ{
+            width: @h;
+            height: @h;
+            border: none;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+          &.down{
+            position: relative;
+            .weChat{
+              .transitionFn(@duration: 0.3s);
+              position: absolute;
+              top:unit(unit(@h,px)-4,px);
+              left: -15px;
+              z-index: 100;
+              padding:0 15px;
+              width: 90px;
+              height: 0;/*130px*/
+              overflow: hidden;
+              /*background:rgba(255,255,255,0.8);*/
+              img{
+                display: block;
+                width: 90px;
+                height: 90px;
+              }
+
+              span{
+                display: block;
+                line-height: 20px;
+                text-align: center;
+                font-size: 14px;
+                font-weight: normal;
+              }
+            }
+            .weChatBg{
+              .weChat;
+              z-index: 99;
+              background: @color-white;
+              opacity: 0.8;
+              filter: alpha(opacity=80);
+            }
+            &:hover{
+              .weChat,.weChatBg{
+                padding: 15px;
+                height: 130px;
+              }
+            }
+          }
+        }
+      }
+    }
+    /*login*/
+    .login{
+      float: right;
+      margin-top: unit((unit(@h,px)-28)/2,px);
+      width: 46px;
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      color: @color-white;
+      font-size: 12px;
+      background: @color-blue;
+      border-radius: 3px;
+      &:hover{
+        background: darken(@color-blue,15%);
+      }
+    }
+  }
+}
+/*main*/
+.main{
+  margin: 20px auto;
+  width: unit(@con-width,px);
+}
+/*menu*/
+.menu{
+  float: left;
+  position: relative;
+  overflow: hidden;
+  width: 198px;
+  border: 1px solid @color-border;
+  background: @color-white;
+  .iScrollIndicator{
+    opacity: 0.3;
+  }
+  a{
+    position: relative;
+    display: block;
+    padding-left: 24px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    color: @color-text;
+    border-left: 5px solid transparent;
+
+    i{
+      position: absolute;
+      right: 6px;
+      top:50%;
+      margin-top: -8px;
+      border: 8px solid transparent;
+      border-left-color: @color-blue;
+      display: none;
+      width: 0;
+      height: 0;
+      font-size: 0;
+      &:after{
+        display: block;
+        position: absolute;
+        content: '';
+        top:-8px;
+        left: -10px;
+        border: 8px solid transparent;
+        border-left-color: @color-blue-light;
+        width: 0;
+        height: 0;
+        font-size: 0;
+      }
+    }
+    &:hover,&.bg{
+      background: @color-blue-light;
+      color:@color-blue ;
+      border-left-color: @color-blue;
+    }
+    &.bg{
+      i{
+        display: block;
+      }
+    }
+  }
+}
+.mainRight{
+  width: 820px;
+  height: 100%;
+  float: right;
+}
+.calendar {
+  @H: 80;
+  position: relative;
+  height: unit(@H, px);
+  border: 1px solid @color-border;
+  background: @color-white;
+  /*按钮*/
+  .btn {
+    position: absolute;
+    top: 0;
+    width: 24px;
+    height: unit(@H, px);
+    .arrow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -9px;
+      margin-left: -9px;
+      width: 0;
+      height: 0;
+      font-size: 0;
+      border: 9px solid transparent;
+
+    }
+    .arrow:after {
+      display: block;
+      content: '';
+      .arrow;
+    }
+    &.btnLeft {
+      left: 0;
+      .arrow {
+        margin-left: -13.5px;
+        border-right-color: #999;
+      }
+      .arrow:after {
+        margin-left: -7px;
+        border-right-color: @color-white;
+      }
+    }
+    &.btnRight {
+      right: 0;
+      .arrow {
+        margin-left: -4.5px;
+        border-left-color: #999;
+      }
+      .arrow:after {
+        margin-left: -11px;
+        border-left-color: @color-white;
+      }
+    }
+    &:hover {
+      &.btnRight {
+        .arrow {
+          border-left-color: @color-blue;
+        }
+
+      }
+      &.btnLeft {
+        .arrow {
+          border-right-color: @color-blue;
+        }
+
+      }
+    }
+  }
+  .container{
+    overflow: hidden;
+    position: relative;
+    margin: 0 24px;
+    height: unit(@H,px);
+    .wrapper{
+      position: absolute;
+      left: 0;
+      top:unit(((@H)-70)/2,px);
+      width: 10000px;
+      height: 70px;
+      li{
+        float: left;
+        a{
+          display: block;
+          padding-top: 9px;
+          width: 110px;
+          height: 61px;
+          span{
+            display: block;
+            line-height: 27px;
+            text-align: center;
+            color: @color-text;
+            font-size: 16px;
+            &.week{
+             /* margin-top: 9px;*/
+              color: lighten(@color-text,30%);
+            }
+          }
+          &:hover,&.bg{
+            background: @color-blue-light;
+            span{
+              color: @color-blue;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

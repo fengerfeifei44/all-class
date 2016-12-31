@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			padding:0;
+			margin: 0;
+		}
+		body{
+			line-height: 100%;
+		}
+		span,i,b{
+			display: inline-block;font-weight: normal;font-style: normal;
+		}
+		.box{
+			width: 820px;height: 80px;overflow: hidden;margin: 50px auto;border: 1px solid #39B3D7;
+		}
+		.box>span:hover{
+			color: red;
+		}
+		.left,.right{
+			font-size: 40px;height: 80px;line-height: 80px;text-align: center;float: left;width: 25px;cursor: pointer;font-weight: bold;
+		}
+		.list_box{
+			float: left;width: 770px;position: relative;left: 0;top: 0;height: 100%;
+		}
+		.list{
+			min-width: 100%;height: 100%;
+		}
+		.list>span{
+			width: 110px;float: left;height: 100%;text-align: center;cursor: pointer;color: #333;
+		}
+		
+		.list>span.on{
+			color: blue;
+		}
+		.week,.date{
+			height: 40px;line-height: 40px;
+		}
+		.info-list{
+			overflow: hidden;height: 30px;line-height: 30px;
+		}
+		.info-list>span{
+			padding:0 25px;height: 100%;float: left;
+		}
+		.info-list>img{
+			width: 40px;float: left;
+		}
+		.info{
+			width: 900px;margin:0 auto;
+		}
+	</style>
+	<body>
+		<div class="box">
+			<span class="left">X</span>
+			<div class="list_box">
+				<div class="list">
+					<!--<span>
+						<i class="week">星期一</i></br>
+						<i class="date">12-19</i>
+					</span>
+					
+					<span>
+						<i class="week">星期一</i></br>
+						<i class="date">12-19</i>
+					</span>
+					
+					<span>
+						<i class="week">星期一</i></br>
+						<i class="date">12-19</i>
+					</span>
+					
+					<span>
+						<i class="week">星期一</i></br>
+						<i class="date">12-19</i>
+					</span>
+					
+					<span>
+						<i class="week">星期一</i></br>
+						<i class="date">12-19</i>
+					</span>
+					
+					<span>
+						<i class="week">星期一</i></br>
+						<i class="date">12-19</i>
+					</span>
+					
+					<span>
+						<i class="week">星期一</i><br />
+						<i class="date">12-19</i>
+					</span>
+					-->
+				</div>
+			</div>	
+			<span class="right">X</span>
+		</div>
+		
+		<div class="info">
+			
+		</div>
+		<script src="//cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+		<script>
+			function DateSet(){
+				var oDate=new Date();
+				this.format=oDate.getFullYear()+'-'+toDouble(oDate.getMonth()+1)+'-'+toDouble(oDate.getDate());
+				this.weekDay=oDate.getDay();
+				this.toDay=oDate.getDate();
+				this.dateTime=oDate.getTime();
+			}
+			DateSet.prototype.getFormat=function(){
+				return this.format;
+			};
+			DateSet.prototype.formatDate=function(str,open){//获取本周日期
+				open= open || 0 ;// 翻页 默认0  前一页 -1  后一页 1
+				str=str|| '2016-12-09';
+				var arr=str.split('-');
+				var oDate1=new Date();
+				var getTime=0;
+				oDate1.setFullYear(arr[0]);
+				oDate1.setMonth(Number(arr[1]-1));
+				oDate1.setDate(arr[2]);
+				getTime=oDate1.getTime();
+				if(open == 0){
+					return getTime;
+				}else if(open == -1){
+					return (getTime-7*3600*1000*24);
+				}else{
+					return (getTime+7*3600*1000*24);
+				}
+			}
+			DateSet.prototype.getDateInfo=function(time){//获取本周的星期
+				var oDate=new Date(time);
+				var weekDay=oDate.getDay();
+				var weekarr=[];
+				var todayFor=this.format;
+				switch(weekDay+''){
+					case '1':
+						weekarr=	transDay(oDate,1);
+					break;
+					case '2':
+						weekarr=	transDay(oDate,2);
+					break;
+					case '3':
+						weekarr=	transDay(oDate,3);
+					break;
+					case '4':
+						weekarr=	transDay(oDate,4);
+					break;
+					case '5':
+						weekarr=	transDay(oDate,5);
+					break;
+					case '6':
+						weekarr=	transDay(oDate,6);
+					break;	
+					default :
+						weekarr=	transDay(oDate,7);
+					break;
+				}
+				function transDay(now,n){
+					var weekInfo=getWeekInfo(n);
+					var nowDate=new Date(now);
+					var arr=[];
+					var caseflag=false;
+					for(var i=0;i<weekInfo.length;i++){
+						var now1=nowDate.getTime()+weekInfo[i]*3600*1000*24;
+						var formatDate=new Date(now1);
+						var weekword=['星期一','星期二','星期三','星期四','星期五','星期六','星期日'];
+						var format=formatDate.getFullYear()+'-'+toDouble(formatDate.getMonth()+1)+'-'+toDouble(formatDate.getDate());
+						caseflag=todayFor==format?true:false;
+						arr.push({
+							isToday:caseflag,
+							day:formatDate.getDay(),// 星期几
+							dates:formatDate.getDate(),// 几号
+							week:weekword[i],
+							format:format,
+							format1:toDouble(formatDate.getMonth()+1)+'-'+toDouble(formatDate.getDate())
+						});
+					}
+					return arr;
+				}
+				function getWeekInfo(a){
+					var arr=[];
+					for(var i=1;i<8;i++){
+						if(i == a ){
+							arr.push(0)
+						}else if(i < a){
+							arr.push(i -a);
+						}else{
+							arr.push(i - a)
+						}
+					}
+					return arr;
+				}
+				return weekarr;
+			}
+			function toDouble(n){
+				return n>10?''+n:'0'+n;
+			}
+			// 业务代码
+			~~(function(){
+				var time=new DateSet();
+				var weekarr=time.getDateInfo(time.dateTime);
+				var todayString=time.getFormat();
+				renderDate(weekarr,'.list',true,function(){
+					var start=$('.left').attr('data-format');
+					var end=$('.right').attr('data-format');
+					renderPage(start,end)
+				});
+				
+				
+				$('.left').on('click',function(){
+					var format=$(this).attr('data-format');
+					var formatime=time.formatDate(format,-1);
+					weekarr=time.getDateInfo(formatime);
+					var flag=false;
+					for(var i=0;i<weekarr.length;i++){
+						if(weekarr[i].isToday == true){
+							flag=true;
+							break;
+						}
+					}
+					console.log(flag);
+					renderDate(weekarr,'.list',flag,function(){
+						var start=$('.left').attr('data-format');
+						var end=$('.right').attr('data-format');
+						renderPage(start,end)
+					});
+				});
+				$('.right').on('click',function(){
+					var format=$(this).attr('data-format');
+					var formatime=time.formatDate(format,1);
+					weekarr=time.getDateInfo(formatime);
+					var flag=false;
+					for(var i=0;i<weekarr.length;i++){
+						if(weekarr[i].isToday == true){
+							flag=true;
+							break;
+						}
+					}
+					console.log(flag);
+					renderDate(weekarr,'.list',flag,function(){
+						var start=$('.left').attr('data-format');
+						var end=$('.right').attr('data-format');
+						renderPage(start,end)
+					});
+				});
+				
+				$('.list').on('click','span',function(){
+					$(this).addClass('on').siblings().removeClass('on');
+					alert($(this).attr('data-format'));
+				});
+				function renderDate(arr,obj,flag,fn){//根据日期渲染日历选项
+					console.log(arr);
+					var str='';
+					$('.left').attr('data-format',arr[0].format);
+					$('.right').attr('data-format',arr[arr.length-1].format);
+					for(var i=0;i<arr.length;i++){
+						if(flag){
+							if(arr[i].isToday ==true){
+								str+='<span data-format="'+arr[i].format+'" class="on">';
+							}else{
+								str+='<span data-format="'+arr[i].format+'">';
+							}
+							str+='<i class="week">'+arr[i].week+'</i></br>'
+								+'<i class="date">'+arr[i].format1+'</i>'
+							+'</span>';
+						}else{
+							if(i == 0){
+								str+='<span data-format="'+arr[i].format+'" class="on">';
+							}else{
+								str+='<span data-format="'+arr[i].format+'">';
+							}
+							str+='<i class="week">'+arr[i].week+'</i></br>'
+								+'<i class="date">'+arr[i].format1+'</i>'
+							+'</span>';
+						}
+					}
+					$(obj).html(str);
+					fn&&fn();
+				}
+				
+				function renderPage(start,end,columnId){//根据日期请求数据渲染页面
+					columnId=columnId||100000;
+					//?callback=gameList&columnId=100000&startTime=2016-12-27&endTime=2017-01-02&_=1482414919906
+					$.ajax({
+						url:'http://matchweb.sports.qq.com/kbs/list',
+						data:{
+							'_':new Date().getTime(),
+							'columnId':columnId,
+							'startTime':start,
+							'endTime':end
+						},
+						dataType:'jsonp',
+						success:function(json){
+							console.log(json);
+							if(json.code == 0){
+								var str='';
+								var data=json.data;
+								for(var i in data){
+									str+='<div><p>'+i+'</p>';
+									for(var j=0;j<data[i].length;j++){
+										var list=data[i][j];
+										str+='<div class="info-list" data-url="'+list.VURL+'">';
+										str+='<span>'+list.quarterTime+'</span>';
+										str+='<span>'+list.matchDesc+'</span>';
+										str+='<img src="'+list.leftBadge+'">';
+										str+='<span>'+list.leftName+'</span>';
+										str+='<img src="'+list.rightBadge+'">';
+										str+='<span>'+list.rightName+'</span>';
+										/*str+='<span>'+list.+'</span>';
+										str+='<span>'+list.+'</span>';
+										str+='<span>'+list.+'</span>';*/
+										str+='</div>';
+									}
+									str+='</div>';
+								}
+								$('.info').html(str);
+							}else{
+								alert('不好意思 今天没有联赛  o(╯□╰)o');
+							}
+							
+						}
+					});
+				}
+			})();
+		</script>
+	</body>
+</html>

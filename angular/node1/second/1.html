@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body>
+<table class="table">
+    <caption>购物车列表</caption>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+</table>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.controller('cartCtrl',['$scope',function($scope){
+        $scope.products=[
+            {productName:'鲳鱼',productPrice:59.9,productCount:1},
+            {productName:'苹果',productPrice:5,productCount:2},
+            {productName:'香蕉',productPrice:3,productCount:3}
+        ]
+    }])
+</script>
+</body>
+</html>

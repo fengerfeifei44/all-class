@@ -1,0 +1,243 @@
+html,body{
+    height: 100%;
+}
+.header{
+    height: 580px;
+    position: relative;
+}
+
+.wrap{
+    width: 100%;
+    height: 89px;
+    line-height: 89px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 22;
+    background: url(../img/nav-b.png) repeat-x;
+}
+.nav{
+    width: 100%;
+}
+.nav h1{
+    float: left;
+    margin-top: 19px;
+    height: 70px;
+}
+.nav ul{
+    float: right;
+}
+.nav ul li{
+    float: left;
+    font-size: 18px;
+}
+.nav ul li a{
+    display: block;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
+}
+.nav ul li a em{
+    color: #fff;
+    opacity: 0.8;
+    filter:alpha(opacity=80);
+    font-style: normal;
+}
+.nav ul li span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+    background: rgba(0,0,0,0.1);
+    z-index: -1;
+    opacity: 0;
+    filter:alpha(opacity =0);
+    transform: scale(0,1);
+    -webkit-transform: scale(0,1);
+    -moz-transform: scale(0,1);
+    -ms-transform: scale(0,1);
+    -o-transform: scale(0,1);
+    transition: 0.5s;
+}
+.nav ul li a:hover em{
+    opacity: 1;
+    filter:alpha(opacity =100);
+}
+.nav ul li a:hover span{
+    opacity: 1;
+    filter:alpha(opacity =100);
+    transform: scale(1,1);
+}
+
+
+.banner{
+    height: 100%;
+    position: relative;
+}
+.prev{
+    display: block;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    left:70px;
+    top:50%;
+    margin-top: -22px;
+    z-index: 222;
+}
+.next{
+    display: block;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    right:70px;
+    top:50%;
+    margin-top: -22px;
+    z-index: 222;
+}
+.slideA{
+    width: 100%;
+    height: 100%;
+    background: #193d85;
+}
+.slideA dl{
+    width: 100%;
+    position: relative;
+}
+.slideA dl dt{
+    position: absolute;
+    left: 50%;
+    margin-left: -540px;
+    top: 0;
+    transform: translate(-50px);
+    opacity: 0;
+
+}
+.slideA dl dd{
+    position: absolute;
+    top: 228px;
+    left:50%;
+    transform: translate(50px);
+    opacity: 0;
+
+
+}
+.slideCur dl dt{
+    transform: translate(0px);
+    transition: transform 0.5s;
+    opacity: 1;
+}
+.slideCur dl dd{
+    transform: translate(0px);
+    transition:transform  0.5s;
+    opacity: 1;
+}
+.slideA dl dd.other{
+    top: 415px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.slideB{
+    background: #ff6900;
+    height: 100%;
+    display: none;
+}
+.slideImg1,.slideImg2{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+}
+.slideImg1 {
+    top: 100px;
+    transform: translate(50px);
+}
+.slideImg2{
+    bottom:45px;
+    transform: scale(0);
+}
+.slideCur .slideImg1{
+    opacity:1;
+    transform: translate(-50px);
+    transition: 0.5s;
+}
+.slideCur .slideImg2{
+    opacity:1;
+    transform: scale(1);
+    transition: 0.5s;
+}
+
+.imgInfo{
+    padding: 30px 0;
+}
+.imgInfo ul{
+    width: 100%;
+    text-align: center;
+}
+.imgInfo ul li{
+    display: inline-block;
+    width: 23%;
+    text-align: center;
+    vertical-align: top;
+}
+.imgInfo ul li span{
+    display: block;
+    width: 152px;
+    height: 124px;
+    background: url(../img/icon-24.png) no-repeat;
+    margin:0 auto;
+}
+.imgInfo ul li span.img1{
+    background-position:0 -128px;
+}
+.imgInfo ul li span.img2{
+    background-position:-300px -128px;
+}
+.imgInfo ul li span.img3{
+    background-position:-604px -128px;
+}
+.imgInfo ul li h4{
+    font-size: 18px;
+    color: #ff6900;
+    padding: 10px 0 0 0 ;
+}
+.imgInfo ul li p{
+    height: 24px;
+    line-height: 24px;
+    color: #333;
+    padding: 5px 0;
+}
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+    .nav,.slideA dl{
+        width: 1000px;
+        margin: 0 auto;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    /*span±³¾°Í¼ËõÐ¡µ½¿í370 ¸ß126*/
+    .imgInfo ul li span{
+        width: 76px;
+        height: 62px;
+        background-size:370px 126px ;
+    }
+    .imgInfo ul li span.img1{
+        background-position: 0 -64px;
+    }
+    .imgInfo ul li span.img2{
+        background-position: -150px -64px;
+    }
+    .imgInfo ul li span.img3{
+        background-position: -302px -64px;
+    }
+
+
+}
+

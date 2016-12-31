@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body ng-controller="myCtrl">
+<!--限制输入框中的数据改变的时间-->
+搜索：<input type="text" ng-model="query" ng-model-options="{updateOn:'blur'}"/>
+<table class="table table-bordered">
+    <tr>
+        <th>姓名</th>
+        <th ng-click="flag=!flag;language='math'">数学</th>
+        <th ng-click="flag=!flag;language='english'">英语</th>
+        <th ng-click="flag=!flag;language='chinese'">语文</th>
+    </tr>
+    <tr ng-repeat="score in scores ">
+        <td>{{score.name}}</td>
+        <td>{{score.math}}</td>
+        <td>{{score.english}}</td>
+        <td>{{score.chinese}}</td>
+    </tr>
+</table>
+{{'avndmcdkeidm'| capitalize:0:3}}
+{{'hello zfpx welcome aa-bb'|headCap}}
+<script src="node_modules/angular/angular.min.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.filter('capitalize',function(){
+        return function(data,param1,param2){
+            return  data.slice(param1,param2).toUpperCase()+data.slice(param2);
+        }
+    })
+    app.filter('headCap',function(){
+        return function(data){
+           return data.replace(/^\w|\s\w/g,function(){
+               return arguments[0].toUpperCase();
+              /* /^[a-z]|\s([a-z]?1)/g*/
+           })
+        }
+    })
+    app.controller('myCtrl',function($scope){
+        $scope.language='chinese';
+        $scope.scores=[
+            {name:'张山',math:10,english:50,chinese:60},
+            {name:'张山',math:57,english:70,chinese:80},
+            {name:'张山',math:90,english:70,chinese:7}
+        ]
+    })
+</script>
+</body>
+</html>

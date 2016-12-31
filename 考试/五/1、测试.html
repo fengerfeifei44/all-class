@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script src="js/event.js"></script>
+<script>
+    var oDiv=document.getElementsByTagName('div')[0];
+    var fn1=function(){ console.log(this==oDiv)}
+    var fn2=function(){ console.log(arguments)}
+    var fn3=function(){ console.log(3)}
+    var fn4=function(){ console.log(4)}
+    var fn5=function(){ console.log(5)}
+    var fn6=function(){ console.log(6)}
+    var fn7=function(){ console.log(7)}
+    var fn8=function(){ console.log(8)}
+    var fn9=function(){ console.log(9)}
+    var fn10=function(){ console.log(10)}
+    on(oDiv,'click',fn1)
+    bind(oDiv,'click',fn2)
+    on(oDiv,'click',fn3)
+    on(oDiv,'click',fn4)
+    on(oDiv,'click',fn5)
+    on(oDiv,'click',fn6)
+    on(oDiv,'click',fn7)
+    on(oDiv,'click',fn8)
+    on(oDiv,'click',fn9)
+    on(oDiv,'click',fn10)
+
+    off(oDiv,'click',fn6)
+
+</script>
+
+</body>
+</html>

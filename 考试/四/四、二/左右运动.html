@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div{
+            position: fixed;
+            left: 0;
+            top: 50px;
+           width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .target{
+            width: 1px;
+            height: 300px;
+            position: absolute;
+            left: 1000px;
+            top: 0;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="向左走"/>
+<input type="button" value="向右走"/>
+<div id="div"></div>
+<div class="target"></div>
+<script src="js/utils.js"></script>
+<script>
+    var oDiv=document.getElementById('div');
+    var aBtn=document.getElementsByTagName('input');
+    var oLeft=aBtn[0];
+    var oRight=aBtn[1];
+    oLeft.onclick=function(){
+        move(0)
+    }
+    oRight.onclick=function(){
+        move(1000)
+    }
+    function move(target){
+        _move();
+        function _move(){
+            var curPos=utils.getCss(oDiv,'left');
+            if(curPos<target){
+                if(curPos+10>=target){
+                    utils.css(oDiv,'left',target)
+                    return;
+                }
+                curPos+=10;
+                utils.css(oDiv,'left',curPos)
+            }else if(curPos>target){
+                if(curPos-10<=target){
+                    utils.css(oDiv,'left',target);
+                    return;
+                }
+                curPos-=10;
+                utils.css(oDiv,'left',curPos)
+            }if(curPos==target){
+                return;
+            }
+            clearTimeout(oDiv.timer)
+            oDiv.timer=setTimeout(_move,10)
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        [ng-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div ng-controller="myCtrl1" ng-cloak>
+    {{name}}
+    <div ng-controller="myCtrl2">
+        {{name}}
+    </div>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.run(function($rootScope){
+
+    })
+    app.controller('myCtrl1',['$scope','$rootScope',function($scope,$rootScope){
+        $scope.name='zf';
+    }]);
+    app.controller('myCtrl2',function($scope){
+        $scope.name='zf';
+    });
+</script>
+</body>
+</html>

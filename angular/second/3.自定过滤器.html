@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body ng-controller="myCtrl">
+<table class="table table-bordered">
+    <tr >
+        <th>姓名</th>
+        <th>语文</th>
+        <th>英语</th>
+        <th>数学</th>
+    </tr>
+    <tr ng-repeat="score in scores">
+        <td>{{score.name}}</td>
+        <td>{{score.chinese}}</td>
+        <td>{{score.english}}</td>
+        <td>{{score.math}}</td>
+    </tr>
+</table>
+{{'abcedfg' | capitalize:0:3}}
+<pre>
+    {{'hello    zfpx   welcome aa-bb' | headCapital}}
+</pre>
+
+<script src="node_modules/angular/angular.min.js"></script>
+<script>
+    var app = angular.module('appModule',[]);
+    //自定义过滤器 创建过滤器
+    app.filter('headCapital',function (uppercaseFilter,numberFilter,filterFilter) { //在自定义过滤器中在此使用过滤器
+        return function (data) {
+            ///\b\w/ 边界+字母
+           return data.replace(/^\w|\s\w/g,function () {
+               //字母开头 | 空格+字母的
+               return uppercaseFilter(arguments[0]);
+           });
+        }
+    });
+
+    app.filter('capitalize',function () {
+        return function (data,param1,param2) { //data表示要过滤的数据
+            return  data.slice(param1,param2).toUpperCase()+data.slice(param2);
+            //返回过滤的后的结果
+        };
+    });
+    app.controller('myCtrl',function ($scope) {
+        $scope.scores = [
+            {name:'张三',chinese:45,english:30,math:120},
+            {name:'李四',chinese:90,english:90,math:90},
+            {name:'王五',chinese:35,english:61,math:88},
+            {name:'赵六',chinese:78,english:66,math:99},
+        ];
+    });
+</script>
+</body>
+</html>

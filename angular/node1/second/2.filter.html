@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var num=3;
+    var obj={name:100};
+    var arr=[{name:1},{name:2},{name:3}];
+   var newArr=arr.filter(function(item,index){
+        return item.name!=num;
+    },arr);
+    var nexArg=arr.map(function(item,index){
+        if(item.name==num){
+            return obj;
+        }
+        return item;
+    });
+    var obj=arr.find(function(item,index){
+        if(item.name==num){
+            return true;
+        }
+    })
+    console.log(obj);
+
+</script>
+</body>
+</html>

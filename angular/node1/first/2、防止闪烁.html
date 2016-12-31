@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        [ng-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<input type="text" ng-model="name"/>
+<input type="text" ng-model="age"/>
+<!--{{name}}-->
+<div ng-bind="name"></div>
+<div ng-cloak>
+    {{name}} {{age}}
+</div>
+<script src="node_modules/angular/angular.js"></script>
+</body>
+</html>

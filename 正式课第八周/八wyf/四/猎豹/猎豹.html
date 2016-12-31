@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>珠峰培训-响应式开发</title>
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+</head>
+<body>
+<!--
+度量单位：%(相对于父标签),em(相对于父标签字体大小),rem
+固定单位: px
+断点：1000  768  @media
+弹性图片 img->max-width:35%(设置)/min-width  移动端 dpr 切2倍 除非公司要求非常精细，切3倍图
+        bg ->直接缩小背景图 background-size
+-->
+
+<div class="header">
+    <div class="wrap">
+        <div class="nav">
+            <h1>
+                <a href="###"><img src="img/logo.png"></a>
+            </h1>
+            <ul>
+                <li><a href="#"><em>首页</em><span></span></a></li>
+                <li><a href="#"><em>下载</em><span></span></a></li>
+                <li><a href="#"><em>论坛</em><span></span></a></li>
+                <li><a href="#"><em>International</em><span></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner">
+        <a href="javascript:void(0)" class="prev" data-name="prev"><img src="img/l-btn.png" ></a>
+
+        <div class="slide slideA slideCur">
+            <dl>
+                <dt><img src="img/bao-2.png"></dt>
+                <dd class="one"><img src="img/st-2.png"></dd>
+                <dd class="other">全新chrome内核，内存占用低，轻巧炫酷皮肤</dd>
+            </dl>
+        </div>
+        <div class="slide slideB ">
+            <div class="slideImg1">
+                <img src="img/bao.png">
+            </div>
+            <div class="slideImg2">
+                <img src="img/nt-1.png">
+            </div>
+        </div>
+
+        <a href="javascript:void(0)" class="next" data-name="next"><img src="img/r-btn.png" > </a>
+    </div>
+</div>
+
+<div class="imgInfo">
+    <ul>
+        <li><a href="###">
+            <span class="img1"></span>
+            <h4>windows版</h4>
+            <p>内存占用最多的极速浏览器</p>
+        </a></li>
+        <li><a href="###">
+            <span class="img2"></span>
+            <h4>手机版</h4>
+            <p>内存占用最多的极速浏览器</p>
+        </a></li>
+        <li><a href="###">
+            <span class="img3"></span>
+            <h4>豹米空气净化大师</h4>
+            <p>最具性价比的顶配空气净化器</p>
+        </a></li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+        var slide = document.querySelectorAll(".slide");
+        var prev = document.querySelector(".prev");
+        var next = document.querySelector(".next");
+        var index = 0;//默认第一张显示
+        prev.addEventListener("click", fnSlide, false);
+        next.addEventListener("click", fnSlide, false);
+        function fnSlide() {
+            var that = this;
+            //遍历所有的slide，找到当前显示的slide
+            [].forEach.call(slide, function (item, index) {
+                if (/slideCur/.test(item.className)) {/*如果匹配则获取当前这张的索引*/
+                    index = index;
+                }
+                //初始化
+                item.style.display = "none";
+                item.classList.remove("slideCur");
+            })
+            var len = slide.length;
+            //判断下是点击的左边按钮还是右边按钮
+
+            if (that.dataset.name == "prev") {
+                index--;
+                index < 0 ? index = len - 1 : null;
+
+            } else if (that.dataset.name == "next") {
+                index++;
+                index == len ? index = 0 : null
+            }
+            //让上一张或下一张显示，并增加类名slideCur
+            slide[index].style.display = "block";
+            window.setTimeout(function(){
+                slide[index].classList.add("slideCur");
+            },100)
+
+            /*display会让Transiton属性，就是没有动画效果
+            * 添加display:block这个属性和添加transiton属性不要同时进行，隔个时间差就行
+            * */
+
+
+
+        }
+
+
+</script>

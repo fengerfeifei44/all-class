@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            position: relative;
+            margin: 50px auto;
+            width: 1000px;
+            height: 300px;
+            overflow: hidden;
+        }
+        .box .banner{
+            position: relative;
+            left: 0;
+            right: 0;
+            width: 4000px;
+            height: 300px;
+        }
+        .box .banner div{
+            float: left;
+            width: 1000px;
+            height: 300px;
+            background: url("img/default.gif") no-repeat center #cccccc;
+        }
+        .box .banner div img{
+            width: 100%;
+            height: 100%;
+        }
+        .box ul{
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+        .box ul li{
+            float: left;
+            margin-left: 10px;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background: lightblue;
+        }
+        .box ul li.on{
+            background: lightcoral;
+        }
+        .box a{
+            position: absolute;
+            top: 126px;
+            width: 30px;
+            height: 45px;
+            background-image: url("img/pre.png");
+            background-repeat: no-repeat;
+            opacity: 0.5;
+            filter: alpha(opacity:50);
+        }
+        .box a:hover{
+            opacity: 1;
+            filter: alpha(opacity:100);
+        }
+        .box a.left{
+            left: 30px;
+            background-position: 0 0;
+        }
+        .box a.right{
+            right: 30px;
+            background-position: -50px 0;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box" class="box">
+    <div class="banner">
+       <!-- <div><img src="img/banner1.jpg" alt=""/></div>
+        <div><img src="img/banner1.jpg" alt=""/></div>
+        <div><img src="img/banner1.jpg" alt=""/></div>
+        <div><img src="img/banner1.jpg" alt=""/></div>-->
+    </div>
+    <ul>
+       <!-- <li class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>-->
+    </ul>
+    <a href="javascript:;" class="left"></a>
+    <a href="javascript:;" class="right"></a>
+</div>
+<script src="js/utils.js"></script>
+<script src="js/move2.js"></script>
+<script src="js/MyTab6.js"></script>
+<script>
+    var tab1=new MyTab('box','json/data.txt',2000)
+</script>
+</body>
+</html>
