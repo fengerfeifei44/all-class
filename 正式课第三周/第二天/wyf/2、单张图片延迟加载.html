@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        p{
+            position: absolute;
+            left: 0;
+            top:1000px;
+            width: 400px;
+            height: 200px;
+            background: url("img2/default.gif") no-repeat #cccccc center;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<p id="p"><img src="" realImg="img2/2.jpg" alt=""/></p>
+<!--单词图片的延迟加载：
+1、所有的事件，必须在系统滚轮事件下发生
+2、在页面布局的时候，不应该让图片显示，我们显示的是默认的占位符，把图片真正的地址保存在自定义属性上
+3、当满足条件的时候，让图片显示：
+    条件：图片自身的高度+到body顶部的距离《scrollTop+clientHeight
+    显示需要：
+       1；创建临时图片，并给其src赋值realTmg上保存的图片地址；
+       2 校验图片地址是否正确；
+       3、onload成功，onerror失败；
+       4 校验完成：给真正的图片元素赋值正确的地址
+       5  性能优化 1 释放临时图片内存 2 避免重复加载-->
+<script src="js/utils.js"></script>
+<script>
+    var oP=document.getElementById('p');
+    var oImg=oP.getElementsByTagName('img')[0];
+    window.onscroll=function(){
+        var  scrollBottom=utils.win('scrollTop')+utils.win("clientHeight");
+        var imgPos=utils.offset(oImg).top+utils.getCss(oImg,'height');
+        if(imgPos<scrollBottom){
+            lazyImg();
+        }
+    };
+        function lazyImg(){
+            if(oImg.loaded) return;
+            var tmpImg=new Image;
+            tmpImg.src=oImg.getAttribute('realImg');
+            tmpImg.onload=function(){
+                oImg.src=this.src;
+                tmpImg=null;
+                oImg.loaded=true;
+            }
+            tmpImg.onerror=function(){
+                oImg.load=true;
+                oP.style.background='url("img2/error.gif") no-repeat #cccccc center';
+                oImg.loaded=null;
+            }
+        }
+
+</script>
+
+</body>
+</html>

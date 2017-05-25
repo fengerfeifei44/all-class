@@ -5,6 +5,14 @@
     <title></title>
 </head>
 <body>
-
+<script>
+    var str='www.baidu.com?name=zhufeng&age=8';
+    var obj={};
+    var reg=/([^&=?]+)=([^&=?]+)/g;
+    str.replace(reg,function(a,b,c){
+        obj[b]=c;
+    })
+    console.log(obj);
+</script>
 </body>
 </html>

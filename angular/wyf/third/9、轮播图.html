@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body>
+<slider></slider>
+<script src="node_modules/angular/angular.min.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.controller('myCtrl',function($scope){
+
+    });
+    app.directive('slider',function(){
+        return {
+            restrict:'E',
+            link:function(scope,elements,attrs){
+
+            },
+            template:`
+            <div class="box" id="box">
+    <div class="banner">
+        <div><img src="" realImg="img/banner1.jpg" alt=""/></div>
+        <div><img src="" realImg="img/banner1.jpg" alt=""/></div>
+        <div><img src="" realImg="img/banner1.jpg" alt=""/></div>
+        <div><img src="" realImg="img/banner1.jpg" alt=""/></div>
+    </div>
+    <ul>
+        <li class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <a href="javascript:;" class="left"></a>
+    <a href="javascript:;" class="right"></a>
+</div>
+            `
+
+        }
+    })
+</script>
+</body>
+</html>

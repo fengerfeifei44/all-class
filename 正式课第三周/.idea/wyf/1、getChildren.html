@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="box">
+    <div>1</div>
+    <p>2</p>
+    <ul></ul>
+    <span></span>
+</div>
+<script>
+    var oBox=document.getElementById("box");
+    var oUl=document.getElementsByTagName('ul')[0];
+    var oEle=document.createElement('div');
+    function getChildren(curEle,tarName){
+        var aChildren=curEle.childNodes;
+        var ary=[];
+        for(var i=0;i<aChildren.length;i++){
+            var cur=aChildren[i]
+            if(cur.nodeType==1){
+                if(tarName){
+                    if(cur.tagName.toLowerCase()===tarName.toLowerCase()){
+                        ary.push(cur);
+                    }
+                }else{
+                    ary.push(cur)
+                }
+            }
+        }
+        return ary;
+    }
+    function prev(curEle){
+        if("previousElementSibling" in window){
+            return this.previousElementSibling;
+        }
+        var pre=curEle.previousSibling;
+        while(pre&&pre.nodeType!==1){
+            pre=pre.previousSibling;
+        }
+        return pre;
+    }
+    function next(curEle){
+        if("nextElementSibling" in window){
+            return this.nextElementSibling;
+        }
+        var next=curEle.nextSibling;
+        while(next&&next.nodeType!==1){
+            next=next.nextSibling;
+        }
+        return next;
+    }
+    function sibling(curEle){
+        var ary=[];
+        var pre=prev(curEle);
+       var nex=next(curEle);
+        if(pre)ary.push(pre);
+        if(nex)ary.push(nex);
+        return ary;
+    }
+    function prevAll(curEle){
+        var ary=[];
+        var pre=prev(curEle);
+        while(pre){
+            ary.push(pre);
+            pre=prev(pre);
+        }
+        return ary;
+    }
+    function nextAll(curEle){
+        var ary=[];
+        var nex=next(curEle);
+        while(nex){
+            ary.push(nex);
+            nex=next(nex);
+
+        }
+        return ary;
+    }
+    function siblings(curEle){
+        var ary1=prevAll(curEle);
+        var ary2=nextAll(curEle);
+        return ary1.concat(ary2);
+    }
+    function firstChild(curEle){
+        var aChildren=getChildren(curEle);
+        return aChildren[0];
+    }
+    function lastChild(curEle){
+        var aChildren=getChildren(curEle);
+        return aChildren[aChildren.length-1];
+    }
+    function index(curEle){
+        return prevAll(curEle).length;
+    }
+    function appendChild(curEle,parent){
+        parent.appendChild(curEle);
+    }
+    function prependChild(curEle,parent){
+        var first=firstChild(parent);
+        if(first){
+            parent.insertBefore(curEle,first);
+        }else{
+            parent.appendChild(curEle);
+        }
+    }
+    function insertBefore(curEle,oldEle){
+        oldEle.parentNode.insertBefore(curEle)
+    }
+    function insertAfter(curEle,oldEle){
+        var nex=next(oldEle);
+        if(nex){
+            oldEle.parentNode.insertBefore(curEle,nex);
+        }else{
+            oldEle.parentNode.appendChild(curEle);
+        }
+    }
+
+    console.log(lastChild(oBox));
+
+</script>
+
+</body>
+</html>

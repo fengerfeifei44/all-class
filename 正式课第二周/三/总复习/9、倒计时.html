@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="box">距离下课还有<span>00天00:00:00</span></div>
+<script>
+    var oDiv=document.getElementById('box');
+    var oSpan=document.getElementsByTagName('span')[0];
+   // countDown();
+    setInterval(countDown,1000);
+    function toDou(n){
+        return n=n>=0&&n<10?"0"+n:""+n;
+    }
+    function countDown(){
+        var oDate=new Date();
+        var s=Math.floor((new Date("2016/11/5 08:00:00")-oDate)/1000);
+        var d=Math.floor(s/86400);
+        s%=86400;
+        var h=Math.floor(s/3600);
+        s%=3600;
+        var m=Math.floor(s/60);
+        s%=60;
+        var str=toDou(d)+":"+toDou(h)+":"+toDou(m)+":"+toDou(s);
+        oSpan.innerHTML=str;
+    }
+
+</script>
+
+</body>
+</html>

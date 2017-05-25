@@ -1,197 +1,149 @@
-(function(pro){
-    function queryURLParameter(){
-        var reg=/([^?&=#]+)=([^?&=#]+)/g,
-            obj={};
-        this.replace(reg,function(){
-            obj[arguments[1]]=arguments[2];
+~function (pro) {
+    function queryURLParameter() {
+        var reg = /([^?&=#]+)=([^?&=#]+)/g,
+            obj = {};
+        this.replace(reg, function () {
+            obj[arguments[1]] = arguments[2];
         });
-        reg=/#([^?&=#]+)/;
-        this.replace(reg,function(){
-            obj['HASH']=arguments[1];
-        })
+        reg = /#([^?=&#]+)/;
+        this.replace(reg, function () {
+            obj['HASH'] = arguments[1];
+        });
         return obj;
     }
-    function formatDate(temp){
-         temp=temp||'{0}年{1}月{2}日 {3}时{4}分{5}秒';
-        var ary=this.match(/\d+/g);
-        temp=temp.replace(/\{(\d+)\}/g,function(){
-            var index=arguments[1],
-                item=parseFloat(ary[index])||0;
-            item<10?item='0'+item:null;
+
+    function formatDate(temp) {
+        temp = temp || '{0}年{1}月{2}日 {3}时{4}分{5}秒';
+        var ary = this.match(/\d+/g);
+        temp = temp.replace(/\{(\d+)\}/g, function () {
+            var index = arguments[1],
+                item = parseFloat(ary[index]) || 0;
+            item < 10 ? item = '0' + item : null;
             return item;
-        })
+        });
         return temp;
-
     }
-   // 2016-12-22.formatDate('{1}-{2}')
-    pro.queryURLParameter=queryURLParameter;
-    pro.formatDate=formatDate;
-})(String.prototype);
-~function(){
-    var $header=$('.header'),
-        $main=$('.main'),
-        $menu=$main.children('.menu');
-    /*computedMainHeight计算main区域的高度*/
-    function computedMainHeight(){
-        var winH=$(window).outerHeight(),
-            headerH=$header.outerHeight(),
-            tarH=winH-headerH-40;
-        $main.css('height',tarH);
-        $menu.css('height',tarH-2)
+
+    pro.queryURLParameter = queryURLParameter;
+    pro.formatDate = formatDate;
+}(String.prototype);
+
+/*--NAV--*/
+var navRender = (function () {
+    var $header = $('.header'),
+        $menu = $header.children('.menu'),
+        $nav = $('.nav');
+    var isBlock = false;
+
+    return {
+        init: function () {
+            $menu.tap(function () {
+                if (!isBlock) {
+                    isBlock = true;
+                    $nav.css({
+                        padding: '.1rem 0',
+                        height: '2.22rem'
+                    });
+                    return;
+                }
+                isBlock = false;
+                $nav.css({
+                    padding: '0',
+                    height: '0'
+                });
+            });
+        }
     }
-    computedMainHeight();
-    $(window).on('resize',computedMainHeight);
+})();
+navRender.init();
 
-}();
+/*--MATCH--*/
+var matchRender = (function () {
+    var $matchPlan = $.Callbacks(),
+        $match = $('.match'),
+        $progress = null,
+        $supportLeft = null,
+        $supportRight = null;
 
-var menuRender=(function(){
-    var menuExample=null,
-        $menu=$('.menu'),
-        $link=$menu.find('a'),
-        /*children子代筛选 find后代筛选 filter同级筛选*/
-        HASH=null;
-    var $menuPlan=$.Callbacks();
-    //实现局部滚动
-    $menuPlan.add(function(){
-        menuExample = new IScroll('.menu',{
-            mouseWheel:true,
-            scrollbars:true,
-            fadeScrollbars:true,
-            /*useTransform:false,
-             useTransition:false,
-             bounce:false*/
+    //->数据绑定
+    $matchPlan.add(function (matchInfo) {
+        var template = $('#matchTemplate').html(),
+            result = ejs.render(template, {matchInfo: matchInfo});
+        $match.html(result);
 
-        });
+        //->数据绑定完成后获取需要的元素
+        $progress = $match.find('.progress');
+        $supportLeft = $match.find('.supportLeft');
+        $supportRight = $match.find('.supportRight');
     });
-    //获取哈希值
-    $menuPlan.add(function(){
-        HASH= window.location.href.queryURLParameter()['HASH'];
-        HASH=HASH ||'nba';
-        var $tarLink=$link.filter('[href="#'+HASH+'"]');
-        $tarLink=$tarLink.length===0?$link.eq(0):$tarLink;
-        $tarLink.addClass('bg');
-        menuExample.scrollToElement($tarLink[0],0);
-        calendarRender.init($tarLink.attr('data-cid'));
-    });
-    //给所有的A标签绑定点击事件
-    $menuPlan.add(function(){
-        $link.on('click',function(){
-            /* $(this).addClass('bg').parent().siblings().children('a').removeClass('bg');*/
-            var _this=this;
-            $link.each(function(index,item){
-                _this===item ? $(item).addClass('bg'):$(item).removeClass('bg');
-            })
-            calendarRender.init($(this).attr('data-cid'));
-        });
 
+    //->计算进度条
+    $matchPlan.add(computedProgress);
+    function computedProgress(flag) {
+        var leftNum = parseFloat($supportLeft.html()),
+            rightNum = parseFloat($supportRight.html());
+        $progress.css('transition', '1s');
+        window.setTimeout(function () {
+            $progress.css('width', (leftNum / (leftNum + rightNum)) * 100 + '%');
+        }, flag === false ? 0 : 500);
+    }
+
+    //->点击支持
+    var isTap = false;
+    $matchPlan.add(function () {
+        var supportInfo = localStorage.getItem('supportInfo');
+        if (supportInfo) {
+            supportInfo =supportInfo.JSON.parse(supportInfo);
+            supportInfo.type == 1 ? $supportLeft.addClass('bg') : $supportRight.addClass('bg');
+            return;
+        }
+        $supportLeft.add($supportRight).tap(function () {
+            if (isTap) return;
+
+            //->在原来基础上数字累加1&让当前点击的元素有选中的样式
+            var num =$(this).html();
+            num++;
+            $(this).html(num).addClass('bg');
+
+            //->让是否点击过的标识为TRUE,这样下次再点击就不在操作了,点击完成后重新的计算一下当前的进度
+            isTap = true;
+            computedProgress(false);
+
+            //->告诉服务器我支持的是谁
+            $.ajax({
+                url: 'http://matchweb.sports.qq.com/kbs/teamSupport?mid=100000:1469151&type=' + $(this).attr('data-type'),
+                type: 'get',
+                dataType: 'jsonp'
+            });
+
+            //->向本地存储一些信息,下一次打开页面判断信息是否存在,存在的话不让在点击支持了,而且上一次点击的是谁,让谁有选中的样式
+            var obj = {
+                type: $(this).attr('data-type')
+            };
+            localStorage.setItem('supportInfo', JSON.stringify(obj));
+        });
     });
 
     return {
-        init:function(){
-            $menuPlan.fire();
-
-        }
-    }
-})()
-
-
-var calendarRender=(function(){
-    var $calendar=$('.calendar'),
-        $wrapper=$calendar.find('.wrapper');
-    var $calendarPlan=$.Callbacks();
-    var $link=null;
-    var $btn=$calendar.find('.btn');
-    var maxL=0,minL=0;
-    //数据绑定
-    $calendarPlan.add(function(today,data,cid){
-        console.log(1);
-        var $calTemplate=$('#calTemplate');
-        var template=$calTemplate.html();
-        var res=ejs.render(template,{calendarDate:data});
-        $wrapper.html(res).css('width',data.length*110);
-         $link=$wrapper.find('a');
-        minL=-(data.length-7)*110;
-
-    });
-    //定位到今天的位置
-    $calendarPlan.add(function(today,data,cid){
-        var $tarLink=$link.filter('[data-time="'+today+'"]');
-        if($tarLink.length===0){
-            today=today.replace(/-/g,'');
-            $link.each(function(index,item){
-                var itemTime=$(item).attr('data-time').replace(/-/g,'');
-                if(itemTime>today){
-                    $tarLink=$(item);
-                    return false;
+        init: function () {
+            //->获取数据,JSONP从腾讯的服务器上获取数据
+            $.ajax({
+                url: 'http://matchweb.sports.qq.com/html/matchDetail?mid=100000:1469151',
+                type: 'get',
+                dataType: 'jsonp',
+                success: function (result) {
+                    //->数据的格式化操作:
+                    //把服务器返回的数据格式化成为我们所需要的数据
+                    if (result && result[0] == 0) {
+                        result = result[1];
+                        var matchInfo = result['matchInfo'];
+                        matchInfo['leftSupport'] = result['leftSupport'];
+                        matchInfo['rightSupport'] = result['rightSupport'];
+                        $matchPlan.fire(matchInfo);//->通知计划表中的任务执行,把获取的数据传递给计划表中的每一个方法
+                    }
                 }
             });
         }
-        if($tarLink===0){
-            $tarLink=$link.eq($link.length-1);
-        }
-        $tarLink.addClass('bg');
-        var tarIndex=$tarLink.parent().index(),
-            curL=-tarIndex*110+330;
-       curL=curL>maxL?maxL:(curL<minL?minL:curL);
-        $wrapper.css('left',curL);
-        //获取到起始的日期和结束的日期，然后控制地下列表的数据改变
-        var strIn=Math.abs(curL/110),
-            enrIn=strIn+6;
-        var startTime=$link.eq(strIn).attr('data-time'),
-            endTime=$link.eq(enrIn).attr('data-time');
-
-        matchRender.init(startTime,endTime,cid);
-    });
-    //实现左右切换 http://matchweb.sports.qq.com/kbs/calendar?columnId=10000
-    $calendarPlan.add(function(today,data,cid){
-        $btn.on('click',function(){
-            var curL=parseFloat($wrapper.css('left'));
-            if(curL%110!==0){
-                curL=Math.round(curL/110)*110;
-            }
-            $(this).hasClass('btnLeft')?curL+=770:curL-=770;
-            curL=curL>maxL?maxL:(curL<minL?minL:curL);
-            $wrapper.stop().animate({left:curL},300,function(){
-                var curLeft=parseFloat($wrapper.css('left')),
-                    strIn=Math.abs(curLeft/110),
-                    endIn=strIn+6;
-                $link.each(function(index,item){
-                    index==strIn?$(item).addClass('bg'):$(item).removeClass('bg');
-                })
-                var starTime=$link.eq(strIn).attr('data-time'),
-                    endTime=$link.eq(endIn).attr('data-time');
-                matchRender.init(starTime,endTime,cid);
-            })
-        })
-
-    })
-     return {
-         init:function(cid){
-             $.ajax({
-                 url:'http://matchweb.sports.qq.com/kbs/calendar?columnId=' + cid,
-                 type:'get',
-                 dataType:'jsonp',
-                 success:function(result){
-                     if(result && result.code===0){
-                         console.log(result)
-                         result=result['data'];
-                         var today=result['today'],
-                             data=result['data'];
-                         $calendarPlan.fire(today,data,cid);
-                     }
-                 }
-             });
-
-         }
-     }
-})();
-var matchRender=(function() {
-    return {
-        init:function(startTime,endTime,cid){
-
-        }
     }
-
-
-}());
-menuRender.init();
+})();
+matchRender.init();

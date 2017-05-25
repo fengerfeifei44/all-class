@@ -1,0 +1,121 @@
+﻿/********************** 
+
+泰合佳通控件样式 陈懿
+
+**********************/
+
+.login-wrapper{
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#1997ec), to(#75c3f3));*/
+    /*background:url(../../../imgs/bgbig.png) left top no-repeat;*/
+     background:url(../../../imgs/adminLogin.png) left top no-repeat;
+    background-size:cover;
+
+}
+
+.login-wrapper-header{
+    height:50px;
+    /*background:#09f;*/
+}
+
+.logo{
+    width: 100%;
+    height: 150px;
+    /*background: url(../../../imgs/logo-default.png)50% 70% no-repeat;*/
+}
+
+.login-controls{
+    width: 100%;
+    position: relative;
+}
+
+.form-wrapper{
+    padding: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper-footer{
+    font-family:"Microsoft YaHei" Arial;
+    height:45px;
+    line-height:45px;
+    position:absolute;
+    bottom:0;
+    /*background:#75c3f3;*/
+    background:#fff;
+    color:#333;
+    width:100%;
+    text-align:center;
+    position:fixed;
+    
+}
+
+
+
+.login-box , .logo{
+    /*-webkit-animation:1.5s ease-out backwards;
+    -moz-animation:1.5s ease-out backwards;
+    -ms-animation:1.5s ease-out backwards;
+    animation:1.5s ease-out backwards;*/
+}
+
+.logo{
+    -webkit-animation-name:fadeinT;
+    -moz-animation-name:fadeinT;
+    -ms-animation-name:fadeinT;
+    animation-name:fadeinT;}
+
+ @-webkit-keyframes fadeinT{
+    0%{
+        opacity:0;
+        -webkit-transform:translateY(-95px);
+    }
+    100%{
+        opacity:1;
+        -webkit-transform:translateY(0);
+    }
+}
+
+@keyframes fadeinT{
+    0%{opacity:0;
+        transform:translateY(-95px);
+    }
+    100%{opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+
+
+
+
+.login-box{
+    -webkit-animation-name:fadeinB;
+    -moz-animation-name:fadeinB;
+    -ms-animation-name:fadeinB;
+    animation-name:fadeinB;}
+
+ @-webkit-keyframes fadeinB{
+    0%{
+        opacity:0;
+        -webkit-transform:translateY(95px);
+    }
+    100%{
+        opacity:1;
+        -webkit-transform:translateY(0);
+    }
+}
+
+@keyframes fadeinB{
+    0%{opacity:0;
+        transform:translateY(95px);
+    }
+    100%{opacity:1;
+        transform:translateY(0);
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            float: left;
+            width: 300px;
+        }
+        li{
+            float: left;
+            width: 100px;
+            height: 30px;
+            background: pink;
+        }
+        li.on{
+            background: yellow;
+        }
+        .box div{
+            display: none;
+            width: 300px;
+            height: 300px;
+            background: #ccc;
+        }
+        .box div.show{
+            display: block;
+            background: lawngreen;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="box" id="box">
+    <ul>
+        <li class="on">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <div class="show">1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<div class="box">
+    <ul>
+        <li class="on">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <div class="show">1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<script>
+    var aDiv=document.getElementsByClassName('box');
+    for(var i=0;i<aDiv.length;i++){
+        fn(aDiv[i])
+    }
+    function fn(obox){
+        var aLis=obox.getElementsByTagName('li');
+        var aDiv=obox.getElementsByTagName('div');
+        for(var i=0;i<aLis.length;i++){
+            aLis[i].index=i;
+            aLis[i].onclick=function(){
+                for(var i=0;i<aLis.length;i++){
+                    aLis[i].className="";
+                    aDiv[i].className="";
+                }
+                this.className='on';
+                aDiv[this.index].className='show';
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>

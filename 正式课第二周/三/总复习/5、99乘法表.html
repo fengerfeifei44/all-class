@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="ul"></ul>
+<script>
+    var oUl=document.getElementById('ul');
+    var str="";
+    for(var i=1;i<=9;i++){
+        str+="<li>";
+        for(var j=1;j<i;j++){
+            str+="<span>"+j+"*"+i+"="+j*i+"</span>";
+        }
+        str+="</li>"
+    }
+    oUl.innerHTML=str;
+</script>
+
+</body>
+</html>

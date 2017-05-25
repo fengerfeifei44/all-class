@@ -3,8 +3,61 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+        .div2{
+            left:200px ;
+            background: green;
+            border: 1px solid transparent;
+
+        }
+        .div3{
+            left:400px ;
+            background: yellow;
+        }
+        .div4{
+            left: 600px;
+            background: pink;
+        }
+    </style>
 </head>
 <body>
-
+<div id="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+<div class="div4"></div>
+<script src="js/event2.js"></script>
+<script src="js/move.js"></script>
+<script src="js/Drag1.js"></script>
+<script>
+    var aDiv=document.getElementsByTagName('div');
+    for(var i=0;i<aDiv.length;i++){
+        var curDiv=new Drag(aDiv[i])
+        if(i==1){
+            curDiv.range({
+                left:0,
+                right:500,
+                top:40,
+                bottom:300
+            })
+        }  if(i==1){
+            curDiv.range({
+                left:0,
+                right:500,
+                top:40,
+                bottom:300
+            })
+        }if(i==2){
+            curDiv.border();
+        }
+    }
+   /* var oDiv=document.getElementById('box');
+    var drag1=new Drag(oDiv);*/
+</script>
 </body>
 </html>

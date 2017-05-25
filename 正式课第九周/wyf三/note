@@ -1,0 +1,37 @@
+1、使用github发布自己的网页
+github 一个网站，一个基于git命令操作提供远程仓库存储的网站或者平台，也是全世界最权威的代码托管平台，我们知道的前端框架，原代码在github上都有托管
+发布页面
+ github免费为我们提供服务器，我们只要在github上有一个自己的账号，就可以把自己的页面传到github上去，基于github把页面发布，别人通过外网网址就可以看到我们的页面了，但是github限制我们只能上传和发布前端静态页面（不能有后台程序），但是页面中的数据可以跨域访问实现动态绑定；
+  基于当前的这个仓库发布我们的项目
+  一个账号可以创建n个仓库，每一个仓库都可以发布一个项目，我们可以发布n个项目
+
+  生活中我们经常去应用商店下载一个APP，然后使用，而很少打开浏览器输入网址访问
+
+  可以跨平台开发，办公成本少
+  项目文件都在自己的服务器上，我们只需要把服务器上的项目更新，用户下一次在进入到网站中看到的永远是最新的
+  HyBrid混合开发模式就是把nativeApp和webApp相结合的一种模式，也是目前市场上最常用的模式
+  https://fengerfeifei44.github.io/Resume/
+
+
+  移动端时间
+  PC端的事件：
+   click dblclick mouseover mouseout mouseenter mouseleave mousedown mouseup mousemove mousewheel
+   keydown keyup
+   focus blur change submit cheaked selected
+   load error unload 页面关闭 resize屏幕大小改变时触发的时间 scroll
+   canplay
+   transitionend animationend
+   readystatechange ...
+   以上这些事件在移动端都存在吗？
+   1）keydown keyup 存在吗
+    很多手机都不支持这两个事件，因为移动端是虚拟键盘，keydown和keyup在PC端经常用于验证在用户输入一个的过程中我们做什么事情，在移动端我们有一个时间‘input’是专门用来代替这两个事件的
+   2）mouse 系列的事件在移动端支持的都不好
+   在移动端的事件应该都是以手指为核心
+   3）click在PC端是点击（不区分是单击还是双击），在移动端也有click事件，移动端对于单击还是双击的需求还是很多的，所以移动端把click识别为单击（不是点击），当用户点击屏幕后手指离开，click事件并没有立马被触发，而是等待了300ms，看这段事件内是否触发了第二次，如果触发了第二次就属于双击而不是单击（click)，没有触发第二次才是click单击 移动端click事件存在，但是属于单击事件，所以有300ms的延迟
+   如何解决300ms的延迟？
+   我们只需要引入一个JS插件：fastclick.js
+   移动端有自己专门的事件（手指事件、重力感应事件）
+   1）单手机事件（Touch）
+     touchstart/touchmove touchend touchcancle (意外情况导致手指操作终止会触发这个事件)
+   2）多手指事件(Gesture)
+   gesturestart gesturechange gestureend gesturecancle

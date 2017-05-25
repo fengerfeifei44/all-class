@@ -1,0 +1,20 @@
+{
+  "name": "20170217",
+  "version": "1.0.0",
+  "description": "",
+  "main": "max.js",
+  "scripts": {
+    "test": "echo hello world",
+    "build": "babel src -wd build",
+    "babelH":"babel -h"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-react": "^6.23.0"
+  }
+}

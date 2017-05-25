@@ -1,0 +1,172 @@
+﻿
+<div class="main-head">
+    <div class="col-md-2 col-sm-2 col-xs-2 text-left" >
+        <span style="cursor:pointer;" ng-click="addBlack()">
+            <img src="imgs/addN.png" alt="" />
+            新建
+        </span>
+    </div>
+    <!--<div class="col-md-2 col-sm-2 col-xs-2">
+        <span style="cursor:pointer;" ng-click="editBlack()">
+            <img src="imgs/edit1.png" alt="" />
+            修改
+        </span>
+    </div>-->
+    <div class="col-md-2 col-sm-2 col-xs-2 text-left">
+        <span style="cursor:pointer;" ng-click="deleteBlack()">
+            <img src="imgs/deleteN.png" alt="" />
+            删除
+        </span>
+    </div>
+    <!--<div class="col-md-6" style="padding-top: 4px;position: relative;">
+        <input type="text" placeholder="搜索" class="search form-control" />
+        <span class="glyphicon glyphicon-search" aria-hidden="true" style="position: absolute;right:25px;top:11px;color:#ccc;font-size: 20px;"></span>
+    </div>-->
+  
+    <!--<div class="col-md-4 col-sm-4  col-xs-4  col-md-offset-3 col-sm-offset-2 col-xs-offset-2    text-right">
+        设置黑名单有效时长
+        <input type="text" placeholder="7" class="search form-control" style="width: 81px; height: 29px; line-height: 29px; border-radius: 5px; color: #656565; padding-left: 3px;display:inline-block;" ng-model="effective" />
+       
+        天
+    </div>
+    <div class="col-md-1 text-right col-sm-2 col-xs-2">
+        <button type="button" class="btn" style="background: #3da7ff;color:white;" ng-click="submit()">提交</button>
+       
+
+    </div>-->
+   
+
+</div>
+<div>
+    <div class="table-responsive">
+        <table class="table  table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>序号</th>
+                    <th>用户ID</th>
+                    <th>备注</th>
+                    <th>投诉时间</th>
+                    <th>投诉原因</th>
+                 
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="b in blackListData" ng-click="selectLine(b.Usr_Id,$index)">
+                    <td><input type="checkbox" ng-model="b.IsChecked" /></td>
+                    <td>{{b.RowIndex}}</td>
+                    <td>{{b.Usr_Id}}</td>
+                    <td>{{b.Comment_Inf}}</td>
+                    <td>{{b.Date_Time}}</td>
+                    <td>{{b.Complain_Reason}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- 分页代码 -->
+<div style="overflow:hidden;">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+        <div style=" text-align: right; margin: 0 auto;" class="search-right">
+            <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="perItems" max-size="maxSize" ng-change="pageChanged(currentPage, maxSize)"
+                            previous-text="上一页" next-text="下一页" class="pagination-sm" boundary-link-numbers="true" rotate="false" num-pages="numPages"></uib-pagination>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6 col-sm-6 col-xs-6" style="height: 70px; padding-top: 19px;">
+        共<span style="padding:0 8px;">{{responseData.PageCount}}</span>页，到
+        <input type="text" name="name" value=" " ng-model="ye" style="width: 30px; height: 30px; position: relative; top: -1px;padding:0;" />
+        <span>页</span>
+        <!--//{{UserInfo.Usr_Account_Name}}-->
+        <!--<button type="button" class="btn btn-default btn-daasadg" ng-click="sure()">确定</button>-->
+        <a class="" ng-click="sure()" style="cursor: pointer; padding-left: 18px;">确定</a>
+    </div>
+
+</div>
+
+<!--<div style=" text-align: right; margin: 0 auto;" class="search-right">
+    <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="perItems" max-size="maxSize" ng-change="pageChanged(currentPage, maxSize)"
+                    previous-text="上一页" next-text="下一页" class="pagination-sm" boundary-link-numbers="true" rotate="false" num-pages="numPages"></uib-pagination>
+
+</div>-->
+
+
+<div class="modal fade money-modal save-modal" id="addBlackUsr" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-addA" role="document">
+        <div class="modal-content">
+            <div class="modal-header money-modal-header text-center">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancelAdd()"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title" id="myModalLabel" style="margin-top: -10px; font-size:20px;">新建黑名单</h4>
+            </div>
+            <div class="modal-body money-modal-body">
+                <form class="form-horizontal">
+                    <!--<div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label necessary">
+                            账号名
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" placeholder="" ng-model="Usr_Account_Name" required autocomplete="off" ng-blur="checkUsr();" ng-keyup="checkUsr1();">
+                        </div>
+                    </div>-->
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                            用户ID
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="idAdd" required>
+                        </div>
+                    </div>
+                    <!--<div class="form-group" style="margin-bottom: 37px;">
+                        <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                            原来用户ID
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="oldidAdd" required>
+                        </div>
+                    </div>-->
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                            投诉原因
+                            <!--<i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>-->
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="comReasonAdd">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">备注</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="commentInfoAdd">
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">联系方式3</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="Contant_Infor3">
+                        </div>
+                    </div>-->
+
+                </form>
+            </div>
+
+            <div class="modal-footer money-modal-footer text-left">
+
+
+                <button type="button" class="btn btn-primary  save col-md-6 col-sm-6 col-xs-6"   ng-click="saveAddBlack ()"> 保存</button>
+                <button type="button" class="btn btn-default col-md-6 col-sm-6 col-xs-6" data-dismiss="modal" style="margin-left: 0; border-left: 1px solid #cdcdcd;">取消</button>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

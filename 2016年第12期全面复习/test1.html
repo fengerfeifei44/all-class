@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function fn(n,m){
+        n=10;
+        console.log(arguments[0]);
+        console.log(arguments.callee.caller);
+    }
+    //fn(1,2);
+    function sum() {
+       fn(1,2)
+    }
+    sum();*/
+    "use strict";
+    function fn(n,m) {
+        n=12;
+        console.log(this)
+    }
+    function sum() {
+        fn(1,2)
+    }
+    fn.call();
+
+</script>
+</body>
+</html>

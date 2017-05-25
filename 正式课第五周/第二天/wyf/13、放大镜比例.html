@@ -3,8 +3,82 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        #small{
+            float: left;
+            position: relative;
+            width: 430px;
+            height: 430px;
+            background: url("img/1.jpg") no-repeat center;
+        }
+        #mark{
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 240px;
+            height: 240px;
+            background: blue;
+            opacity: 0.3;
+            filter: alpha(opacity:0);
+        }
+        #big{
+            display: none;
+            position: relative;
+            float: left;
+            margin-left: 10px;
+            width: 430px;
+            height: 430px;
+            overflow: hidden;
+        }
+        #big img{
+            position: absolute;
+
+        }
+    </style>
 </head>
 <body>
+<div id="small">
+    <div id="mark"></div>
+</div>
+<div id="big">
+    <img src="img/2.jpg" alt=""/>
+</div>
+<script>
+    var oSmall=document.getElementById('small');
+    var oMark=document.getElementById('mark');
+    var oBig=document.getElementById('big');
+    var oImg=document.getElementsByTagName('img')[0];
+    oSmall.onmouseover=function(){
+        oMark.style.display='block';
+        oBig.style.display='block';
+    }
+    oSmall.onmousemove=function(e){
+        e=e||window.event;
+        var l= e.clientX-this.offsetLeft-oMark.offsetWidth/2;
+        var t= e.clientY-this.offsetTop-oMark.offsetHeight/2;
+        var maxL=this.offsetWidth-oMark.offsetWidth;
+        var maxT=this.offsetHeight-oMark.offsetHeight;
+        if(l>=maxL){
+            l=maxL;
+        }else if(l<=0){
+            l=0
+        }
+        if(t>=maxL){
+            t=maxT;
+        }else if(t<=0){
+            t=0
+        }
+        oMark.style.left=l+'px';
+        oMark.style.top=t+'px';
+        oImg.style.left=l/(this.offsetWidth-oMark.offsetWidth)*(oBig.offsetWidth-oImg.offsetWidth)+'px'
+        oImg.style.top=t/(this.offsetHeight-oMark.offsetHeight)*(oBig.offsetHeight-oImg.offsetHeight)+'px'
+    }
+    oSmall.onmouseout=function(){
+        oMark.style.display='none';
+        oBig.style.display='none';
+    }
+</script>
 
 </body>
 </html>

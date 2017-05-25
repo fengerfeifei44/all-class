@@ -1,0 +1,1 @@
+grunt custom:angular,grid,treelist,treeview,dropdownlist,upload,multiselect,colorpicker

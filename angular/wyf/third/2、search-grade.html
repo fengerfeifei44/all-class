@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body ng-controller="myCtrl">
+<input type="text" ng-model="query">
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="stu in students">
+        {{stu.name}}
+        <div ng-bind-html="stu.chinese|search:query|trustAsHtml"></div>
+    </li>
+</ul>
+<script src="node_modules/angular/angular.min.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.filter('trustAsHtml',function($sce){
+        return function(data){
+            return $sce.trustAsHtml(data);
+        }
+    });
+    app.filter('search',function(){
+        return function(data,param1){
+            if (!param1) return data;
+            return data.replace(new RegExp(param1,'g'),function(){
+               return '<font color="red">'+arguments[0]+'</font>'
+            });
+        }
+    });
+    app.controller('myCtrl',function($scope){
+        $scope.students=[
+            {name:'张三',chinese:'100'},
+            {name:'李四',chinese:'33'},
+            {name:'赵五',chinese:'56'},
+            {name:'王六',chinese:'88'},
+            {name:'朱七',chinese:'90'}
+        ]
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>bookstore</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <!--<link rel="stylesheet" href="css/index.css">-->
+</head>
+<body>
+<!--表示-->
+<!--<div class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#!/home">BookStore</a>
+        </div>
+        <div>
+            <ul class="navbar-nav nav">
+                <li><a href="#!/home">首页</a></li>
+                <li><a href="#!/list">列表页</a></li>
+                <li><a href="#!/add">新增图书</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div ng-view class="container"></div>-->
+
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<!--angular angular-resource angular-route-->
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script>
+    var app=angular.module('appModule',['ngResource','ngRoute']);
+    //默认锚点不会被chrome抓取
+    app.factory('Books',function ($resource) {
+        return $resource('/books/:bid',null,{
+            update:{
+                method:'PUT'
+            }
+        })
+
+    });
+    app.config(function ($routeProvider) {
+        $routeProvider.when('/home',{
+            templateUrl:'temp/home.html',//通过ajax拿到对应的页面
+            controller:'homeCtrl'
+        }).when('/list',{
+            templateUrl:'temp/list.html',
+            controller:'listCtrl'
+        }).when('/detail/:id',{
+            templateUrl:'temp/detail.html',
+            controller:'detailCtrl'
+
+        }).when('/add',{
+            templateUrl:'temp/add.html',
+            controller:'addCtrl'
+        }).otherwise('temp/home.html')
+    })

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.controller('myCtrl',function ($scope) {
+        $scope.date=new Date();
+    })
+</script>
+</body>
+</html>

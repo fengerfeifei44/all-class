@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        table{
+            border-radius: 10px;
+            margin: 50px auto;
+            width: 800px;
+            font-size: 20px;
+            box-shadow: 0 0 10px #000;
+            overflow: hidden;
+        }
+        thead{
+            height: 40px;
+            line-height: 60px;
+            text-align:center;
+            background: darkgreen;
+            color: white;
+        }
+        tbody{
+            text-align: center;
+        }
+        tbody tr{
+            height: 40px;
+            line-height: 40px;
+        }
+        .bg0{
+            background: lavender;
+        }
+        .bg1{
+            background: lightblue;
+        }
+        .cursor{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" id="tab">
+    <thead>
+    <tr>
+        <th class="cursor">姓名</th>
+        <th class="cursor">年龄</th>
+        <th class="cursor">分数</th>
+        <th>性别</th>
+    </tr>
+    </thead>
+    <tbody>
+  <!--  <tr class="bg0">
+        <td>赵老大</td>
+        <td>23</td>
+        <td>85</td>
+        <td>男</td>
+    </tr>
+    <tr class="bg1">
+        <td>赵老大</td>
+        <td>23</td>
+        <td>85</td>
+        <td>男</td>
+    </tr>-->
+    </tbody>
+</table>
+<script src="utils.js"></script>
+<script>
+    (function(){
+        //1、获取元素
+        var oTab=document.getElementById('tab');
+        var tHead=oTab.tHead;//获取表头
+        var tCells=tHead.rows[0].cells;//获取第一行的每一列；
+        var tBody=oTab.tBodies[0];
+        var aRows=tBody.rows;//获取每一行
+        var data=null;
+        //2、获取数据
+        getData();
+        function getData(){
+            var xml=new XMLHttpRequest;
+            xml.open("get","data.txt",false);
+            xml.onreadystatechange=function(){
+                if(xml.readyState==4&&/^2\d{2}$/.test(xml.status)){
+                    data=utils.jsonParse(xml.responseText);
+                    console.log(xml.responseText)
+                }
+            };
+            xml.send();
+        }
+        bind();
+        //3、添加到页面
+        function bind(){
+            var str='';
+            for(var i=0;i<data.length;i++){
+                data[i].sex=data[i].sex==0?"男":"女";
+                str+="<tr>\
+                <td>"+data[i].name+"</td>\
+                <td>"+data[i].age+"</td>\
+                <td>"+data[i].score+"</td>\
+                <td>"+data[i].sex+"</td>\
+                </tr>";
+
+
+            }
+            tBody.innerHTML+=str;
+        }
+        //4、隔行变色
+        colorChange();
+      function colorChange(){
+          for(var i=0;i<aRows.length;i++){
+              aRows[i].className="bg"+i%2;
+          }
+      }
+        //5、点击排序
+        function sort(n){
+            for(var i=0;i<tCells.length;i++){
+                tCells[i].flag=i==n?tCells[n].flag*=-1:-1;
+            }
+           // tCells[n].flag*=-1;
+            var ary=utils.makeArray(aRows);
+            ary.sort(function(a,b){
+                a= a.cells[n].innerHTML;
+                b= b.cells[n].innerHTML;
+                if(isNaN(a)||isNaN(b)){
+                    return a.localeCompare(b)*tCells[n].flag;
+                }
+                return (a-b)*tCells[n].flag;
+                });
+            var flg=document.createDocumentFragment();
+            for(var i=0;i<ary.length;i++){
+                flg.appendChild(ary[i]);
+            }
+            tBody.appendChild(flg);
+            flg=null;
+            colorChange();
+        }
+        for(var j=0;j<tCells.length;j++){
+            tCells[j].flag=-1;
+            tCells[j].index=j;
+            if(tCells[j].className=="cursor"){
+                tCells[j].onclick=function(){
+                    sort(this.index);
+                }
+            }
+        }
+    })()
+</script>
+
+</body>
+</html>

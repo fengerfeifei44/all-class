@@ -5,6 +5,21 @@
     <title></title>
 </head>
 <body>
+<input type="text" id="btn"/>
+<script>
+    var oBtn=document.getElementById('btn')
+    oBtn.onkeydown=function(e){
+        e=e||window.event;
+        console.log(e.keyCode)
+        if((e.keyCode<48|| e.keyCode>57)&&e.keyCode!=8){
+            e.defaultPrevented?e.defaultPrevented(): e.returnValue=false
+        }
+      /*  console.dir(e);
+       if(typeof this.value!='number'){
+          e.defaultPrevented();
+       }*/
+    }
 
+</script>
 </body>
 </html>

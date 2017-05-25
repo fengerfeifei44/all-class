@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            background: yellow;
+            line-height: 30px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+<script>
+   /* var oUl=document.getElementsByTagName('ul')[0];
+    var aLi=document.getElementsByTagName('li')
+    oUl.onclick=function (e) {
+        e=e||window.event;
+        var target=e.target||e.srcElement;
+        if(target.tagName.toLowerCase()==='li'){
+            alert(target.innerHTML);
+        }
+    }*/
+  for (var i=0;i<10;i++){
+
+     var move=(function (index) {
+          console.log(index)
+      })(i)
+      var timer=setInterval(move,1000);
+  }
+
+
+</script>
+</body>
+</html>

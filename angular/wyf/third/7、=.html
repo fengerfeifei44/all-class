@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-controller="myCtrl">
+<input type="text" ng-model="aa"/>
+<text title="aa" s="say(m,n)"></text>
+<script src="node_modules/angular/angular.min.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.controller('myCtrl',function($scope){
+        $scope.aa=100;
+        $scope.say=function(who,where){
+            alert(who);
+            alert(where);
+        }
+    });
+    app.directive('text',function(){
+        return {
+            restrict:'E',
+            template:`<div>
+                            <h1>{{aa}}</h1>
+                            <input type="text" ng-model="aa"/>
+                            <button ng-click="say({m:'aa',n:aa})">点我</button>
+                        </div>
+            `,
+            scope:{
+                aa:'=title',
+                say:'&s'
+            }
+        }
+    })
+</script>
+</body>
+</html>

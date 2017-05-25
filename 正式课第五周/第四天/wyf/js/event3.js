@@ -35,6 +35,15 @@ function off(ele,type,fn){
 }
 function run(){
     var e=window.event;
+    e.pageX=(document.documentElement.scrollLeft||document.body.scrollLeft)+e.clientX;
+    e.pageY=(document.documentElement.scrollTop||document.body.scrollTop)+e.clientY;
+    e.target=e.target||e.srcElement;
+    e.preventDefault=function(){
+        e.returnValue=false;
+    };
+    e.stopPropagation=function(){
+        e.cancelable=true;
+    }
     var a=this[e.type+'onEvent'];
     if(a&&a.length){
         for(var i=0;i<a.length;i++){

@@ -1,0 +1,256 @@
+﻿<div class="main-head">
+    <div class="col-md-2 text-left col-sm-2 col-xs-2">
+        <span data-toggle="modal"  style="cursor: pointer; color: #3ea6ff;" ng-click="addUser()">
+            <img src="imgs/addN.png" alt="" />
+            新建策略
+        </span>
+
+    </div>
+    <div class="col-md-2 text-left col-sm-2 col-xs-2">
+        <span data-toggle="modal"  style="cursor: pointer; color: #3ea6ff;" ng-click="editUser()">
+            <img src="imgs/editN.png" alt="" />
+            编辑
+        </span>
+
+    </div>
+    <div class="col-md-2 text-left col-sm-2 col-xs-2">
+        <span style="cursor: pointer; color: #3ea6ff;" ng-click="delete()">
+            <img src="imgs/deleteN.png" alt="" />
+            删除
+        </span>
+
+    </div>
+    <div class="col-md-2 text-left col-sm-2 col-xs-2">
+        <span style="cursor: pointer; color: #3ea6ff;" ng-click="fileUpload()">
+            <img src="imgs/upload.png" alt="" />
+            文件上传
+        </span>
+
+    </div>
+    <div class="col-md-2  col-sm-2 col-xs-2" style="padding-top: 4px; position: relative;">
+        <input type="text" placeholder="" class="search form-control" ng-model="SWEB_CONTENT" ng-focus="searchDis()" ng-blur="searchShow()"/>
+        <img src="imgs/searchIcon.png" alt="Alternate Text" style="position: absolute; top: 11px; left: 24px;cursor:pointer;" class="searchIcon" />
+        <!--<span class="glyphicon glyphicon-search" aria-hidden="true" style="position: absolute; right: 25px; top: 11px; color: #ccc; font-size: 20px; cursor: pointer;" ng-click="searchUserAccount()"></span>-->
+    </div>
+    <div class="col-md-1 col-sm-1 col-xs-1 text-right">
+        <button type="button" class="btn" style="background: #3da7ff;color:white;" ng-click="searchUserAccount()">搜索</button>
+    </div>
+
+</div>
+<div>
+    <div class="table-responsive">
+        <table class="table  table-striped account-table">
+            <thead>
+                <tr>
+                    <th class="tablePe1"><input type="checkbox" ng-model="ischeckall" ng-click="CheckAll()" /></th>
+                    <th class="tablePe1">序号</th>
+                    <th class="tablePe1">网站名称</th>
+                    <th class="tablePe1">网站地址</th>
+                    <th class="tablePe1">JS路径</th>
+                    <th class="tablePe1">PC端位置</th>
+                    <th class="tablePe1">移动端位置</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="u in userAccountData">
+                    <td>
+                        <input data-val="{{u}}" type="checkbox" ng-model="u.IsChecked" /></td>
+                    <td class="usrIndex">{{$index+(currentPage-1)*perItems+1}}</td>
+                    <td class="usrName">{{u.WEB_CONTENT}}</td>
+                    <td style="color: #236db4;">{{u.WEB_HOST}}</td>
+                    <!--<td>{{u.Contant_Infor1+" "+u.Contant_Infor2+" "+u.Contant_Infor3}}</td>-->
+                    <td style="color: #236db4;">{{u.JS_CONTENT}}</td>
+                    <td>{{u.AD_PC_POSITION}}</td>
+                    <td>{{u.AD_APP_POSITION}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal6">
+    Launch demo modal
+</button>-->
+<!-- Modal -->
+
+<div class="modal fade money-modal save-modal" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-addA" role="document">
+        <div class="modal-content">
+            <div class="modal-header money-modal-header text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel" style="margin-top: -10px; font-size: 20px;">新建策略</h4>
+            </div>
+            <div class="modal-body money-modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label"><i style="color: red; font-size: 18px; position: absolute; left: 15px; top: 10px;">*</i>网站名称</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" placeholder="" ng-model="WEB_CONTENT" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">网站地址</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="WEB_HOST" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 37px;">
+                        <label for="inputPassword3" class="col-sm-3 control-label"><i style="color: red; font-size: 18px; position: absolute; left: 15px; top: 10px;">*</i>JS路径</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Password1" placeholder="" ng-model="JS_CONTENT" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">PC端位置</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" ng-model="pc_adress_y" style="width: 45%;float:left;margin-right:5%;">
+                                <option value="left">浏览器左侧</option>
+                                <option value="right">浏览器右侧</option>
+                            </select>
+                            <input type="text" class="form-control" id="Text1" style="width: 45%;float:left;" placeholder="上下位置" ng-model="pc_adress_x" required>
+                            <label class="control-label" style="width:5%;float:left;">%</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">APP端位置</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" ng-model="AD_APP_POSITION">
+                                <option value="top">浏览器头部</option>
+                                <option value="center">浏览器中间</option>
+                                <option value="bottom">浏览器底部</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+            <div class="modal-footer money-modal-footer text-left">
+                <div class="form-group">
+
+                    <button type="button" class="btn btn-primary col-md-6 save col-sm-6 col-xs-6"  ng-click="saveAddUser ()" >保存</button>
+                    <button type="button" class="btn btn-default col-md-6 col-sm-6 col-xs-6" data-dismiss="modal" style="margin-left: 0; border-left: 1px solid #cdcdcd;">取消</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade money-modal edit-modal" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-addA" role="document">
+        <div class="modal-content">
+            <div class="modal-header money-modal-header text-center">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="H1" style="margin-top: -10px; font-size: 20px;">编辑策略</h4>
+                <input type="hidden" class="form-control" id="Text3" placeholder="" ng-model="edit_WEB_JS_ID" value="{{edit_WEB_JS_ID}}" required>
+            </div>
+            <div class="modal-body money-modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label"><i style="color: red; font-size: 18px; position: absolute; left: 15px; top: 10px;">*</i>网站名称</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Text4" placeholder="" ng-model="edit_WEB_CONTENT" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">网站地址</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="edit_WEB_HOST" placeholder="" ng-model="edit_WEB_HOST">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 37px;">
+                        <label for="inputPassword3" class="col-sm-3 control-label"><i style="color: red; font-size: 18px; position: absolute; left: 15px; top: 10px;">*</i>JS路径</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="Password3" placeholder="" ng-model="edit_JS_CONTENT" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">PC端位置</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" ng-model="edit_pc_adress_y" style="width: 45%;float:left;margin-right:5%;">
+                                <option value="left">浏览器左侧</option>
+                                <option value="right">浏览器右侧</option>
+                            </select>
+                            <input type="text" class="form-control" id="edit_pc_adress_x" style="width: 45%;float:left;" placeholder="上下位置" ng-model="edit_pc_adress_x">
+                            <label class="control-label" style="width:5%;float:left;">%</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">APP端位置</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" ng-model="edit_AD_APP_POSITION">
+                                <option value="top">浏览器头部</option>
+                                <option value="center">浏览器中间</option>
+                                <option value="bottom">浏览器底部</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer money-modal-footer text-left">
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary col-md-6 save col-sm-6 col-xs-6" ng-click="saveEditUser()">保存</button>
+                    <button type="button" class="btn btn-default col-md-6 col-sm-6 col-xs-6" data-dismiss="modal" style="margin-left: 0; border-left: 1px solid #cdcdcd;">取消</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="fileModal">
+    <div class="modal-dialog" style="width: 437px; height: 153px; margin: 219px auto; ">
+        <div class="modal-content" style=" position: relative; background-color: transparent;">
+            <div style="width: 100%;padding: 15px;  opacity: 0.4; height:190px;background-color: rgb(0, 0, 0);" id="M2cover"></div>
+            <div class="modal-header" style="border-bottom: 0; position: absolute;  top: 0; left: 0; color: white; width: 100%">
+                <button type="button" class="close img-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center" style="">选择文件</h4>
+            </div>
+            <div class="modal-body" style="overflow:hidden;position:absolute;top:50px;width:100%;">
+                <div class="col-md-10 col-sm-10 col-xs-10"  style="padding-left:0;"><input type="type" name="name" value=" " class="form-control " /></div>
+               
+                <button type="button" class="btn btn-primary col-md-2 col-sm-2 col-xs-2"  style="background: #3399fe;">浏览</button>
+               
+            </div>
+            <div class="modal-footer" style="text-align: left; border-top: 0; position: absolute; top: 115px; width: 100%;">
+                <button type="button" class="btn btn-primary" style="width: 162px; background: #3399fe;">上传</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="width: 162px; margin-left: 63px; background: #999999;border-color:#999999;">取消</button>
+               
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- 分页代码 -->
+<div style="overflow:hidden;">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+        <div style=" text-align: right; margin: 0 auto;" class="search-right">
+            <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="perItems" max-size="maxSize" ng-change="pageChanged(currentPage, maxSize)"
+                            previous-text="上一页" next-text="下一页" class="pagination-sm" boundary-link-numbers="true" rotate="false" num-pages="numPages"></uib-pagination>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6 col-sm-6 col-xs-6" style="height: 70px; padding-top: 19px;">
+        共<span style="padding:0 8px;">{{responseData.PageCount}}</span>页，到
+        <input type="text" name="name" value=" " ng-model="ye" style="width: 30px; height: 30px; position: relative; top: -1px;padding:0;" />
+        <span>页</span>
+        <!--//{{UserInfo.Usr_Account_Name}}-->
+        <!--<button type="button" class="btn btn-default btn-daasadg" ng-click="sure()">确定</button>-->
+        <a class="" ng-click="sure()" style="cursor: pointer; padding-left: 18px;">确定</a>
+    </div>
+
+</div>
+

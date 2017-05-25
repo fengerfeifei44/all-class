@@ -61,6 +61,11 @@ function run(){//拿到数组，顺序调用  [fn1,fn2,null,null]
     }
 
 }
+function processThis(fn,context){
+    return function(e){
+        fn.call(context,e)
+    }
+}
 
 
 

@@ -3,8 +3,60 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        .box{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
 </head>
 <body>
+<div class="box"><img src="" alt=""/></div>
+<script>
+    var oDiv=document.getElementsByTagName('div')[0];
+    oDiv.onmousedown=down;
+    function processThis(fn,context){
+        return function(e){
+            fn.call(context,e)
+        }
+    }
+    function down(e){
+        e=e||window.event;
+        this.left=this.offsetLeft;
+        this.top=this.offsetTop;
+        this.x= e.clientX;
+        this.y= e.clientY;
+        if(this.setCapture){
+            this.setCapture();
+            this.onmousemove=move;
+            this.onmouseup=up;
+        }else{
+            document.onmousemove=processThis(move,this);
+            document.onmouseup=processThis(up,this);
+            e.preventDefault();
+
+        }
+
+    }
+    function move(e){
+        e=e||window.event;
+        this.style.left=this.left+ e.clientX-this.x+'px';
+        this.style.top=this.top+e.clientY-this.y+'px';
+    }
+    function up(){
+       if(this.releaseCapture){
+           this.releaseCapture();
+           this.onmousemove=null;
+           this.onmouseup=null;
+       }
+        else{
+           document.onmousemove=null;
+           document.onmouseup=null;
+       }
+    }
+</script>
 
 </body>
 </html>

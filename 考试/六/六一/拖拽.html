@@ -3,8 +3,38 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
+<div>
+    <img src="1.jpg" alt=""/>
+</div>
+<script src="js/utils.js"></script>
+<script src="js/move.js"></script>
+<script src="js/event.js"></script>
+<script src="js/drag.js"></script>
+<script>
+    on(oDiv,'selfDown',fn1);
+    on(oDiv,'selfDown',fn2);
+    on(oDiv,'selfMove',fn1)
+    function fn1(){
+        console.log(1)
+    }
+    function fn2(){
+        console.log(2)
+    }
+
+</script>
 
 </body>
 </html>

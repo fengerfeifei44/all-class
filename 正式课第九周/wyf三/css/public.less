@@ -1,15 +1,7 @@
-@color-white:#FFF;
-@color-border:#eee;
-@color-text:#555;
-@color-blue:#346AFF;
-@color-blue-light:#EFF3FF;
-
-@con-width:1040;
-
-.transitionFn(@property:all,@duration:1s,@time-function:linear,@delay:0s){
-  -webkit-transition: @arguments;
-  -moz-transition: @arguments;
-  -ms-transition: @arguments;
-  -o-transition: @arguments;
-  transition: @arguments;
+.positionMiddle(@W,@H){
+  position: absolute;
+  top:50%;
+  left: 50%;
+  margin-top: unit(-(@H/2),rem);
+  margin-left: unit(-(@W/2),rem);
 }

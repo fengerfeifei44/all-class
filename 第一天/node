@@ -1,0 +1,54 @@
+css3
+1、选择器
+2、导入网络字体包@font-face(项目中很少用，因为耗性能和流量)
+3、一些新增加的样式属性
+   border-radius
+   box-shadow
+   text-shadow
+4、对于背景的变革
+   background-corder/image/repeat/position/attachment
+   background-size:100%    cover
+   background:-webkit-linear(radial)-gradient
+   background-clip:content-box
+   background-origin:
+   filter:blur()模糊度
+ 5、transform 变形
+ transform-style：preserve-3d （perspective：2000px）
+ transform-origin：
+ rotate()
+ scale()
+ skew(x|y|z)
+ translate
+ matrix 矩阵变形
+
+6、transition 过渡动画 [property]
+7、animation帧动画
+  [animation-name]
+   @key-frames [animation-name]{
+
+   }
+8、css3的盒子模型
+    columns实现多列布局
+    box-sizing :border-box/padding-box content-box
+    flexbox:弹性盒模型
+9、@media媒体查询
+
+三、响应式布局
+  场景宣传+webApp+微信的二次开发（webApp）+phoneGap/React Native
+  1、hyBrid模式：混合式开发
+  2、流式布局法（PC和移动端使用的是同一套项目，我们项目使用@media设置条件重写样式）
+  3、rem响应式布局（移动端和PC分开的项目，我们做移动端使用rem
+  4、目前市场上很多大项目，老项目的响应式特别混乱：流式布局+rem+flexbox三者结合的方式来做的
+四、移动端JS和事件
+程序员的基本素养
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1、什么是SEO？
+  百度或者谷歌等搜索引擎都有一个小虫子（爬虫/蜘蛛），会每隔一段时间去每一个网站中抓取内容，把抓取到的内容放到自己的词库中；当用户输入某一个词语的时候，搜索引擎回到词库中去查找，把对应关键词涉及到的网站展示出来，如果我们网站的关键词被收录的越多，我们的展示越靠前==》需要我们把网站中重点要推广的词语多次优化的展示
+  例如：title keywords h1..h6 都是我们做SEO优化的一些手段，市场上有专门的SEO专员，就是做一些有利于收录和抓取的工作
+
+  一个页面中的h1标签只能出现一次，h1的权重非常的高
+2、SEM
+ 百度竞价推广（无节操的机制）我们花钱在百度做一个关键词竞价，谁出的钱多，谁就靠前
+
+ less编译 开发中：我们可以导入一个JS去编译，这样我们只需要正常的去写less代码即可，最后都会由js为我们编译了
+ 上线前：我们使用工具或者node把less编译为正常的css，项目引入的也是正常的css，然后在上线

@@ -3,8 +3,74 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        body,html{
+            height: 300%;
+        }
+        a{
+            display:none;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: chartreuse;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
+<a href="javascript:;">回到顶部</a>
+<script src="js/utils.js"></script>
+<script>
+    var oBtn=document.getElementsByTagName('a')[0];
+    /*window.onscroll=function(){
+        oBtn.onclick=function(){
+            var target=utils.win('scrollTop');
+            var duration=2000;
+            var interval=10;
+            var step=target/duration*interval;
+            var timer=setInterval(function(){
+                var curTop=utils.win('scrollTop');
+                curTop-=step;
+                if(curTop<=0){
+                    clearInterval(timer);
+                    return;
+                }
+                utils.win('scrollTop',curTop);
+            },interval)
+        }
+    }*/
+    window.onscroll=computedDisplay;
+            function computedDisplay(){
+                if(utils.win("scrollTop")>utils.win("clientHeight")){
+                    oBtn.style.display="block";
+                }
+            }
+        oBtn.onclick=function(){
+            oBtn.style.display="none";
+            window.onscroll=null;
+            var target=utils.win('scrollTop');
+            var duration=2000;
+            var interval=10;
+            var step=target/duration*interval;
+            var timer=setInterval(function(){
+                var curTop=utils.win('scrollTop');
+                curTop-=step;
+                if(curTop<=0){
+                    clearInterval(timer);
+                    window.onscroll=computedDisplay;
+                    return;
+                }
+                utils.win('scrollTop',curTop);
+            },interval)
+
+        }
+
+
+</script>
 
 </body>
 </html>

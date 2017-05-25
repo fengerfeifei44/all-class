@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+</head>
+<body>
+<div class="container" ng-controller="searchCtrl">
+<input type="text" class="form-control" style="margin-top:40px" ng-model="query" ng-keyup="search($event)" ng-keydown="down($event)"/>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="a in arrs" ng-class="{active:$index==index}">{{a}}</li>
+
+    </ul>
+</div>
+<script src="node_modules/angular/angular.min.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.controller('searchCtrl',function($scope,$http,$sce){
+        $scope.arrs=[];
+        $scope.index=-1;
+        $scope.remmber='';
+        var timer='';
+        $scope.down=function(e){
+            var keyCode= e.keyCode;
+            if(keyCode==38||keyCode==40){
+                e.preventDefault();
+            }
+        };
+
+        //请求数据
+        $scope.search=function(e){
+            var keyCode= e.keyCode;
+            if(keyCode==38||keyCode==40){
+                if(keyCode==38){
+                    if($scope.index<=-1){
+                        $scope.index=$scope.arrs.length
+                    }
+                    $scope.index--;
+                }
+                if(keyCode==40){
+                    if($scope.index>=$scope.arrs.length-1){
+                        $scope.index=-2;
+                    }
+                    $scope.index++;
+                }
+                if(!$scope.arrs[$scope.index]){
+                    $scope.query = $scope.remmber;
+                }else{
+                    $scope.query=$scope.arrs[$scope.index];
+                }
+
+                clearTimeout(timer);
+                /*timer=setTimeout(function(){
+                    window.location.href='https://www.baidu.com/s?wd='+$scope.query
+                },3000);*/
+                console.log(timer);
+                return false;
+            }
+            $http.jsonp($sce.trustAsResourceUrl('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+$scope.query),{jsonpCallbackParam:'cb'}).then(function(res){
+                $scope.remmber=$scope.query;
+                $scope.arrs=res.data.s
+            },function(err){
+                console.log(err)
+            })
+        }
+
+    })
+</script>
+</body>
+</html>

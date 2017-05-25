@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+<script>
+    var aDiv=document.getElementsByTagName('div');
+    var res=Array.prototype.slice.call(aDiv);
+    console.log(res);
+    //console.log(myArray(aDiv));
+    function myArray(arg){
+        var ary=[];
+        try{
+            ary=Array.prototype.slice.call(arg);
+        }catch(e){
+            for(var i=0;i<arg.length;i++){
+                ary.push(arg[i]);
+            }
+        }
+        return ary;
+    }
+</script>
+
+</body>
+</html>

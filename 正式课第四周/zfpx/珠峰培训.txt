@@ -1,0 +1,13 @@
+ES6比较全的文档http://es6.ruanyifeng.com/
+http://www.zhangxinxu.com/ 经常看一写css的问题建议看下
+http://www.liaoxuefeng.com/ 廖雪峰
+阮一峰的博客  
+代码和页面同步的一个小工具 browser-sync 
+
+我叫贺文榜 陕西人陕北的 91年的
+
+最重要的三点
+模板字符串
+对象的扩张
+函数的箭头函数（箭头函数注意:1:this指向  不可以当做构造函数  不能使用arguments对象）
+箭头函数里面的this 在定义的那一刻就确定了(我们以前的写法this是在执行的时候才知道他是谁) 箭头函数里面的this指向他上层作用域

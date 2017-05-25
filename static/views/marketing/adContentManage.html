@@ -1,0 +1,285 @@
+﻿
+<style type="text/css">
+
+    
+    .adChange li {
+        float:left;
+        cursor:pointer;
+       
+        border-right: 1px solid #ddd;
+        border-top:1px solid #ddd;
+        
+        background: #F4F9FD;
+        width:130px;
+        text-align:center;
+    }
+    .adChange {
+
+        border-left: 1px solid #ddd;
+        margin-left: 0;
+        margin-bottom: 0;
+        height: 42px;
+        line-height: 40px;
+    }
+        .adChange li a {
+            width: 100%;
+            display: block;
+            height: 100%;
+            color: #979B9C;
+        }
+    .adMenu .adChange .active a, .adMenu .adChange li a:hover {
+        background: #fff !important;
+        color: #343434 !important;
+        font-weight: bold;
+    }
+</style>
+
+
+
+
+<div class="main-head" style="margin-bottom:10px;">
+    <!--<div class="col-md-2">
+        <img src="imgs/add1.png" alt="" />
+        新建账号
+    </div>
+    <div class="col-md-2">
+        <img src="imgs/edit1.png" alt="" />
+        编辑
+    </div>
+    <div class="col-md-2">
+        <img src="imgs/delete1.png" alt="" />
+        删除
+    </div>-->
+    <div class="col-md-8 col-sm-8 col-xs-8" style="color:#000;font-size:16px;">
+        内容管理列表
+    </div>
+    <!--<div class="col-md-4 col-sm-4 col-xs-4 text-right" >
+        广告投放间隔
+        <input type="text" class="search form-control" style="width: 81px; height: 29px; line-height: 29px; border-radius: 5px; color: #656565; padding-left: 3px; display: inline-block;" ng-model="interval"/>
+       
+        秒
+        <button type="button" class="btn" style="background: #3da7ff; color: white; padding-top: 4px; padding-bottom: 4px;" ng-click="submit()">提交</button>
+    </div>-->
+    <!--<div class="col-md-2 col-sm-2 col-xs-2 text-left"  >
+        <button type="button" class="btn" style="background: #3da7ff;color:white;" ng-click="submit()">提交</button>   
+    </div>-->
+
+    <div class="col-md-3 col-sm-3 col-xs-3  " style="padding-top: 4px; padding-right: 0;">
+        <input type="text" placeholder="" class="search form-control" ng-model="AdName" ng-focus="searchDis()" ng-blur="searchShow()" />
+        <img src="imgs/searchIcon.png" alt="Alternate Text" style="position: absolute; top: 11px; left: 24px;cursor:pointer;" class="searchIcon" />
+        <!--<span class="glyphicon glyphicon-search" aria-hidden="true" style="position: absolute; right: 25px; top: 11px; color: #ccc; font-size: 20px;cursor:pointer;" ng-click="searchAD()"></span>-->
+       
+    </div>
+    <div class="col-md-1 col-sm-1 col-xs-1 text-center" style="padding-left:0;">
+        <button type="button" class="btn" style="background: #3da7ff;color:white;padding-top:4px;padding-bottom:4px;" ng-click="searchAD()">搜索</button>
+    </div>
+
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 adMenu">
+    <ul class="adChange list-unstyled">
+        <li ng-click="changeTabs($event,4)" role="presentation" class="active"><a>待审核广告</a></li>
+        <li ng-click="changeTabs($event,5)" role="presentation"><a>未通过广告</a></li>
+        <li ng-click="changeTabs($event,0)" role="presentation"><a>投放中广告</a></li>
+        <li ng-click="changeTabs($event,1)" role="presentation"><a>已暂停广告</a></li>
+        <li ng-click="changeTabs($event,3)" role="presentation"><a>投放结束广告</a></li>
+    </ul>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12" >
+   
+
+        <div class="table-responsive adListCon" style="float:left;width:89%;">
+            <div style="width:217%;">
+                <table class="table  table-striped">
+                    <thead>
+                        <tr>
+
+                            <th class="tablePe1">序号</th>
+                            <!--<th class="tablePe1">操作</th>-->
+                            <!--<th class="tablePe2">
+                                <select class="table-select" ng-model="ADstatus" ng-change="statusSelect()" style="cursor:pointer;" id="statusSelect">
+                                    <option value="">全部状态</option>
+                                    <option value="0">投放中</option>
+                                    <option value="1">已暂停</option>
+                                    <option value="2">待投放</option>
+                                    <option value="3">投放结束</option>
+                                    <option value="4">待审核</option>
+                                    <option value="5">审核未通过</option>
+                                </select>
+                            </th>-->
+                            <th class="tablePe3">广告名称</th>
+                            <th class="tablePe4" style="min-width: 148px;">广告编号</th>
+                            <th class="tablePe4" style="min-width: 148px;">所属账号</th>
+                            <th class="tablePe5">浏览资源缩略图</th>
+                            <th class="tablePe6">点击跳转</th>
+                            <th class="tablePe7">开始时间</th>
+                            <th class="tablePe8">结束时间</th>
+                            <th class="tablePe9">时间段</th>
+                            <th class="tablePe2">单人频次</th>
+                        </tr>
+
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="cm in advert">
+                            <td class="tablePe1" ng-class="{'imgNumber2':cm.imgNumber==2}">{{cm.RowIndex}}</td>
+                            <!--<td class="tablePe1" ng-class="{'imgNumberspan2':cm.imgNumber==2}">
+                                <span ng-class="{false:'verify',true:'check'}[cm.ad_status==4]" ng-click="verifyClick($event,cm.ad_status,cm.ad_resource_desc,cm.link_code,cm.CHARGING_TYPE,cm.show_num);" data-target="{{MUrl}}">审核</span>
+                            </td>-->
+                            <!--<td class="tablePe2" ng-class="{'imgNumber2':cm.imgNumber==2}">{{cm.ad_status_text}}</td>-->
+                            <td class="tablePe3" ng-class="{'imgNumber2':cm.imgNumber==2}">{{cm.ad_desc}}</td>
+                            <td class="tablePe4 adId" ng-class="{'imgNumber2':cm.imgNumber==2}" style="min-width: 148px;">{{cm.ad_id}}</td>
+                            <td class="tablePe4" ng-class="{'imgNumber2':cm.imgNumber==2}" style="min-width: 148px;">{{cm.ad_account_name}}</td>
+                            <td class="text-color imgurl tablePe5"><span ng-click="modalClick($event)" data-toggle="modal" data-target="#myModal2">{{cm.ad_resource_desc.split("|")[0]}}</span><br ng-show="cm.ad_resource_desc.split('|').length==2"><span ng-show="cm.ad_resource_desc.split('|').length==2" ng-click="modalClick($event)" data-toggle="modal" data-target="#myModal2">{{cm.ad_resource_desc.split("|")[1]}}</span></td>
+                            <td class="text-color tablePe6"><a target="_blank" href="{{cm.link_code.split('|')[0]}}">{{cm.link_code.split("|")[0]}}</a><span ng-show="cm.link_code.split('|').length==2"><br /></span><a target="_blank" href="{{cm.link_code.split('|')[1]}}">{{cm.link_code.split("|")[1]}}</a></td>
+                            <td class="tablePe7" ng-class="{'imgNumber2':cm.imgNumber==2}">{{cm.start_delivery_date}}</td>
+                            <td class="tablePe8" ng-class="{'imgNumber2':cm.imgNumber==2}">{{cm.end_delivery_date}}</td>
+                            <td class="tablePe9" ng-class="{'imgNumber2':cm.imgNumber==2}">{{cm.ad_delivery_hour}}</td>
+                            <td class="tablePe2" ng-class="{'imgNumber2':cm.imgNumber==2}">{{cm.freq_num}}</td>
+                        </tr>
+                        <!--<tr ng-repeat="cm in advert">
+                        <td>{{cm.RowIndex}}</td>
+
+                        <td>{{cm.ad_desc}}</td>
+                        <td>{{cm.ad_id}}</td>
+                        <td>{{cm.show_num}}</td>
+
+                        <td>{{cm.surp_num}}</td>
+
+                        <td>{{cm.ad_status}}</td>
+                    </tr>-->
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    <div class="table-responsive checkDiv" style="float:left;width:11%;">
+        <div style="width:100%;">
+            <table class="table  table-striped">
+                <thead>
+                    <tr>
+
+                        <th class="tablePe1">操作</th>
+                       
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    <tr  ng-repeat="cm in advert" style="height:57px;line-height:57px;padding-top:10px;">
+                        <td class="tablePe1" ng-class="{'imgNumberspan2':cm.imgNumber==2}">
+                            <span ng-class="{false:'verify',true:'check'}[cm.ad_status==4]" ng-click="verifyClick($event,cm.ad_status,cm.ad_resource_desc,cm.link_code,cm.CHARGING_TYPE,cm.show_num,cm.ad_desc,cm.ad_id,cm.ad_account_id,cm.ad_account_name);" data-target="{{MUrl}}">审核</span>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+  
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade ad-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width: 422px; padding-top: 22px; padding-left: 31px;">
+        <div class="modal-content" style="width: 422px; padding: 15px;">
+            <div class="modal-header" style="border-bottom: 0; padding-top: 0;">
+                <button type="button" class="close check-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+            </div>
+            <div class="modal-body" style="padding-top: 0; padding-bottom: 0;">
+                <div class="adModal1">
+                    <p class="text-center">PC端</p>
+                    <p>
+                        <img id="adImgUrl1" style="width: 100%;" src="" alt="Alternate Text" />
+                    </p>
+                    <p>跳转链接</p>
+                    <p><a class="adImgHref1" target="_blank" href="#">{{adImgHref1}}</a></p>
+                </div>
+                <div class="adModal2">
+                    <p class="text-center">移动端</p>
+                    <p>
+                        <img id="adImgUrl2" style="width: 100%;" src="" alt="Alternate Text" />
+                    </p>
+                    <p>跳转链接</p>
+                    <p><a class="adImgHref2" target="_blank" href="#">{{adImgHref2}}</a></p>
+                </div>
+            </div>
+            <div class="modal-footer" style="border-top: 0; padding-bottom: 0; padding-top: 0;">
+                <button type="button" class="btn btn-default agree btn-block" ng-click="agreeClick()" data-dismiss="modal" style="height: 32px; border-radius: 0; background-color: #3399fe; color: white;">同意</button>
+                <div>
+                    <textarea ng-model="AD_COMMENTS" style="height: 82px; width: 360px; border: 1px solid #b2b2b2; margin-top: 10px; display: block; margin-bottom: 10px;" class="reason form-control " placeholder="若不同意，请写下原因："></textarea>
+                </div>
+                <button type="button" class="btn btn-primary disagree btn-block" ng-click="disagreeClick()" style="height: 32px; border-radius: 0; background-color: #999999;" ng-click="disagree();">不同意</button>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width: 483px; position: relative;">
+        <div class="modal-content" style="width: 100%; height: auto; padding: 15px; position: relative;">
+            <div style="width: 100%; padding: 15px; background-color: #000; opacity: 0.4; filter: Alpha(opacity=40);" id="M2cover"></div>
+            <div class="modal-header" style="border-bottom: 0;">
+                <button type="button" class="close img-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <h4 class="modal-title" id="H1" style="width: 360px; height: auto; background-color: #cecece; text-align: center; position: absolute; top: 30px; left: 60px;">
+                <img style="width: 100%;" id="M2Image" src="" alt="图片有误" />
+            </h4>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+<!-- 分页代码 -->
+<div>
+    <div class="col-md-6 col-sm-6 col-xs-6">
+        <div style=" text-align: right; margin: 0 auto;" class="search-right">
+            <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="perItems" max-size="maxSize" ng-change="pageChanged(currentPage, maxSize)"
+                            previous-text="上一页" next-text="下一页" class="pagination-sm" boundary-link-numbers="true" rotate="false" num-pages="numPages"></uib-pagination>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6 col-sm-6 col-xs-6" style="height: 70px; padding-top: 19px;">
+        共<span style="padding:0 8px;">{{responseData.PageCount}}</span>页，到
+        <input type="text" name="name" value=" " ng-model="ye" style="width: 30px; height: 30px; position: relative; top: -1px;padding:0;" />
+        <span>页</span>
+        <!--//{{UserInfo.Usr_Account_Name}}-->
+        <!--<button type="button" class="btn btn-default btn-daasadg" ng-click="sure()">确定</button>-->
+        <a class="" ng-click="sure()" style="cursor: pointer; padding-left: 18px;">确定</a>
+    </div>
+
+</div>
+<!--<div style=" text-align: right; margin: 0 auto;" class="search-right">
+    <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="perItems" max-size="maxSize" ng-change="pageChanged(currentPage, maxSize)"
+                    previous-text="上一页" next-text="下一页" class="pagination-sm" boundary-link-numbers="true" rotate="false" num-pages="numPages"></uib-pagination>
+
+</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

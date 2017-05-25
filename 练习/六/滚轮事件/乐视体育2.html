@@ -4,118 +4,127 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             list-style: none;
         }
-        html,body{
-            width: 100%;
-            height: 100%;
-        }
-        .main{
+
+        html, body {
             width: 100%;
             height: 100%;
             overflow: hidden;
-            position: relative;
         }
-        .inner{
+
+        .inner {
             position: absolute;
             width: 100%;
-            height:100%;
+            height: 100%;
             left: 0;
             top: 0;
         }
-        .inner div{
+
+        .inner div {
             width: 100%;
-            height:100%;
+            height: 100%;
         }
-        .div1{
+
+        .div1 {
             background: darkgreen;
         }
-        .div2{
+
+        .div2 {
             background: darkcyan;
         }
-        .div3{
+
+        .div3 {
             background: darkmagenta;
         }
-        .div4{
+
+        .div4 {
             background: darkgoldenrod;
         }
-        .div5{
+
+        .div5 {
             background: darkorange;
         }
-        .div6{
+
+        .div6 {
             background: darkred;
         }
-        ul{
+
+        ul {
             position: fixed;
             right: 50px;
-            top: 50px;
-           margin-top: 150px;
+            top: 50%;
+            margin-top: -150px;
 
         }
-        ul li{
+
+        ul li {
             border: 1px solid red;
             width: 50px;
             height: 50px;
             background: grey;
         }
-        .on{
+
+        .on {
             background: yellow;
         }
 
     </style>
 </head>
 <body>
-<div class="main" id="main">
-    <div class="inner" id="inner">
-        <div class="div1"></div>
-        <div class="div2"></div>
-        <div class="div3"></div>
-        <div class="div4"></div>
-        <div class="div5"></div>
-        <div class="div6"></div>
-    </div>
+
+<div class="inner" id="inner">
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+    <div class="div6"></div>
+    <ul>
+        <li class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 </div>
-<ul>
-    <li class="on"></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+
+
 <script src="js/utils.js"></script>
 <script src="js/move.js"></script>
 <script src="js/wheel.js"></script>
 <script>
-    var oMain=document.getElementById('main');
-    var oInner=document.getElementById('inner');
-    var aDiv=oInner.getElementsByTagName('div');
-    var aLi=document.getElementsByTagName('li');
-    var n=0;
-    var isWheel=true;
-   // console.log(utils.win('clientHeight'));
-   // oMain.style.height=utils.win('clientHeight')+'px';
-    for(var i=0;i<aDiv.length;i++){
-        aDiv[i].style.height=utils.win('clientHeight')+'px';
-    }
-    var height=utils.win('clientHeight');
-   // oInner.style.height=aDiv[0].style.height*aDiv.length+'px';
-    wheel(oMain,function(bOk){
-        if(bOk){
-            if(isWheel){
-                if(n>=aDiv.length-1){
+    var oInner = document.getElementById('inner');
+    var aDiv = oInner.getElementsByTagName('div');
+    var aLi = document.getElementsByTagName('li');
+    var n = 0;
+    var isWheel = true;
+    /*for (var i = 0; i < aDiv.length; i++) {
+        aDiv[i].style.height = utils.win('clientHeight') + 'px';
+    }*/
+    var height = utils.win('clientHeight');
+    // oInner.style.height=aDiv[0].style.height*aDiv.length+'px';
+    wheel(oInner, function (bOk) {
+        if (bOk) {
+            n++;
+            console.log(n);
+            if(n>=aDiv.length){
+                n=aDiv.length-1;
                     return;
                 }
                 n++;
                 restore()
                 run();
-            }
-        }else{
-            if(isWheel){
-                if(n<=0){
+
+        } else {
+            if (isWheel) {
+                n--;
+                if(n<=-1){
+                    n=0;
                     return;
                 }
                 n--;
@@ -125,23 +134,23 @@
         }
 
     })
-    function restore(){
-        isWheel=false;
+    function restore() {
+        isWheel = false;
         clearTimeout(timer);
-        var timer=setTimeout(function(){
-            isWheel=true;
-        },1000)
+        var timer = setTimeout(function () {
+            isWheel = true;
+        }, 1000)
     }
-    function run(){
+    function run() {
         animate({
-            id:oInner,
-            target:{
-                top:-n*height
+            id: oInner,
+            target: {
+                top: -n * height
             },
-            duration:500
+            duration: 500
         })
-        for(var i=0;i<aLi.length;i++){
-            aLi[i].className=i==n?'on':null;
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].className = i == n ? 'on' : null;
         }
     }
 

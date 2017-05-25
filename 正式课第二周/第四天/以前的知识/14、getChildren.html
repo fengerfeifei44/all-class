@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function getChildren(curEle){
+        var oChild=curEle.childNodes;
+        var ary=[];
+        for(var i=0;i<oChild.length;i++){
+            var cur=oChild[i];
+            if(cur.nodeType==1){
+                ary.push(cur);
+            }
+        }
+        return ary;
+    }
+</script>
+
+</body>
+</html>

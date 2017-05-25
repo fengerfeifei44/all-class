@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body,.parent{
+            width: 100%;
+            height: 100%;
+        }
+        .parent{
+            display: flex;
+            flex-direction: column;
+        }
+        .top{
+            height: 100px;
+            background: black;
+        }
+        .bottom{
+            height: 50px;
+            background: black;
+        }
+        .middle{
+            flex: 1;
+            display: flex;
+
+        }
+        .left{
+            width: 200px;
+            background: yellow;
+
+        }
+        .right{
+            flex: 1;
+            overflow: hidden;
+            background: red;
+
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+   <div class="top">top</div>
+    <div class="middle">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <div class="bottom">bottom</div>
+</div>
+</body>
+</html>

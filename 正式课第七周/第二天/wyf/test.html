@@ -4,7 +4,21 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
 
+<body>
+<script src="ajax封装.js"></script>
+<script>
+    var data=null;
+    ajax({
+        type:'get',
+        url:'temp.xml',
+        async:false,
+        dataType:'json',
+        success:function(val){
+            data=val;
+        }
+    })
+    console.log(data)
+</script>
 </body>
 </html>

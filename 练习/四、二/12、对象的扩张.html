@@ -3,8 +3,66 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .tab{
+            width: 300px;
+            margin: 50px auto;
+        }
+        .tab .tab-head{
+            width: 300px;
+        }
+        .tab .tab-head li{
+            float: left;
+            width: 100px;
+            height: 30px;
+            background: lightcoral;
+        }
+        .tab .tab-head li.change{
+            background: lightcyan;
+        }
+        .tab-cn div{
+            display: none;
+            width: 300px;
+            height: 300px;
+            background: lightblue;
+        }
+        .tab-cn div.show{
+            display: block;
+        }
+    </style>
 </head>
 <body>
+<div class="tab" id="box"></div>
+<script>
+    //object.assign();用来合并对象
+    function Tab(opt){
+        var options={
+            index:0,
+            cName:change
+        }
+        for(var key in opt){
+            options[key]=opt[key];
+        }
+    }
+    var oBox=document.getElementById('box')
+    var tab=new Tab({
+        ele:oBox,
+        data:[
+            {title:'腾讯视频'},
+            {title:'腾讯新闻'},
+            {title:'腾讯体育'}
+        ],
+        cName:change
+
+    })
+
+
+</script>
 
 </body>
 </html>

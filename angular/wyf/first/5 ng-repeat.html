@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="myCtrl">
+   <!-- <ul>
+        <li ng-repeat="(key,val) in arrs">
+            {{val}} myCtrl
+        </li>
+    </ul>-->
+    <ul>
+        <li ng-repeat="val in arrs">
+            {{val.name}}
+            <ul>
+                <li ng-repeat="v in val.type track by $index">
+                    {{v}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.controller('myCtrl',['$scope',function($scope){
+        $scope.arrs=[{name:'apple',type:['酸','甜']},{name:'apple',type:['酸','甜','甜']}];
+
+    }])
+</script>
+</body>
+</html>

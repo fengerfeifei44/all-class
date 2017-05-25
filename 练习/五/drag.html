@@ -3,8 +3,65 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        div{
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            background: red;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
+<div><img src="img/banner1.jpg" alt=""/></div>
+<script src="js/event1.js"></script>
+<script>
+    var oDiv=document.getElementsByTagName('div')[0];
+    on(oDiv,'mousedown',down);
+    function processThis(fn,context){
+        return function(e){
+            fn.call(context,e)
+        }
+    }
+    function down(e){
+        e=e||window.event;
+        this.l=this.offsetLeft;
+        this.t=this.offsetTop;
+        this.x= e.clientX;
+        this.y= e.clientY;
+        if(this.setCapture){
+            this.setCapture();
+            on(this,'mousemove',move);
+            on(this,'mouseup',up)
+        }else{
+            this.Move=processThis(move,this);
+            this.Up=processThis(up,this);
+            on(document,'mousemove',this.Move);
+            on(document,'mouseup',this.Up);
+            e.preventDefault();
+        }
+    }
+    function move(e){
+        e=e|| window.event;
+        this.style.left=this.l+ e.clientX-this.x+'px';
+        this.style.top=this.t+ e.clientY-this.y+'px';
+    }
+    function up(){
+        if(this.releaseCapture){
+            this.releaseCapture();
+            off(this,'mousemove',move);
+            off(this,'mouseup',up)
+        }else{
+            off(document,'mousemove',this.Move);
+            off(document,'mouseup',this.Up);
+        }
 
+    }
+
+</script>
 </body>
 </html>

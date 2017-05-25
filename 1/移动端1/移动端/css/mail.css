@@ -1,0 +1,30 @@
+body,html{
+    background-color: #f8f8f8;
+}
+h2{
+    text-align: center;
+    font-weight: normal;
+    line-height: 44px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.list{
+    color: #333;
+    font-size: 14px;
+}
+.list li{
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f0f0f0;
+}
+.list li>p{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+.list li>p>span{
+    display: inline-block;
+
+}

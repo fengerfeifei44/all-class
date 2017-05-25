@@ -1,0 +1,45 @@
+body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, table, hr, main, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 12px 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong {
+    font-weight: 500;
+}
+
+i, em {
+    font-style: normal;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+img {
+    vertical-align: top;
+    border: none;
+}
+img, input, select, textarea {
+    vertical-align: middle;
+    outline: none;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+.clear {
+    zoom: 1;
+}
+.clear:after {
+    display: block;
+    content: "";
+    clear: both;
+}

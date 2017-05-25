@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body, html {
+            height: 300%;
+            background: -webkit-linear-gradient(top, lightgreen, lightblue, lightgrey, lightpink);
+        }
+
+        a {
+            display: none;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background: darkcyan;
+            border-radius: 50%;
+
+        }
+    </style>
+</head>
+<body>
+<a href="javascript:;" id="btn">顶部</a>
+<script src="js/utils.js"></script>
+<script>
+    var oBtn = document.getElementById('btn');
+    var timer=null;
+    var flag=false;
+    window.onscroll = computedDisplay;
+    function computedDisplay() {
+        if(flag) clearInterval(timer);
+        flag=true;
+        if (utils.win('scrollTop') > utils.win('clientHeight')) {
+            oBtn.style.display = 'block';
+        } else {
+            oBtn.style.display = 'none';
+        }
+    };
+
+    oBtn.onclick = function () {
+        oBtn.style.display = 'none';
+        window.onscroll=null;//当回到顶部时又会触发滚轮事件，按钮又会显示；
+        var target = utils.win('scrollTop');
+        var duration = 1000;
+        var interval = 30;
+        var step = target / duration * interval;
+        timer = setInterval(function () {
+            var curTop = utils.win('scrollTop');
+
+            if (curTop <= 0) {//定时器一直在走，滚轮滑下来又会自动上去；
+                clearInterval(timer);
+                window.onscroll=computedDisplay;//如果不加下一次滑动的时候按钮就不会显示
+                return;
+            }
+            curTop -= step;
+            utils.win("scrollTop", curTop);
+             flag=false;
+        },interval)
+    }
+</script>
+
+
+</body>
+</html>

@@ -3,8 +3,20 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet/less" href="css/style.less"/>
 </head>
 <body>
+<div id="div1"></div>
+<script>
+    var less={
+        env:'development',
+        poll:1000
 
+    }
+</script>
+<script src="less-2.5.3.min.js"></script>
+<script>
+    less.watch();//启动
+</script>
 </body>
 </html>

@@ -1,0 +1,299 @@
+.skin-green .main-header .navbar {
+	background-color: #17a9a8
+}
+.skin-green .main-header .navbar .nav>li>a {
+	color: #fff
+}
+.skin-green .main-header .navbar .nav>li>a:hover, .skin-green .main-header .navbar .nav>li>a:active, .skin-green .main-header .navbar .nav>li>a:focus, .skin-green .main-header .navbar .nav .open>a, .skin-green .main-header .navbar .nav .open>a:hover, .skin-green .main-header .navbar .nav .open>a:focus {
+	background: rgba(0,0,0,0.1);
+	color: #f6f6f6
+}
+.skin-green .main-header .navbar .sidebar-toggle {
+	color: #fff
+}
+.skin-green .main-header .navbar .sidebar-toggle:hover {
+	color: #f6f6f6;
+	background: rgba(0,0,0,0.1)
+}
+.skin-green .main-header .navbar .sidebar-toggle {
+	color: #fff
+}
+.skin-green .main-header .navbar .sidebar-toggle:hover {
+	background-color: #029b9a
+}
+
+@media (max-width:767px) {
+.skin-green .main-header .navbar .dropdown-menu li.divider {
+	background-color: rgba(255,255,255,0.1)
+}
+.skin-green .main-header .navbar .dropdown-menu li a {
+	color: #fff
+}
+.skin-green .main-header .navbar .dropdown-menu li a:hover {
+	background: #008d4c
+}
+}
+.skin-green .main-header .logo {
+	background-color: #22b7b5;
+	color: #fff;
+	border-bottom: 0 solid transparent
+}
+.skin-green .main-header .logo:hover {
+	background: #22b7b5
+}
+.skin-green .main-header li.user-header {
+	background-color: #22b7b5
+}
+.skin-green .content-header {
+	background: #fff;
+    position: relative;
+    padding: 15px 15px 10px 20px;
+    -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+.skin-green .wrapper, .skin-green .main-sidebar, .skin-green .left-side {
+	background-color: #29333f
+}
+.skin-green .user-panel>.info, .skin-green .user-panel>.info>a {
+	color: #fff
+}
+.skin-green .sidebar-menu>li.header {
+	color: #4b646f;
+	background: #1a2226
+}
+.skin-green .sidebar-menu>li>a {
+	border-left: 4px solid transparent
+}
+.skin-green .sidebar-menu>li:hover>a, .skin-green .sidebar-menu>li.active>a {
+	color: #fff;
+	background: #1e282c;
+	border-left-color: #22b7b5
+}
+.skin-green .sidebar-menu>li>.treeview-menu {
+	margin: 0 1px;
+	background: #2c3b41
+}
+.skin-green .sidebar a {
+	color: #b8c7ce
+}
+.skin-green .sidebar a:hover {
+	text-decoration: none
+}
+.skin-green .treeview-menu>li>a {
+	color: #8aa4af
+}
+.skin-green .treeview-menu>li.active>a, .skin-green .treeview-menu>li>a:hover {
+	color: #fff
+}
+.skin-green .sidebar-form {
+	/*border-radius: 3px;*/
+    height: 42px;
+	border: 1px solid #e5e5e5;
+	/*margin: 10px 10px*/
+}
+.skin-green .sidebar-form input[type="text"], .skin-green .sidebar-form .btn {
+	box-shadow: none;
+	background-color: #fff;
+	border: 1px solid transparent;
+	height: 39px;
+	-webkit-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out
+}
+.skin-green .sidebar-form input[type="text"] {
+	color: #666;
+	border-top-left-radius: 2px !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+	border-bottom-left-radius: 2px !important
+}
+.skin-green .sidebar-form input[type="text"]:focus, .skin-green .sidebar-form input[type="text"]:focus+.input-group-btn .btn {
+	background-color: #fff;
+	color: #666
+}
+.skin-green .sidebar-form input[type="text"]:focus+.input-group-btn .btn {
+	border-left-color: #fff
+}
+.skin-green .sidebar-form .btn {
+	color: #999;
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 2px !important;
+	border-bottom-right-radius: 2px !important;
+	border-bottom-left-radius: 0 !important
+}
+
+
+/**button¿Ø¼þ 20150807Ìí¼Ó ³ÂÜ²**/
+
+.btn {
+	border-radius: 3px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border: 1px solid transparent
+}
+.btn.uppercase {
+	text-transform: uppercase
+}
+.btn.btn-flat {
+	border-radius: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-width: 1px
+}
+.btn:active {
+	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+	-moz-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+	box-shadow: inset 0 3px 5px rgba(0,0,0,0.125)
+}
+.btn:focus {
+	outline: none
+}
+.btn.btn-file {
+	position: relative;
+	overflow: hidden
+}
+.btn.btn-file>input[type='file'] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block
+}
+.btn-default {
+	/*color: #17a9a8 !important;*/
+    color: #666;
+    background-color: #fff;
+    border-color: #e5e5e5;
+}
+.btn-default:hover, .btn-default:active, .btn-default.hover {
+	background-color: #f9f9f9 !important
+}
+
+.btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open>.dropdown-toggle.btn-default {
+	color: #17a9a8;
+	background-color: #e6e6e6;
+	border-color: #ccc
+}
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default {
+	background-image: none
+}
+.btn-default.disabled, .btn-default.disabled.active, .btn-default.disabled.focus, .btn-default.disabled:active, .btn-default.disabled:focus, .btn-default.disabled:hover, .btn-default[disabled], .btn-default[disabled].active, .btn-default[disabled].focus, .btn-default[disabled]:active, .btn-default[disabled]:focus, .btn-default[disabled]:hover, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default.active, fieldset[disabled] .btn-default.focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:hover {
+	background-color: #fff;
+	border-color: #ccc
+}
+.btn-default .badge {
+	color: #fff;
+	background-color: #333
+}
+.btn-primary {
+	background-color: #3c8dbc;
+	border-color: #367fa9
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary.hover {
+	background-color: #367fa9
+}
+.btn-success {
+	background-color: #22b7b5;
+	border-color: #22b7b5
+}
+.btn-success:hover, .btn-success:active, .btn-success.hover {
+	background-color: #029b9a
+}
+
+.btn-success.active, .btn-success.focus, .btn-success:active, .btn-success:focus, .btn-success:hover, .open>.dropdown-toggle.btn-success {  
+	color: #fff;
+	background-color: #029b9a;
+	border-color: #22b7b5
+}
+.btn-success.active, .btn-success:active, .open>.dropdown-toggle.btn-success {
+	background-image: none
+}
+.btn-info {
+	background-color: #00c0ef;
+	border-color: #00acd6
+}
+.btn-info:hover, .btn-info:active, .btn-info.hover {
+	background-color: #00acd6
+}
+.btn-danger {
+	background-color: #dd4b39;
+	border-color: #d73925
+}
+.btn-danger:hover, .btn-danger:active, .btn-danger.hover {
+	background-color: #d73925
+}
+.btn-warning {
+	background-color: #f39c12;
+	border-color: #e08e0b
+}
+.btn-warning:hover, .btn-warning:active, .btn-warning.hover {
+	background-color: #e08e0b
+}
+.btn-outline {
+	border: 1px solid #fff;
+	background: transparent;
+	color: #fff
+}
+.btn-outline:hover, .btn-outline:focus, .btn-outline:active {
+	color: rgba(255,255,255,0.7);
+	border-color: rgba(255,255,255,0.7)
+}
+.btn-link {
+	-webkit-box-shadow: none;
+	box-shadow: none
+}
+.btn[class*='bg-']:hover {
+	-webkit-box-shadow: inset 0 0 100px rgba(0,0,0,0.2);
+	box-shadow: inset 0 0 100px rgba(0,0,0,0.2)
+}
+.btn-app {
+	border-radius: 3px;
+	position: relative;
+	padding: 15px 5px;
+	margin: 0 0 10px 10px;
+	min-width: 80px;
+	height: 60px;
+	text-align: center;
+	color: #666;
+	border: 1px solid #ddd;
+	background-color: #f4f4f4;
+	font-size: 12px
+}
+.btn-app>.fa, .btn-app>.glyphicon, .btn-app>.ion {
+	font-size: 20px;
+	display: block
+}
+.btn-app:hover {
+	background: #f4f4f4;
+	color: #444;
+	border-color: #aaa
+}
+.btn-app:active, .btn-app:focus {
+	-webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+	-moz-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+	box-shadow: inset 0 3px 5px rgba(0,0,0,0.125)
+}
+.btn-app>.badge {
+	position: absolute;
+	top: -3px;
+	right: -10px;
+	font-size: 10px;
+	font-weight: 400
+}
+
+.btn-group-lg > .btn, .btn-lg {
+	padding: 11px 16px;
+	font-size: 14px;
+	line-height: 1.3333333;
+	border-radius: 6px
+}

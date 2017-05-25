@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<style>
+    [ng-cloak]{
+        display: none;
+    }
+</style>
+<body ng-controller="myCtrl" class="container">
+<table class="table table-bordered" ng-cloak>
+    <caption class="h3">用户列表</caption>
+    <tr>
+        <td>用户名</td>
+        <td>年龄</td>
+        <td>操作</td>
+    </tr>
+    <tr ng-repeat="user in users" >
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>
+            <button class="btn btn-danger" ng-click="remove(user)">删除</button>
+            <button class="btn btn-warning" data-toggle="modal" data-target=".modal" ng-click="update(user)">修改</button>
+        </td>
+    </tr>
+    <button class="btn btn-primary" data-toggle="modal" data-target=".modal"  >增加</button>
+</table>
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">修改内容</h4>
+            </div>
+            <div class="modal-body">
+                用户名：<input type="text" ng-model="user.name">
+                年龄：<input type="text" ng-model="user.age">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="save()" ng-if="flag">修改</button>
+                <button type="button" class="btn btn-primary" ng-click="add()" ng-if="f">增加</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script>
+    var app=angular.module('appModule',['ngResource']);
+    app.factory('$book',function ($resource) {
+        return $resource('/user/:id',null,{
+            update:{method:'put'}
+        })
+    });
+    app.controller('myCtrl',function ($scope,$http,$book) {
+
+        $scope.users=$book.query();
+        $scope.save=function () {
+
+            $book.update({id:$scope.user.id},$scope.user).$promise.then(function (data) {
+                $scope.users=$scope.users.map(function (item) {
+                    if(item.id==data.id){
+                        return data;
+                    }
+                    return item;
+                })
+                $('.modal').modal('toggle');
+            });
+
+        };
+        $scope.remove=function (u) {
+            $book.delete({id:u.id}).$promise.then(function () {
+                $scope.users=$scope.users.filter(function (item) {
+                    return item.id!=u.id;
+                })
+            });
+
+        };
+        $scope.update=function (u) {
+            $scope.flag=true;
+            $scope.f=false;
+
+            $scope.user=JSON.parse(JSON.stringify(u));
+
+        };
+        $scope.add=function () {
+            $scope.f=true;
+            $book.save({name:$scope.user.name,age:$scope.user.age}).$promise.then(function (data) {
+
+                $scope.user.name=$scope.user.age='';
+                $scope.users.push(data);
+                $('.modal').modal('toggle');
+                $scope.flag=true;
+            });
+
+           // $scope.user.name=$scope.user.age='';
+           /* $scope.flag=false;
+            $book.save({name:$scope.user.name,age:$scope.user.name}).
+            $scope.user.name=$scope.user.age='';
+            $scope.users=$book.query();
+            $('.modal').modal('toggle');*/
+        };
+       /* $book.get({id:1});//获取一个用户  对象类型 返回查找的那一项
+        $book.query();//获取所有的用户    数组  全部
+        $book.save({name:1});//增加用户   返回保存的那一项
+        $book.update({id:1},{name:1});//修改某个用户  返回修改的那一项
+        $book.delete({id:1});//删除某个用户  返回一个{}对象
+        $book.delete();//删除所有用户*/
+    })
+</script>
+</body>
+</html>

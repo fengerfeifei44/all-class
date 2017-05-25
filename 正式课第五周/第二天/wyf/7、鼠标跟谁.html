@@ -3,8 +3,60 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        #box{
+           /* border: 1px solid #000000;*/
+            position: relative;
+            width: 840px;
+            height: 200px;
+
+            margin: 50px auto;
+        }
+        #box img{
+            display: block;
+            margin: 5px;
+            float: left;
+            width: 200px;
+
+        }
+        #box img#mark{
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 400px;
+
+        }
+    </style>
 </head>
 <body>
+<div id="box">
+    <img src="img/apple_1.jpg" realImg="img/apple_1_bigger.jpg" alt=""/>
+    <img src="img/apple_2.jpg" realImg="img/apple_2_bigger.jpg" alt=""/>
+    <img src="img/apple_3.jpg" realImg="img/apple_3_bigger.jpg" alt=""/>
+    <img src="img/apple_4.jpg" realImg="img/apple_4_bigger.jpg" alt=""/>
+    <img src="img/apple_1_bigger.jpg" alt="" id="mark"/>
+</div>
+<script>
+    var oBox=document.getElementById('box');
+    var mark=document.getElementById('mark');
+    oBox.onmouseover=function(e){
+        e=e||window.event;
+        var target= e.target|| e.srcElement;
+        if(target.tagName.toLowerCase()=='img'){
+            mark.style.display='block'
+            mark.src=target.getAttribute('realImg');
+        }
+    }
+    oBox.onmousemove=function(e){
+        e=e|| e.event;
+        mark.style.left= e.clientX-this.offsetLeft+'px';
+        mark.style.top= e.clientY-this.offsetTop+'px';
+    }
+    oBox.onmouseout=function(e){
+        mark.style.display='none';
+    }
+</script>
 
 </body>
 </html>

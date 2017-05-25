@@ -216,7 +216,7 @@
                 utils.css(defaultOpt.id,defaultOpt.target);
                 clearInterval(defaultOpt.id.timer);
                 /*defaultOpt.callback && defaultOpt.callback.call(defaultOpt.id);*/
-                fire(defaultOpt.id,'selfEnd');
+               //fire(defaultOpt.id,'selfEnd');
                 return;
             }
             time+=10;

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-controller="myCtrl">
+<input type="text" ng-model="aa"/>
+<text title="{{aa}}"></text>
+<script src="node_modules/angular/angular.min.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.controller('myCtrl',function($scope){
+        $scope.aa=100;
+    });
+    app.directive('text',function(){
+        return {
+            restrict:'E',
+            template:'<h1>{{aa}}<input type="text" ng-model="aa"/></h1>',
+            scope:{
+                aa:'@title'
+            }
+        }
+    })
+</script>
+</body>
+</html>

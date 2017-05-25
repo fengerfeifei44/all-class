@@ -3,8 +3,69 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        body{
+            padding: 30px;
+        }
+        div{
+            float: left;
+        }
+        #s{
+            position: relative;
+            width: 430px;
+            height: 430px;
+            background: url("img/1.jpg") no-repeat;
+        }
+        #mark{
+            display:none ;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 215px;
+            height: 215px;
+            background: lightblue;
+            opacity: 0.3;
+            filter: alpha(opacity:30);
+        }
+        #b{
+            display: none;
+            margin-left: 10px;
+            width: 430px;
+            height: 430px;
+            overflow: hidden;
+        }
+        #b img{
+            width: 860px;
+            height: 860px;
+        }
+    </style>
 </head>
 <body>
+<div id="s">
+    <div id="mark"></div>
+</div>
+<div id="b">
+    <img src="img/2.jpg" alt=""/>
+</div>
+<script>
+    var oS=document.getElementById('s');
+    var oMark=document.getElementById('mark');
+    var oB=document.getElementById('b');
+    var oImg=oB.getElementsByTagName('img')[0];
+    oS.onmouseover=function(){
+        oMark.style.display='block';
+        oB.style.display='block'
+    }
+    oS.onmousemove=function(e){
+        e=e||window.event;
+       oMark.left= e.clientX-this.offsetWidth+'px';
+        oMark.top= e.clientY-this.offsetHeight+'px';
+    }
+    oS.onmouseout=function(){
+        oMark.style.display='none';
+        oB.style.display='none'
+    }
+</script>
 
 </body>
 </html>

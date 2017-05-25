@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function area(cur){
+       var ary=[];
+        for(var i=0;i<arguments.length;i++){
+           ary.push(arguments[i]);
+        }
+        ary.sort(function(a,b){return a-b});
+        ary.shift();
+        ary.pop();
+        return ((eval(ary.join("+")))/ary.length).toFixed(2);
+    }
+   console.log(area(9.8899,2.1122,3.3344,5.3399,7.7788)) ;
+</script>
+
+</body>
+</html>

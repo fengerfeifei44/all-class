@@ -5,6 +5,18 @@
     <title></title>
 </head>
 <body>
-
+<script src="ajax.js"></script>
+<script>
+    ajax({
+        url:'./笔记',
+        type:'get',
+        async:false,
+        data:{a:1,b:2},
+        dataType:'text',
+        success:function(data){
+            console.log(data)
+        }
+    })
+</script>
 </body>
 </html>

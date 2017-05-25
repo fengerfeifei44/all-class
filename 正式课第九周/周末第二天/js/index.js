@@ -93,7 +93,7 @@ var matchRender = (function () {
     $matchPlan.add(function () {
         var supportInfo = localStorage.getItem('supportInfo');
         if (supportInfo) {
-            supportInfo = JSON.parse(supportInfo);
+            supportInfo =supportInfo.JSON.parse(supportInfo);
             supportInfo.type == 1 ? $supportLeft.addClass('bg') : $supportRight.addClass('bg');
             return;
         }
@@ -101,7 +101,7 @@ var matchRender = (function () {
             if (isTap) return;
 
             //->在原来基础上数字累加1&让当前点击的元素有选中的样式
-            var num = parseFloat($(this).html());
+            var num =$(this).html();
             num++;
             $(this).html(num).addClass('bg');
 

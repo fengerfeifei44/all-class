@@ -1,7 +1,8 @@
-.positionMiddle(@W,@H){
-  position: absolute;
-  top:50%;
-  left: 50%;
-  margin-top: unit(-(@H/2),rem);
-  margin-left: unit(-(@W/2),rem);
+@color-blue:#1C90F2;
+@color-white:#fff;
+@color-text:#555;
+@color-red:#F82D2D;
+.transitionFn(@property:all,@duration: 1s,@time-function: linear,@delay: 0s){
+  -webkit-transition: @arguments;
+  transition: @arguments;
 }

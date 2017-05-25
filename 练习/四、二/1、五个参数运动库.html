@@ -3,8 +3,28 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        div{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
 </head>
 <body>
+<div id="div"></div>
+<script src="js/utils.js"></script>
+<script src="js/move.js"></script>
+<script>
+    var oDiv=document.getElementById('div');
+    inamate(oDiv,{left:1000,top:400},1000,function(){
+        this.style.background='green';
+    })
+
+</script>
 
 </body>
 </html>

@@ -1,0 +1,84 @@
+HTML5语义化标签（结构标签和功能标签）
+h1-h6 img p ul li ol li dl dt dd em strong q a
+div span 没有任何含义
+语义化标签：合理的标签做合适的事情
+
+结构化标签（用来布局）
+让页面结构更加清晰，更加有利于搜索引擎，对未来浏览器的更加友好
+section 一块区域 范围非常大
+header 头部或者一个区域的头部
+nav 导航 一般用于页面的主导航
+main 表示主体内容
+footer 尾部或者一块区域的尾部
+article 独立的内容（放在任何地方都可以独立存在），例如一篇文章
+aside 对主体内容的辅助信息，放在aside标签里的内容可有可无，例如侧边栏，文章的广告
+figure 插图
+figcaption 对插图的描述成为图题
+
+forms input 元素的种类
+search 手机键盘右下角按钮的图标不是向右的箭头，而是变成search
+tel 数字键盘，在
+url url地址
+email 邮箱地址
+number 数字输入框
+range
+ 属性
+ placeholder 设置输入前的提示信息，当输入内容时，提示信息消失
+ autocomplete  是否保存用户输入的信息 on 保存 off 不保存
+ autofocus 光标自动聚焦
+ required 必须填写内容
+ pattern 设置正则验证的规则
+
+ validity 这个对象有几个属性
+      valid 验证不通过时返回false
+      patternMismatch typeMismatch valueMissing customError 验证不通过时返回true
+
+form属性 可以让表单元素关联form标签（也就是说这个表单元素是属于哪个form标签下）
+novalidate 作用在form标签上，表单元素不需要验证，就可以提交
+formnovalidate 作用在submit类型的按钮，表单元素不需要验证，就可以提交
+www.w3cplus.com
+
+:nth-child(n) 选定第几个子元素
+:nth-child(even) 偶数
+:nth-child(odd) 奇数
+:nth-child(2n) n从0开始设置的
+:nth-of-type(2)在同种类型（标记名相同）的元素中找到第几个子元素
+:empty 没有任何子元素（包含文本，换行，空格）
+
+否定选择器
+:not(选择器)不包含某个元素（排除某个元素）
+属性选择器
+E[attr=val]只能等于val
+E[attr|=val] 只能等于val或者以val开头
+E[attr*=val] 包含val即可
+E[attr~=val] 属性可以有一个或多个，但是有一个必须是val
+E[attr^=val] 以val开头
+E[attr$=val] 以val结尾
+
+目标伪类选择器
+:target
+
+linear-gradient 线性渐变
+沿着一条直线轴方向渐变
+第一个参数：渐变的方向
+从第二个参数开始设置渐变的颜色和位置
+red 20%,green 70% 20%到70%之间成为渐变过渡区
+颜色的位置可以通过百分比或者具体的像素值
+如何去掉渐变过渡区？对每个颜色设置起始位置和结束位置
+
+radial-gradient 径向渐变 由一个点向多个方向渐变
+第一个参数：设置渐变形状
+at后面设置圆心的位置 left top center bottom|10px(水平坐标) 20px（垂直）默认在中心点
+ 重复
+
+ box-shaow 默认为外阴影
+ 第一个参数：正 右 负 左
+ 第二个参数：（垂直便宜）
+ 第三个参数：模糊半径
+ 第四个参数：扩展半径 如果是正值，阴影往外扩散 负：阴影往内收缩
+ 第五个参数：阴影的颜色
+ inset 内阴影 并且便宜的方向刚好和外阴影相反
+
+  text-shadow 文本阴影 相当于盒子阴影少了扩展半径
+
+

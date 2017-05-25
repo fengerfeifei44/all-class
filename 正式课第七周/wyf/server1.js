@@ -5,24 +5,26 @@ var http = require('http'),
     url = require('url'),
     fs = require('fs');
 var server1=http.createServer(function(req,res){
-    var urlObg=url.parse(req.url,true),
+
+     var urlObg=url.parse(req.url,true),
         pathname=urlObg.pathname,
         query=urlObg.query;
-    var reg=/\.([0-9a-zA-Z])+/i;
+    var reg=/\.([0-9a-zA-Z]+)/i;
     if(reg.test(pathname)){
-        var suffix=reg.exec(pathname)[0].toLowerCase();
+        var suffix=reg.exec(pathname)[1].toUpperCase();
         var suffixMIME='text/plain';
         switch (suffix){
-            case 'html':
+            case 'HTML':
                 suffixMIME='text/html';
                 break;
-            case 'css':
+            case 'CSS':
                 suffixMIME='text/css';
                 break;
-            case 'js':
+            case 'JS':
                 suffixMIME='text/javascript';
                 break;
         }
+
         var conFile='file is not find!',
              status=404;
         try{
@@ -31,7 +33,7 @@ var server1=http.createServer(function(req,res){
         }catch(e){
 
         }
-        res.writeHead(status,{'content-type':+suffixMIME+';charset=utf-8;'});
+         res.writeHead(status, {'content-type':suffixMIME+';charset=utf-8;'});
         res.end(conFile);
         return;
     }
@@ -42,7 +44,8 @@ var server1=http.createServer(function(req,res){
     var result = {code:1,msg:'error',data:null};
 
 //1获取所有的客户信息
-    if(pathname==='/gerAllList'){
+
+     if(pathname==='/getAllList'){
         if(customData.length>0){
             result = {
                 code:0,
@@ -50,8 +53,8 @@ var server1=http.createServer(function(req,res){
                 data:customData
             };
         }
-        res.writeHead(200,{'content-type':'application/json;charset=utf-8;'});
-        res.end(JSON.stringify(result));
+         res.writeHead(200, {'content-type': 'application/json;charset=utf-8;'});
+         res.end(JSON.stringify(result));
         return;
     }
     //2增加客户信息：
@@ -62,7 +65,7 @@ var server1=http.createServer(function(req,res){
         })
         req.on('end',function(){
             requestStr=JSON.parse(requestStr);
-            requestStr['id']=customData.length===0?1:parseFloat(customData[customData.length-1])+1;
+            requestStr['id']=customData.length===0?1:parseFloat(customData[customData.length-1]['id'])+1;
             customData.push(requestStr);
             fs.writeFileSync('./json/custom.json',JSON.stringify(customData),'utf-8')
             result={

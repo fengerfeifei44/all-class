@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul{
+            list-style: none;
+            margin: 50px auto;
+            width: 600px;
+            box-shadow: 0 0 10px #ccc;
+            /*overflow: hidden;*/
+        }
+        li{
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        li span{
+            margin: 0 10px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            background: red;
+            color: white;
+        }
+        .bg0{
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul">
+    <li><span>0</span>习近平总书记１２日上午在十八届中央纪委六次全会上发表重要讲话，深刻分析反腐败斗争依然严峻复杂的形势，提出当前和今后一个时期的目标任务。</li>
+    <li><span>1</span>习近平总书记１２日上午在十八届中央纪委六次全会上发表重要讲话，深刻分析反腐败斗争依然严峻复杂的形势，提出当前和今后一个时期的目标任务。</li>
+</ul>
+<script src="json1.js"></script>
+<script>
+    var oUl=document.getElementById('ul');
+    var aLis=document.getElementsByTagName('li');
+    for(var i=0;i<aLis.length;i++){
+        aLis[i].onmouseover=function(){
+            this.className='bg0';
+        };
+        aLis[i].onmouseout=function(){
+            this.className='';
+        }
+    }
+//绑定方法1：字符串拼接
+   /* var str='';
+    for(var i=0;i<ary.length;i++){
+        str+="<li><span>"+(i+2)+"</span>"+ary[i].desc+"</li>";
+    }
+    oUl.innerHTML+=str;*/
+
+    //思路2：动态创建
+    /*for(var i=0;i<ary.length;i++){
+        var oLi=document.createElement('li');
+        oLi.innerHTML="<span>"+(i+2)+"</span>"+ary[i].desc;
+        oUl.appendChild(oLi);
+    }
+*/
+    //思路3：文档碎片
+    var frg=document.createDocumentFragment();
+    for(var i=0;i<ary.length;i++){
+        var oLi=document.createElement('li');
+        oLi.innerHTML="<span>"+(i+2)+"</span>"+ary[i].desc;
+        frg.appendChild(oLi);
+    }
+    oUl.appendChild(frg);
+</script>
+
+</body>
+</html>

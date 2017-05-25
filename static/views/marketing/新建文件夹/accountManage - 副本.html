@@ -1,0 +1,235 @@
+﻿
+
+    <div class="main-head">
+        <div class="col-md-2 text-right col-sm-2 col-xs-2">
+            <span   style="cursor:pointer;" ng-click="addUser()">
+                <img src="imgs/add1.png" alt="" />
+                新建账号
+            </span>
+
+        </div>
+      
+
+       
+        <div class="col-md-2 text-right col-sm-2 col-xs-2">
+            <span style="cursor:pointer;" ng-click="editUser()">
+                <img src="imgs/edit1.png" alt="" />
+                编辑
+            </span>
+
+        </div>
+        <div class="col-md-2 text-right col-sm-2 col-xs-2">
+            <span style="cursor:pointer;" ng-click="delete()">
+                <img src="imgs/delete1.png" alt="" />
+                删除
+            </span>
+
+        </div>
+        <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-xs-4 col-xs-offset-2" style="padding-top: 4px;position: relative;">
+            <input type="text" placeholder="搜索" class="search form-control" ng-model="userAccountName" />
+            <span class="glyphicon glyphicon-search" aria-hidden="true" style="position: absolute;right:25px;top:11px;color:#ccc;font-size: 20px;cursor:pointer;" ng-click="searchUserAccount()"></span>
+        </div>
+
+</div>
+<div>
+    <div class="table-responsive">
+        <div style="width:100%;">
+            <table class="table  table-striped account-table" style="table-layout: fixed;">
+                <thead>
+                    <tr>
+                        <th style="width:5%"></th>
+                        <th style="width:5%">序号</th>
+                        <th style="width:20%">账号</th>
+                        <!--<th style="width:15%">密码</th>-->
+                        <th style="width:30%">联系方式</th>
+                        <th style="width:12%">剩余展示数</th>
+                        <th style="width:13%">剩余点击数</th>
+                        <th style="width:15%">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="u in userAccountData">
+                        <td class="accountTd1"><input type="checkbox" ng-model="u.IsChecked" /></td>
+                        <td class="usrIndex accountTd12">{{u.RowIndex}}</td>
+                        <td class="usrName accountTd3" title="{{u.Usr_Account_Name}}">{{u.Usr_Account_Name}}</td>
+                        <!--<td class="accountTd4">{{u.Usr_Password}}</td>-->
+                        <!--<td>{{u.Contant_Infor1+" "+u.Contant_Infor2+" "+u.Contant_Infor3}}</td>-->
+                        <td class="accountTd5">{{u.FullInfor}}</td>
+                        <td class="accountTd6">{{u.Show_Num}}</td>
+                        <td class="accountTd7">{{u.Site_Num}}</td>
+                        <td class="operate accountTd8" style="cursor:pointer">
+
+                            <a href="#/main/marketingData/moneyManage" ng-click="viewRechargeRecord($event)">查看充值记录</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+       
+    </div>
+</div>
+
+
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal6">
+    Launch demo modal
+</button>-->
+<!-- Modal -->
+
+    <div class="modal fade money-modal save-modal" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document" style="width:420px;">
+            <div class="modal-content">
+                <div class="modal-header money-modal-header text-center">
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancelAdd()"><span aria-hidden="true">&times;</span></button>-->
+                    <h4 class="modal-title" id="myModalLabel" style="margin-top: -10px; font-size:20px;">新建账号</h4>
+                </div>
+                <div class="modal-body money-modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-3 control-label necessary">
+                                账号名
+                                <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputEmail3" placeholder="" ng-model="Usr_Account_Name" required autocomplete="off" ng-blur="checkUsr();" ng-keyup="checkUsr1();" maxlength="30">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                                密码
+                                <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="" ng-model="Usr_Password" required maxlength="30">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 37px;">
+                            <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                                确认密码
+                                <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="" ng-model="Usr_Password_confirm" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                                联系方式1
+                                <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                            </label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="Contant_Infor1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">联系方式2</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="Contant_Infor2">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-3 control-label">联系方式3</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="Contant_Infor3">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer money-modal-footer">
+
+
+                    <button type="button" class="btn btn-primary  save" ng-click="saveAddUser ()" style="width:50%;"> 保存</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 0; border-left: 1px solid #cdcdcd; width: 49%;">取消</button>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade  money-modal edit-modal" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width:420px;">
+        <div class="modal-content">
+            <div class="modal-header money-modal-header text-center">
+                <!--<button type="button" id="centerClickId" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancelEdit()"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title" id="myModalLabel" style="margin-top: -10px; font-size:20px;">编辑账号</h4>
+            </div>
+            <div class="modal-body money-modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label necessary">
+                            用户名
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputEmail3" placeholder="" ng-model="Usr_Account_Name_Edit" required disabled maxlength="30">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                            密码
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="" ng-model="Usr_Password_Edit" required maxlength="30">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 37px;">
+                        <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                            确认密码
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="" ng-model="Usr_Password_Confirm_Edit" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                            联系方式1
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="Contant_Infor1_Edit">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">联系方式2</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="Contant_Infor2_Edit">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label">联系方式3</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="Contant_Infor3_Edit">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer money-modal-footer">
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary save" ng-click="saveEditUser()" style="width:50%;"> 保存</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left: 0; border-left: 1px solid #cdcdcd;width:49%;" ng-click="cancelEdit()">取消</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="empty"></div>
+
+    <div style=" text-align: right; margin: 0 auto;" class="search-center">
+        <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="perItems" max-size="maxSize" ng-change="pageChanged(currentPage, maxSize)"
+                        previous-text="上一页" next-text="下一页" class="pagination-sm" boundary-link-numbers="true" rotate="false" num-pages="numPages"></uib-pagination>
+
+    </div>

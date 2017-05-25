@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background:radial-gradient(circle,yellow,green);
+            border-radius: 50%;
+            animation: move 3s;
+        }
+        @-webkit-keyframes move{
+            0%{
+                -webkit-transform: translate(100px,100px);
+                transform: translate(100px,100px);
+            }
+            50%{
+                -webkit-transform: translate(300px,300px);
+                transform: translate(300px,300px);
+            }
+            100%{
+                -webkit-transform: translate(500px,0);
+                transform: translate(500px,0);
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+﻿<div class="main-head">
+    <div class="col-md-3 col-sm-3 col-xs-3 text-right" style=" padding-right: 0;">
+        <div style="color: #6998d0; cursor: pointer; text-align: left;" ng-click="addRecharge()">
+            <img src="imgs/addN.png" alt="" />
+            新建交易记录
+        </div>
+
+    </div>
+   
+    <div class="col-md-3 col-md-offset-5 col-sm-offset-5 col-xs-offset-5 col-sm-3 col-xs-3" style="padding-top: 4px;position: relative;">
+        <input type="text" placeholder="" class="search form-control" ng-model="searchContent" ng-focus="searchDis()" ng-blur="searchShow()" />
+        <img src="imgs/searchIcon.png" alt="Alternate Text" style="position: absolute; top: 11px; left: 24px;cursor:pointer;" class="searchIcon" />
+        <!--<span class="glyphicon glyphicon-search" aria-hidden="true" style="position: absolute;right:25px;top:11px;color:#ccc;font-size: 20px;cursor:pointer;" ng-click="search()"></span>-->
+    </div>
+    <div class="col-md-1 col-sm-1 col-xs-1 text-right">
+        <button type="button" class="btn" style="background: #3da7ff;color:white;" ng-click="search()">搜索</button>
+    </div>
+
+</div>
+<div>
+    <div class="table-responsive">
+        <div style="width:100%">
+            <table class="table  table-striped" style="table-layout:fixed;">
+                <thead>
+                    <tr>
+                        <!--<th></th>-->
+                        <th style="width:5%">序号</th>
+                        <th style="width:15%">用户账号</th>
+                        <!--<th style="width:20%">银行账号</th>-->
+                        <th style="width:10%">交易类型</th>
+                        <!--<th style="width:15%">开户行</th>-->
+                        <th style="width:15%">金额</th>
+                        <th style="width:10%">折扣</th>
+                        <th style="width:10%">展示数</th>
+                        <th style="width:10%">等价点击数</th>
+                        <th style="width:25%">时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="m in usrReChargingListData">
+                        <!--<td><input type="checkbox" /></td>-->
+                        <td class="moneyTd1">{{m.RowIndex}}</td>
+                        <td class="moneyTd2" title="{{m.Usr_Account_Name}}">{{m.Usr_Account_Name}}</td>
+                        <!--<td class="moneyTd3" title="{{m.Card_No}}">{{m.Card_No}}</td>-->
+                        <td class="moneyTd4" title="{{m.Recharge_TypeName}}">{{m.Recharge_TypeName}}</td>
+                        <!--<td class="moneyTd4" title="{{m.Band_Name}}">{{m.Band_Name}}</td>-->
+                        <td class="moneyTd5" title="{{m.ReCharge_Balance}}">{{m.ReCharge_Balance}}</td>
+                        <td class="moneyTd6" title="{{m.Discount}}">{{m.Discount}}折</td>
+                        <td class="moneyTd7" title="{{m.Show_Num}}">{{m.Show_Num}}</td>
+                        <td class="moneyTd8" title="{{m.Site_Num}}">{{m.Site_Num_Deal}}</td>
+                        <!--<td class="moneyTd8" title="{{m.Site_Num}}">{{m.Site_Num}}</td>-->
+                        <td class="moneyTd8" title="{{m.Recharge_Date}}">{{m.Recharge_Date}}</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+      
+    </div>
+</div>
+
+  
+
+
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal5">
+    Launch demo modal
+</button>-->
+
+<!-- Modal -->
+
+<div class="modal fade money-modal save-modal" id="myModal5" ng-click="disappear($event)">
+    <!--<div class="modal fade money-modal save-modal" id="myModal5" ng-click="disappear($event)" ng-show="showRechargeModel">-->
+    <div class="modal-dialog modal-dialog-addA" role="document">
+        <div class="modal-content">
+            <div class="modal-header money-modal-header text-center">
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeButton" ng-click="cancel()"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title" id="myModalLabel" style="margin-top: -10px; font-size:20px;">新建交易记录</h4>
+            </div>
+            <div class="modal-body money-modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label necessary">
+                            用户账号
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-9">
+
+                            <input type="text" class="form-control" id="inputEmail3" placeholder="" ng-model="Usr_Account_Name" ng-change="userShow()" required autocomplete="off" ng-click="usrInput($event)">
+                            <ul class="list-unstyled" style=" font-size: 13px; color: #555; background-color: #fff; border: 1px solid #ccc; border-radius: 4px; width: 283px; position: ABSOLUTE; z-index: 1000;" ng-show="usr" id="user-item" ng-click="usrInput()">
+                                <li ng-repeat="x in userAccountData"><a href="javascript:;" ng-click="clickSelectUser($event)" class="usrItem">{{x.Usr_Account_Name}}</a></li>
+                            </ul>
+                            <!--<h1 ng-repeat="x in records">{{x}}</h1>
+                            <table>
+                                <tr ng-repeat="x in userAccountData">
+                                    <td>{{x.Usr_Account_Name}}</td>
+                                </tr>
+                            </table>-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                            交易类型
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;top:8px;">*</i>
+                        </label>
+                        <div class="col-sm-9" style="padding-top:7px;">
+                            <ul class="list-unstyled list-inline">
+                                <li>
+                                    <a href="javascript:void(0);" style="position: relative; padding-right: 10px;" ng-click="rechargeS()">
+                                        <span style="display:inline-block;width:6px;height:6px;border:2px solid #ccc;border-radius:50%;padding:4px;"></span>
+                                        <span style="display: inline-block; width: 6px; height: 6px; background: red; border-radius: 50%;position:absolute;top:4px;left:3px;" ng-show="recharge"></span>
+                                    </a>
+                                    充值
+
+                                </li>
+                                <li style="padding-left:40px;" >
+                                    <a href="javascript:void(0);" style="position: relative; padding-right: 10px;" ng-click="refundS()">
+                                        <span style="display:inline-block;width:6px;height:6px;border:2px solid #ccc;border-radius:50%;padding:4px;"></span>
+                                        <span style="display: inline-block; width: 6px; height: 6px; background: red; border-radius: 50%;position:absolute;top:4px;left:3px;" ng-show="refund"></span>
+                                    </a>
+                                    退款
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                            银行账号
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="cardNo">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 13px;">
+                        <label for="inputPassword3" class="col-sm-3 control-label" style="position:relative;">开户行</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="bandName">
+                        </div>
+                    </div>-->
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                            金额
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="recharge_balance" required ng-change="money()" ng-blur="rechargeMoney()">
+                            <input type="text" class="form-control" id="money" placeholder="" ng-model="moneyBig" disabled>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="refund">
+                        <label for="inputPassword3" class="col-sm-3 control-label necessary">
+                            展示数
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" required ng-model="showBack">
+                            <!--<input type="text" class="form-control" id="money" placeholder="" ng-model="moneyBig" disabled>-->
+                        </div>
+                    </div>
+                    <div class="form-group" ng-show="discountShow">
+                        <label for="inputPassword3" class="col-sm-3 control-label necessary col-xs-3">
+                            折扣
+                            <i style="color: red; font-size: 18px; position: absolute;right:0;">*</i>
+                        </label>
+                        <div class="col-sm-8 col-xs-8">
+                            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="discount" required ng-blur="changeDiscount()" ng-keyup="changeDiscount()">
+
+                        </div>
+                        <div class="col-sm-1 col-xs-1" style="height:34px;line-height:34px;text-align:left;padding:0;">
+                            <span>%</span>
+                        </div>
+                    </div>
+                    <div class="form-group text-group" ng-show="numShow">
+                        <div class="col-sm-6 col-xs-12 showNum" style=" padding-left: 16px;">展示数 <input ng-model="Show_Num" style="width: 100px; height: 30px; line-height: 30px; border: none;" value="" placeholder="" disabled></div>
+                        <div class="col-sm-6 col-xs-12 siteNum">
+                            等价点击数 <input ng-model="Site_Num" style="width: 100px; height: 30px; line-height: 30px; border: none;" value="10000" placeholder="" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer money-modal-footer" style="text-align:left;">
+                <div class="form-group">
+                    <button type="button" class="btn   save col-md-6 col-sm-6 col-xs-6" ng-click="saveRecharge()">保存</button>
+                    <button type="button" class="btn  col-md-6 col-sm-6 col-xs-6" data-dismiss="modal" style="margin-left: 0; border-left: 1px solid #cdcdcd;" id="cancel" ng-click="cancel()">取消</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="empty"></div>
+<!-- 分页代码 -->
+<div style="overflow:hidden;">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+        <div style=" text-align: right; margin: 0 auto;" class="search-right">
+            <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="perItems" max-size="maxSize" ng-change="pageChanged(currentPage, maxSize)"
+                            previous-text="上一页" next-text="下一页" class="pagination-sm" boundary-link-numbers="true" rotate="false" num-pages="numPages"></uib-pagination>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-md-6 col-sm-6 col-xs-6" style="height: 70px; padding-top: 19px;">
+        共<span style="padding:0 8px;">{{responseData.PageCount}}</span>页，到
+        <input type="text" name="name" value=" " ng-model="ye" style="width: 30px; height: 30px; position: relative; top: -1px;padding:0;" />
+        <span>页</span>
+        <!--//{{UserInfo.Usr_Account_Name}}-->
+        <!--<button type="button" class="btn btn-default btn-daasadg" ng-click="sure()">确定</button>-->
+        <a class="" ng-click="sure()" style="cursor: pointer; padding-left: 18px;">确定</a>
+    </div>
+
+</div>
+    <!--<div style=" text-align: right; margin: 0 auto;" class="search-right">
+        <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="perItems" max-size="maxSize" ng-change="pageChanged(currentPage, maxSize)"
+                        previous-text="上一页" next-text="下一页" class="pagination-sm" boundary-link-numbers="true" rotate="false" num-pages="numPages"></uib-pagination>
+
+    </div>-->
+
+

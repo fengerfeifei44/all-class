@@ -3,8 +3,41 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
 </head>
 <body>
+<div id="box"></div>
+<script src="js/event.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/move.js"></script>
+<script>
+    var oDiv=document.getElementsByTagName('div')[0];
+    ev.on(oDiv,'selfEnd',fn1)
+    ev.on(oDiv,'selfEnd',fn2)
+    ev.on(oDiv,'selfEnd',fn3)
+    function fn1(){
+        console.log(1)
+    }
+    function fn2(){
+        console.log(2)
+    }
+    function fn3(){
+        console.log(3)
+    }
+    animate({
+        id:oDiv,
+        target:{
+            width:400,
+            height:400
+        }
+    })
+</script>
 
 </body>
 </html>

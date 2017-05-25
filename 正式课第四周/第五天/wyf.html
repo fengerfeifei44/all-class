@@ -5,6 +5,32 @@
     <title></title>
 </head>
 <body>
+<div id="box">
+    <div>
+        <ul></ul>
+    </div>
+    <span>我是中国人</span>
+</div>
+<script src="js/jquery-2.0.3.js"></script>;
+<script>
+    var $box=$("#box");
+    var p=document.createElement('p');
+    $box.before(p);
+   // $box.remove();
+    var $child=$box.children();
+    console.log($child)
+   /* $.ajax({
+        type:"get",
+        url:"json/data.txt",
+        async:false,
+        dataType:"json",
+        success:function(val){
+            console.log(val)
+        }
+
+
+    })*/
+</script>
 
 </body>
 </html>

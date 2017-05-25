@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box1">
+    <div id="box2">
+        <div id="box3"></div>
+    </div>
+</div>
+<script>
+    var oDiv3=document.getElementById('box3');
+    var ary=[];
+    while(oDiv3.parentNode!=null){
+        oDiv3=oDiv3.parentNode;
+        ary.push(oDiv3.parentNode);
+    }
+    console.log(ary,ary[ary.length-1]);
+</script>
+
+</body>
+</html>

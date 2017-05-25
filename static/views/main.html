@@ -1,0 +1,361 @@
+﻿<style type="text/css">
+    .navbar-header {
+        float: left;
+    }
+
+    .collapseD {
+        float: right;
+    }
+
+    .navD {
+        list-style: none;
+    }
+
+        .navD > li {
+            float: left;
+        }
+
+
+    .dropdownD {
+        height: 50px;
+        line-height: 50px;
+    }
+   
+    .collapseDa {
+        float: right;
+    }
+
+    #menu {
+        color: black;
+        font-weight: 500;
+        font-size: 16px;
+        float: right !important;
+        margin-right: -15px;
+    }
+    .menuList {
+        padding-top: 10px;
+        margin-right: -15px;
+    }
+
+    .menuList li {
+        float: left;
+        height: 50px;
+        line-height: 50px;
+       
+       
+    }
+    .menuList li a{
+        
+        color:#777;
+        font-size:16px;
+        padding:15px;
+      
+    }
+
+    .navDaasadg > li {
+        float: left;
+        height: 50px;
+        line-height: 50px;
+        
+    }
+   
+</style>
+<div class="navbar  daas-nav" style="height:30px;min-height:30px; margin-bottom: 0; min-width: 1080px;">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header" style="height:30px;">
+            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>-->
+            <a class="navbar-brand" href="javascript:void(0)" style="padding-top:0;height:30px;line-height:30px;padding-bottom:0;">
+                用户名:
+                {{currentUser.User_Name}}
+            </a>
+        </div>
+        <div class="collapseD" id="Div1" style="position:relative;z-index:1000000;">
+            <ul class="navD" style="overflow:hidden;height:30px;line-height:30px;">
+                <li class="line" style="position: relative;padding:0 10px;">
+                    <!--<img src="imgs/userphoto6.png" alt="" style="margin-top: 3px; margin-right: 19px;" id="usrPhoto">-->
+                    <!--<button ng-click="changePwd()" type="button" class="btn btn-default">修改密码</button>-->
+                    <a href="javascript:void(0)"  ng-click="changePwd()" style="color:white;font-size:16px;">
+                        修改密码
+                    </a>
+                </li>
+
+                <li style="padding-top:2px;">
+                    
+                    <span style="color:white;width:2px;height:13px;display:inline-block;background:white;"></span>
+                </li>
+                <li style="padding: 0 10px;"><a href="javascript:void(0);" ng-click="exit()" style="color:white;font-size:16px;">退出登录</a></li>
+
+                <!--<li class="dropdown dropdownD">
+                    <a href="javascript:;" style="color:#FFF;height:60px;" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        用户:
+                        {{currentUser.User_Name}}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li style="height: 50px; width: 100%;">
+                            个人信息
+                        </li>
+                        <li style="text-align: center; height: 40px; width: 100%;">
+                            <button ng-click="changePwd()" type="button" class="btn btn-default">修改密码</button>
+                            <button ng-click="cancel()" type="button" class="btn btn-default">注销</button>
+                        </li>
+                    </ul>
+                </li>-->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+
+<div class="navbar navbar-default" style="background-color: white; box-shadow: 10px 5px 10px #cacaca; margin-bottom: 10px; height: 80px; line-height: 80px; min-width: 1080px; ">
+    <div class="container">
+
+        <div class="navbar-header">
+
+            <a class="navbar-brand text-center" href="#" style="color: #379ffe; font-weight: 500;" ng-click="returnMain()">   T-DAAS<br />精准营销平台</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class=" collapseDa" id="Div1" style="display:block;">
+
+            <ul class="nav navbar-nav navbar-right dropdown navDaasadg" id="menu" style="padding-top: 10px;">
+                <!-- Single button -->
+                <!--<div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>-->
+                <!--<li id="ad-manage">
+                    <a id="dLabel" class="dropdown-toggle" data-target="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        广告内容管理
+                        <span class="caret"></span>
+                    </a>
+                    <span style="display: none; width: 162px; height: 5px; background-color: #1d87db; position: absolute; left:-18px; bottom: -18px;" class="lineIcon"></span>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel" style="margin-top: 18px;">
+                        <li class="ad-list" ui-sref="main.AddADManage({is_template:0})">
+                            新建广告
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li class="ad-list" ui-sref="main.AdManage">
+                            内容管理列表
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li class="ad-list" ui-sref="main.adTemplet">
+                            广告模板管理
+                        </li>
+                    </ul>
+                </li>-->
+                <li class="dropDown">
+                    <a id="dLabel" data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        广告管理
+                        <span class="caret"></span>
+                    </a>
+                   
+                    <span style="display: none; width: 105px; height: 5px; background-color: #1d87db; position: absolute; left:0; bottom: -18px;" class="lineIcon"></span>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel" style="margin-top: 18px;left:0;">
+                        <li class="ad-list" ui-sref="main.adContentManage">
+                            <a href="javascript:void(0);" class="text-center" style="padding-top:9px;padding-bottom:9px;">广告内容管理</a>
+                        </li>
+                        <!--<li role="separator" class="divider"></li>-->
+                        <li class="ad-list" ui-sref="main.adEffect">
+                            <a href="javascript:void(0);" class="text-center" style="padding-top:9px;padding-bottom:9px;">广告效果监控</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <!--<li ui-sref="main.adEffect">
+                    <a href="#">广告效果监控</a>
+
+                    <span style="display: none; width: 120px; height: 5px; background-color: #1d87db; position: absolute; left: 5px; bottom: -18px;" class="lineIcon"></span>
+                </li>-->
+                <!--<li ui-sref="main.blackList">
+                    <a href="#">黑名单</a>
+
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 5px; bottom: -18px;" class="lineIcon"></span>
+                </li>-->
+                <li ui-sref="main.accountManage">
+                    <a href="#">账号管理</a>
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 6px; bottom: -18px;" class="lineIcon"></span>
+                </li>
+                <li ui-sref="main.moneyManage">
+                    <a href="#">交易管理</a>
+                    <span style="display: none; width: 90px; height:5px; background-color: #1d87db; position: absolute; left: 5px; bottom: -18px;" class="lineIcon"></span>
+                </li>
+                <li>
+                    <a id="dLabel" data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        策略管理
+                        <span class="caret"></span>
+                    </a>
+
+                    <span style="display: none; width: 105px; height: 5px; background-color: #1d87db; position: absolute; left:0; bottom: -18px;" class="lineIcon"></span>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel" style="margin-top: 18px;left:0;z-index:1001;">
+                        <li class="ad-list" ui-sref="main.blackList">
+                            <a href="javascript:void(0);" class="text-center" style="padding-top:9px;padding-bottom:9px;">黑名单策略</a>
+                        </li>
+                        <!--<li role="separator" class="divider"></li>-->
+                        <li class="ad-list" ui-sref="main.webset">
+                            <a href="javascript:void(0);" class="text-center" style="padding-top:9px;padding-bottom:9px;">推广策略</a>
+                        </li>
+                       
+                    </ul>
+                </li>
+                <li>
+                    <a id="dLabel" data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        指标监控
+                        <span class="caret"></span>
+                    </a>
+
+                    <span style="display: none; width: 105px; height: 5px; background-color: #1d87db; position: absolute; left:0; bottom: -18px;" class="lineIcon"></span>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel" style="margin-top: 18px;left:0;">
+                        <!--<li class="ad-list" ui-sref="main.blackList">
+                <a href="javascript:void(0);" class="text-center" style="padding-top:9px;padding-bottom:9px;">黑名单</a>
+            </li>-->
+                        <!--<li role="separator" class="divider"></li>-->
+                        <li class="ad-list" ui-sref="main.platMonitor">
+                            <a href="javascript:void(0);" class="text-center" style="padding-top:9px;padding-bottom:9px;">平台监控</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+                
+                <li>
+                    <a id="dLabel" data-target="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        系统管理
+                        <span class="caret"></span>
+                    </a>
+
+                    <span style="display: none; width: 105px; height: 5px; background-color: #1d87db; position: absolute; left:0; bottom: -18px;" class="lineIcon"></span>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel" style="margin-top: 18px;left:0;">
+                        <!--<li class="ad-list" ui-sref="main.blackList">
+                            <a href="javascript:void(0);" class="text-center" style="padding-top:9px;padding-bottom:9px;">黑名单</a>
+                        </li>-->
+                        <!--<li role="separator" class="divider"></li>-->
+                        <li class="ad-list" ui-sref="main.systemLogin">
+                            <a href="javascript:void(0);" class="text-center" style="padding-top:9px;padding-bottom:9px;">系统日志</a>
+                        </li>
+                        <li class="ad-list" ui-sref="main.UsrFeedbackDetail">
+                            <a href="javascript:void(0);" class="text-center" style="padding-top:9px;padding-bottom:9px;">用户反馈</a>
+                        </li>
+                        <li class="ad-list" ui-sref="main.newsRelease">
+                            <a href="javascript:void(0);" class="text-center" style="padding-top:9px;padding-bottom:9px;">消息发布</a>
+                        </li>
+                        <li class="ad-list" ui-sref="main.configManage">
+                            <a href="javascript:void(0);" class="text-center" style="padding-top:9px;padding-bottom:9px;">配置管理</a>
+                        </li>
+
+
+                    </ul>
+                </li>
+                <!--<li ui-sref="main.systemLogin">
+                    <a href="#">系统日志</a>
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 6px; bottom: -18px;" class="lineIcon"></span>
+                </li>
+                <li ui-sref="main.UsrFeedbackDetail">
+                    <a href="#">用户反馈</a>
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 6px; bottom: -18px;" class="lineIcon"></span>
+                </li>-->
+                <!--<li ui-sref="main.webset">
+                    <a href="#">策略下发</a>
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 6px; bottom: -18px;" class="lineIcon"></span>
+                </li>-->
+                <!--<li ui-sref="main.platMonitor">
+                    <a href="#">平台监控</a>
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 6px; bottom: -18px;" class="lineIcon"></span>
+                </li>-->
+                <!--<li ui-sref="main.configManage">
+                    <a href="#">配置管理</a>
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 6px; bottom: -18px;" class="lineIcon"></span>
+                </li>-->
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</div>
+<!--<div style="background-color: white; box-shadow: 10px 5px 10px #cacaca; margin-bottom: 10px; height: 80px; line-height: 80px;">
+    <div class="container" style="overflow:hidden;">
+        <div style="float:left;height:80px;color:#000;margin-left:-15px;">
+            <a class="navbar-brand text-center" href="#" style="color: #379ffe; font-weight: 500;" ng-click="returnMain()">   T-DAAS<br />精准营销平台</a>
+        </div>
+        <div style="float:right;height:80px;line-height:80;">
+            <ul style="list-style:none;height:80px;line-height:80px;" class="menuList">
+               
+                <li ui-sref="main.adContentManage">
+                    <a href="#">
+                        广告内容管理
+
+                    </a>
+                    <span style="display: none; width: 162px; height: 5px; background-color: #1d87db; position: absolute; left:-18px; bottom: -18px;" class="lineIcon"></span>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel" style="margin-top: 18px;">
+                        <li class="ad-list" ui-sref="main.AddADManage({is_template:0})">
+                            新建广告
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li class="ad-list" ui-sref="main.AdManage">
+                            内容管理列表
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li class="ad-list" ui-sref="main.adTemplet">
+                            广告模板管理
+                        </li>
+                    </ul>
+                </li>
+                <li ui-sref="main.adEffect">
+                    <a href="#">广告效果监控</a>
+
+                    <span style="display: none; width: 120px; height: 5px; background-color: #1d87db; position: absolute; left: 5px; bottom: -18px;" class="lineIcon"></span>
+                </li>
+                <li ui-sref="main.blackList">
+                    <a href="#">黑名单</a>
+
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 5px; bottom: -18px;" class="lineIcon"></span>
+                </li>
+                <li ui-sref="main.moneyManage">
+                    <a href="#">交易管理</a>
+                    <span style="display: none; width: 90px; height:5px; background-color: #1d87db; position: absolute; left: 5px; bottom: -18px;" class="lineIcon"></span>
+                </li>
+                <li ui-sref="main.accountManage">
+                    <a href="#">账号管理</a>
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 6px; bottom: -18px;" class="lineIcon"></span>
+                </li>
+                <li ui-sref="main.systemLogin">
+                    <a href="#">系统日志</a>
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 6px; bottom: -18px;" class="lineIcon"></span>
+                </li>
+                <li ui-sref="main.UsrFeedbackDetail">
+                    <a href="#">用户反馈</a>
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 6px; bottom: -18px;" class="lineIcon"></span>
+                </li>
+                <li ui-sref="main.webset">
+                    <a href="#">策略下发</a>
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 6px; bottom: -18px;" class="lineIcon"></span>
+                </li>
+                <li ui-sref="main.platMonitor">
+                    <a href="#">平台监控</a>
+                    <span style="display: none; width: 90px; height: 5px; background-color: #1d87db; position: absolute; left: 6px; bottom: -18px;" class="lineIcon"></span>
+                </li>
+
+            </ul>
+        </div>
+       
+    </div>
+   
+</div>-->
+
+<div ui-view="" class="container" style="background:white;min-width:1080px;">
+</div>
+
+<div class='control-sidebar-bg'></div>
+

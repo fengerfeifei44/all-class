@@ -41,7 +41,7 @@
             <button class="btn btn-danger btn-xs"  ng-click="del(product)">删除</button>
         </td>
     </tr >
-    <tr ng-if="products.length">
+    <tr ng-show="products.length">
     <td colspan="6">
         总价{{total()}}
         <!--如果任意一个作用域上的值变化了就会触发函数执行-->
@@ -55,7 +55,7 @@
         <!--过滤器 过滤数据，不影响原数据-->
     </td>
     </tr>
-    <tr class="text-center text-danger" ng-if="!products.length">
+    <tr class="text-center text-danger" ng-hide="products.length">
         <td colspan="6">
             暂无数据.....^_^#!!
         </td>

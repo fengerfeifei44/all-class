@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var obj={name:5};
+   /* function fn(m,n){
+        console.log(this)
+    }
+    fn.call(obj);*/
+
+    function fn1(n){
+        console.log(this,n);
+    }
+    function fn2(){
+        alert(2);
+    }
+    fn1.call.call(fn2,1);
+</script>
+
+</body>
+</html>

@@ -67,7 +67,9 @@ var server1=http.createServer(function(req,res){
         });
         res.writeHead(200,{'content-type':'application/json;charset=utf-8;'});
         res.end(JSON.stringify(result));
+
     }
+
 
 })
 server1.listen(80,function(){

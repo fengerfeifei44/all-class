@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var str='aaaccccbbbdddCCCCCAAAAABbbbAAAAcccDDdDD';
+    //思路2
+    var obj={};
+     for(var i=0;i<str.length;i++){
+         var cur=str[i].toLowerCase();
+         if(obj[cur]){
+             obj[cur]++;
+         }else{
+             obj[cur]=1;
+         }
+     }
+    var max=0;
+    for(var attr in obj){
+       if(obj[attr]>max)max=obj[attr];
+    }
+    var ary=[];
+    for(var attr in obj){
+        if(max==obj[attr]){
+            ary.push(attr);
+        }
+    }
+    console.log(max,ary);
+    //思路1
+   /*  str=str.split('').sort(function(a,b){return a.localeCompare(b)}).join('');
+    var max=0;
+    var maxStr='';
+    str.replace(/(\w)\1+/gi,function(a,b){
+        if(a.length>max){
+            max= a.length;
+            maxStr=b;
+        }else if(a.length===max){
+            maxStr+=b;
+        }
+
+        console.log(max,maxStr);
+    })*/
+
+
+</script>
+
+</body>
+</html>

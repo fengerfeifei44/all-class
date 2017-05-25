@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function makeArray(arg){
+        var ary=[];
+        try{
+            ary = Array.prototype.slice.call(arg);
+        }catch(e){
+            for(var i=0;i<arg.length;i++){
+                ary.push(arg);
+            }
+        }
+        return ary;
+    }
+
+</script>
+
+</body>
+</html>

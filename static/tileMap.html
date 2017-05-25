@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html ng-app="demoapp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bower_components/ui-leaflet/MarkerCluster.css" />	
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/ui-leaflet/leaflet-src.js"></script>
+    <script src="/bower_components/ui-leaflet/l.ellipse.js"></script>
+    <script src="/bower_components/ui-leaflet/ui-leaflet.min.js"></script>
+    <script src="/bower_components/ui-leaflet/leaflet.markercluster.js"></script>
+    <script src="/bower_components/ui-leaflet/leaflet.markercluster.freezable-src.js"></script>
+    
+    <script src="/bower_components/ui-leaflet/leaflet-cell.js"></script>
+    <script src="/bower_components/angular-simple-logger/angular-simple-logger.js"></script>
+    <script src="/scripts/services/mapService.js"></script>
+    <link rel="stylesheet" href="/bower_components/ui-leaflet/leaflet.css" />
+    <style>
+        .legend {
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: rgba(255,255,255, 0.9);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            padding: 6px 8px;
+            width: 180px;
+            line-height: 18px;
+            color: #555;
+            background:  transparent;
+        }
+
+            .legend i {
+                width: 16px;
+                height: 16px;
+                float: left;
+                margin-right: 8px;
+                opacity: 0.7;
+            }
+
+    </style>
+    <script>
+        var app = angular.module("demoapp", ["ui-leaflet","map-service"]);
+        app.controller('BasicLegendController', ['$scope', 'leafletData','mapService', function ($scope, leafletData,mapService) {
+            angular.extend($scope, {
+                guangzhou: {
+                     
+                    zoom: 14
+                    // , crs: "EPSG:3857"
+                },
+                baise: {
+                    lat: 23.9021997000,
+                    lng: 106.6187418000,
+                    zoom: 14
+                    // , crs: "EPSG:3857"
+                }
+               ,
+                legend: {
+                    position: 'bottomleft',
+                    colors: [ '#ff0000', '#28c9ff', '#0000ff', '#ecf386' ],
+                    labels: [ 'National Cycle Route', 'Regional Cycle Route', 'Local Cycle Network', 'Cycleway' ]
+                },
+                defaults: {
+                   
+                }
+                
+                //, tiles: {
+                //    url: "/wms/services/GetGoogleTileMap?level={z}&x={x}&y={y}"
+                //     , options: { attribution: '', zoom: 14 }
+                //}
+            });
+            $scope.layerControl;
+            $scope.baselayers = {
+                //  '<img src="imgs/map.png" width="32" height="32" />': L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png"
+                //      , { attribution: '', zoom: 14 })
+                '<img src="/imgs/map.png" width="32" height="32" />': L.tileLayer("http://localhost:27890/demo/wms/GetGoogleTileMap?level={z}&x={x}&y={y}"
+                     , { attribution: '', zoom: 14 })
+               , '<img src="/imgs/satellite-map.png" width="32" height="32" />': L.tileLayer("http://localhost:27890/demo/wms/GetGoogleTileMap?level={z}&x={x}&y={y}&type=GoogleSatellite"
+                     , { attribution: '', zoom: 14 })
+            
+            };
+            $scope.overlayLayers = {
+                '路网': L.tileLayer.wms('http://localhost:27890/demo/wms/GoogleMap?maptype=GoogleLabels', {
+                    format: 'image/png',
+                    transparent: true
+               , crs: L.CRS.EPSG3857
+                    ,version:1.4
+               , tms: false
+                    ,layerName:'ggglables'
+                }
+               
+                )
+                  ,
+                '栅格': L.tileLayer.wms('http://localhost:27890/demo/wms/GridLayer?maptype=GoogleLabels', {
+                    format: 'image/png',
+                    transparent: true
+              , crs: L.CRS.EPSG3857
+              , tms: false
+                }
+               
+               ),
+                 '画布': new L.FeatureGroup()
+               
+            };
+            $scope.initMap = function (id) {
+                var map = null;
+                leafletData.getMap(id).then(function (m) {
+                    map = m;
+                    //显示比例尺
+                    L.control.scale().addTo(map);
+                    //显示图层信息
+                    for (var l in $scope.baselayers) {
+                        var layer = $scope.baselayers[l];
+                        layer.addTo(map);
+                        break;
+                    }
+                    for (var l in $scope.overlayLayers) {
+                        var layer = $scope.overlayLayers[l];
+                        layer.addTo(map);
+                    }
+                    $scope.layerControl =  L.control.layers($scope.baselayers, $scope.overlayLayers);
+                    $scope.layerControl.addTo(map);
+                    $scope.map = map;
+                });
+                
+                return map;
+            };
+            $scope.addPolyon = function () {
+                //POLYGON((106.5674 25.0818,106.5894 25.0598,106.6113 25.0488,106.6223 25.0543,106.6223 25.0653,106.6663 25.0598,106.6992 25.0818,106.6992 25.0928,106.7212 25.0983,106.7432 25.0983,106.7542 25.0873,106.7432 25.0708,106.7651 25.0323,106.7432 25.0323,106.7212 25.0269,106.7212 25.0049,106.7432 24.9774,106.7432 24.9664,106.7651 24.9554,106.7651 24.939,106.8201 24.895,106.853 24.8621,106.842 24.8511,106.842 24.8621,106.8201 24.8456,106.8091 24.8456,106.7981 24.8291,106.7981 24.8181,106.7871 24.7906,106.7542 24.7906,106.7212 24.8126,106.7212 24.8071,106.6992 24.8126,106.6663 24.7906,106.6663 24.7742,106.6882 24.7522,106.7322 24.7302,106.7542 24.7247,106.7871 24.7028,106.7871 24.6863,106.8091 24.6863,106.8201 24.6808,106.8091 24.6643,106.7871 24.6533,106.7212 24.6478,106.6992 24.6204,106.6882 24.6204,106.6882 24.6039,106.6882 24.5984,106.7212 24.6094,106.7212 24.6149,106.7322 24.6204,106.7651 24.6094,106.7761 24.5874,106.7651 24.5709,106.7761 24.549,106.7651 24.5325,106.7651 24.5105,106.7981 24.5105,106.7981 24.4995,106.8201 24.4775,106.7981 24.4556,106.853 24.4226,106.842 24.4061,106.853 24.3951,106.875 24.3896,106.886 24.4061,106.897 24.3787,106.908 24.3732,106.886 24.3567,106.897 24.3347,106.886 24.3127,106.886 24.3073,106.897 24.2853,106.897 24.2688,106.9299 24.2523,106.9189 24.2139,106.864 24.1919,106.864 24.1644,106.897 24.115,106.9189 24.0985,106.9629 24.1095,106.9629 24.104,106.9409 24.0875,106.9849 24.0656,106.9958 24.0436,107.0178 24.0326,107.0398 24.0326,107.0618 24.0601,107.0728 24.0546,107.1167 24.0491,107.1387 24.0381,107.1387 24.0106,107.1497 23.9941,107.1606 23.9886,107.1716 23.9886,107.1936 23.9722,107.2485 23.9667,107.2705 23.9941,107.2815 23.9941,107.2815 23.9777,107.3035 23.9557,107.3145 23.9172,107.3584 23.9063,107.3694 23.9227,107.3804 23.9172,107.3914 23.8733,107.4023 23.8733,107.4353 23.8348,107.4573 23.8348,107.4792 23.8733,107.5232 23.8898,107.5452 23.8898,107.5452 23.8788,107.5342 23.8568,107.5452 23.8403,107.5671 23.8348,107.5671 23.8019,107.6221 23.7744,107.644 23.7744,107.677 23.8074,107.688 23.7964,107.699 23.7964,107.699 23.7909,107.7539 23.7964,107.7539 23.7909,107.7429 23.7909,107.7429 23.7799,107.7539 23.7634,107.7649 23.7579,107.7759 23.7689,107.7869 23.7689,107.8088 23.7524,107.8198 23.7305,107.8308 23.714,107.8308 23.7085,107.8308 23.6975,107.8198 23.692,107.8198 23.681,107.8088 23.6646,107.7649 23.67,107.7539 23.6536,107.71 23.6261,107.71 23.6041,107.71 23.5986,107.71 23.5876,107.7209 23.5547,107.7319 23.5217,107.7319 23.4998,107.7429 23.4613,107.7319 23.4503,107.7429 23.4448,107.7649 23.4503,107.7979 23.4283,107.8088 23.4338,107.8418 23.4283,107.8748 23.4448,107.8857 23.4393,107.8857 23.4283,107.8748 23.4229,107.8528 23.3789,107.8308 23.3734,107.8308 23.3514,107.8198 23.3459,107.8308 23.3405,107.8308 23.335,107.8198 23.3295,107.8198 23.3405,107.7979 23.3459,107.7649 23.3459,107.7539 23.335,107.7539 23.313,107.7209 23.302,107.7209 23.291,107.699 23.28,107.677 23.28,107.644 23.2745,107.644 23.2855,107.6111 23.291,107.5891 23.291,107.5781 23.2635,107.5891 23.2471,107.5891 23.2306,107.5671 23.2251,107.5671 23.2141,107.5562 23.2031,107.5342 23.1976,107.5012 23.2306,107.4683 23.2251,107.4683 23.2306,107.4792 23.2471,107.4463 23.2471,107.4243 23.2581,107.4023 23.2416,107.3804 23.2471,107.3804 23.2526,107.3804 23.269,107.3694 23.269,107.3584 23.2965,107.3584 23.324,107.3254 23.3405,107.3035 23.335,107.3035 23.3514,107.2705 23.3459,107.2375 23.3185,107.2156 23.3185,107.2046 23.335,107.1826 23.3295,107.1716 23.313,107.1387 23.302,107.1277 23.2855,107.0728 23.2745,107.0508 23.28,107.0398 23.291,107.0398 23.302,107.0068 23.3075,106.9958 23.2965,106.9409 23.302,106.9299 23.28,106.9409 23.28,106.9189 23.2635,106.9189 23.2416,106.897 23.2251,106.875 23.2196,106.842 23.1921,106.8091 23.1976,106.7981 23.1866,106.7761 23.1757,106.7871 23.1537,106.7651 23.1317,106.7651 23.1152,106.7761 23.1042,106.7651 23.0823,106.7761 23.0768,106.7981 23.0878,106.8091 23.0768,106.7871 23.0383,106.7981 23.0328,106.7981 23.0219,106.7871 23.0219,106.7651 22.9999,106.7651 22.9889,106.7432 22.9669,106.7212 22.9669,106.7212 22.9559,106.7212 22.9449,106.6772 22.923,106.6663 22.8955,106.6663 22.89,106.6663 22.8735,106.6553 22.8625,106.6333 22.879,106.6003 22.9285,106.5894 22.9285,106.5674 22.9175,106.5454 22.923,106.5454 22.9395,106.5234 22.9449,106.5125 22.9449,106.5015 22.9285,106.5015 22.901,106.4795 22.9065,106.4685 22.8955,106.4465 22.901,106.4465 22.89,106.4136 22.89,106.4246 22.8735,106.4136 22.8735,106.3806 22.879,106.3696 22.8625,106.3477 22.8571,106.3367 22.8735,106.3147 22.8625,106.3037 22.8735,106.2817 22.868,106.2598 22.8735,106.2708 22.879,106.2598 22.89,106.2598 22.8955,106.2708 22.912,106.2378 22.9395,106.2378 22.9504,106.2048 22.9834,106.1719 22.9834,106.1389 22.9944,106.1169 22.9834,106.106 22.9834,106.084 22.9944,106.062 22.9889,106.0071 22.9889,106.0181 22.9559,106.0071 22.9395,105.9631 22.9504,105.9521 22.934,105.9302 22.9449,105.9082 22.9395,105.8972 22.934,105.8862 22.9175,105.8752 22.9175,105.8752 22.934,105.8533 22.9559,105.8533 22.9669,105.8423 22.9669,105.8423 22.9779,105.8423 22.9834,105.8203 22.9779,105.8093 22.9889,105.7764 23.0219,105.7544 23.0328,105.7434 23.0273,105.7104 23.0658,105.6775 23.0603,105.6445 23.0768,105.6226 23.0603,105.6116 23.0713,105.5786 23.0658,105.5676 23.0713,105.5676 23.0988,105.5676 23.1097,105.5676 23.1317,105.5676 23.1647,105.5457 23.1921,105.5347 23.2416,105.5676 23.2526,105.5676 23.291,105.5896 23.2965,105.5896 23.3075,105.5896 23.313,105.6116 23.313,105.6116 23.324,105.6226 23.324,105.6555 23.3459,105.6775 23.3405,105.6665 23.324,105.6775 23.324,105.6995 23.3295,105.6885 23.3459,105.6665 23.3514,105.6885 23.3569,105.6885 23.3679,105.6775 23.3734,105.6555 23.3899,105.6335 23.4009,105.6665 23.4009,105.6665 23.4064,105.6995 23.3954,105.7324 23.4283,105.7434 23.4338,105.7654 23.4613,105.7983 23.4723,105.8093 23.4668,105.8203 23.4778,105.8203 23.5052,105.8203 23.5162,105.8752 23.5327,105.8972 23.5217,105.9082 23.4998,105.9412 23.5052,105.9521 23.4943,105.9961 23.4888,105.9961 23.4668,105.9851 23.4558,105.9961 23.4448,106.0181 23.4558,106.0181 23.4668,106.04 23.4833,106.073 23.4888,106.084 23.5217,106.106 23.5217,106.106 23.5327,106.1499 23.5712,106.1169 23.5931,106.1169 23.6041,106.1389 23.6206,106.1499 23.6646,106.1499 23.6865,106.1609 23.725,106.1499 23.736,106.1389 23.8019,106.1499 23.8184,106.1938 23.8184,106.1938 23.8348,106.1829 23.8458,106.1719 23.8623,106.1938 23.8623,106.1938 23.8733,106.1829 23.8843,106.1609 23.8843,106.1389 23.9282,106.1389 23.9557,106.1169 23.9667,106.095 23.9886,106.084 23.9941,106.095 24.0051,106.084 24.0216,106.062 24.0161,106.051 24.0216,106.0291 24.0381,105.9961 24.0656,105.9961 24.0765,106.0181 24.082,106.0181 24.0875,106.0291 24.104,106.0071 24.0985,105.9961 24.115,106.0071 24.1205,105.9412 24.1095,105.9302 24.1205,105.8972 24.1095,105.9082 24.0875,105.8972 24.0875,105.9082 24.071,105.8972 24.0491,105.8862 24.0436,105.8533 24.0546,105.8423 24.0271,105.8203 24.0326,105.7983 24.0216,105.7874 24.0326,105.7983 24.0546,105.7654 24.071,105.7434 24.0546,105.6995 24.0656,105.6775 24.0381,105.6445 24.0326,105.6335 24.0765,105.6445 24.0875,105.6335 24.0875,105.6335 24.126,105.6006 24.137,105.5457 24.126,105.5237 24.126,105.5347 24.115,105.5237 24.104,105.5017 24.0436,105.5127 24.0271,105.4907 24.0161,105.4468 24.0326,105.4138 24.0271,105.3918 24.0656,105.3479 24.082,105.3149 24.115,105.271 24.104,105.271 24.093,105.293 24.082,105.282 24.0656,105.26 24.0601,105.238 24.0765,105.2271 24.0875,105.2161 24.0985,105.1941 24.1205,105.1831 24.1315,105.1831 24.1644,105.2051 24.1699,105.2161 24.1589,105.238 24.2029,105.2271 24.2194,105.2161 24.2194,105.2051 24.2303,105.2051 24.2523,105.2051 24.2578,105.1831 24.2523,105.1831 24.2633,105.1611 24.2798,105.1831 24.2908,105.1721 24.3018,105.1941 24.3292,105.1392 24.3677,105.1172 24.3622,105.0952 24.3842,105.1062 24.3951,105.1062 24.4006,105.1062 24.4116,105.0623 24.4281,105.0403 24.4391,104.9963 24.4281,104.9744 24.4061,104.9304 24.4061,104.9194 24.4226,104.8645 24.4281,104.8425 24.4501,104.8096 24.4391,104.7766 24.4446,104.7766 24.4556,104.7656 24.4611,104.7437 24.4391,104.7217 24.4446,104.6997 24.4226,104.7217 24.3732,104.7107 24.3512,104.7327 24.3457,104.7217 24.3292,104.6997 24.3182,104.6558 24.3622,104.6118 24.3787,104.6338 24.3951,104.6118 24.4226,104.5789 24.4226,104.5679 24.472,104.5569 24.4775,104.5459 24.5105,104.5459 24.5215,104.5239 24.5435,104.502 24.5929,104.502 24.6259,104.48 24.6478,104.469 24.6368,104.447 24.6368,104.447 24.6423,104.469 24.6423,104.491 24.6533,104.5239 24.7247,104.5349 24.7302,104.5569 24.7247,104.5679 24.7137,104.6008 24.7083,104.6008 24.6918,104.6338 24.6588,104.6997 24.6533,104.6997 24.6478,104.6997 24.6313,104.7107 24.6259,104.7437 24.6204,104.7656 24.6588,104.8425 24.6808,104.8645 24.7028,104.8645 24.7247,104.8865 24.7412,104.9084 24.7577,104.9744 24.7687,105.0293 24.7906,105.0293 24.8181,105.0403 24.8511,105.0403 24.873,105.0623 24.8895,105.0732 24.9115,105.1282 24.95,105.1392 24.9609,105.1611 24.9609,105.1831 24.9829,105.2161 24.9939,105.2161 24.9884,105.238 24.9774,105.238 24.9664,105.26 24.9664,105.26 24.9445,105.271 24.928,105.3259 24.9225,105.3699 24.9445,105.4358 24.9225,105.4468 24.906,105.4578 24.8676,105.4688 24.8566,105.4907 24.8401,105.5017 24.8071,105.5676 24.7961,105.6006 24.8071,105.6226 24.7797,105.7104 24.7687,105.7324 24.7412,105.7544 24.7357,105.7654 24.7192,105.8093 24.7028,105.8313 24.7028,105.8533 24.7137,105.8643 24.7302,105.8972 24.7247,105.9412 24.7247,105.9631 24.6753,105.9851 24.6588,105.9851 24.6533,106.0291 24.6368,106.051 24.6698,106.051 24.6863,106.1169 24.7137,106.1169 24.7247,106.1389 24.7302,106.1499 24.7632,106.1719 24.7577,106.1829 24.7852,106.1829 24.8016,106.1938 24.8126,106.2048 24.8566,106.1938 24.873,106.1938 24.8895,106.1609 24.939,106.1499 24.95,106.1499 24.9609,106.1938 24.9554,106.2158 24.9829,106.2488 24.9719,106.2708 24.9829,106.3037 24.9774,106.3367 24.9884,106.4026 25.0049,106.4465 25.0159,106.4685 25.0378,106.5125 25.0543,106.5234 25.0708,106.5454 25.0818,106.5674 25.0818))
+                //POLYGON((104.447 22.8571,107.8857 22.8571,107.8857 25.0983,104.447 25.0983,104.447 22.8571))
+                var latlngs = [{ lng: 104.447, lat: 22.8571 }, { lng: 107.8857, lat: 22.8571 }, { lng: 107.8857, lat: 25.0983 }, { lng: 104.447, lat: 25.0983 }, { lng: 104.447, lat: 22.8571 }];
+                //var polyline = L.polyline(latlngs, { color: 'red', fill: true, fillColor: 'blue' });
+                mapService.addPolygon('map',latlngs,{ color: 'red', fill: true, fillColor: 'blue',weight:1 }
+                ,function(p){
+                    p.bindPopup("i am polyon");
+                $scope.map.fitBounds(p.getBounds());
+                });
+                
+            }
+            $scope.addPoint = function () {
+                //var marker = { lng: 106.6187418000, lat: 23.9021997000, message: 'i am a marker.' ,draggable:true ,riseOnhove:true };//L.marker({ lng: 106.6187418000, lat: 23.9021997000 }, { title: 'i am a marker.' });
+                //$scope.markers['d'] = marker;
+                mapService.addMarker('map',{ lng: 106.6187418000, lat: 23.9021997000}
+                ,{title: 'i am a marker.' ,draggable:true ,riseOnhove:true });
+                
+                $scope.map.panTo({ lng: 106.6187418000, lat: 23.9021997000 });
+            };
+            $scope.addCircle = function () {
+                //创建圆形
+                var c = L.circle({ lng: 106.6187418000, lat: 23.9021997000 }, 500, { color: 'red', fill: true, fillColor: 'green', fillOpacity: 0.7 });
+                $scope.log=window.angular.toJson(c.toGeoJSON())
+                //将图形添加到地图中
+                c.addTo($scope.map);
+                //添加popup
+                c.bindPopup("I am circlePopup.<input type='text' width='56' value='input text' />", {keepInView:true,offset:[9,-8],zoomAnimation:false})
+                //给图形添加事件,c.on('mouseover', function (mouseEvent) { });
+                c.on('mouseover', function (mouseEvent) {
+                    c.openPopup(mouseEvent.latlng);
+                });
+                c.on('mouseout', function (mouseEvent) {
+                    c.closePopup();
+                });
+
+            }
+            $scope.markers = {
+                //'m1':{ lng: 106.6187418000, lat: 23.9021997000 ,message: 'i am a marker.' }
+            };
+            $scope.bindingClick = false;
+            //监控地图点击事件，添加标记
+            $scope.addMarkerByClick = function () {
+                function addCMarker(ev) {
+                    // var m = L.marker(ev.latlng, { title: ' i am add by click.' })
+                   // var m = L.cellMarker(ev.latlng, { title: 'i am cell.' , cellType: 1 ,angle:270});
+                   //添加基站
+                    mapService.addCellMarker('map',ev.latlng,{ title: 'i am cell.' , cellType: 1 ,angle:270},
+                    function(cell){
+                         alert(window.angular.toJson(cell._latlng));
+                    });
+                   // m.addTo($scope.map);
+                    var m1 = L.cellMarker(ev.latlng, { title: 'i am cell1.' , cellType: 1 ,angle:30,netType:1 ,cellColors:{1:'yellow',7:'red',5:'blue',8:'purple',10:'#ff3399'}});
+                    m1.addTo($scope.map);
+                    var m2 = L.cellMarker(ev.latlng, { title: 'i am cell2.' , cellType: 1 ,angle:120});
+                   m2.on('click',function(me){
+                       alert(window.angular.toJson(me.latlng));// window.angular.toJson(polygon.toGeoJSON())
+                   });
+                    m2.addTo($scope.map);
+                }
+                
+                $scope.map.once('click', addCMarker);
+                   
+                   
+               
+            };
+            //$scope.
+            //$scope.newPolyline.editing .enable();
+            $scope.DrawLine = function () {
+                var drawLayer = $scope.overlayLayers['画布'];
+                mapService. DrawPolygon('map',function(p){
+                    drawLayer.addLayer(p);
+                    //输出多边形geojson
+                    $scope.log = window.angular.toJson(p.toGeoJSON());
+                    $scope.log +="getBounds:"+ window.angular.toJson(p.getBounds());
+                });
+                // var newPolyline = L.polyline([], { color: 'blue', weight: 1 });
+                // drawLayer.addLayer(newPolyline);
+                // $scope.map.on('click', function (ev) {
+                //     newPolyline.addLatLng(ev.latlng);
+                // });
+                // newPolyline.once('dblclick', function (ev) {
+                //     $scope.map.off('click')//clearAlleventListeners();
+                //     var lls = newPolyline.getLatLngs();
+                //     if (lls.length >= 3) {
+                //         //自动闭合
+                //         newPolyline.addLatLng(lls[0])
+                //         //创建多边形 //添加填充色,添加到图层中
+                //         var polygon = L.polygon(newPolyline.getLatLngs()
+                //             , {fill:true,fillColor:'blue', weight:2 ,opacity:0.6});
+                //         drawLayer.addLayer(polygon);
+                //        
+                //         //输出geojson
+                //         $scope.log = window.angular.toJson(polygon.toGeoJSON());
+                //     } else {
+                //         
+                //        
+                //     }
+                //     //删除画线
+                //     drawLayer.removeLayer(newPolyline);
+                // });
+            };
+            $scope.AddCell = function () {
+              
+                    //{ "type": "Feature", "properties": {}, "geometry": { "type": "Polygon", "coordinates": [[[106.61064147949217, 23.89855077669015], [106.59467697143555, 23.87422219195088], [106.56858444213867, 23.866530268489296], [106.5483283996582, 23.868728007534923], [106.53390884399414, 23.88583769986199], [106.54369354248047, 23.90263125245046], [106.5648078918457, 23.907496266765104], [106.68205261230469, 23.899806321409514], [106.68994903564453, 23.89148811049623], [106.61064147949217, 23.89855077669015]]] } }
+                //var cellLayer = L.geoJson(cellDatas, {
+                //    style: function (feature) {
+                //        return { color:'green',weight:5}
+                //    }
+                //    , onEachFeature: function (feature, layer) {
+                //        layer.bindPopup(feature.properties.name)
+                //    }
+                //});
+                var cellDatas = [{ cellID: 2, cellType: 1, netType: 5, name: "小区2", angle: 0
+                ,  lng: 106.61064147949217, lat: 23.900591030667897 }
+                ,{ cellID: 12, cellType: 1, netType: 1, name: "小区12", angle: 80
+                ,  lng: 106.61064147949217, lat: 23.900591030667897 }
+                ,{ cellID: 13, cellType: 1, netType: 7, name: "小区13", angle: 280
+                ,  lng: 106.61064147949217, lat: 23.900591030667897 }
+                ,{ cellID: 112, title:'我是室分', cellType: 2, netType: 10, name: "室内", angle: 80
+                ,  lng: 106.5648078918457, lat: 23.907496266765104 }
+                 ,{ cellID: 112, title:'我是宏站', cellType: 0, netType: 7, name: "室内", angle: 80
+                ,  lng: 106.5648078918457, lat: 23.908497266765104 }];
+               
+               mapService.addCellLayer("map",'基站',cellDatas,{cellClick:function(ev){
+                   alert(window.angular.toJson(ev.target.data));
+               }});
+                //var cellLayer = L.cellLayer().addLayers(cellDatas);//cluster()
+               // var cellLayer = L.cellLayer.cluster().add(cellDatas);//cluster()
+                //drawLayer.addLayer(drawLayer);
+                // window.angular.forEach(cellDatas, function ( v,k) {
+                //     cellLayer.addLayer($scope.DrawCell(v.cellType, v.netType, v.angle, v.coordinates));
+                // });
+               // cellLayer.addTo($scope.map);
+               // $scope.overlayLayers['基站']=cellLayer;
+            };
+            $scope.DrawCell = function (type, netType, angle, latlng) {
+                var el = L.ellipse(latlng, [20,200], angle 
+                    , {
+                        color: 'green', weight: 5, fill: true, fillColor: 'green',startAngle:0,endAngle:180
+                    });
+                return el;
+            };
+            $scope.map ;
+            //$scope.initMap('map');
+            //初始化地图
+           mapService.initMap('map'
+                    ,{scale:true,layerControl:true,baselayers:$scope.baselayers, overlayLayers:$scope.overlayLayers}
+                ,function(m){
+                    $scope.map = m;
+                }
+           );
+        } ]);
+    </script>
+</head>
+<body ng-controller="BasicLegendController"><!--legend="legend" -->
+    <leaflet id="map" lf-center="baise" defaults="defaults" tiles="tiles" markers="markers" width="100%" height="480px"></leaflet>
+   <div>
+       
+       <input type="button" value="addmarker" ng-click="addPoint()" width="50" />
+       <input type="button" value="addPolygon" width="50" ng-click="addPolyon()" />
+       <input type="button" value="addCircle" width="50" ng-click="addCircle()" />
+       <input type="button" value="addMarkerByClick" width="50" ng-click="addMarkerByClick()"/>
+       <input type="button" value="DrawLine" width="50" ng-click="DrawLine()" />
+       <input type="button" value="AddCells" width="50" ng-click="AddCell()" />
+   </div>
+    <div >
+        <textarea type="text" style="width:100%" ng-model="log" height="50"></textarea>
+    </div>
+</body>
+</html>

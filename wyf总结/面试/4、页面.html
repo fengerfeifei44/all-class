@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box">
+    <input type="text" id="inp">
+    <div id="div"></div>
+    <ul id="ul"></ul>
+</div>
+<script>
+    var inp = document.getElementById('inp');
+    var div = document.getElementById('div')
+    inp.onkeyup = function () {
+        var str = inp.value;
+        var ary = str.split('');
+        var obj = {}
+
+        for (var i = 0; i < ary.length; i++) {
+            var val = ary[i]
+            console.log();
+            if (typeof obj[val] != 'undefined') {
+                obj[val]++
+
+            } else {
+                obj[val] = 1
+
+            }
+        }
+
+        var str=''
+        for (var key in obj) {
+            str+=`<div> 字符：${key}出现 ${obj[key]}</div> `
+
+        }
+        div.innerHTML=str
+    }
+   /* var oInp=document.getElementById('inp');
+    var oUl=document.getElementById('ul');
+    oInp.onkeyup=function (e) {
+        var str=oInp.value;
+        console.log(this.value)
+        var obj={};
+        for (var i=0;i<str.length;i++){
+            var cur=str[i];
+            if(obj[cur]){
+                obj[cur]++;
+            }else {
+                obj[cur]=1;
+            }
+        }
+        for (var key in obj){
+            var li=document.createElement('li');
+            li.innerHTML=key+'输出了'+obj[key]+'次';
+            oUl.appendChild(li);
+        }
+    }*/
+</script>
+</body>
+</html>

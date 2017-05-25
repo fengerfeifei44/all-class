@@ -3,8 +3,51 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        *{
+            margin: 0;;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            margin: 50px auto;
+            width: 300px;
+
+        }
+       .box li{
+           float: left;
+           width: 100px;
+           height: 30px;
+           line-height: 30px;
+           background: lightblue;
+           text-align: center;
+       }
+        .box li.on{
+            background: yellow;
+        }
+        .banner div{
+            width: 300px;
+            height: 300px;
+            background: #cccccc;
+        }
+        .banner .show{
+           display: block;
+        }
+    </style>
 </head>
 <body>
+<div id="box" class="box">
+    <ul>
+        <li class="on">吃饭</li>
+        <li>睡觉</li>
+        <li>打豆豆</li>
+    </ul>
+    <div class="banner">
+        <div class="show">吃饭</div>
+        <div>睡觉</div>
+        <div>打豆豆</div>
+    </div>
+</div>
 
 </body>
 </html>

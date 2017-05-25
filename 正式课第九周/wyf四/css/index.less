@@ -1,59 +1,240 @@
 @import (reference) 'public';
 html{
   font-size: 100px;
+
 }
-html,body,.cube{
+html,body{
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  background: #EBF0F5;
 }
-.cube{
-  position: relative;
-  background: url("../cube/zf_cubeBg.jpg") no-repeat center;
-  background-size: cover;
-  perspective: 2000px;
-  .cubeBox{
-    .positionMiddle(5.1,5.1);
-    width: 5.1rem;
-    height: 5.1rem;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transform: scale(0.6) rotateX(-35deg) rotateY(45deg);
-    transform: scale(0.6) rotateX(-35deg) rotateY(45deg);
-    -webkit-transition: .3s;
-    li{
-      position: absolute;
+.main{
+  margin: 0 auto;
+  max-width: 640px;
+}
+/*header*/
+.header{
+  @H:.88;
+  height: unit(@H,rem);
+  line-height:unit(@H,rem);
+  background: @color-blue;
+  a{
+    display: block;
+    font-size: .32rem;
+    color: @color-white;
+    font-weight: normal;
+  }
+
+  .logo{
+    float: left;
+    width: 2.14rem;
+    height: unit(@H,rem);
+    border-right: .02rem solid darken(@color-white,15%);
+    a{
+      display: block;
       width: 100%;
       height: 100%;
+      padding-left: .7rem;
+      background: url("../kbs/icon-logo.png") no-repeat .1rem center;
+      background-size: .48rem .48rem;
+    }
+  }
+  .type{
+    float: left;
+    padding:0 .2rem;
+    height: 100%;
+    border-left: 0.02rem solid lighten(@color-blue,15%);
+  }
+  .login{
+    .type;
+    float: right;
+    border: none;
+  }
+  .menu {
+    float: right;
+    width: unit(@H,rem);
+    height: unit(@H,rem);
+    background: url("../kbs/btn-nav-fold.png") no-repeat center center;
+    background-size: 50% 50%;
+  }
+
+}
+/*nav*/
+.nav{
+
+  width: 100%;
+
+  height: 0;
+  /*height: 2.22rem;*/
+
+  padding: 0;
+  /*padding: .1rem 0;*/
+  overflow: hidden;
+  .transitionFn(@duration: .3s);
+  li{
+    float: left;
+    width: 16%;
+    &:nth-child(6n+1){
+      margin-left: 2%;
+    }
+    a{
+      display: block;
+      height: .74rem;
+      line-height: .74rem;
+      text-align: center;
+      color:@color-text;
+      font-size: .32rem;
+    }
+  }
+
+}
+/*video*/
+.video{
+  height: 3.6rem;
+  background: #000;
+  video{
+    width: 100%;
+    height: 100%;
+  }
+}
+.match{
+  padding: .3rem;
+  background: @color-white;
+  .top{
+    height: .6rem;
+    line-height: .6rem;
+    .startTime{
+      float: left;
+      width: 32%;
+      font-size: .24rem;
+      text-align: center;
+      color:lighten(@color-text,22%);
+    }
+    .team{
+      float: left;
+      width: 34%;
       img{
-        width: 100%;
-        height: 100%;
+        display: inline-block;
+        width: .6rem;
+        height: .6rem;
+        vertical-align: top;
       }
-      &:nth-child(1){
-        -webkit-transform: translateZ(2.55rem);
-        transform: translateZ(2.55rem);
+      span{
+        display: inline-block;
+        color: @color-text;
+        font-size: .4rem;
+        vertical-align:top;
       }
-      &:nth-child(2){
-        -webkit-transform: translateZ(-2.55rem) rotateY(180deg);
-        transform: translateZ(-2.55rem) rotateY(180deg);
+      &.teamLeft{
+        text-align: left;
+        span{
+          margin-left: .24rem;
+        }
       }
-      &:nth-child(3){
-        -webkit-transform: translateX(-2.55rem) rotateY(-90deg);
-        transform: translateX(-2.55rem) rotateY(-90deg);
+      &.teamRight{
+        text-align: right;
+        span{
+          margin-right: .24rem;
+        }
       }
-      &:nth-child(4){
-        -webkit-transform: translateX(2.55rem) rotateY(90deg);
-        transform: translateX(2.55rem) rotateY(90deg);
-      }
-      &:nth-child(5){
-        -webkit-transform: translateY(-2.55rem) rotateX(90deg);
-        transform: translateY(-2.55rem) rotateX(90deg);
-      }
-      &:nth-child(6){
-        -webkit-transform: translateY(2.55rem) rotateX(-90deg);
-        transform: translateY(2.55rem) rotateX(-90deg);
-      }
+    }
+  }
+  .middle{
+    position: relative;
+    margin: .2rem 0;
+    height: .04rem;
+    background: @color-blue;
+    .progress{
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: @color-red;
     }
 
   }
+  .bottom{
+    height: .4rem;
+    line-height: .4rem;
+    color: #999;
+    font-size: .24rem;
+    text-align: center;
+    .support{
+      float: left;
+      width: 34%;
+      &.supportLeft{
+        background: url("../kbs/support-left.png")no-repeat left center;
+        background-size: .24rem .24rem;
+        &.bg{
+          color: @color-red;
+          background: url("../kbs/support-red.png")no-repeat left center;
+          background-size: .24rem .24rem;
+        }
+      }
+      &.supportRight{
+        background: url("../kbs/support-right.png") no-repeat right center;
+        background-size: .24rem .24rem;
+        &.bg{
+          color: @color-blue;
+          background: url("../kbs/support-blue.png")no-repeat left center;
+          background-size: .24rem .24rem;
+        }
+      }
+    }
+    .descript{
+      float: left;
+      width: 32%;
+    }
+  }
+}
+/*play*/
+.player{
+  width: 6.4rem;
+  background: @color-white;
+  position: relative;
+  padding: .2rem .3rem;
+  height: 2.14rem;
+  overflow: hidden;
+  .wrapper{
+    position: absolute;
+    left: .3rem;
+    top: .2rem;
+    width: 100rem;
+    height: 2.14rem;
+    li{
+      float: left;
+      margin-right: .2rem;
+      a{
+        display: block;
+        width: 2.2rem;
+
+        div{
+          position: relative;
+          display: block;
+          background: red;
+          width: 100%;
+          height: 100%;
+          img{
+            width: 100%;
+            height:100%;
+          }
+          span{
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            padding: .04rem;
+            font-size: .24rem;
+            text-align: center;
+            color: @color-white;
+            background: rgba(0, 0, 0, 0.4);
+          }
+
+        }
+
+      }
+    }
+  }
+
 }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            position: absolute;
+            left: 0;
+            top: 60px;
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .box2{
+            position: absolute;
+            left: 1000px;
+            top: 0;
+            width: 1px;
+            height: 300px;
+            background: black;
+        }
+        input{
+
+            width:100px ;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="向左走"/>
+<input type="button" value="向右走"/>
+
+<div class="box1"></div>
+<div class="box2"></div>
+<script src="js/utils.js"></script>
+<script>
+    var oBox1=document.getElementsByTagName('div')[0];
+    var oBox2=document.getElementsByTagName('div')[0];
+    var aInput=document.getElementsByTagName('input');
+   // var target=1000;
+        var oLeft=aInput[0];
+        var oRight=aInput[1];
+    oRight.onclick=function(){
+        move(1000);
+    }
+    oLeft.onclick=function(){
+        move(0);
+    }
+
+    function move(target){
+        _move();
+      function _move(){
+          var curPos=oBox1.offsetLeft;
+          if(curPos<target){
+              if(curPos+10>target){
+                  utils.css(oBox1,"left",target);
+                  return;
+              }
+              curPos+=10;
+              utils.css(oBox1,"left",curPos)
+          }else if(curPos>target){
+              if(curPos-10<target){
+                  utils.css(oBox1,"left",target);
+                  return;
+              }
+              curPos-=10;
+              utils.css(oBox1,'left',curPos)
+          }else{
+              return;
+          }
+          clearTimeout(oBox1.timer);
+          oBox1.timer=setTimeout(function(){
+              move(target)
+          },10)
+      }
+    }
+
+
+</script>
+
+</body>
+</html>

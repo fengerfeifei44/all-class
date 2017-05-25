@@ -3,8 +3,127 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            padding-left: 20px;
+            background: -webkit-linear-gradient(top,lightblue ,lightcyan ,lightgrey);
+        }
+        li{
+            line-height: 30px;
+        }
+        em{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url("img/icon.png") no-repeat -59px -28px;
+           /* background: url("img/icon.png") no-repeat -42px -29px;*/
+
+
+        }
+        .two{
+            padding-left: 40px;
+        }
+        .three{
+            padding-left: 60px;
+        }
+        .four{
+            padding-left: 80px;
+        }
+    </style>
 </head>
 <body>
+<ul class="box">
+    <li>
+        <em></em>
+        <span>第一级菜单</span>
+        <ul class="two">
+            <li>
+                <em></em>
+                <span>第二级菜单</span>
+                <ul class="three">
+                    <li>
+                        <em></em>
+                        <span>第三级菜单</span>
+                        <ul class="four">
+                            <li>
+                                <span>第四季菜单</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>第三级菜单</span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <em></em>
+                <span>第二级菜单</span>
+                <ul class="three">
+                    <li><span>第三级菜单</span></li>
+                    <li><span>第三级菜单</span></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <em></em>
+        <span>第一级菜单</span>
+        <ul class="two">
+            <li>
+                <span>第二级菜单</span>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <em></em>
+        <span>第一级菜单</span>
+        <ul class="two">
+            <li>
+                <span>第二级菜单</span>
+            </li>
+        </ul>
+    </li>
+
+</ul>
+<script src="js/jquery-2.0.3.js"></script>
+<script>
+    var $box=$('.box');
+    var $span=$box.find('span');
+
+     $.each($span,function(index,item){
+        var pre=$(item).prev();
+        if(pre.length){
+            $(item).css('cursor','pointer')
+            $(pre).css('cursor','pointer')
+        }
+    })
+    $box.click(function(e){
+        e=e||window.event;
+        var target= e.target|| e.srcElement;
+        if(target.tagName.toLowerCase()=='span'||target.tagName.toLowerCase()=='em'){
+            var $parent=$(target.parentNode);
+            var $ul=$parent.children('ul');
+            var $em=$parent.children('em')
+            console.log($ul)
+            if($ul.length){
+                if($ul.css('display')=='block'){
+                    var $aul=$parent.find('ul');
+                    var $aem=$parent.find('em')
+                    $aul.css('display','none')
+                    $aem.css('background','url("img/icon.png") no-repeat -59px -28px')
+                }else{
+                    $ul.css('display','block')
+                    $em.css('background','url("img/icon.png") no-repeat -42px -29px')
+                }
+            }
+        }
+    })
+</script>
 
 </body>
 </html>

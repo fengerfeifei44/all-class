@@ -3,8 +3,89 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style></style>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .ul{
+            position: relative;
+            margin: 5px auto;
+            padding: 5px;
+            width: 480px;
+            height: 640px;
+            background: #cccccc;
+        }
+        .ul li{
+            float: left;
+            margin: 5px;
+            width: 150px;
+            height: 150px;
+            background: lightblue;
+        }
+        .ul li img{
+            width: 100%;
+        }
+
+    </style>
 </head>
 <body>
+<ul class="ul">
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/2.png" alt=""/></li>
+    <li><img src="img/3.png" alt=""/></li>
+    <li><img src="img/4.png" alt=""/></li>
+    <li><img src="img/5.png" alt=""/></li>
+    <li><img src="img/6.png" alt=""/></li>
+    <li><img src="img/7.png" alt=""/></li>
+    <li><img src="img/8.png" alt=""/></li>
+    <li><img src="img/9.png" alt=""/></li>
+    <li><img src="img/10.png" alt=""/></li>
+    <li><img src="img/11.png" alt=""/></li>
+    <li><img src="img/12.png" alt=""/></li>
+</ul>
+<script src="js/utils.js"></script>
+<script src="js/event.js"></script>
+<script src="js/move.js"></script>
+<script src="js/Drag.js"></script>
 
+<script>
+    var aLi=document.getElementsByTagName('li');
+    var zIndex=0
+    for(var i=aLi.length-1;i>=0;i--){
+        var oLi=aLi[i];
+        oLi.style.left=(oLi.l=oLi.offsetLeft)+'px';
+        oLi.style.top=(oLi.t=oLi.offsetTop)+'px';
+        oLi.style.position='absolute';
+        oLi.style.margin=0;
+        new Drag(oLi).on('selfDown',creaseIndex).on('selfUp',goHome)
+    }
+    function creaseIndex(){
+        this.ele.style.zIndex=++zIndex;
+    }
+    function goHome(){
+        animate({
+            id:this.ele,
+            target:{
+                left:this.ele.l,
+                top:this.ele.t
+            },
+            duration:500,
+            effect:3
+        })
+
+    }
+    function isHited(l,r){
+        if(l.offsetLeft+ l.offsetWidth< r.offsetLeft|| l.offsetTop+l.offsetHeight< r.offset)
+    }
+  /*  function hited(){
+        var ary=[];
+        for(var i=0;i<aLi.length;i++){
+
+        }
+    }*/
+</script>
 </body>
 </html>

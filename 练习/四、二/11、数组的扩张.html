@@ -5,6 +5,28 @@
     <title></title>
 </head>
 <body>
+<script>
+/**/
+
+    function makeArray(arg){
+        var ary=[];
+        try{
+            ary=[].slice.call(arg);
+        }catch (e){
+            for(var i=0;i<arg.length;i++){
+                ary.push(arg[0])
+            }
+        }
+        return ary;
+    }
+    var oUl=document.createElement('ul');
+    for(var i=0;i<20;i++){
+        var oLi=document.createElement('li');
+        li.innerHTML=i;
+        ul.appendChild(oLi);
+    }
+    oUl.innerHTML+=oLi;
+</script>
 
 </body>
 </html>

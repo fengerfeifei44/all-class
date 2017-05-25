@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--指定一个启动的模块的名字-->
+<html ng-app="zfModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="firstCtrl">{{name}}</div>
+<div ng-controller="secondCtrl">{{name}}</div>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    //module方法
+    var app=angular.module('zfModule',[]);//[]表示创建模块
+    //firstCtrl控制器的名字，控制器的定义（送一个作用域）
+    //$scope 送的$scope名字不能变
+    app.controller('firstCtrl',function($scope){
+        $scope.name=1;
+    });
+    app.controller('secondCtrl',function($scope){
+        $scope.name=2;
+    });
+    /*angular.module('zuModule');//获取模块*/
+</script>
+</body>
+</html>

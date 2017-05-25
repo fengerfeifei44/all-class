@@ -3,8 +3,63 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        div{
+            width: 800px;
+            height: 100px;
+        }
+        canvas{
+            border: 1px solid #000000;
+        }
+    </style>
 </head>
 <body>
-
+<canvas id="canvas" width="800" height="500"></canvas>
+<script>
+    var canvas=document.getElementById('canvas');
+    var ctx=canvas.getContext('2d');
+    function Girl(x,y){
+        this.x=x||50;
+        this.y=y||50;
+        this.state=0;
+    }
+    Girl.prototype={
+        update:function(){
+            this.state=++this.state%4;
+            this.x+=10;
+        },
+        render:function(){
+            ctx.drawImage(game.img,this.state*96,96*2,96,96,this.x,this.y,192,192)
+        }
+    }
+    function Game(){
+        var _this=this;
+        this.img=new Image;
+        this.img.src='img/01.png';
+        this.timer=null;
+        this.img.onload=function(){
+           _this.run();
+        }
+        this.girl=new Girl();
+    }
+    Game.prototype={
+        mainloop:function(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            this.girl.update();
+            this.girl.render();
+        },
+        run:function(){
+            var _this=this;
+            clearInterval(this.timer);
+           this.timer=setInterval(function(){
+               _this.mainloop();
+           },100)
+        }
+        pause:function(){
+            clearInterval(this.timer);
+        }
+    }
+    var game=new Game();
+</script>
 </body>
 </html>

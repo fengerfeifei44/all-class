@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    /*
+    * 1、把类数组转数组
+    * 2、数组排序
+    * 3、掐头去尾
+    * 4、求平均数*/
+    /**
+     *
+     * @returns {string}
+     */
+    function average(){
+       var ary=Array.prototype.slice.call(arguments);
+        ary.sort(function(a,b){return a-b})
+        ary.shift();
+        ary.pop();
+        return (eval(ary.join("+"))/ary.length).toFixed(2);
+    }
+    var res=average(1.2233,5.4455,3.445,6.7788,9.2277);
+    console.log(res);
+</script>
+
+</body>
+</html>

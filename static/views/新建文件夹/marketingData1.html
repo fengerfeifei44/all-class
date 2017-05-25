@@ -1,0 +1,69 @@
+﻿<style type="text/css">
+    
+</style>
+    <div class="container" id="con">
+    <div class="row">
+        <div class="col-md-2 sidebar col-sm-2 col-xs-2" style="float:left;">
+            <ul class="list-unstyled" id="menu" style="behavior: url(#default#savehistory)">
+                <li style="position: relative; behavior: url(#default#savehistory)" ui-sref="main.marketingData.accountManage">
+                    <span style="width: 5px; display: none; height: 49px; background-color: #fe7f2e; position: absolute; left: 0;" class="lineIcon"></span>
+                    <img src="imgs/accountS.png" alt="" class="accountImg" />
+
+                    <span class="text">账号管理</span>
+                </li>
+
+
+
+
+                <li ui-sref="main.marketingData.moneyManage">
+                    <span style="display: none; width: 5px; height: 49px; background-color: #fe7f2e; position: absolute; left: 0;" class="lineIcon"></span>
+                    <img src="imgs/money.png" alt="" class="moneyImg" />
+                    <span class="text">充值管理</span>
+                </li>
+                <li ui-sref="main.marketingData.adContentManage">
+                    <span style="display: none; width: 5px; height: 49px; background-color: #fe7f2e; position: absolute; left: 0;" class="lineIcon"></span>
+                    <img src="imgs/adcontent.png" alt="" class="adContentImg" />
+                    <span class="text">广告内容管理</span>
+                </li>
+                <li ui-sref="main.marketingData.adEffect">
+                    <span style="display: none; width: 5px; height: 49px; background-color: #fe7f2e; position: absolute; left: 0;" class="lineIcon"></span>
+                    <img src="imgs/adeffect.png" alt="" class="adEffectImg" />
+                    <span class="text">广告效果监控</span>
+                </li>
+                <li ui-sref="main.marketingData.blackList">
+                    <span style="display: none; width: 5px; height: 49px; background-color: #fe7f2e; position: absolute; left: 0;" class="lineIcon"></span>
+                    <img src="imgs/blacklist.png" alt="" class="blackListImg" />
+                    <span class="text">黑名单</span>
+                </li>
+                <li ui-sref="main.marketingData.systemLogin">
+                    <span style="display: none; width: 5px; height: 49px; background-color: #fe7f2e; position: absolute; left: 0;" class="lineIcon"></span>
+                    <img src="imgs/systemlogin.png" alt="" class="systemLoginImg" />
+                    <span class="text">系统日志</span>
+                </li>
+                <li ui-sref="main.marketingData.UsrFeedbackDetail">
+                    <span style="display: none; width: 5px; height: 49px; background-color: #fe7f2e; position: absolute; left: 0;" class="lineIcon"></span>
+                    <img src="imgs/usrfeedback3.png" alt="" class="usrfeedback3" />
+                    <span class="text">用户反馈</span>
+                </li>
+                <li ui-sref="main.marketingData.webset">
+                    <span style="display: none; width: 5px; height: 49px; background-color: #fe7f2e; position: absolute; left: 0;" class="lineIcon"></span>
+                    <img src="imgs/tactics.png" alt="" class="tactics" />
+                    <span class="text">策略下发</span>
+                </li>
+                <li ui-sref="main.marketingData.platMonitor">
+                    <span style="display: none; width: 5px; height: 49px; background-color: #fe7f2e; position: absolute; left: 0;" class="lineIcon"></span>
+                    <img src="imgs/platMonitor1.png" alt="" class="platMo" />
+                    <span class="text">平台监控</span>
+                </li>
+            </ul>
+            <a href="javascript:void(0);" class="flexButton" ng-click="flex()"><img src="imgs/flex.png" alt="" class="flex" /></a>
+        </div>
+        <div class="col-md-10 main col-sm-10 col-xs-10" style="float: left; margin-top: 3px;">
+           
+            <div ui-view style="position:relative"></div>
+
+
+
+        </div>
+    </div>
+</div>

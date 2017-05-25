@@ -3,8 +3,158 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        html,body{
+            height: 100%;
+        }
+        img{
+            display: block;;
+            width: 270px;
+            height: 129px;
+            margin: 80px auto 30px;
+        }
+        div{
+            position: relative;
+            margin: 0 auto;
+            width: 640px;
+            height: 40px;
+            line-height: 40px;
+        }
+        input{
+            float: left;
+            border: 1px solid #333333;
+            width: 530px;
+            height: 38px;
+            padding-left: 8px;
+            font-size: 20px;
+        }
+       span{
+           float: left;
+           width: 100px;
+           height: 40px;
+           background: lightseagreen;
+           text-align: center;
+           line-height: 40px;
+           cursor: pointer;
+       }
+        ul{
+            display: none;
+            position: absolute;
+            top: 39px;
+            left: 0px;
+            border: 1px solid #333333;
+            width: 638px;
+        }
+        li{
+            width: 100%;
+            height: 100%;
+        }
+        li a{
+
+            height: 100%;
+            line-height: 40px;
+            display: block;
+            padding-left: 8px;
+        }
+        li a:hover{
+            background: #cccccc;
+        }
+    </style>
 </head>
 <body>
+<img src="bd.png" alt=""/>
+<div id="box">
+    <input type="text"/>
+    <span>搜索</span>
+    <ul>
+        <li><a href="javascript:;">哈哈</a></li>
+        <li><a href="javascript:;">嘿嘿</a></li>
+        <li><a href="javascript:;">嘻嘻</a></li>
+        <li><a href="javascript:;">呵呵</a></li>
+    </ul>
+</div>
+<script>
+    var oImg=document.getElementsByName('img')[0];
+    var oBox=document.getElementById('box')
+    var oTxt=oBox.getElementsByTagName('input')[0];
+    var oBtn=oBox.getElementsByTagName('span')[0];
+    var oUl=oBox.getElementsByTagName('ul')[0];
+    var aA=oBox.getElementsByTagName('a');
+    var n=-1;
+    var oldValue=null;
+    //点击txt,如果有内容就显示，没有就隐藏；
+    //聚焦时有内容显示，无内容隐藏；
+    //点击a,让a 的内容为txt的内容，ul隐藏，同时搜索；
+    //点击除了搜索框和下拉菜单以外的任何内容，都隐藏；
+    //按键盘上下键都能切换内容，按下回车键开始搜索
+    //点击btn开始搜素；
+    oTxt.onfocus=oTxt.onkeyup=function(){
+        if(this.value.length){
+            oUl.style.display='block';
+        }else{
+            oUl.style.display='none';
+        }
+    }
+    oTxt.onclick=function(e){
+        e=e||window.event;
+        e.stopPropagation? e.stopPropagation(): e.cancelBubble=true;
+    }
+    document.body.onclick=function(e){
+        e=e||window.event;
+        var target= e.target|| e.srcElement;
+        if(target.tagName.toLowerCase()==='a'){
+            oTxt.value=target.innerHTML;
+            search();
+        }
+        if(target==oBtn){
+            search();
+        }
+        if(target!==oTxt||target!==oBtn){
+            oUl.style.display='none'
+        }
+    }
+    oTxt.onkeydown=function(e){
+        e=e||window.event;
+        if(e.keyCode==40){
+            n++;
+            if(n>=aA.length){
+                n=-1;
+            }
+            list();
+        }else if(e.keyCode===38){
+            n--;
+            if(n<=-2){
+                n=aA.length-1;
+            }
+            list();
+        }else if(e.keyCode==13){
+            search();
+        }
+    }
+    function list(){
+        if(!oldValue){
+            oldValue=oTxt.value;
+        }
+        for(var i=0;i<aA.length;i++){
+            aA[i].style.background=null;
+        }
+        if(n===-1){
+            oTxt.value=oldValue;
+        }else{
+            aA[n].style.background='#ccc';
+            oTxt.value=aA[n].innerHTML;
+        }
+    }
+    function search(){
+        window.open('https://www.baidu.com/s?wd='+oTxt.value);
+    }
+</script>
 
 </body>
 </html>

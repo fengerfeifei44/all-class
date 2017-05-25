@@ -1,3 +1,62 @@
-/**
- * Created by Administrator on 2016/12/27.
- */
+(function(pro){
+    function queryURLParameter(){
+
+        var reg=/([^?=&#]+)=([^?=&#]+)/g;
+        var obj={};
+            this.replace(reg,function(){
+            obj[arguments[1]]=arguments[2];
+        });
+        return obj;
+    }
+    pro.queryURLParameter=queryURLParameter;
+})(String.prototype);
+(function(){
+    var submit=document.getElementById('submit');
+    var userName=document.getElementById('userName');
+    var url=window.location.href;
+    var urlObg=url.queryURLParameter();
+    var curId=urlObg['id'];
+
+    if(curId!=='undefined'){
+        ajax({
+            url:'/getInfo?id='+curId,
+            type:'get',
+            cache:false,
+            dataType:'json',
+            success:function(result){
+                console.log(result);
+                if(result && result.code===0){
+                    userName.value=result['data']['name'];
+
+                }
+            }
+        })
+    }
+    submit.onclick=function(){
+        if(typeof curId!=='undefined'){
+            ajax({
+                url:'/updateInfo',
+                type:'post',
+                dataType:'json',
+                data:{id:curId,name:userName.value},
+                success:function(result){
+                    window.location.href='index.html';
+                }
+            })
+            return;
+        }
+
+            ajax({
+                url:'/addInfo',
+                type:'post',
+                dataType:'json',
+                data:{name:userName.value},
+                success:function(result){
+                    if(result && result.code==0){
+                        window.location.href='index.html';
+                    }
+                }
+            })
+
+    }
+})();

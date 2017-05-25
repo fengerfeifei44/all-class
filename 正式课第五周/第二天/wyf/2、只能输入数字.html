@@ -5,6 +5,17 @@
     <title></title>
 </head>
 <body>
+<input type="text"/>
+<script>
+    var input=document.getElementsByTagName('input')[0];
+    input.onkeydown=function(e){
+        e=e||window.event;
+       // console.log(e.keyCode)
+        if((e.keyCode<48|| e.keyCode>57 )&& e.keyCode!=8){
+            e.preventDefault? e.preventDefault(): e.returnValue=false;
+        }
+    }
+</script>
 
 </body>
 </html>

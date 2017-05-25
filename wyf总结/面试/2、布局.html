@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body,.box{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .box{
+            position: relative;
+        }
+        .top{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100px;
+            background: black;
+        }
+        .left{
+            position: absolute;
+            top:100px;
+            left: 0;
+            bottom: 50px;
+            width: 100px;
+            background: yellow;
+        }
+        .right{
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            right:0;
+            bottom: 50px;
+            background: red;
+            /*overflow: auto;*/
+
+        }
+        .bottom{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="top"></div>
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="bottom"></div>
+</div>
+</body>
+</html>

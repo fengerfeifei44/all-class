@@ -3,8 +3,42 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        canvas{
+            border: 1px solid #000000;
+        }
+    </style>
 </head>
 <body>
+<canvas id="canvas" width="800" height="500"></canvas>
+<script>
+    var canvas=document.getElementById('canvas');
+    var ctx=canvas.getContext('2d');
+    var img=new Image;
+    img.src="img/1.jpg";
+    function Girl(x,y){
+        this.x=x||50;
+        this.y=y||50;
+        this.state=0;
+    }
+    Girl.prototype={
+        update:function(){
+            this.state=++this.state%4;
+            console.log(this.state)
+            this.x+=40;
+        },
+        render:function(){
+            ctx.drawImage(img,this.state*96,100,96,96,this.x,this.y,192,192);
+        }
+    }
+   var g=new Girl();
+    setInterval(function(){
+        ctx.clearRect(0,0,canvas.width,canvas.height)
+        g.update();
+        g.render();
 
+    },100)
+
+</script>
 </body>
 </html>

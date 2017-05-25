@@ -1,0 +1,15 @@
+@color:red;
+#div1{
+  width: 200px;
+  height: 200px;
+  background: @color;
+  &:hover{
+    width: 400px;
+    height: 400px;
+    opacity: 0.5;
+    .transition(all,1s,ease,0s)
+  }
+}
+.transition(@property,@duration,@timing-function,@delay){
+  transition: @arguments;
+}

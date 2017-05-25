@@ -5,6 +5,31 @@
     <title></title>
 </head>
 <body>
+<script>
+    var oBtn=document.getElementsByTagName('a')[0];
+    //1.总距离target  2.总时间：duration  3.频率：interval 4.步长：target/duration*interval;
+    //每次在最新的距离上-固定的步长=新距离；给元素赋值他最新的距离；
+    window.onscroll=function(){
+        oBtn.onclick=function(){
+            var target=utils.win('scrollTop');
+            var duration=1000;
+            var interval=10;
+            var step=target/duration*interval;
+            var timer=setInterval(function(){
+                //1.拿到最新的距离，并且用最新的距离-step；
+                var curTop=utils.win('scrollTop');
+                curTop-=step;
+                if(curTop<=0){
+                    clearInterval(timer);
+                    return;
+                }
+                utils.win('scrollTop',curTop);
+                console.log(curTop)
+            },interval)
+        }
+    }
+
+</script>
 
 </body>
 </html>

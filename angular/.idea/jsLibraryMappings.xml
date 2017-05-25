@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/first" libraries="{angular/first/node_modules}" />
+    <file url="file://$PROJECT_DIR$/wyf/fifty" libraries="{angular/wyf/fifty/node_modules}" />
+    <file url="file://$PROJECT_DIR$/wyf/first" libraries="{angular/wyf/first/node_modules}" />
+    <file url="file://$PROJECT_DIR$/wyf/first/hello" libraries="{angular/wyf/first/hello/node_modules}" />
+    <file url="file://$PROJECT_DIR$/wyf/fourth" libraries="{angular/wyf/fourth/node_modules}" />
+    <file url="file://$PROJECT_DIR$/wyf/second" libraries="{angular/wyf/second/node_modules}" />
+    <file url="PROJECT" libraries="{angular/first/node_modules, angular/wyf/fifty/node_modules, angular/wyf/first/hello/node_modules, angular/wyf/first/node_modules, angular/wyf/fourth/node_modules, angular/wyf/second/node_modules, angular/wyf/third/node_modules}" />
+    <includedPredefinedLibrary name="ECMAScript 6" />
+    <includedPredefinedLibrary name="Node.js Core" />
+    <includedPredefinedLibrary name="WebGL" />
+  </component>
+</project>

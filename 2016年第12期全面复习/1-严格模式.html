@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+     * 在严格模式和非严格模式下的JS区别
+     * - 自己回去总结一下，在高级程序设计第三版的后面有总结
+     * - arguments的映射问题(在非严格模式下：arguments和形参是映射在一起的，一个值发生改变，另外一个值也会跟着改变，但是在严格模式下是没有映射机制的，arguments和形参是单独的个体)
+     * - 在严格模式下是禁止使用arguments.callee/arguments.callee.caller的
+     * - 在严格模式下函数的函数的主体不指定默认是undefined，非严格模式下是window
+     * - ...
+     */
+    //    function fn(n, m) {
+    //        //->m:2
+    //        arguments[1] = 12;
+    //        //->m:12
+    //        console.log(m);
+    //
+    //        //->arguments[0]=1
+    //        n = 13;
+    //        //->arguments[0]=13
+    //        console.log(arguments[0]);
+    //
+    //        console.log(arguments.callee); //->当前函数本身 =>fn
+    //        console.log(arguments.callee.caller); //->当前函数执行的区域 =>sum
+    //    }
+    //
+    //    function sum() {
+    //        fn(1, 2);
+    //    }
+    //    sum();
+</script>
+
+<script>
+    "use strict";
+    //    function fn(n, m) {
+    //        //->m:2
+    //        arguments[1] = 12;
+    //        //->m:2
+    //        console.log(m);
+    //
+    //        //->arguments[0]=1
+    //        n = 13;
+    //        //->arguments[0]=1
+    //        console.log(arguments[0]);
+    //
+    //        //->Uncaught TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them(…)
+    //        console.log(arguments.callee);//->当前函数本身 =>fn
+    //        console.log(arguments.callee.caller);//->当前函数执行的区域 =>sum
+    //    }
+    //
+    //    function sum() {
+    //        fn(1, 2);
+    //    }
+    //    sum();
+
+    //    function fn() {
+    //        console.log(this);
+    //    }
+    //    fn();//->undefined 严格模式下不是window而是undefined
+    //    fn.call(1);//->1
+    //    fn.apply(null);//->null
+    //    fn.call(undefined);//->undefined
+    //    fn.call();//->undefined
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function F(){
+        this.x=100;
+        var a=123;
+        alert(a);
+    }
+    F.prototype.bb=9;
+    var f=new F;
+    F();
+    F.aa=1;
+    console.dir(F);
+</script>
+
+</body>
+</html>

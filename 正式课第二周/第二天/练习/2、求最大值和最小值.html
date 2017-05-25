@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var ary=[20,3,12,6,34,5];
+    /*思路1：sort排序*/
+    /*ary.sort(function(a,b){return a-b});
+    var max=ary.pop(),min=ary.shift();
+    console.log(max,min);*/
+
+    //思路2：假设法 for 循环
+   /* var max=ary[0],min=ary[0];
+    for(var i=0;i<ary.length;i++){
+        if(max<ary[i]){max=ary[i]}
+        if(min>ary[i]){min=ary[i]}
+    }
+    console.log(max,min);*/
+
+    //思路3：Math.max +eval
+    /*var str=ary.toString();
+    var max=eval("Math.max("+str+")");
+    var min=eval("Math.min("+str+")");
+    console.log(max,min);*/
+
+    //思路4：Math
+    var max=Math.max.apply(null,ary);
+    var min=Math.min.apply(null,ary);
+    console.log(max,min);
+
+
+</script>
+
+</body>
+</html>

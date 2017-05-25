@@ -1,0 +1,1290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1e711a09-23d1-468a-ae65-a1fdd8a84164" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wyf/fourth/factory.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wyf/fourth/service.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wyf/fourth/服务.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/first/2、防止闪烁.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/first/3、声明数据.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/first/4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/first/5 ng-repeat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/first/6 ng-repeat.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/first/7、购物车.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/first/8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/first/angular1.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/first/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/html.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/nodeText/1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/second/1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/second/2.filter.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/second/3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/second/4、过滤器.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/second/5、在JS中使用过滤器.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/second/cart.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node1/text.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/1、盒子模型.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/1、跑马灯.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/2、单张图片延迟加载.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/2、封装getCss.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/3、win方法.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/3、多张图片的延迟加载.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/default.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/default.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/error.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/error.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/jd.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf/img2/notic.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf总结/1、左右切换轮播图 --原生构造函数/js/event.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../wyf总结/1、左右轮播jQuery版/js/event.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/HTML5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/1、transition.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/3D产品信息.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/5.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/6.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/7、正方体.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/8.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/9.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/animate.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/3D演示.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/3d_axes.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/bg-grid.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/chimpified.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/hs.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/img1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/jd.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/jdLike.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/pic.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/transform-functions-rotate3d_hom4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../八wyf/二/images/yl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../正式课第七周/第三天/js/query.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../正式课第三周/wyf/4、多张图片的重载.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../正式课第三周/wyf/5、单张图片延迟加载.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../正式课第三周/wyf/6、跑马灯.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../正式课第三周/wyf/scrollWidth.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../正式课第二周/第一天.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../第七周第一天/A.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../第七周第一天/B.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../第七周第一天/C.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../第七周第一天/css/css.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../第七周第一天/server.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../第七周第一天/suibian.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../第七周第一天/temp.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../第七周第一天/test.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../第七周第一天/笔记" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/12期JS正式课.iml" afterPath="$PROJECT_DIR$/../.idea/12期JS正式课.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/encodings.xml" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/../.idea/jsLibraryMappings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/misc.xml" afterPath="$PROJECT_DIR$/../.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/first/4.controller.html" afterPath="$PROJECT_DIR$/first/4.controller.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second/1.filter.html" afterPath="$PROJECT_DIR$/second/1.filter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second/2.orderBy.html" afterPath="$PROJECT_DIR$/second/2.orderBy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/second/cart1.html" afterPath="$PROJECT_DIR$/second/cart1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf/回到顶部.html" afterPath="$PROJECT_DIR$/../wyf/回到顶部.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf/回到顶部高级版.html" afterPath="$PROJECT_DIR$/../wyf/回到顶部高级版.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf/标准回到顶部.html" afterPath="$PROJECT_DIR$/../wyf/标准回到顶部.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf/瀑布流基础版.html" afterPath="$PROJECT_DIR$/../wyf/瀑布流基础版.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf/练习1/js/utils.js" afterPath="$PROJECT_DIR$/../wyf/练习1/js/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf/练习1/花瓣网.html" afterPath="$PROJECT_DIR$/../wyf/练习1/花瓣网.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/1、左右切换轮播图 --原生构造函数/1、左右轮播图.html" afterPath="$PROJECT_DIR$/../wyf总结/1、左右切换轮播图 --原生构造函数/1、左右轮播图.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/1、左右切换轮播图 --原生构造函数/js/1.js" afterPath="$PROJECT_DIR$/../wyf总结/1、左右切换轮播图 --原生构造函数/js/1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/1、左右轮播jQuery版/js/tab.js" afterPath="$PROJECT_DIR$/../wyf总结/1、左右轮播jQuery版/js/tab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/1、左右轮播jQuery版/左右轮播图-jQuery.html" afterPath="$PROJECT_DIR$/../wyf总结/1、左右轮播jQuery版/左右轮播图-jQuery.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/4、forEach map封装/js/tab.js" afterPath="$PROJECT_DIR$/../wyf总结/4、forEach map封装/js/tab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/4、forEach map封装/test.html" afterPath="$PROJECT_DIR$/../wyf总结/4、forEach map封装/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/5、求平均值/average.html" afterPath="$PROJECT_DIR$/../wyf总结/5、求平均值/average.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/6、判断是否为公有方法/hasownPub.html" afterPath="$PROJECT_DIR$/../wyf总结/6、判断是否为公有方法/hasownPub.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/7、数组去重/去重.html" afterPath="$PROJECT_DIR$/../wyf总结/7、数组去重/去重.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/一/index.html" afterPath="$PROJECT_DIR$/../wyf总结/一/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/一/js/detail.js" afterPath="$PROJECT_DIR$/../wyf总结/一/js/detail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/一/js/index1.js" afterPath="$PROJECT_DIR$/../wyf总结/一/js/index1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/一/json/custom.json" afterPath="$PROJECT_DIR$/../wyf总结/一/json/custom.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/一/server.js" afterPath="$PROJECT_DIR$/../wyf总结/一/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/一/server1.js" afterPath="$PROJECT_DIR$/../wyf总结/一/server1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/一些常用的网址" afterPath="$PROJECT_DIR$/../wyf总结/一些常用的网址" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/九/js/index1.js" afterPath="$PROJECT_DIR$/../wyf总结/九/js/index1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/九/json/custom.json" afterPath="$PROJECT_DIR$/../wyf总结/九/json/custom.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../wyf总结/九/server.js" afterPath="$PROJECT_DIR$/../wyf总结/九/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/AJAX" afterPath="$PROJECT_DIR$/../正式课第七周/AJAX" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/wyf/css/css.css" afterPath="$PROJECT_DIR$/../正式课第七周/wyf/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/wyf/detail.html" afterPath="$PROJECT_DIR$/../正式课第七周/wyf/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/wyf/index.html" afterPath="$PROJECT_DIR$/../正式课第七周/wyf/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/wyf/js/detail.js" afterPath="$PROJECT_DIR$/../正式课第七周/wyf/js/detail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/wyf/js/index.js" afterPath="$PROJECT_DIR$/../正式课第七周/wyf/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/wyf/json/custom.json" afterPath="$PROJECT_DIR$/../正式课第七周/wyf/json/custom.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/wyf/server1.js" afterPath="$PROJECT_DIR$/../正式课第七周/wyf/server1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/五 笔记" afterPath="$PROJECT_DIR$/../正式课第七周/五 笔记" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/ajax.js" afterPath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/ajax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/ajax封装.js" afterPath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/ajax封装.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/css/css.css" afterPath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/server.js" afterPath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/server1.js" afterPath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/server1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/temp.html" afterPath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/temp.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/test.html" afterPath="$PROJECT_DIR$/../正式课第七周/第二天/wyf/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/第四天/wyf/ajax.js" afterPath="$PROJECT_DIR$/../正式课第七周/第四天/wyf/ajax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/第四天/wyf/test.html" afterPath="$PROJECT_DIR$/../正式课第七周/第四天/wyf/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/练习/一/css/css.css" afterPath="$PROJECT_DIR$/../正式课第七周/练习/一/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/练习/一/detail.html" afterPath="$PROJECT_DIR$/../正式课第七周/练习/一/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/练习/一/index.html" afterPath="$PROJECT_DIR$/../正式课第七周/练习/一/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/练习/一/js/detail.js" afterPath="$PROJECT_DIR$/../正式课第七周/练习/一/js/detail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/练习/一/js/index.js" afterPath="$PROJECT_DIR$/../正式课第七周/练习/一/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/练习/一/json/custom.json" afterPath="$PROJECT_DIR$/../正式课第七周/练习/一/json/custom.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/练习/一/server1.js" afterPath="$PROJECT_DIR$/../正式课第七周/练习/一/server1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第七周/练习/二/server.js" afterPath="$PROJECT_DIR$/../正式课第七周/练习/二/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第三周/wyf/1、getByClass.html" afterPath="$PROJECT_DIR$/../正式课第三周/wyf/1、getByClass.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第三周/wyf/2、hasClass.html" afterPath="$PROJECT_DIR$/../正式课第三周/wyf/2、hasClass.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第三周/wyf/js/utils.js" afterPath="$PROJECT_DIR$/../正式课第三周/wyf/js/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第三周/第一天/win方法.html" afterPath="$PROJECT_DIR$/../正式课第三周/第一天/win方法.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/index.html" afterPath="$PROJECT_DIR$/../正式课第九周/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf三/css/index.less" afterPath="$PROJECT_DIR$/../正式课第九周/wyf三/css/index.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf三/css/public.less" afterPath="$PROJECT_DIR$/../正式课第九周/wyf三/css/public.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf三/index.html" afterPath="$PROJECT_DIR$/../正式课第九周/wyf三/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf三/index1.html" afterPath="$PROJECT_DIR$/../正式课第九周/wyf三/index1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf三/note" afterPath="$PROJECT_DIR$/../正式课第九周/wyf三/note" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf四/css/index.less" afterPath="$PROJECT_DIR$/../正式课第九周/wyf四/css/index.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf四/css/public.less" afterPath="$PROJECT_DIR$/../正式课第九周/wyf四/css/public.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf四/index.html" afterPath="$PROJECT_DIR$/../正式课第九周/wyf四/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf四/js/ejs.min.js" afterPath="$PROJECT_DIR$/../正式课第九周/wyf四/js/ejs.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf四/js/index.js" afterPath="$PROJECT_DIR$/../正式课第九周/wyf四/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf四/js/index1.js" afterPath="$PROJECT_DIR$/../正式课第九周/wyf四/js/index1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf四/js/zepto.min.js" afterPath="$PROJECT_DIR$/../正式课第九周/wyf四/js/zepto.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf四/json/package.json" afterPath="$PROJECT_DIR$/../正式课第九周/wyf四/json/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/wyf四/note" afterPath="$PROJECT_DIR$/../正式课第九周/wyf四/note" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第九周/周末第二天/js/index.js" afterPath="$PROJECT_DIR$/../正式课第九周/周末第二天/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第二周/第一天/1.回调函数.html" afterPath="$PROJECT_DIR$/../正式课第二周/第一天/1.回调函数.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第二周/第一天/7.call.html" afterPath="$PROJECT_DIR$/../正式课第二周/第一天/7.call.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第二周/第五天/测试/1、出现次数最多的单词.html" afterPath="$PROJECT_DIR$/../正式课第二周/第五天/测试/1、出现次数最多的单词.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第二周/第五天/测试/2、键值对.html" afterPath="$PROJECT_DIR$/../正式课第二周/第五天/测试/2、键值对.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第二周/第五天/测试/3、日期格式化封装.html" afterPath="$PROJECT_DIR$/../正式课第二周/第五天/测试/3、日期格式化封装.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/10、放大镜比例计算.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/10、放大镜比例计算.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/11、多级菜单.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/11、多级菜单.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/12、多级菜单.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/12、多级菜单.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/13、放大镜比例.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/13、放大镜比例.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/1、阻止右键弹出窗口.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/1、阻止右键弹出窗口.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/2、只能输入数字.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/2、只能输入数字.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/3、点击a链接删除div.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/3、点击a链接删除div.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/4、鼠标移动.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/4、鼠标移动.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/5、小米购物车.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/5、小米购物车.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/6、小米购物车点击版.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/6、小米购物车点击版.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/7、鼠标跟谁.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/7、鼠标跟谁.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/8、鼠标跟随jQuery.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/8、鼠标跟随jQuery.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/9、放大镜.html" afterPath="$PROJECT_DIR$/../正式课第五周/第二天/wyf/9、放大镜.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第五天/wyf百度.html" afterPath="$PROJECT_DIR$/../正式课第五周/第五天/wyf百度.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第五天/wyf百度1.html" afterPath="$PROJECT_DIR$/../正式课第五周/第五天/wyf百度1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/1、测试.html" afterPath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/1、测试.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/drag.html" afterPath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/drag.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/js/event.js" afterPath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/js/event.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/js/event1.js" afterPath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/js/event1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/js/event2.js" afterPath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/js/event2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/js/event3.js" afterPath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/js/event3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/wyf柯理化函数.html" afterPath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/wyf柯理化函数.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/拖拽.html" afterPath="$PROJECT_DIR$/../正式课第五周/第四天/wyf/拖拽.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/练习考试/1、测试.html" afterPath="$PROJECT_DIR$/../正式课第五周/练习考试/1、测试.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/练习考试/2、回到顶部.html" afterPath="$PROJECT_DIR$/../正式课第五周/练习考试/2、回到顶部.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/练习考试/3、domReady.html" afterPath="$PROJECT_DIR$/../正式课第五周/练习考试/3、domReady.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/练习考试/js/event.js" afterPath="$PROJECT_DIR$/../正式课第五周/练习考试/js/event.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/练习考试/js/top.js" afterPath="$PROJECT_DIR$/../正式课第五周/练习考试/js/top.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/轮播图构造函数复习/js/top.js" afterPath="$PROJECT_DIR$/../正式课第五周/轮播图构造函数复习/js/top.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/轮播图构造函数复习/js/top1.js" afterPath="$PROJECT_DIR$/../正式课第五周/轮播图构造函数复习/js/top1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/轮播图构造函数复习/wyf回到顶部.html" afterPath="$PROJECT_DIR$/../正式课第五周/轮播图构造函数复习/wyf回到顶部.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第五周/轮播图构造函数复习/wyf回到顶部2.html" afterPath="$PROJECT_DIR$/../正式课第五周/轮播图构造函数复习/wyf回到顶部2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/text/1.text.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/text/1.text.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/text/2.正方形.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/text/2.正方形.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/text/3、3D产品.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/text/3、3D产品.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/text/4.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/text/4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/text/5、flex.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/text/5、flex.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/w小球球/index.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/w小球球/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/三/1.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/三/1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/三/less/css/style.less" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/三/less/css/style.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/三/less/less.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/三/less/less.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/三/笔记" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/三/笔记" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/三/阿里云/css/index.css" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/三/阿里云/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/三/阿里云/index.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/三/阿里云/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/个人简历/css/index.css" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/个人简历/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/个人简历/index.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/个人简历/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/四/猎豹/猎豹.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/四/猎豹/猎豹.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/四/笔记" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/四/笔记" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/四/素材/css/index.css" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/四/素材/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/四/素材/css/index1.css" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/四/素材/css/index1.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/四/素材/index.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/四/素材/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/四/素材/index1.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/四/素材/index1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/小球球/index.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/小球球/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/猎豹/css/index.css" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/猎豹/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/猎豹/index.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/猎豹/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/八wyf/猎豹/text.html" afterPath="$PROJECT_DIR$/../正式课第八周/八wyf/猎豹/text.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第八周/第12期第三天less/demo.html" afterPath="$PROJECT_DIR$/../正式课第八周/第12期第三天less/demo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第四周/wyf/1、鼠标跟随.html" afterPath="$PROJECT_DIR$/../正式课第四周/wyf/1、鼠标跟随.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第四周/wyf/2、放大镜固定比例.html" afterPath="$PROJECT_DIR$/../正式课第四周/wyf/2、放大镜固定比例.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第四周/zfpx/wyf.html" afterPath="$PROJECT_DIR$/../正式课第四周/zfpx/wyf.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第四周/第五天/js/wyfTab.js" afterPath="$PROJECT_DIR$/../正式课第四周/第五天/js/wyfTab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第四周/第五天/wyf.html" afterPath="$PROJECT_DIR$/../正式课第四周/第五天/wyf.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第四周/第五天/wyf渐隐渐现轮播图.html" afterPath="$PROJECT_DIR$/../正式课第四周/第五天/wyf渐隐渐现轮播图.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../正式课第四周/第五天/wyf选项卡.html" afterPath="$PROJECT_DIR$/../正式课第四周/第五天/wyf选项卡.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../测试/js/utils.js" afterPath="$PROJECT_DIR$/../测试/js/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../测试/多张图片的延迟加载.html" afterPath="$PROJECT_DIR$/../测试/多张图片的延迟加载.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../测试/检验.html" afterPath="$PROJECT_DIR$/../测试/检验.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../测试/跑马灯.html" afterPath="$PROJECT_DIR$/../测试/跑马灯.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../第一天/css/index.less" afterPath="$PROJECT_DIR$/../第一天/css/index.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../第一天/css/public.less" afterPath="$PROJECT_DIR$/../第一天/css/public.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../第一天/index.html" afterPath="$PROJECT_DIR$/../第一天/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../第一天/js/ejs.min.js" afterPath="$PROJECT_DIR$/../第一天/js/ejs.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../第一天/js/index.js" afterPath="$PROJECT_DIR$/../第一天/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../第一天/node" afterPath="$PROJECT_DIR$/../第一天/node" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../第一天/note2" afterPath="$PROJECT_DIR$/../第一天/note2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/10、拖拽.html" afterPath="$PROJECT_DIR$/../练习/五/10、拖拽.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/11、拖拽.html" afterPath="$PROJECT_DIR$/../练习/五/11、拖拽.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/12、事件库.html" afterPath="$PROJECT_DIR$/../练习/五/12、事件库.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/1、渐隐渐现轮播图jQuery.html" afterPath="$PROJECT_DIR$/../练习/五/1、渐隐渐现轮播图jQuery.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/2、轮播图.html" afterPath="$PROJECT_DIR$/../练习/五/2、轮播图.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/3、只能编辑删除数字.html" afterPath="$PROJECT_DIR$/../练习/五/3、只能编辑删除数字.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/4、事件委托.html" afterPath="$PROJECT_DIR$/../练习/五/4、事件委托.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/5、鼠标移动.html" afterPath="$PROJECT_DIR$/../练习/五/5、鼠标移动.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/6、轮播图.html" afterPath="$PROJECT_DIR$/../练习/五/6、轮播图.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/7、轮播图.html" afterPath="$PROJECT_DIR$/../练习/五/7、轮播图.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/8、轮播图.html" afterPath="$PROJECT_DIR$/../练习/五/8、轮播图.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/9、柯里化函数.html" afterPath="$PROJECT_DIR$/../练习/五/9、柯里化函数.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/drag.html" afterPath="$PROJECT_DIR$/../练习/五/drag.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/drag2.html" afterPath="$PROJECT_DIR$/../练习/五/drag2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/js/event.js" afterPath="$PROJECT_DIR$/../练习/五/js/event.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/js/event1.js" afterPath="$PROJECT_DIR$/../练习/五/js/event1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/js/event4.js" afterPath="$PROJECT_DIR$/../练习/五/js/event4.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/js/tab.js" afterPath="$PROJECT_DIR$/../练习/五/js/tab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/js/tab1.js" afterPath="$PROJECT_DIR$/../练习/五/js/tab1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/js/tab2.js" afterPath="$PROJECT_DIR$/../练习/五/js/tab2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/js/tab3.js" afterPath="$PROJECT_DIR$/../练习/五/js/tab3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/五/js/tabJQuery.js" afterPath="$PROJECT_DIR$/../练习/五/js/tabJQuery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六一/js/Drag1.js" afterPath="$PROJECT_DIR$/../练习/六/六一/js/Drag1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六一/js/drag.js" afterPath="$PROJECT_DIR$/../练习/六/六一/js/drag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六一/js/drop2.js" afterPath="$PROJECT_DIR$/../练习/六/六一/js/drop2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六一/js/event.js" afterPath="$PROJECT_DIR$/../练习/六/六一/js/event.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六一/js/event1.js" afterPath="$PROJECT_DIR$/../练习/六/六一/js/event1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六一/js/event2.js" afterPath="$PROJECT_DIR$/../练习/六/六一/js/event2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六一/js/move.js" afterPath="$PROJECT_DIR$/../练习/六/六一/js/move.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六一/test.html" afterPath="$PROJECT_DIR$/../练习/六/六一/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六一/text.html" afterPath="$PROJECT_DIR$/../练习/六/六一/text.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六一/拖拽.html" afterPath="$PROJECT_DIR$/../练习/六/六一/拖拽.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六一/拖拽2.html" afterPath="$PROJECT_DIR$/../练习/六/六一/拖拽2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六三/js/drag.js" afterPath="$PROJECT_DIR$/../练习/六/六三/js/drag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六三/js/event.js" afterPath="$PROJECT_DIR$/../练习/六/六三/js/event.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六三/js/move.js" afterPath="$PROJECT_DIR$/../练习/六/六三/js/move.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六三/照片墙.html" afterPath="$PROJECT_DIR$/../练习/六/六三/照片墙.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六五/1.表格排序.html" afterPath="$PROJECT_DIR$/../练习/六/六五/1.表格排序.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六五/2、左右轮播.html" afterPath="$PROJECT_DIR$/../练习/六/六五/2、左右轮播.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六五/js/lunbo.js" afterPath="$PROJECT_DIR$/../练习/六/六五/js/lunbo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六五/js/move.js" afterPath="$PROJECT_DIR$/../练习/六/六五/js/move.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六五/js/tab.js" afterPath="$PROJECT_DIR$/../练习/六/六五/js/tab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六四/1、canvas.html" afterPath="$PROJECT_DIR$/../练习/六/六四/1、canvas.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六四/2.html" afterPath="$PROJECT_DIR$/../练习/六/六四/2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六四/3、炫酷小球.html" afterPath="$PROJECT_DIR$/../练习/六/六四/3、炫酷小球.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六四/4.html" afterPath="$PROJECT_DIR$/../练习/六/六四/4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六四/5、走动的小精灵.html" afterPath="$PROJECT_DIR$/../练习/六/六四/5、走动的小精灵.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/六四/6、游戏框架.html" afterPath="$PROJECT_DIR$/../练习/六/六四/6、游戏框架.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/拖拽组件开发/js/Drag.js" afterPath="$PROJECT_DIR$/../练习/六/拖拽组件开发/js/Drag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/拖拽组件开发/js/effect.js" afterPath="$PROJECT_DIR$/../练习/六/拖拽组件开发/js/effect.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/拖拽组件开发/拖拽组件测试页.html" afterPath="$PROJECT_DIR$/../练习/六/拖拽组件开发/拖拽组件测试页.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/滚轮事件/js/move.js" afterPath="$PROJECT_DIR$/../练习/六/滚轮事件/js/move.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/滚轮事件/js/screenSwitch.js" afterPath="$PROJECT_DIR$/../练习/六/滚轮事件/js/screenSwitch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/滚轮事件/js/wheel.js" afterPath="$PROJECT_DIR$/../练习/六/滚轮事件/js/wheel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/滚轮事件/test.html" afterPath="$PROJECT_DIR$/../练习/六/滚轮事件/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/滚轮事件/乐视体育.html" afterPath="$PROJECT_DIR$/../练习/六/滚轮事件/乐视体育.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/滚轮事件/乐视体育2.html" afterPath="$PROJECT_DIR$/../练习/六/滚轮事件/乐视体育2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/六/滚轮事件/乐视体育3.html" afterPath="$PROJECT_DIR$/../练习/六/滚轮事件/乐视体育3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/10、字符串的扩桩.html" afterPath="$PROJECT_DIR$/../练习/四、二/10、字符串的扩桩.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/11、数组的扩张.html" afterPath="$PROJECT_DIR$/../练习/四、二/11、数组的扩张.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/12、对象的扩张.html" afterPath="$PROJECT_DIR$/../练习/四、二/12、对象的扩张.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/13.html" afterPath="$PROJECT_DIR$/../练习/四、二/13.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/14、函数的扩张.html" afterPath="$PROJECT_DIR$/../练习/四、二/14、函数的扩张.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/15、set 和map.html" afterPath="$PROJECT_DIR$/../练习/四、二/15、set 和map.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/1、五个参数运动库.html" afterPath="$PROJECT_DIR$/../练习/四、二/1、五个参数运动库.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/2、一个参数运动库.html" afterPath="$PROJECT_DIR$/../练习/四、二/2、一个参数运动库.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/3、轮播图基础版.html" afterPath="$PROJECT_DIR$/../练习/四、二/3、轮播图基础版.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/4、轮播图基础版.html" afterPath="$PROJECT_DIR$/../练习/四、二/4、轮播图基础版.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/8.html" afterPath="$PROJECT_DIR$/../练习/四、二/8.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/8、轮播图构造函数版.html" afterPath="$PROJECT_DIR$/../练习/四、二/8、轮播图构造函数版.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/9.html" afterPath="$PROJECT_DIR$/../练习/四、二/9.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/ES6.html" afterPath="$PROJECT_DIR$/../练习/四、二/ES6.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/js/MyTab.js" afterPath="$PROJECT_DIR$/../练习/四、二/js/MyTab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/js/MyTab6.js" afterPath="$PROJECT_DIR$/../练习/四、二/js/MyTab6.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/js/MyTab8.js" afterPath="$PROJECT_DIR$/../练习/四、二/js/MyTab8.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/js/move.js" afterPath="$PROJECT_DIR$/../练习/四、二/js/move.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/js/move1.js" afterPath="$PROJECT_DIR$/../练习/四、二/js/move1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/js/move2.js" afterPath="$PROJECT_DIR$/../练习/四、二/js/move2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/js/move3.js" afterPath="$PROJECT_DIR$/../练习/四、二/js/move3.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/js/tab1.js" afterPath="$PROJECT_DIR$/../练习/四、二/js/tab1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/js/tab2.js" afterPath="$PROJECT_DIR$/../练习/四、二/js/tab2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/test.html" afterPath="$PROJECT_DIR$/../练习/四、二/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../练习/四、二/渐隐渐现轮播图.html" afterPath="$PROJECT_DIR$/../练习/四、二/渐隐渐现轮播图.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/九-考试/js/detail.js" afterPath="$PROJECT_DIR$/../考试/九-考试/js/detail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/九-考试/json/custom.json" afterPath="$PROJECT_DIR$/../考试/九-考试/json/custom.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/九-考试/server.js" afterPath="$PROJECT_DIR$/../考试/九-考试/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/九-考试/server1.js" afterPath="$PROJECT_DIR$/../考试/九-考试/server1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/五/1、测试.html" afterPath="$PROJECT_DIR$/../考试/五/1、测试.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/五/js/event.js" afterPath="$PROJECT_DIR$/../考试/五/js/event.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/五/js/move.js" afterPath="$PROJECT_DIR$/../考试/五/js/move.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/五/js/tab.js" afterPath="$PROJECT_DIR$/../考试/五/js/tab.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/五/test.html" afterPath="$PROJECT_DIR$/../考试/五/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/五/左右轮播图切换构造函数.html" afterPath="$PROJECT_DIR$/../考试/五/左右轮播图切换构造函数.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/六/六一/js/drag.js" afterPath="$PROJECT_DIR$/../考试/六/六一/js/drag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/六/六一/js/event.js" afterPath="$PROJECT_DIR$/../考试/六/六一/js/event.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/六/六一/拖拽.html" afterPath="$PROJECT_DIR$/../考试/六/六一/拖拽.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/六/六二/js/Drag1.js" afterPath="$PROJECT_DIR$/../考试/六/六二/js/Drag1.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/六/六二/js/drag.js" afterPath="$PROJECT_DIR$/../考试/六/六二/js/drag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/六/六二/js/event.js" afterPath="$PROJECT_DIR$/../考试/六/六二/js/event.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/六/六二/js/utils.js" afterPath="$PROJECT_DIR$/../考试/六/六二/js/utils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/六/六二/test.html" afterPath="$PROJECT_DIR$/../考试/六/六二/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/六/六二/拖拽+弹跳.html" afterPath="$PROJECT_DIR$/../考试/六/六二/拖拽+弹跳.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/拖拽组件开发/1、test.html" afterPath="$PROJECT_DIR$/../考试/拖拽组件开发/1、test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/拖拽组件开发/js/Drag.js" afterPath="$PROJECT_DIR$/../考试/拖拽组件开发/js/Drag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/拖拽组件开发/js/move.js" afterPath="$PROJECT_DIR$/../考试/拖拽组件开发/js/move.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/拖拽组件开发/照片墙.html" afterPath="$PROJECT_DIR$/../考试/拖拽组件开发/照片墙.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/一/css/index.css" afterPath="$PROJECT_DIR$/../考试/练习/一/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/一/css/index.less" afterPath="$PROJECT_DIR$/../考试/练习/一/css/index.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/一/detail.html" afterPath="$PROJECT_DIR$/../考试/练习/一/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/一/index.html" afterPath="$PROJECT_DIR$/../考试/练习/一/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/一/js/detail.js" afterPath="$PROJECT_DIR$/../考试/练习/一/js/detail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/一/js/index.js" afterPath="$PROJECT_DIR$/../考试/练习/一/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/一/json/custom.json" afterPath="$PROJECT_DIR$/../考试/练习/一/json/custom.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/一/server.js" afterPath="$PROJECT_DIR$/../考试/练习/一/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/三/js/detail.js" afterPath="$PROJECT_DIR$/../考试/练习/三/js/detail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/三/js/index.js" afterPath="$PROJECT_DIR$/../考试/练习/三/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/三/json/custom.json" afterPath="$PROJECT_DIR$/../考试/练习/三/json/custom.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/三/server.js" afterPath="$PROJECT_DIR$/../考试/练习/三/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/二/js/detail.js" afterPath="$PROJECT_DIR$/../考试/练习/二/js/detail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/二/js/index.js" afterPath="$PROJECT_DIR$/../考试/练习/二/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/二/json/custom.json" afterPath="$PROJECT_DIR$/../考试/练习/二/json/custom.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../考试/练习/二/server.js" afterPath="$PROJECT_DIR$/../考试/练习/二/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../花瓣网实战/css/comment.css" afterPath="$PROJECT_DIR$/../花瓣网实战/css/comment.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../花瓣网实战/css/css.css" afterPath="$PROJECT_DIR$/../花瓣网实战/css/css.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../花瓣网实战/index.html" afterPath="$PROJECT_DIR$/../花瓣网实战/index.html" />
+    </list>
+    <ignored path="angular.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="angular" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wyf/1、bookstore/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#49#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fifth/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3.angular-resource.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fifth/3.angular-resource.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="90" column="26" lean-forward="true" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wyf/sixth/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="24">
+              <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#49#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wyf/sixth/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="61" column="31" lean-forward="false" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Unnamed" />
+        <option value="Html5" />
+        <option value="Less File" />
+        <option value="CSS File" />
+        <option value="json" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ngRoute</find>
+      <find>module</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/wyf/素材/css/public.less" />
+        <option value="$PROJECT_DIR$/wyf/素材/js/index.js" />
+        <option value="$PROJECT_DIR$/wyf/素材/index.html" />
+        <option value="$PROJECT_DIR$/wyf/素材/css/index.less" />
+        <option value="$PROJECT_DIR$/wyf/fourth/表单验证.html" />
+        <option value="$PROJECT_DIR$/fourth/6.验证.html" />
+        <option value="$PROJECT_DIR$/wyf/fourth/交互数据.html" />
+        <option value="$PROJECT_DIR$/wyf/fourth/search2.html" />
+        <option value="$PROJECT_DIR$/third/watch&amp;apply.html" />
+        <option value="$PROJECT_DIR$/third/11.watch.html" />
+        <option value="$PROJECT_DIR$/wyf/wyF-anli/index1.html" />
+        <option value="$PROJECT_DIR$/wyf/wyF-anli/css/public.less" />
+        <option value="$PROJECT_DIR$/wyf/wyF-anli/css/index.less" />
+        <option value="$PROJECT_DIR$/wyf/wyF-anli/js/index.js" />
+        <option value="$PROJECT_DIR$/wyf/fifty/1、定时器.html" />
+        <option value="$PROJECT_DIR$/wyf/fifty/index.html" />
+        <option value="$PROJECT_DIR$/wyf/fifty/form.html" />
+        <option value="$PROJECT_DIR$/wyf/fifty/server.js" />
+        <option value="$PROJECT_DIR$/wyf/fifty/userserver.js" />
+        <option value="$PROJECT_DIR$/wyf/fifty/3 angular-resource.html" />
+        <option value="$PROJECT_DIR$/first/4.controller.html" />
+        <option value="$PROJECT_DIR$/third/8.directive.html" />
+        <option value="$PROJECT_DIR$/third/10.=&amp;.html" />
+        <option value="$PROJECT_DIR$/wyf/sixth/note" />
+        <option value="$PROJECT_DIR$/wyf/sixth/css/index.less" />
+        <option value="$PROJECT_DIR$/wyf/sixth/css/index.css" />
+        <option value="$PROJECT_DIR$/wyf/sixth/text.js" />
+        <option value="$PROJECT_DIR$/wyf/sixth/test.js" />
+        <option value="$PROJECT_DIR$/wyf/sixth/books.json" />
+        <option value="$PROJECT_DIR$/wyf/sixth/tmpl/add.html" />
+        <option value="$PROJECT_DIR$/wyf/sixth/server.js" />
+        <option value="$PROJECT_DIR$/wyf/text.html" />
+        <option value="$PROJECT_DIR$/wyf/bookstore/text.html" />
+        <option value="$PROJECT_DIR$/wyf/bookstore/temp/home.html" />
+        <option value="$PROJECT_DIR$/wyf/bookstore/temp/detail.html" />
+        <option value="$PROJECT_DIR$/wyf/bookstore/server.js" />
+        <option value="$PROJECT_DIR$/wyf/bookstore/index.html" />
+        <option value="$PROJECT_DIR$/bookstore/server.js" />
+        <option value="$PROJECT_DIR$/bookstore/tmpl/detail.html" />
+        <option value="$PROJECT_DIR$/wyf/bookstore/temp/list.html" />
+        <option value="$PROJECT_DIR$/wyf/bookstore/temp/add.html" />
+        <option value="$PROJECT_DIR$/wyf/sixth/tmpl/detail.html" />
+        <option value="$PROJECT_DIR$/wyf/sixth/tmpl/home.html" />
+        <option value="$PROJECT_DIR$/wyf/1、bookstore/temp/home.html" />
+        <option value="$PROJECT_DIR$/wyf/1、bookstore/temp/add.html" />
+        <option value="$PROJECT_DIR$/wyf/sixth/tmpl/list.html" />
+        <option value="$PROJECT_DIR$/wyf/1、bookstore/temp/list.html" />
+        <option value="$PROJECT_DIR$/wyf/1、bookstore/temp/detail.html" />
+        <option value="$PROJECT_DIR$/wyf/sixth/index.html" />
+        <option value="$PROJECT_DIR$/wyf/1、bookstore/index.html" />
+        <option value="$PROJECT_DIR$/wyf/1、bookstore/server.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/bookManager/node_modules" />
+    <handled-path value="$PROJECT_DIR$/bookstore/node_modules" />
+    <handled-path value="$PROJECT_DIR$/first/node_modules" />
+    <handled-path value="$PROJECT_DIR$/fourth/node_modules" />
+    <handled-path value="$PROJECT_DIR$/second/node_modules" />
+    <handled-path value="$PROJECT_DIR$/sixth/node_modules" />
+    <handled-path value="$PROJECT_DIR$/third/node_modules" />
+    <handled-path value="$PROJECT_DIR$/wyf/1、bookstore/node_modules" />
+    <handled-path value="$PROJECT_DIR$/wyf/bookstore/node_modules" />
+    <handled-path value="$PROJECT_DIR$/wyf/fifty/node_modules" />
+    <handled-path value="$PROJECT_DIR$/wyf/first/hello/node_modules" />
+    <handled-path value="$PROJECT_DIR$/wyf/first/node_modules" />
+    <handled-path value="$PROJECT_DIR$/wyf/fourth/node_modules" />
+    <handled-path value="$PROJECT_DIR$/wyf/second/node_modules" />
+    <handled-path value="$PROJECT_DIR$/wyf/sixth/node_modules" />
+    <handled-path value="$PROJECT_DIR$/wyf/third/node_modules" />
+    <handled-path value="$PROJECT_DIR$/xiaojing/node_modules" />
+    <handled-path value="$PROJECT_DIR$/练习书店/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wyf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angular" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fifth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../zhufengnodejs_node12" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="JavaScriptLanguageLevel" value="ES6" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="javascript.nodejs.core.library.configured.version" value="7.1.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\12 期课件\Javascript201612\angular\wyf\1、bookstore" />
+      <recent name="E:\12 期课件\Javascript201612\angular\wyf" />
+      <recent name="E:\12 期课件\Javascript201612\angular\wyf\bookstore" />
+      <recent name="E:\12 期课件\Javascript201612\angular\wyf\fourth" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\12 期课件\Javascript201612\angular\wyf" />
+      <recent name="E:\12 期课件\Javascript201612\angular\wyf\sixth" />
+      <recent name="E:\12 期课件\Javascript201612\angular\wyf\1、bookstore" />
+      <recent name="E:\12 期课件\Javascript201612\angular" />
+      <recent name="E:\12 期课件\Javascript201612\angular\wyf\bookstore" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Node.js.server.js (3)">
+    <configuration default="false" name="server.js (1)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/wyf/sixth">
+      <method />
+    </configuration>
+    <configuration default="false" name="server.js (2)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/wyf/bookstore">
+      <method />
+    </configuration>
+    <configuration default="false" name="server.js (3)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/wyf/1、bookstore">
+      <method />
+    </configuration>
+    <configuration default="false" name="server1.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="server1.js" working-dir="$PROJECT_DIR$/wyf/sixth">
+      <method />
+    </configuration>
+    <configuration default="false" name="server1.js (1)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="server1.js" working-dir="$PROJECT_DIR$/wyf/1、bookstore">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Node.js.server.js (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.server.js (2)" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.server.js (3)" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.server1.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.server1.js (1)" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Node.js.server.js (3)" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.server1.js (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.server.js (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.server1.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.server.js (2)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1e711a09-23d1-468a-ae65-a1fdd8a84164" name="Default" comment="" />
+      <created>1483066284141</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1483066284141</updated>
+      <workItem from="1484066951960" duration="64000" />
+      <workItem from="1484098486109" duration="27121000" />
+      <workItem from="1484139181611" duration="9668000" />
+      <workItem from="1484184807483" duration="22683000" />
+      <workItem from="1484230403905" duration="26880000" />
+      <workItem from="1484499499619" duration="48793000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="135209000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16517857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25684932" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41754386" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2001488" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/wyf/1、bookstore/index.html</url>
+          <line>50</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/wyf/wyF-anli/css/index.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/wyF-anli/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-500">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/wyF-anli/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/QQ音乐案例最终完成版/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="102" column="23" lean-forward="true" selection-start-line="102" selection-start-column="23" selection-end-line="102" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/wyF-anli/index1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/fifty/3 angular-resource.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-558">
+          <caret line="86" column="10" lean-forward="false" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+          <folding>
+            <element signature="e#2903#3123#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/fifty/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-155">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="102" column="11" lean-forward="true" selection-start-line="102" selection-start-column="11" selection-end-line="102" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/tmpl/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/tmpl/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fifth/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="77" column="14" lean-forward="false" selection-start-line="77" selection-start-column="14" selection-end-line="77" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookstore/tmpl/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="15" column="89" lean-forward="false" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/练习书店/tmpl/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/练习书店/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="61" column="3" lean-forward="false" selection-start-line="61" selection-start-column="3" selection-end-line="61" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/练习书店/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="66" column="7" lean-forward="false" selection-start-line="66" selection-start-column="7" selection-end-line="66" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookManager/tmpl/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookManager/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookManager/tmpl/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="75" lean-forward="false" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaojing/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookManager/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="83" column="44" lean-forward="true" selection-start-line="83" selection-start-column="44" selection-end-line="83" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bookManager/tmpl/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaojing/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="93" column="29" lean-forward="true" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaojing/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="98" column="4" lean-forward="true" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/bookstore/temp/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="32" lean-forward="true" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/bookstore/temp/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/bookstore/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="91" column="55" lean-forward="true" selection-start-line="91" selection-start-column="55" selection-end-line="91" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/bookstore/temp/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/bookstore/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="98" column="7" lean-forward="true" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/1、bookstore/node_modules/.bin/mime">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fifth/1.定时器.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fifth/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/sixth/books.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="0" column="329" lean-forward="true" selection-start-line="0" selection-start-column="329" selection-end-line="0" selection-end-column="329" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/bookstore/temp/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" column="74" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/sixth/server1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-48">
+          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/sixth/tmpl/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/1、bookstore/temp/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/sixth/tmpl/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/1、bookstore/books.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/sixth/tmpl/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/1、bookstore/temp/add.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/1、bookstore/temp/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="3" column="32" lean-forward="true" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/sixth/tmpl/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/1、bookstore/temp/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="15" column="77" lean-forward="false" selection-start-line="15" selection-start-column="77" selection-end-line="15" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/sixth/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="61" column="31" lean-forward="false" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/1、bookstore/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3">
+          <caret line="83" column="23" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/sixth/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/1、bookstore/server1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wyf/1、bookstore/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fifth/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fifth/3.angular-resource.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="90" column="26" lean-forward="true" selection-start-line="90" selection-start-column="26" selection-end-line="90" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

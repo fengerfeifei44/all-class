@@ -3,8 +3,55 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .tab{
+            width: 300px;
+            margin: 50px auto;
+        }
+        .tab .tab-head{
+            width: 300px;
+        }
+        .tab .tab-head li{
+            float: left;
+            width: 100px;
+            height: 30px;
+            background: lightcoral;
+        }
+        .tab .tab-head li.change{
+            background: lightcyan;
+        }
+        .tab-cn div{
+            display: none;
+            width: 300px;
+            height: 300px;
+            background: lightblue;
+        }
+        .tab-cn div.show{
+            display: block;
+        }
+    </style>
 </head>
 <body>
+<div class="tab">
+    <ul class="tab-head">
+        <li class="change">腾讯视频</li>
+        <li>腾讯新闻</li>
+        <li>腾讯体育</li>
+    </ul>
+    <div class="tab-cn">
+        <div class="show">1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</div>
+<script>
+
+</script>
 
 </body>
 </html>

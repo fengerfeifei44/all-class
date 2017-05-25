@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>bookstore</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!--表示-->
+<div class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#!/home">BookStore</a>
+        </div>
+        <div>
+            <ul class="navbar-nav nav">
+                <li><a href="#!/home">首页</a></li>
+                <li><a href="#!/list">列表页</a></li>
+                <li><a href="#!/add">新增图书</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div ng-view class="container"></div>
+
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<!--angular angular-resource angular-route-->
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script>
+    var app=angular.module('appModule',['ngResource','ngRoute']);
+    //默认锚点不会被chrome抓取
+    app.factory('Books',function ($resource) {
+        return $resource('/books/:bid',null,{
+            update:{
+                method:'PUT'
+            }
+        })
+
+    });
+    app.config(function ($routeProvider) {
+        $routeProvider.when('/home',{
+            templateUrl:'tmpl/home.html',//通过ajax拿到对应的页面
+            controller:'homeCtrl'
+        }).when('/list',{
+            templateUrl:'tmpl/list.html',
+            controller:'listCtrl'
+        }).when('/detail/:id',{
+            templateUrl:'tmpl/detail.html',
+            controller:'detailCtrl'
+
+        }).when('/add',{
+            templateUrl:'tmpl/add.html',
+            controller:'addCtrl'
+        }).otherwise('tmpl/home.html')
+    });
+
+    app.controller('detailCtrl',function ($scope,$routeParams,Books,$location) {
+        var id=$routeParams.id;
+        $scope.book=Books.get({bid:id});
+        $scope.flag=true;
+        $scope.remove=function () {
+            Books.delete({bid:id}).$promise.then(function () {
+
+                $location.path('/list');
+            })
+        };
+        $scope.change=function () {
+            $scope.flag=false;
+        };
+        $scope.update=function () {
+            Books.update({bid:id},$scope.book).$promise.then(function () {
+                $scope.flag=true;
+            })
+        }
+    });
+
+    app.controller('addCtrl',function ($scope,Books,$location) {
+        $scope.add=function () {//保存
+            Books.save($scope.book).$promise.then(function () {
+                $location.path('/list');
+            });
+
+        }
+    })
+
+    app.controller('listCtrl',function ($scope,Books) {
+       $scope.bookList = Books.query();
+    })
+    app.controller('homeCtrl',function ($scope,$sce) {
+        $scope.home=$sce.trustAsHtml('<h1>欢迎来购书</h1>');
+
+        $('.carousel').carousel();
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var str='www.baidu.com?name=zhufeng&age=8';
+    String.prototype.queryURLParameter=function(){
+        var obj={};
+        this.replace(/([^?=&]+)=([^?=&]+)/g,function($0,$1,$2){
+            obj[$1]=$2;
+        });
+        return obj;
+    }
+    str.queryURLParameter();
+</script>
+
+</body>
+</html>

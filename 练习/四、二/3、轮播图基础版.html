@@ -3,8 +3,96 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        img{
+            border: none;
+        }
+        .box{
+            position: relative;
+            margin: 50px auto;
+            width: 1000px;
+            height: 300px;
+            overflow: hidden;
+        }
+        .box .banner{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4000px;
+            height: 300px;
+
+        }
+        .box .banner div{
+            float: left;
+            width: 1000px;
+            height: 300px;
+        }
+        .box ul{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        .box ul li{
+            float: left;
+            margin-left: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #cccccc;
+        }
+        .box ul li.on{
+            background: lightblue;
+        }
+        .box a{
+            display: none;
+            position: absolute;
+            top: 126px;
+            background-image: url("img/pre.png");
+            background-repeat: no-repeat;
+            width: 30px;
+            height: 45px;
+            opacity: 0.3;
+            filter: alpha(opacity:30);
+        }
+        .box a:hover{
+            opacity: 1;
+            filter: alpha(opacity:100);
+        }
+        .left{
+            background-position: 0 0;
+            left: 30px;
+        }
+        .right{
+            background-position: -50px 0;
+            right: 30px;
+        }
+    </style>
 </head>
 <body>
+<div id="box" class="box">
+    <div class="banner">
+        <div><img src="img/banner1.jpg" alt=""/></div>
+        <div><img src="img/banner2.jpg" alt=""/></div>
+        <div><img src="img/banner3.jpg" alt=""/></div>
+        <div><img src="img/banner4.jpg" alt=""/></div>
+    </div>
+    <ul>
+        <li class="on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <a href="javaScript:;" class="left" ></a>
+    <a href="javaScript:;" class="right"></a>
+</div>
+<script src="js/utils.js"></script>
+<script src="js/move1.js"></script>
+<script src="js/tab1.js"></script>
 
 </body>
 </html>

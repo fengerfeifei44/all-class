@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#!/home">Bookstore</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" >
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#!/home">首页</a></li>
+                <li><a href="#!/list">列表页</a></li>
+                <li><a href="#!/add">新增图书</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div ng-view class="container"></div>
+
+</body>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script>
+var app=angular.module('appModule',['ngResource','ngRoute']);
+app.factory('$book',function($resource){
+    return $resource('/books/:bid',null,{
+        update:{method:"PUT"}
+    })
+});
+app.config(function($routeProvider){
+    $routeProvider.when('/home',{
+        templateUrl:'tmpl/home.html',
+        controller:'homeCtrl'
+    }).when('/list',{
+        templateUrl:'tmpl/list.html',
+        controller:'listCtrl'
+    }).when('/detail/:id',{
+        templateUrl:'tmpl/detail.html',
+        controller:'detailCtrl'
+    }).when('/add',{
+        templateUrl:'tmpl/add.html',
+        controller:'addCtrl'
+    }).otherwise('/home')
+});
+app.controller('homeCtrl',function($scope,$sce){
+    $scope.home=$sce.trustAsHtml('<h1>欢迎来购书</h1>');
+    $('.carousel').carousel();//调用轮播图
+});
+    app.controller('listCtrl',function($scope,$book){
+        $scope.bookList=$book.query()
+    });
+    app.controller('detailCtrl',function($scope,$routeParams){
+        $scope.detail=$routeParams.id
+    });
+    app.controller('addCtrl',function($scope,$book,$location){
+        $scope.add=function(){
+            $book.save($scope.book).$promise.then(function(){
+                $location.path('/list');
+            })
+        }
+    })
+</script>
+</html>

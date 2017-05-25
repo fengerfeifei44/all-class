@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;;
+            padding: 0;
+        }
+        .box{
+            margin: 50px auto;
+            width: 800px;
+            height: 200px;
+            border: 5px dashed lightblue;
+            position: relative;
+            overflow: hidden;
+        }
+        ul{
+            position: absolute;
+            left: 0;
+            top: 0;
+
+
+
+            list-style: none;
+        }
+        ul li{
+            float: left;
+            width: 200px;
+            height: 200px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="box" class="box">
+    <ul>
+        <li><img src="img/1.jpg" alt=""/></li>
+        <li><img src="img/2.jpg" alt=""/></li>
+        <li><img src="img/3.jpg" alt=""/></li>
+        <li><img src="img/4.jpg" alt=""/></li>
+    </ul>
+</div>
+<script src="js/utils.js"></script>
+<script>
+    var oBox=document.getElementById('box');
+    var oUl=document.getElementsByTagName('ul')[0];
+    var aLis=oUl.getElementsByTagName('li');
+    var curLeft=utils.getCss(oUl,'left');
+    oUl.innerHTML+=oUl.innerHTML;
+    oUl.style.width=utils.getCss(aLis[0],'width')*aLis.length+'px';
+    var timer=setInterval(function(){
+        if(curLeft<-utils.getCss(oUl,"width")/2){
+            curLeft=0;
+        }
+        curLeft-=3;
+        oUl.style.left=curLeft+'px';
+    },50)
+
+</script>
+
+</body>
+</html>

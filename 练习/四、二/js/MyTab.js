@@ -36,8 +36,9 @@ MyTab.prototype={
         //鼠标移入停止 移出继续
         this.overOut();
         //点击焦点手动切换
-      //  this.handleChange();
+       this.handleChange();
         //点击左右按钮手动切换
+        this.leftRight();
     },
     getData:function(){
         var _this=this;
@@ -115,7 +116,7 @@ MyTab.prototype={
         var _this=this;
         for(var i=0;i<this.aLi.length;i++){
             (function(index){
-                _this.aLi[index].onclick=function(){
+                _this.aLi[i].onclick=function(){
                    _this.n=index;
                     animate({
                         id:_this.oBanner,
@@ -129,6 +130,27 @@ MyTab.prototype={
                 }
 
             })(i)
+        }
+    },
+    leftRight:function(){
+        var _this=this;
+        this.oBtnRight.onclick=function(){
+            _this.autoMove();
+        }
+        this.oBtnLeft.onclick=function(){
+            if(_this.n<=0){
+                _this.n=_this.aDiv.length-1;
+                utils.css(_this.oBanner,'left',-_this.n*1000)
+            }
+            _this.n--;
+            animate({
+                id:_this.oBanner,
+                target:{
+                    left:-_this.n*1000
+                },
+                duration:500
+            });
+            _this.bannerTip();
         }
     }
 

@@ -3,8 +3,131 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <link rel="stylesheet" href="animate.css"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body,html{
+            height: 100%;
+        }
+        .wrap>img{
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+        .wrap :target{
+            z-index: 5;
+        }
+        .item{
+            position: fixed;
+            bottom: 10px;
+            left: 300px;
+            text-align: center;
+            z-index: 10;
+
+
+        }
+        .item li{
+            float: left;
+            margin: 0 10px;
+            border: 10px solid rgba(255,255,255,.5);
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+        }
+        .item a{
+            width: 100%;
+            height: 100%;
+        }
+        .item img{
+            width: 100%;
+            height: 100%;
+        }
+        #bg1:target{
+            animation: slideLeft 1s 1;
+        }
+
+        @-webkit-keyframes slideLeft {
+            0%{
+                transform: translateX(-300px);
+            }
+            100%{
+                transform: translate(0);
+            }
+        }
+        #bg2:target{
+            animation: slideTop 1s 1;
+
+        }
+        @-webkit-keyframes slideTop {
+            0%{
+                transform: translateY(-300px);
+            }
+            100%{
+                transform: translate(0);
+            }
+        }
+        #bg3:target{
+            animation: slideCenter 1s 1;
+
+        }
+        @-webkit-keyframes slideCenter {
+            0%{
+                transform: scale3d(0,0,0);
+            }
+            100%{
+                transform: scale3d(1,1,1);
+            }
+        }
+        #bg4:target{
+            animation: slideOut 1s 1;
+
+        }
+        @-webkit-keyframes slideOut {
+            0%{
+                transform: scale3d(2,2,2);
+            }
+            100%{
+                transform: scale3d(1,1,1);
+            }
+        }
+        #bg5:target{
+            animation: rotate 1s 1;
+
+        }
+        @-webkit-keyframes rotate {
+            0%{
+                transform: scale3d(0,0,0) rotate(0deg);
+            }
+            100%{
+                transform: scale3d(1,1,1) rotate(360deg);
+            }
+        }
+    </style>
+
 </head>
 <body>
+<div class="wrap">
+    <img src="images/1.jpg" alt="" id="bg1"/>
+    <img src="images/2.jpg" alt="" id="bg2"/>
+    <img src="images/3.jpg" alt="" id="bg3"/>
+    <img src="images/4.jpg" alt="" id="bg4"/>
+    <img src="images/5.jpg" alt="" id="bg5"/>
+    <ul class="item">
+        <li><a href="#bg1"><img src="images/1.jpg" alt=""/></a></li>
+        <li><a href="#bg2"><img src="images/2.jpg" alt=""/></a></li>
+        <li><a href="#bg3"><img src="images/3.jpg" alt=""/></a></li>
+        <li><a href="#bg4"><img src="images/4.jpg" alt=""/></a></li>
+        <li><a href="#bg5"><img src="images/5.jpg" alt=""/></a></li>
+    </ul>
+</div>
 
 </body>
 </html>

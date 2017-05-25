@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var obj={};
+    function fn(a){
+        var ary=[];
+        for(var i=0;i<4;i++){
+           var cur=a.call(obj,2,3);
+            ary.push(cur);
+        }
+       return ary;
+    }
+    function fn2(n,m){
+        alert(this+(n+m))
+        return 10;
+    }
+    console.log(fn(fn2));
+   // console.log(fn2());
+   // console.log(fn(fn2));
+</script>
+
+</body>
+</html>

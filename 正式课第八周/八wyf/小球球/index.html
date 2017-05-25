@@ -3,8 +3,133 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        .move{
+            width: 100%;
+            text-align: center;
+            position: relative;
+            height: 800px;
+            color: grey;
+        }
+        .move h3{
+            font-size: 43px;
+            font-weight: 100;
+            padding-top: 80px;
+        }
+        .move #animete div{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .move #animete div:nth-child(1){
+            top: 320px;
+            left: 20px;
+            background: red;
+            box-shadow: 0 0 0 0 red;
+        }
+        .move #animete div:nth-child(2){
+            top: 430px;
+            left: 840px;
+            background: yellow;
+            box-shadow: 0 0 0 0 yellow;
+        }
+        .move #animete div:nth-child(3){
+            top: 640px;
+            left: 330px;
+            background: black;
+            box-shadow: 0 0 0 0 black;
+        }
+        .move #animete div:nth-child(4){
+            top: 250px;
+            left: 200px;
+            background: lightblue;
+            box-shadow: 0 0 0 0 lightblue;
+        }
+        .move #animete div:nth-child(5){
+            top: 200px;
+            left: 300px;
+            background: navajowhite;
+            box-shadow: 0 0 0 0 navajowhite;
+        }
+        .move #animete div:nth-child(6){
+            top: 390px;
+            left: 400px;
+            background:wheat;
+            box-shadow: 0 0 0 0 wheat;
+        }
+        .move #animete div:nth-child(7){
+            top: 290px;
+            left: 620px;
+            background: deeppink;
+            box-shadow: 0 0 0 0 deeppink;
+        }
+        .move #animete div:nth-child(8){
+
+        }
+        .move #animete div.shadow{
+            box-shadow: 0 0 0 30px transparent;
+            -webkit-transition:box-shadow 1s;
+            -moz-transition:box-shadow 1s;
+            -ms-transition:box-shadow 1s;
+            -o-transition:box-shadow 1s;
+            transition:box-shadow 1s;
+        }
+
+    </style>
 </head>
 <body>
-
+<section class="move">
+    <h3>一切为你</h3>
+    <p>凝聚生态链广泛合作伙伴，构建下一代移动互联网生态系统，满足你的一切所想所需!</p>
+    <div id="animete">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    </section>
 </body>
 </html>
+    <script>
+        ~function () {
+            var oDiv = document.querySelector('#animete');
+            var aDiv = oDiv.querySelectorAll('div');
+            for(var i=0;i<aDiv.length;i++){
+                aDiv[i].index=i;
+                aDiv[i].onclick=function () {
+                    aDiv[this.index].className='shadow';
+                    /*    var timer=setTimeout(function () {
+                     for(var j=0;j<aDiv.length;j++){
+                     aDiv[Math.round(Math.random()*8)].className='shadow'
+                     }
+                     },1000);
+                     var timer1=setTimeout(function () {
+                     for(var a=0;a<aDiv.length;a++){
+                     aDiv[a].className='';
+                     }
+                     },3000)*/
+                    aDiv[this.index].addEventListener('webkitTransitionEnd',function () {
+                        aDiv[this.index].className='';
+                        var timer=setTimeout(function () {
+                            for(var j=0;j<aDiv.length;j++){
+                                aDiv[Math.round(Math.random()*j)].className='shadow';
+                            }
+                        },300);
+                        setTimeout(function () {
+                            for(var j=0;j<aDiv.length;j++){
+                                aDiv[j].className=' ';
+                            }
+                        },1200);
+
+                    })
+
+                }
+            }
+        }();
+
+    </script>

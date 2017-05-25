@@ -2,9 +2,41 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>个人简历</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+   <!-- <script>
+        var desW = 640;
+        var winW = document.documentElement.clientWidth;
+        document.documentElement.style.fontSize = winW / desW * 100 + 'px';
+    </script>-->
+    <script>
+        var desW = 640;
+        var winW = document.documentElement.clientWidth;
+        document.documentElement.style.fontSize = winW/desW*100+"px";
+    </script>
 </head>
 <body>
-
+<section class="main">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">
+            </div>
+            <div class="swiper-slide slide2">
+            </div>
+        </div>
+    </div>
+</section>
+<script src="js/swiper.min.js"></script>
+<script>
+    var swiper1 = new Swiper(".swiper-container", {
+        direction: "vertical",
+        loop: true
+    })
+</script>
 </body>
 </html>

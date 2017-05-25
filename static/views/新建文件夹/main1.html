@@ -1,0 +1,68 @@
+﻿<style type="text/css">
+    .navbar-header {
+        float: left;
+    }
+
+    .collapseD {
+        float: right;
+    }
+
+    .navD {
+        list-style: none;
+    }
+
+        .navD > li {
+            float: left;
+        }
+
+
+    .dropdownD {
+        height: 50px;
+        line-height: 50px;
+    }
+</style>
+<div class="navbar  daas-nav" style="height: 60px; margin-bottom: 0;">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>-->
+            <a class="navbar-brand" href="#" ng-click="returnMain()">T-DAAS精准营销平台</a>
+        </div>
+        <div class="collapseD" id="Div1" style="position:relative;z-index:1000000;">
+            <ul class="navD">
+                <li class="line" style="position: relative; top: 7px;">
+                    <img src="imgs/userphoto6.png" alt="" style="margin-top: 3px; margin-right: 19px;" id="usrPhoto">
+                </li>
+                <li class="dropdown dropdownD">
+                    <a href="javascript:;" style="color:#FFF;height:60px;" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        用户:
+                        {{currentUser.User_Name}}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li style="height: 50px; width: 100%;">
+                            个人信息
+                        </li>
+                        <li style="text-align: center; height: 40px; width: 100%;">
+                            <button ng-click="changePwd()" type="button" class="btn btn-default">修改密码</button>
+                            <button ng-click="cancel()" type="button" class="btn btn-default">注销</button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+
+<div ui-view="">
+</div>
+
+<div class='control-sidebar-bg'></div>
+

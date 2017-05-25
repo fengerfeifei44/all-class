@@ -1,0 +1,445 @@
+﻿/********************** 
+
+泰合佳通控件样式 陈懿
+
+**********************/
+
+.page-header .page-header-top {
+height: 50px !important;
+background: #09f;
+}
+
+.page-header .page-header-top .page-logo {
+float: left;
+display: block;
+width: 255px;
+height: 50px !important;
+}
+
+.page-header .page-header-top .page-logo .logo-default {
+ margin: 0  !important; 
+}
+
+.page-header {
+opacity: 1;
+filter: alpha(opacity=100);
+width: 100%;
+margin: 0;
+border: 0;
+padding: 0;
+box-shadow: none;
+height: 60px !important;
+background-image: none;
+}
+
+/******** 模态框 ********/
+.tes-title{
+    width:360px;
+    height:30px;
+    line-height:30px;
+    padding:0 10px;
+    background:#09f;
+    color:#fff;
+    border-radius:5px 5px 0 0;
+}
+
+.tes-content{
+    width:360px;
+    padding:30px;
+    background:#fff;
+    border:1px #ccc solid;
+    border-radius: 0 0 5px 5px;
+    text-align:center;
+}
+
+.tes-content .tes-content-icon{
+   margin-bottom:20px;
+}
+
+.tes-content .tes-content-info{
+    margin-bottom:30px;
+    
+}
+
+
+/********** button **********/
+
+.btn-margin{margin-right:15px;}
+
+/**********
+Button Blue Colors
+***********/
+
+.blue.btn {
+  color: white;
+  background-color: #09f;
+  border-color: "";
+  padding:8px 20px;
+}
+.blue.btn:hover, .blue.btn:focus, .blue.btn:active, .blue.btn.active {
+  color: white;
+  background-color: #46B5FF;
+}
+.open .blue.btn.dropdown-toggle {
+  color: white;
+  background-color: #46B5FF;
+}
+.blue.btn:active, .blue.btn.active {
+  background-image: none;
+}
+.open .blue.btn.dropdown-toggle {
+  background-image: none;
+}
+.blue.btn.disabled, .blue.btn.disabled:hover, .blue.btn.disabled:focus, .blue.btn.disabled:active, .blue.btn.disabled.active, .blue.btn[disabled], .blue.btn[disabled]:hover, .blue.btn[disabled]:focus, .blue.btn[disabled]:active, .blue.btn[disabled].active, fieldset[disabled] .blue.btn, fieldset[disabled] .blue.btn:hover, fieldset[disabled] .blue.btn:focus, fieldset[disabled] .blue.btn:active, fieldset[disabled] .blue.btn.active {
+  background-color: #09f;
+}
+.blue.btn .badge {
+  color: #09f;
+  background-color: white;
+}
+
+
+
+/**********
+Button Default
+***********/
+
+.btn-default.btn {
+  color: #333;
+  background-color: #FFF;
+  border-color: "";
+  padding:8px 20px;
+}
+.btn-default.btn:hover, .btn-default.btn:focus, .btn-default.btn:active, .btn-default.btn.active {
+  color: #09f;
+  background-color: #f2f2f2;
+}
+.open .btn-default.btn.dropdown-toggle {
+  color:  #09f;
+  background-color: #f2f2f2;
+}
+.btn-default.btn:active, .btn-default.btn.active {
+  background-image: none;
+}
+.open .btn-default.btn.dropdown-toggle {
+  background-image: none;
+}
+.btn-default.btn.disabled, .btn-default.btn.disabled:hover, .btn-default.btn.disabled:focus, .btn-default.btn.disabled:active, .btn-default.btn.disabled.active, .btn-default.btn[disabled], .btn-default.btn[disabled]:hover, .btn-default.btn[disabled]:focus, .btn-default.btn[disabled]:active, .btn-default.btn[disabled].active, fieldset[disabled] .btn-default.btn, fieldset[disabled] .btn-default.btn:hover, fieldset[disabled] .btn-default.btn:focus, fieldset[disabled] .btn-default.btn:active, fieldset[disabled] .btn-default.btn.active {
+  background-color: #09f;
+}
+.btn-default.btn .badge {
+  color: #09f;
+  background-color: white;
+}
+
+
+/******** 分页 ********/
+.pagination>li>a, .pagination>li>span {
+position: relative;
+float: left;
+padding: 6px 12px;
+margin:0 4px;
+line-height: 1.42857143;
+color: #000;
+text-decoration: none;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius:5px;
+}
+
+.pagination>li>a:hover{
+color: #09f;
+text-decoration: none;
+background-color: #f2f2f2;
+border: 1px solid #ddd;
+}
+
+.pagination>li>a:focus{
+position: relative;
+float: left;
+padding: 6px 12px;
+margin:0 4px;
+line-height: 1.42857143;
+color: #fff;
+text-decoration: none;
+background-color: #09f;
+border: 1px solid #09f;
+border-radius:5px;
+}
+
+
+/******* 表格 ******/
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+border-bottom-width: 1px;
+}
+
+.table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
+border: 1px solid #ddd;
+}
+
+ .table-bordered>thead>tr>th{
+     border:none;
+     background:#09f;
+     color:#fff;
+ }
+
+ .table-striped>tbody>tr:nth-of-type(odd) {
+background-color: #fff;
+}
+
+.table-striped>tbody>tr:nth-of-type(even) {
+background-color: #f9f9f9;
+}
+
+
+/*** 表格 灰色表头 ***/
+ .table-bordered-default>thead>tr>th{
+     padding:3px;
+     margin-top:2px;
+     border:none;
+     background:#f2f2f2;
+     color:#999;
+     font-size:12px;
+     font-weight:inherit;
+ }
+
+
+  .table>tbody>tr.active>td, .table>tbody>tr.active>th, .table>tbody>tr>td.active, .table>tbody>tr>th.active, .table>tfoot>tr.active>td, .table>tfoot>tr.active>th, .table>tfoot>tr>td.active, .table>tfoot>tr>th.active, .table>thead>tr.active>td, .table>thead>tr.active>th, .table>thead>tr>td.active, .table>thead>tr>th.active {
+background-color: #ddeffd;
+}
+
+
+
+
+/*************** 标签页 *****************/
+.nav-tabs {
+border-bottom: 3px solid #09f;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+color: #fff;
+cursor: default;
+background-color: #fff;
+border: 1px solid #09f;
+border-bottom-color: transparent;
+background: #09f;
+}
+
+.nav>li>a {
+position: relative;
+display: block;
+padding: 2px 25px;
+background: #f2f2f2;
+border: 1px solid #d7d7d7;
+color:#666;
+}
+
+.nav-tabs>li {
+float: left;
+margin-bottom: 0px;
+font-family: 'Microsoft YaHei'
+}
+
+.tab-content-default{
+    margin-top:3px;
+}
+
+
+/*************** 登录表单 ***************/
+.login-box{
+    width: 360px;
+    padding: 20px;
+    display: block;
+    background:#fff;
+    border-radius:8px;
+    box-shadow: 0 2px 10px #666;
+    margin-top:80px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family:"Microsoft YaHei";
+}
+
+.login-title{
+    font-size:18px;
+    color:#333;
+    text-align:center;
+    border-bottom:1px solid #ccc;
+    padding-bottom: 13px;
+}
+
+.login-box fieldset{
+    display: block;
+    height: 22px;
+    padding:  0 130px ;
+    zoom: 1;
+    clear: both;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-color:#888;
+
+}
+
+.login-box legend{
+    line-height: 22px;
+    font-size: 18px;
+    padding: 0 3px 0 12px;
+    font-weight: 600;
+    border-bottom:0;
+}
+
+.login-box span{
+    color:#333;
+}
+
+.login-content{
+    margin-top:35px;
+}
+
+.login-text{
+    border:1px solid #ddd;
+    border-radius:4px;
+    padding:2px 0;
+    background:#fff
+}
+
+.input-group-lg>.form-control, .input-group-lg>.input-group-addon, .input-group-lg>.input-group-btn>.btn {
+height: 46px;
+width:318px;
+padding: 10px 16px;
+font-size: 14px;
+line-height: 1.3333333;
+border-radius:0;
+}
+.login-form-name,.login-form-name:focus{
+    background:#fff;
+    border:none;
+    box-shadow:none;
+}
+
+ .login-form-password,.login-form-password:focus{
+     
+    background:#fff;
+    border-top:1px solid #ddd;
+    border-left:none;
+    border-bottom:none;
+    border-right:none;
+    box-shadow:none;
+   
+}
+
+ .login-content lebel{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+ }
+
+  .login-content .checkbox{
+    position: relative;
+    display: block;
+    width:75px;
+    margin: 10px 20px 0;
+    font-weight:400;
+    color:#333
+    
+}
+
+  .login-button{
+      margin-top:23px;
+      text-align:center;
+      font-size:16px;
+  }
+
+    .login-button .blue{
+      font-size:16px;
+  }
+  .login-footer{
+      margin-top:30px;
+  }
+
+   .login-footer ul{
+       height:30px;
+       padding:0;
+       color:#999;
+  }
+
+
+  .login-footer ul li{
+      display:block;
+      float:left;
+  }
+
+  .login-footer ul li a{
+     color:#09f;
+     text-decoration:none;
+  }
+   .login-footer ul li a:hover{
+     color:#46B5FF;
+     text-decoration:none;
+  }
+  .login-footer .login-info{
+      color:#09f;
+      padding:0 5px;
+  }
+
+
+  /*************** 注册框 ***************/
+
+  .login-form-phone,.login-form-phone:focus{
+    background:#fff;
+    border:none;
+    box-shadow:none;
+}
+
+  .login-form-code,.login-form-code:focus{
+     
+    background:#fff;
+    border-top:1px solid #ddd;
+    border-left:none;
+    border-bottom:none;
+    border-right:none;
+    box-shadow:none;
+   
+}
+
+.login-text-down{
+    margin-top:30px;
+}
+
+.login-text span.click{
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    z-index: 9999;
+}
+
+/************* 滚动条样式 *************/
+::-webkit-scrollbar {width: 16px; height: 16px;} /* 背景宽度 */
+::-webkit-scrollbar-track {background-color: #f1f1f1;} /* 背景颜色*/
+::-webkit-scrollbar-thumb { height:70px; background-color: #09f;} /* 滑块属性 */
+::-webkit-scrollbar-thumb:hover {background-color: #46B5FF;} /* 滑块操作时 */
+::-webkit-scrollbar-corner {background-color: #fff;} /* 相交处颜色 */
+::-webkit-scrollbar-arrow-color{background-color:black;}
+::-webkit-scrollbar-button:end:increment {background-image: url(../../imgs/scroll_cntrl_dwn.png);}/* 定义滚动条渐增按扭的样式 */
+::-webkit-scrollbar-button:start:decrement {background-image: url(../../imgs/scroll_cntrl_up.png);}/* 定义滚动条渐减按扭的样式 */
+
+
+.scrollbar{
+    width:300px;
+    height:250px;
+    border:1px solid #ddd;
+    overflow-y:scroll;
+}
+
+/******** sprite大图标 ********/
+.tes-content .tes-sprite-big{
+   width:44px;
+   height:44px; 
+   background-image:url(../../imgs/tes-sprite-big.png);
+   background-repeat: no-repeat;
+   display: inline-block;
+   vertical-align: middle;
+}
+
+.tes-content .u131{
+    background-position:-325px 0px;
+}

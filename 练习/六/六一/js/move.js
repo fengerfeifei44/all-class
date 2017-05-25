@@ -215,7 +215,8 @@
             if(time>=defaultOpt.duration){//停止条件的判断；
                 utils.css(defaultOpt.id,defaultOpt.target);
                 clearInterval(defaultOpt.id.timer);
-                defaultOpt.callback && defaultOpt.callback.call(defaultOpt.id);
+               /* defaultOpt.callback && defaultOpt.callback.call(defaultOpt.id);*/
+                ev.fire(defaultOpt.id,'selfEnd');
                 return;
             }
             time+=10;

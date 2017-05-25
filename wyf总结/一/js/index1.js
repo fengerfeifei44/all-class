@@ -24,7 +24,7 @@
                 <span>'+cur['id']+'</span>\
                 <span>'+cur['name']+'</span>\
                 <span>\
-                <a href="">修改</a>\
+                <a href="detail.html?id='+cur['id']+'">修改</a>\
                 <a href="" data-id="'+cur['id']+'">删除</a>\
                 </span>\
                 </li>'

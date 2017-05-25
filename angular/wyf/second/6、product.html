@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <style>
+        [ng-cloak]{
+            display: none;
+        }
+        .color{
+            background: lightblue;
+        }
+    </style>
+</head>
+<body class="container" ng-controller="cartCtrl">
+<div style="margin-top:20px">
+    <label for="price">查询价格</label>
+    <input type="text" id="price" placeholder="请输入单价" ng-model="query" ng-model-options="{debounce:500}"/>
+</div>
+<table class="table table-bordered table-hover" ng-cloak>
+    <caption class="h2">购物车列表</caption>
+    <tr class="text-warning text-center">
+        <th class="text-center">全选
+            <input type="checkbox" ng-change="selectAll()" ng-model="selects"/>
+        </th>
+        <th class="text-center">商品</th>
+        <th class="text-center" ng-click="flag=!flag">单价</th>
+        <th class="text-center">数量</th>
+        <th class="text-center">小计</th>
+        <th class="text-center">操作</th>
+    </tr>
+    <tr class="text-center" ng-repeat="product in products | orderBy:'price':flag|filter:{price:query} track by $index" ng-class="{'color':$even}">
+        <td><input type="checkbox" ng-model="product.isSelected" ng-change="selectOne()"/></td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>
+            <button ng-click="product.count=product.count-1" ng-disabled="product.count<=1?true:false">-</button>
+            <input type="text" ng-model="product.count" ng-readonly="true"/>
+            <button ng-click="product.count=product.count+1">+</button>
+        </td>
+        <td>{{product.price*product.count}}</td>
+        <td><button class="btn bg-danger btn-xs" ng-click="del(product)">删除</button></td>
+    </tr>
+    <tr ng-if="products.length">
+        <td colspan="6">
+            总计{{total()|currency:'￥'}}
+            <select ng-model="opts">
+                <option ng-repeat="c in coasts" value="{{c.val}}">{{c.content}}</option>
+            </select>
+            折后价格{{total()*opts | currency:'￥':1}}
+        </td>
+    </tr>
+    <tr ng-if="!products.length">
+        <td colspan="6" class="text-danger text-center">
+            暂无商品
+        </td>
+    </tr>
+</table>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.controller('cartCtrl',['$scope',function($scope){
+        $scope.opts = "0.3";
+        $scope.coasts = [{val:0.3,content:'打3折'},{val:0.4,content:'打4折'},{val:0.5,content:'打5折'}];
+        $scope.products=[
+            {name:'鲳鱼',price:59,count:1,isSelected:true},
+            {name:'黄花鱼',price:69,count:2,isSelected:true},
+            {name:'多宝鱼',price:79,count:3,isSelected:true}
+        ];
+        $scope.del=function(product){
+            $scope.products=$scope.products.filter(function(item,index){
+                return item!=product;
+            })
+        };
+        $scope.total=function(){
+            var sum=0;
+            $scope.products.forEach(function(item,index){
+                sum+=item.price*item.count;
+            });
+            return sum;
+        };
+        $scope.selectAll=function(){
+           $scope.products.forEach(function(item,index){
+               item.isSelected=$scope.selects;
+           })
+        };
+        $scope.selectOne=function(){
+            var flag=$scope.products.find(function(item,index){
+               return !item.isSelected
+            });
+            if(flag){
+                $scope.selects=false;
+            }else{
+                $scope.selects=true;
+            }
+        };
+        $scope.selectOne();
+    }]);
+
+</script>
+</body>
+</html>

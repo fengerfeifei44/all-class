@@ -5,7 +5,7 @@
     <title></title>
     <style>
         #box{
-            /* border: 1px solid #000000;*/
+             border: 1px solid #000000;
             position: relative;
             width: 840px;
             height: 200px;
@@ -19,13 +19,14 @@
             width: 200px;
 
         }
-        #box img#mark{
+        #box #mark{
             display: none;
             position: absolute;
             left: 0;
             top: 0;
+        }
+        #box #mark img{
             width: 400px;
-
         }
     </style>
 </head>
@@ -35,21 +36,26 @@
     <img src="img/apple_2.jpg" realImg="img/apple_2_bigger.jpg" alt=""/>
     <img src="img/apple_3.jpg" realImg="img/apple_3_bigger.jpg" alt=""/>
     <img src="img/apple_4.jpg" realImg="img/apple_4_bigger.jpg" alt=""/>
-    <img src="img/apple_1_bigger.jpg" alt="" id="mark"/>
+    <div  id="mark"><img src="img/apple_1_bigger.jpg" alt=""/></div>
 </div>
+<script src="js/jquery-2.0.3.js"></script>
 <script>
     var $box=$('#box');
     var $mark=$('#mark');
-    $box.onmouseover=function(e){
-        e=e|| window.event;
-        var target= e.target|| e.srcElement;
-        if(target.tagName.toLowerCase()=='img'){
-            $mark.show()
-        }
-    }
-    $box.onmouseout=function(){
-        $mark.hide();
-    }
+    var $pos=$box.offset();
+    $box.mouseover(function(e){
+        console.log(1)
+        $mark.show().find('img').attr('src', e.target.getAttribute('realImg'))
+    })
+    $box.mousemove(function(e){
+        $mark.css({
+            left: e.clientX-$pos.left+30,
+            top: e.clientY-$pos.top+30,
+        })
+    })
+    $box.mouseout(function(e){
+        $mark.hide()
+    })
 </script>
 
 </body>

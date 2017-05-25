@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        div{
+            margin: 10px auto;
+            width: 1260px;
+        }
+        div:after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+        ul{
+            float: left;
+            margin: 5px;
+            list-style: none;
+            width: 200px;
+           /* height: 200px;
+            background: red;*/
+        }
+        ul li{
+            width: 100%;
+            background: url("img2/default.gif") no-repeat center #cccccc;
+            margin-bottom: 10px;
+        }
+        ul li img{
+            width: 100%;
+        }
+        a{
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 10px;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            background: chartreuse;
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+</div>
+<a href="javascript:;">返回顶部</a>
+<script src="js/utils.js"></script>
+<script>
+    var oDiv=document.getElementsByTagName('div')[0];
+    var aUl=document.getElementsByTagName('ul');
+    var aImg=document.getElementsByTagName('img');
+    var oBtn=document.getElementsByTagName('a')[0];
+    var timer=null;
+    var flag=false;
+    var ary=[
+        {srcImg:"img2/1.jpg"},
+        {srcImg:"img2/2.jpg"},
+        {srcImg:"img2/3.jpg"},
+        {srcImg:"img2/4.jpg"},
+        {srcImg:"img2/5.jpg"},
+        {srcImg:"img2/6.jpg"},
+        {srcImg:"img2/7.jpg"},
+        {srcImg:"img2/8.jpg"},
+        {srcImg:"img2/9.jpg"},
+        {srcImg:"img2/10.jpg"}
+    ];
+    function createLi(){
+        var oLi=document.createElement('li');
+        oLi.innerHTML='<img src="" realImg='+ary[utils.rnd(0,9)].srcImg+' alt=""/>';
+        oLi.style.height=utils.rnd(50,200)+"px";
+        return oLi;
+    }
+    function li50(){
+        for(var i=0;i<=50;i++){
+            var oLi=createLi();
+            var ary=utils.makeArray(aUl);
+            ary.sort(function(a,b){
+                return a.clientHeight- b.clientHeight;
+            })
+            ary[0].appendChild(oLi);
+        }
+    }
+    function showImg(){
+        var scrollBottom=utils.win('scrollTop')+utils.win('clientHeight');
+        for(var i=0;i<aImg.length;i++){
+
+            var scrollTop=utils.offset(aImg[i]).top+utils.getCss(aImg[i],'height');
+
+            if(scrollTop<=scrollBottom){
+                lazyImg(aImg[i]);
+
+            }
+        }
+    }
+
+    function lazyImg(img){
+        if(img.loaded) return;
+        var tmpImg=new Image;
+        tmpImg.src=img.getAttribute('realImg');
+        tmpImg.onload=function(){
+            img.src=this.src;
+            tmpImg=null;
+            img.loaded=true;//记录图片已经被加载过了
+            img.parentNode.style.height="auto";
+        };
+        tmpImg.onerror=function(){
+            img.parentNode.style.background='url("img2/error.gif") no-repeat center #cccccc';
+            tmpImg=null;
+            img.loaded=true;
+        }
+    }
+    li50();
+    showImg();
+   window.onscroll=function(){
+       if(flag) clearInterval(timer);
+       flag=true;
+       var scrollBottom=utils.win('scrollTop')+utils.win('clientHeight');
+       if(utils.win('scrollTop')>=utils.win('clientHeight')){
+           oBtn.style.display="block";
+       }else{
+           oBtn.style.display="none";
+       }
+       showImg();
+       if(utils.win("scrollHeight")-10<=scrollBottom){
+           li50();
+
+       }
+   }
+    oBtn.onclick=function(){
+        var target=utils.win("scrollTop");
+        var duration=1000;
+        var interval=30;
+        var step=target/duration*interval;
+        timer=setInterval(function(){
+            var curTop=utils.win("scrollTop");
+            curTop-=step;
+            utils.win('scrollTop',curTop);
+            flag=false;
+        },interval)
+    }
+
+</script>
+
+</body>
+</html>

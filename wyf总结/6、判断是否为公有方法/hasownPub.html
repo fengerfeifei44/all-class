@@ -6,6 +6,8 @@
 </head>
 <body>
 <script>
+    /*思路：1、属性在这个对象上，且不再它的私有属性上
+    *        */
     function hasPubProperty(attr,obj){
         return attr in obj && !obj.hasOwnProperty(attr);
     }

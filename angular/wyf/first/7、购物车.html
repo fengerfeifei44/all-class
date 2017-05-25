@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        [ng-cloak]{
+            display: none;
+        }
+        .box{
+            margin: 100px auto;
+            border: 1px solid #000000;
+            width: 400px;
+        }
+
+    </style>
+</head>
+<body ng-controller="cartCtrl">
+<table class="box">
+    <thead>
+    <tr>
+        <td>商品</td>
+        <td>单价</td>
+        <td>数量</td>
+        <td>小计</td>
+    </tr>
+    </thead>
+    <tr ng-repeat="val in products">
+        <td>{{val.productName}}</td>
+        <td>{{val.productPrice}}</td>
+        <td>
+            <input type="text" ng-model="val.productCount"/>
+        </td>
+        <td id="price">{{val.productPrice*val.productCount}}</td>
+    </tr>
+</table>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.controller('cartCtrl',['$scope',function($scope){
+        $scope.products=[
+            {productName:'鲳鱼',productPrice:59.9,productCount:1},
+            {productName:'苹果',productPrice:5,productCount:2},
+            {productName:'香蕉',productPrice:3,productCount:3}
+        ]
+
+    }])
+
+</script>
+</body>
+</html>

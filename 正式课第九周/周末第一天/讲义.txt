@@ -108,8 +108,8 @@
 
   以上这些事件在移动端都存在吗?
     1)keydowm、keyup存在吗?
-      很多手机都不支持这两个事件，因为移动端是虚拟键盘，keydowm和keyup在PC端经常用于验证在用户输入的过程中我们做什么事情，在移动端我们有一个事件‘input’，是专门用来代替这两个事件的
-      oInput.addEventListener('input',function(){},false);
+      很多手机都不支持这两个事件，因为移动端是虚拟键盘，keydowm和keyup在PC端经常用于验证在用户输入的过程我们做什么事情，在移动端我们有一个事件‘input’，是专门用来代替这两个事件的
+      oInput.addEventL中istener('input',function(){},false);
       oInput.oninput=function(){}
 
     2)mouse系列的事件在移动端支持的都不好，在移动端的事件应该都是以手指为核心

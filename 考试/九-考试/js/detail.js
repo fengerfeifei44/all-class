@@ -14,7 +14,7 @@
 }(String.prototype));
 (function(){
     var submit=document.getElementById('submit');
-    var username=document.getElementById('username');
+    var username=document.getElementById('userName');
     var url=window.location.href;
     var urlObj=url.queryURLParameter();
     var curId=urlObj['id'];
@@ -29,7 +29,8 @@
             success:function(result){
                 if(result && result.code===0){
                     username.value=result['data']['name'];
-                    console.log(1)
+                    console.log(result.data)
+
                 }
             }
         })

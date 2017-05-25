@@ -5,6 +5,19 @@
     <title></title>
 </head>
 <body>
+<script>
+    function domReady(fn){
+        if(document.addEventListener){
+            document.addEventListener('DOMContentLoaded',fn)
+        }else{
+            document.onreadystatechange=function(){
+                if(document.readyState==='complete'){
+                    fn();
+                }
+            }
+        }
+    }
+</script>
 
 </body>
 </html>

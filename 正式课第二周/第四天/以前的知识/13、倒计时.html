@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>距离睡觉还有<span>00天00:00:00</span></div>
+<script>
+    var oDiv=document.getElementsByTagName('div')[0];
+    var oSpan=document.getElementsByTagName('span')[0];
+    function countDown(){
+        var oDate=new Date();
+        var s=(new Date("2016/11/6 2:00:00")-oDate)/1000;
+        var d=Math.floor(s/86400);
+        s%=86400;
+        var h=Math.floor(s/3600);
+        s%=3600;
+        var m=Math.floor(s/60);
+        s%=60;
+        s=Math.floor(s);
+        var str=toDou(d)+"天"+toDou(h)+":"+toDou(m)+":"+toDou(s);
+        oSpan.innerHTML=str;
+    }
+    function toDou(n){
+        return n>=0&&n<10?"0"+n:""+n;
+    }
+    setInterval(countDown,1000);
+</script>
+
+</body>
+</html>

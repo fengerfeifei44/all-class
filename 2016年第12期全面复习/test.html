@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <p></p>
+    <span></span>
+    <a href="#"></a>
+</div>
+<script>
+    var oBox=document.getElementById('box');
+    function getChildren(curEle,tagName){
+        var childs=curEle.childNodes;//获取所有的子节点
+        var ary=[];
+        for(var i=0; i<childs.length; i++){
+            var cur=childs[i];
+            if(cur.nodeType==1){//首先保证是子元素，再考虑是否过滤；
+                if(tagName){
+                    if(cur.tagName.toLocaleLowerCase()===tagName.toLowerCase()){
+                        ary.push(cur);
+                    }
+                }else{
+                    ary.push(cur)
+                }
+            }
+        }
+        return ary;
+    }
+    console.log(getChildren(oBox))
+    var str='wangyongfeng'
+    var str1=str.slice(1,5);
+    console.log(str,str1);
+
+</script>
+</body>
+</html>

@@ -3,8 +3,62 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        div{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
+<div id="box"><img src="1.jpg" alt=""/></div>
+<script>
+   var  oBox=document.getElementById('box');
+    oBox.onmousedown=down;
+   function processThis(fn,context){
+       return function(e){
+           fn.call(context,e)
+       }
+   }
+    function down(e){
+        e=e||window.event;
+        this.l=this.offsetLeft;
+        this.t=this.offsetTop;
+        this.x= e.clientX;
+        this.y= e.clientY;
+        if(this.setCapture){
+            this.setCapture();
+            oBox.onmousemove=move;
+            oBox.onmouseup=up;
+        }else{
+            var _this=this;
+            document.onmousemove=processThis(move,_this);
+            document.onmouseup=processThis(up,_this);
+            e.preventDefault();
+        }
 
+    }
+    function move(e){
+        e=e||window.event;
+        this.style.left=this.l+ e.clientX-this.x+'px';
+        this.style.top=this.t+ e.clientY-this.y+'px';
+    }
+    function up(){
+        if(this.releaseCapture){
+            this.releaseCapture();
+            this.onmousemove=null;
+            this.onmouseup=null;
+        }else{
+            document.onmousemove=null;
+            document.onmouseup=null;
+        }
+
+    }
+</script>
 </body>
 </html>

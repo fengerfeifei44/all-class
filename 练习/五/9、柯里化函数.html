@@ -5,6 +5,20 @@
     <title></title>
 </head>
 <body>
+<script>
+    Function.prototype.myBind=function(context){
+        var _this=this;
+        var outAry=Array.prototype.slice.call(arguments,1);
+        if('bind' in Function.prototype){
+            return this.bind.apply(this,[context].concat(outAry));
+        }
+        return function(){
+            var innerAry=Array.prototype.slice.call(arguments);
+            innerAry.length==0?innerAry[innerAry.length]=window.event:null;
+            _this.apply(context,outAry.concat[innerAry])
+        }
+    }
+</script>
 
 </body>
 </html>

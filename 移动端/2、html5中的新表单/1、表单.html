@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--1、传统的表单
+input select textaea lable-->
+<!---->
+<!--2 新增加的表单
+  input search url email tel number range color date time
+  progress进步条
+  datalist 二级下拉框
+  新增加的表单元素在IE6-8下不兼容，而且没办法处理兼容 html5是不能处理表单的兼容的-->
+
+<!--在传统的PHP网站开发中，我们在ACTTON中放入一个处理数据和业务逻辑的页面 我们使用SUBMIT按钮 当点击的时候 会把输入的内容自动获取，拼接成-->
+<!--submit按钮有默认行为，如果我们不想使用跳转这样的行业需要阻止它的默认行为，同样还有reset-->
+<form action="">
+    <label for=""></label><!--标记标签 类似于span-->
+    <input style="outline: none" type="text" onblur="失去焦点" onfocus="获取焦点" onchange="内容改变" onkeypress="键盘长按" autofocus><!--autofocus自动获取光标-->
+    <select name="" id=""></select><!--下拉框 option是下拉框的选项-->
+    <textarea name="" id="text" cols="30" rows="10">111</textarea>
+    <input type="password">
+    <input type="radio" name="sex" checked id="man"> <label for="man">男</label>
+    <input type="radio" name="sex" checked id="girl"> <label for="girl">女</label>
+
+</form>
+</body>
+</html>

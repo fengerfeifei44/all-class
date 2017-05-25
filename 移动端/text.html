@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select name="area" id="province">
+    <option value="请选择" selected>请选择</option>
+</select>
+
+<select name="" id="city">
+    <option value="请选择" selected>请选择</option>
+</select>
+
+<script>
+
+   var areaReader=(function () {
+       var province=document.getElementById('province');
+       function bindData(curEle,data) {
+           var frg=document.createDocumentFragment();
+           for(var i=0,len=data.length;i<len;i++){
+               var dataItem=data[i]
+               var option=document.createElement('option');
+               option.value=dataItem.name;
+               frg.appendChild(option)
+           }
+
+       }
+       return{
+           init:function () {
+               //获取数据
+               ajax({
+                   url:'json/data.json',
+                   success:function (result) {
+                       console.log(result);
+                       //给省绑定数据
+                   }
+               })
+
+           }
+       }
+   })
+    areaReader.init();
+</script>
+</body>
+</html>

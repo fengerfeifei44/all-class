@@ -3,8 +3,60 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 400px;
+            height: 200px;
+            background: url("img2/default.gif") no-repeat center #cccccc;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
+<div style="height: 1000px"></div>
+<ul>
+    <li><img src="" realImg="img2/1.jpg" alt=""/></li>
+    <li><img src="" realImg="img2/2.jpg" alt=""/></li>
+    <li><img src="" realImg="img2/3.jpg" alt=""/></li>
+    <li><img src="" realImg="img2/4.jpg" alt=""/></li>
+    <li><img src="" realImg="img2/5.jpg" alt=""/></li>
+    <li><img src="" realImg="img2/6.jpg" alt=""/></li>
+</ul>
+<script src="js/utils.js"></script>
+<script>
+    var aImg=document.getElementsByTagName('img');
+    window.onscroll=function(){
+        var scrollBottom=utils.win('scrollTop')+utils.win("clientHeight");
+        for(var i=0;i<aImg.length;i++){
+            var curPos=utils.offset(aImg[i]).top+utils.getCss(aImg[i],"height");
+            if(curPos<=scrollBottom){
+                lazyImg(aImg[i]);
+            }
+        }
+    };
+    function lazyImg(img){
+        if(img.loaded)return;
+        var tmpImg=new Image;
+        tmpImg.src=img.getAttribute('realImg');
+        tmpImg.onload=function(){
+            img.src=this.src;
+            img.loaded=true;
+            tmpImg=null;
+        }
+        tmpImg.onerror=function(){
+            img.parentNode.style.background='url("img2/error.gif") no-repeat center #cccccc';
+            img.loaded=true;
+            tmpImg=null;
+        }
+    }
+
+</script>
 
 </body>
 </html>

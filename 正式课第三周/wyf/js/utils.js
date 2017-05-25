@@ -72,6 +72,82 @@ var utils={
         }
         return Math.round(Math.random()*(m-n)+n);
     },
+    //getByClassName:通过class名（限定范围的）获取元素
+    getByClassName:function(str,parent){
+        parent=parent||window;
+        if("getComputedStyle" in window){
+            return this.makeArray(parent.getElementsByClassName(str));
+        }
+        var ary=[];
+        var aryClass=str.replace(/(^ +)|( +$)/g,'').split(/\s+/g);
+        var nodeList=parent.getElementsByTagName("*");
+        for(var i=0;i<nodeList.length;i++){
+            var cur=nodeList[i];
+            var bOk=true;
+            for(var j=0;j<aryClass.length;j++){
+                var reg=new RegExp("( |^)"+aryClass[j]+"( |$)","g");
+                if(!reg.test(cur.className)){
+                    bOk=false;
+                }
+            }
+            if(bOk){
+                ary.push(cur);
+            }
+
+        }
+        return ary;
+    },
+    //hasClassName:判断元素身上是否有某个class名
+    hasClassName:function(curEle,cName){
+        var reg=new RegExp("(^| )"+cName+"( |$)","g");
+        return reg.test(curEle.className);
+    },
+    //addClass:可以给元素身上以字符串形式批量添加class名（当元素身上没这个class名的时候，可以给这个元素添加这个class名）
+    addClass:function(curEle,strClass){
+        var aryClass=strClass.replace(/(^ +)|( +$)/g,"").split(/\s+/g);
+        for(var i=0;i<aryClass.length;i++){
+            if(!this.hasClassName(curEle,strClass[i])){
+                curEle.className+=" "+aryClass[i];
+            }
+        }
+    },
+    //setCss样式:
+    setCss:function(curEle,attr,value){
+        if(attr=="float"){
+            curEle.style.cssfloat=value;
+            curEle.styleFloat=value
+        }
+        if(attr=="opacity"){
+            curEle.style.opacity=value;
+            curEle.style.filter="alpha(opacity="+value*100+")";
+            return;
+        }
+       var reg=/^([+-])?(\d+(\.\d+)?)(px|pt|rem|em|%)?$/;
+        if(reg.test(value)){
+            if(Number(value)||Number(value)==0){
+                value=value+"px";
+            }
+        }
+        curEle.style[attr]=value;
+    },
+    setGroupCss:function(curEle,obj){
+        for(var attr in obj){
+            this.setCss(curEle,attr,obj[attr]);
+        }
+
+    },
+    css:function(curEle,a,b){
+        if(typeof a=="string"){
+            if(b){
+                this.setCss(curEle,a,b);
+            }else{
+               return this.getCss(curEle,b);
+            }
+        }else{
+            this.setGroupCss(curEle,a,b);
+        }
+    }
+
 
 
 

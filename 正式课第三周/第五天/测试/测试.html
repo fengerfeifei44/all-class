@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body,html{
+            height: 2000px;
+        }
+        #box{
+            margin: 100px;
+           height: 40px;
+            width: 40px;
+           background: red;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div class="box1 box2 box3"></div>
+    <div class="box1 box2"></div>
+    <p>1</p>
+    <span></span>
+</div>
+
+<script src="js/utils.js"></script>
+<script>
+    var oBox=document.getElementById('box');
+    var oDiv=oBox.getElementsByTagName('div')[0];
+    var oP=oBox.getElementsByTagName('p')[0]
+    var ary=utils.getByClass("box2",oBox);
+    var oEle=document.createElement('ul');
+    //console.log(utils.children(oBox,"p"))
+   // console.log(utils.firstChild(oBox))
+   // console.log(utils.lastChild(oBox))
+    utils.insertAfter(oEle,oDiv)
+    //console.log(utils.setCss(oBox,"opacity",0.5));
+    //console.log(utils.setCss(oBox,"height",100));
+   // console.log(utils.css(oBox,"height"));
+    //alert(utils.offset(oBox).left)
+   // console.log(utils.win("scrollTop"))
+   // alert(utils.getCss(oBox,"opacity"));
+    // console.log(utils.rnd(9,199));
+   // var data='{"name":"wyf"}'
+    //console.dir(data)
+</script>
+
+</body>
+</html>

@@ -3,8 +3,80 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        #box{
+            position: relative;
+            margin: 50px auto;
+            border:1px solid #000000;
+            width: 400px;
+            height: 400px;
+        }
+        #mark{
+            position: absolute;
+            width: 100px;
+            height:100px;
+            background: green;
+
+        }
+    </style>
 </head>
 <body>
+<div id="box">
+
+</div>
+<script>
+    var oMark=null;
+    var oDiv=document.getElementById('box');
+    oDiv.onmouseover=function(e){
+        e=e||window.event;
+        var oTo=e.fromElement|| e.relatedTarget;
+        if(!oDiv.contains(oTo)){
+            oMark=document.createElement('div');
+            oMark.id='mark';
+            oDiv.appendChild(oMark);
+        }
+    }
+    oDiv.onmousemove=function(e){
+        e=e||window.event;
+        oMark.style.left= e.clientX-this.offsetLeft+'px';
+        oMark.style.top= e.clientY-this.offsetTop+'px';
+    }
+    oDiv.onmouseout=function(e){
+        e=e||window.event;
+        var oTo= e.toElement|| e.relatedTarget;
+        if(!this.contains(oTo)){
+            oDiv.removeChild(oMark)
+        }
+
+    }
+
+  /*  oDiv.onmouseover=function(){
+        console.log(123)
+        oMark=document.createElement('div');
+        oMark.id='mark'
+
+        oMark.onmousemove=function(){
+            e=e||window.event;
+            e.stopPropagation? e.stopPropagation(): e.cancelBubble=true;
+        }
+        this.appendChild(oMark)
+
+    }
+    oDiv.onmousemove=function(e){
+        e=e|| window.event;
+        oMark.style.left= e.clientX-this.offsetLeft+'px';
+        oMark.style.top= e.clientY-this.offsetTop+'px'
+    }
+    oDiv.onmouseout=function(){
+        console.log(456)
+        this.removeChild(oMark)
+        oMark.onmousemove=function(e){
+            e=e||window.event;
+            e.stopPropagation? e.stopPropagation(): e.cancelBubble=true;
+        }
+    }*/
+
+</script>
 
 </body>
 </html>

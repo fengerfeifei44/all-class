@@ -1,0 +1,33 @@
+/*
+@color:red;
+#div1{
+  width: 200px;
+  height: 200px;
+  background: @color;
+  &:hover{/!*&∏∏±Í«©*!/
+    width: 400px;
+    height: 400px;
+    opacity: 0.5;
+    .transition(all,1s,ease,0s);
+  }
+}
+.transition(@property,@duration,@timing-function,@delay){
+  -webkit-transition:@arguments;
+  -moz-transition:@arguments;
+  -ms-transition:@arguments;
+  -o-transition:@arguments;
+  transition:@arguments;
+}
+@fontSize:16px;
+@color:color;
+*/
+@fontSize:16px;
+@color:color;
+@url:"../images";
+@box:box;
+#div1{
+  font-size: @fontSize;
+  @{color}:red;
+  background-@{color}:green;
+  background-image: url("@{url}/a.png");
+}

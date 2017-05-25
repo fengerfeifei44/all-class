@@ -3,8 +3,53 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        #box{
+            position: relative;
+            margin: 50px auto;
+            width: 840px;
+        }
+        #box img{
+            width: 200px;
+        }
+        #mark{
+            display:none;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+        #mark img{
+            width: 400px;
+        }
+    </style>
 </head>
 <body>
+<div id="box">
+    <img src="img/apple_1.jpg" realImg="img/apple_1_bigger.jpg" alt=""/>
+    <img src="img/apple_2.jpg" realImg="img/apple_2_bigger.jpg" alt=""/>
+    <img src="img/apple_3.jpg" realImg="img/apple_3_bigger.jpg" alt=""/>
+    <img src="img/apple_4.jpg" realImg="img/apple_4_bigger.jpg" alt=""/>
+    <div id="mark"><img src="img/apple_1_bigger.jpg" alt=""/></div>
+</div>
+<script src="js/jquery-2.0.3.js"></script>
+<script>
+    var $box=$('#box');
+    var $mark=$('#mark');
+    var $pos=$box.offset();
+    $box.mouseover(function(e){
+        $mark.show().find('img').attr('src', e.target.getAttribute('realImg'));
+    })
+    $box.mousemove(function(e){
+        $mark.css({
+            left: e.clientX-$pos.left+10,
+            top: e.clientY-$pos.top+10
+        })
+    })
+    $box.mouseout(function(){
+        $mark.hide()
+    })
+</script>
 
 </body>
 </html>

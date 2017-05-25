@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var obj={};
+    var ary=[10,30,40];
+  /* var res=ary.forEach(function(item,index,input){
+        console.log(this,arguments);
+       return 10;
+    })
+    console.log(res);*/
+
+    Array.prototype.myForEach=function(callback,context){
+        context=context||window;
+        if("forEach" in Array.prototype){
+            this.forEach(callback,context);
+            return;
+        }
+        for(var i=0;i<this.length;i++){
+            callback.call(context,this[i],i,this)
+        }
+    }
+ var res=ary.myForEach(function(item,index,input){
+     console.log(item);
+    // return item*10; 回调函数没有返回值，forEach也没有返回值
+ })
+    console.log(res);
+</script>
+
+</body>
+</html>

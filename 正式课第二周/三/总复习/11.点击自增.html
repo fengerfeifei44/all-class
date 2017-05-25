@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            border-radius: 100px;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            background: yellow;
+            font-size: 60px;
+            -webkit-user-select: none;
+        }
+    </style>
+</head>
+<body>
+<div>0</div>
+<script>
+    var oDiv=document.getElementsByTagName("div")[0];
+   /* var n=0;
+    oDiv.onclick=function(){
+        this.innerHTML=++n;
+    }*/
+
+    /*(function(){
+        var n=0;
+        oDiv.onclick=function() {
+            this.innerHTML = ++n;
+        }
+    })()*/
+
+   /* oDiv.onclick=function(){
+        this.innerHTML++;
+    }*/
+
+    /*oDiv.n=0;
+    oDiv.onclick=function(){
+        this.innerHTML=++this.n;
+    }*/
+
+    oDiv.onclick=(function(){
+        var n=0;
+        return function(){
+            this.innerHTML=++n;
+        }
+    })()
+
+
+</script>
+
+</body>
+</html>

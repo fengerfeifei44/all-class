@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="oneCtrl"></div>
+<div ng-controller="twoCtrl"></div>
+<script src="node_modules/angular/angular.min.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.service('cale',function(){
+       var that=this;
+       this.currency='$';
+
+        this['+']=function(a,b){return that.currency+(a+b)},
+         this['-']=function(a,b){return that.currency+(a-b)}
+
+    })
+    app.controller('oneCtrl',function($scope,cale){
+        $scope.a=1;
+        $scope.b=2;
+        console.log(cale['+']($scope.a,$scope.b));
+    });
+    app.controller('twoCtrl',function($scope,cale){
+        $scope.a=1;
+        $scope.b=2;
+        console.log(cale['-']($scope.a,$scope.b));
+    })
+</script>
+</body>
+</html>

@@ -124,7 +124,7 @@ var server1=http.createServer(function(req,res){
     }
     //5、删除客户信息
     if(pathname==='/removeInfo'){
-        customId=query['id'];
+       var customId=query['id'];
         customData.forEach(function(item,index){
             if(item['id']==customId){
                 customData.splice(index,1);

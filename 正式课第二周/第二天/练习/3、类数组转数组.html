@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<script>
+    var aLis=document.getElementsByTagName('li');
+    console.log(makeArray(aLis));
+    /**
+     * 功能：类数组转数组
+     * @param arg 类数组
+     * @returns {Array}
+     */
+    function makeArray(arg){
+        var ary=[];
+        try{
+            ary=Array.prototype.slice.call(arg)
+        }catch(e){
+            for(var i=0;i<arg.length;i++){
+                ary.push(arg);
+            }
+        }
+        return ary;
+    }
+</script>
+
+</body>
+</html>

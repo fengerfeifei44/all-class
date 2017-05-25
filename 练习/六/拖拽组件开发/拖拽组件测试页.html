@@ -3,8 +3,80 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            position: relative;
+            margin: 0 auto;
+            padding: 5px;
+            width: 640px;
+            height: 640px;
+            background: #cccccc;
+        }
+        li{
+            float: left;
+            margin: 5px;
+            width: 150px;
+            height: 150px;
+            background: lightblue;
+        }
+        li img{
+            display: block;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+<ul id="ul">
+   <!-- <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/1.png" alt=""/></li>
+    <li><img src="img/1.png" alt=""/></li>-->
+</ul>
+<script src="js/utils.js"></script>
+<script src="js/event.js"></script>
+<script src="js/move.js"></script>
+<script src="js/Drag.js"></script>
+<script>
 
+    var oUl=document.getElementById('ul');
+    var aLi=document.getElementsByTagName('li');
+    function createLi(data){
+        var frg=document.createDocumentFragment();
+        for(var i=0;i<data;i++){
+            var oLi=document.createElement('li');
+            oLi.innerHTML='<img src="img/'+(i+1)+'.png" alt=""/>'
+            frg.appendChild(oLi);
+        }
+        oUl.appendChild(frg);
+        frg=null;
+    }
+    createLi(14);
+    for(var i=aLi.length-1;i>=0;i--){
+        var oLi=aLi[i];
+        oLi.oldColor=utils.css(oLi,'backgroundColor');
+        //oLi.oldColor=utils.css(oLi,'backgroundColor');
+        oLi.style.left=(oLi.l=oLi.offsetLeft)+'px';
+        oLi.style.top=(oLi.t=oLi.offsetTop)+'px';
+        oLi.style.position='absolute';
+        oLi.style.margin=0;
+        var drag=new Drag(oLi);
+        drag.photo(aLi);
+        //drag.jump();
+    }
+
+</script>
 </body>
 </html>

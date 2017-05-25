@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html ng-app="demoapp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/ui-leaflet/leaflet.js"></script>
+    <script src="/bower_components/ui-leaflet/ui-leaflet.min.js"></script>
+    <script src="/bower_components/angular-simple-logger/angular-simple-logger.js"></script>
+    <link rel="stylesheet" href="/bower_components/ui-leaflet/leaflet.css" />
+    <script>
+        var app = angular.module("demoapp", ['ui-leaflet']);
+        app.controller("LayersImageOverlayController", [ "$scope", "$log", "leafletData", "leafletBoundsHelpers", function($scope, $log, leafletData, leafletBoundsHelpers) {
+            var maxBounds = leafletBoundsHelpers.createBoundsFromArray([[-158, -208], [158, 208]]);
+            angular.extend($scope, {
+                defaults: {
+                  scrollWheelZoom: false,
+                  crs: 'Simple',
+                  maxZoom: 2
+                },
+                center: {
+                    lat:25,
+                    lng: 25,
+                    zoom: 15
+                },
+                maxBounds: maxBounds,
+                layers: {
+                    baselayers: {
+                        sanfrancisco: {
+                            name: 'Andes',
+                            type: 'imageOverlay',
+                            url: '/demo/Indoor/GetFloorLayout?scale=15',
+                            bounds: [[0, 88], [158, 0]],
+                            layerParams: {
+                                showOnSelector: false,
+                                noWrap: true,
+                                attribution: ''
+                            }
+                        }
+                    },
+                }
+            });
+       }]);
+    </script>
+</head>
+<body ng-controller="LayersImageOverlayController">
+    <leaflet lf-center="center" defaults="defaults" layers="layers" maxbounds="maxBounds" height="480px" width="480px"></leaflet>
+    <h1>Layer with image overlay and maxBounds</h1>
+</body>
+</html>

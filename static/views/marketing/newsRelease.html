@@ -1,0 +1,55 @@
+﻿<form class="form-horizontal" style="font-size: 16px; padding-top: 13px; padding-right: 100px; padding-bottom: 305px; ">
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label col-sm-offset-2 col-md-2 col-xs-2 col-md-offset-2 col-xs-offset-2 text-right"     style="font-weight:normal;float:left;min-width:73px;">消息类型</label>
+        <div class="col-sm-6 col-md-6 col-xs-6" style="padding-top: 7px;min-width:437px;float:left;">
+            <ul class="list-inline list-unstyled">
+                <li>
+                    <a href="javascript:void(0);" style="position: relative; padding-right: 10px;" ng-click="messageClick()">
+                        <span style="display: inline-block; width: 6px; height: 6px; border: 1px solid #6a6a6c; border-radius: 50%; padding: 7px;position:relative;top:4px;"></span>
+                        <span style="display: inline-block; width: 8px; height: 8px; background: red; border-radius: 50%;position:absolute;top:5px;left:4px;" ng-show="information"></span>
+                    </a>
+                    信息
+
+                </li>
+                <li style="padding-left:119px;">
+                    <a href="javascript:void(0);" style="position: relative; padding-right: 10px;" ng-click="activityClick()">
+                        <span style="display: inline-block; width: 6px; height: 6px; border: 1px solid #6a6a6c; border-radius: 50%; padding: 7px; position: relative; top: 4px; "></span>
+                        <span style="display: inline-block; width: 8px; height: 8px; background: red; border-radius: 50%;position:absolute;top:5px;left:4px;" ng-show="activity"></span>
+                    </a>
+                    活动
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail3" class="col-sm-2 control-label col-sm-offset-2 col-md-2 col-xs-2 col-md-offset-2 col-xs-offset-2 text-right" style="font-weight: normal; float: left; min-width: 73px;">发布内容</label>
+        <div class="col-sm-6 col-md-6 col-xs-6 " style="min-width: 437px; float: left;">
+            <textarea class="form-control" rows="8" ng-model="message_conf"></textarea>
+            <!--<input type="email" class="form-control" id="inputEmail3" placeholder="Email">-->
+        </div>
+    </div>
+    <div class="form-group" ng-show="linkMess">
+        <label for="inputPassword3" class="col-sm-2 control-label col-sm-offset-2 col-md-2 col-xs-2 col-md-offset-2 col-xs-offset-2 text-right" style="font-weight: normal; float: left; min-width: 73px;">链接</label>
+        <div class="col-sm-6 col-md-6 col-xs-6" style="min-width: 437px; float: left;">
+            <input type="text" class="form-control" id="inputPassword3" placeholder="" ng-model="link_mess">
+        </div>
+    </div>
+
+    
+    <div class="form-group">
+        <label for="inputPassword3" class="col-sm-2 control-label col-sm-offset-2 col-md-2 col-xs-2 col-md-offset-2 col-xs-offset-2 text-right" style="font-weight: normal; float: left; min-width: 73px;"></label>
+        <div class="col-sm-6 col-md-6 col-xs-6 text-right" style="min-width: 437px; float: left;">
+            <button type="submit" class="btn btn-primary" style="width: 160px; background: #1e86df;height:40px;font-size:16px;" ng-click="publishClick()">发布</button>
+        </div>
+        <!--<div class="col-lg-1 col-lg-offset-5 col-md-1 text-right col-sm-offset-8 col-xs-2 col-sm-2 col-md-offset-8 col-xs-offset-8" style="min-width: 437px;">
+            <button type="submit" class="btn btn-primary">发布</button>
+        </div>-->
+    </div>
+</form>
+
+
+  
+
+
+
+

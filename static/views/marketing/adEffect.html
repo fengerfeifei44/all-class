@@ -1,0 +1,145 @@
+﻿<style type="text/css">
+    .bold
+    {
+        font-weight: bold;
+        font-size: 15px;
+    }
+</style>
+
+<div class="main-head">
+    <div class="col-md-8 time-choice col-sm-8 col-xs-8" style="min-width: 544px;">
+        <form class="form-inline">
+            <div class="form-group" ng-show="true" style="display: inline-block; margin-bottom: 0; vertical-align: middle;">
+                <span class="bold">选择时间</span>
+                <!--<input kendo-date-picker ng-model="datastart" k-format="MyDateFormat" k-options="DateSelectorOptions" k-rebind="DateSelectorOptions"
+                    k-ng-model="datastart" id="date1" type="button" class="form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 152px;"/>-->
+                <input id="start" style="width: 152px;" value="" ng-model="datastart" k-ng-model="datastart"> 
+            </div>
+            <div class="form-group" style="display: inline-block; margin-bottom: 0; vertical-align: middle;">
+                <span class="bold">至</span>
+                <!--<input kendo-date-picker ng-model="dataend" k-format="MyDateFormat" k-options="DateSelectorOptions1" k-rebind="DateSelectorOptions1"
+                       k-ng-model="dataend" id="date2" type="button" class="form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 152px;" />-->  
+                <input id="end" style="width: 152px;" value="" ng-model="dataend" k-ng-model="dataend">   
+            </div>
+            <a class="search" ng-click="searchClick()" style="border: 0; background: none; font-weight: bold; color: #3da7ff; cursor: pointer;"><i class="fa fa-search" style="font-size: 12px; padding-left: 2px;"></i>
+                <span style="position: relative; color: #3da7ff; top: 2px;">查询</span>
+
+            </a>
+        </form>
+    </div>
+</div>
+
+
+<div class="container-fluid" ng-init="isHour = false">
+    <div class="row-fluid" id="pieConfig" style="height: 400px; margin-top: 20px; position: relative;">
+        <span style="position: absolute; right: 35%; margin-top: 0px; font-size: 18px; cursor: pointer; color: #3da7ff;z-index:1000" ng-show="hasShowNum" ng-click="convertPer()">转换率</span>
+        <ng-echarts class="col-md-12 col-sm-12 col-xs-12" ec-config="pieConfig" ec-option="pieOption" style="height: 400px;"></ng-echarts>
+    </div>
+</div>
+
+<div>
+    <div style="overflow: hidden;" class="nav-daasadg">
+        <div class="row">
+            <div class="col-md-4">
+                <ul class="nav navbar-nav nav-table">
+                    <li ng-click="changeTabs($event,0)" role="presentation" class="active"><a>投放中广告</a></li>
+                    <li ng-click="changeTabs($event,1)" role="presentation"><a>已暂停广告</a></li>
+                    <li ng-click="changeTabs($event,3)" role="presentation" style="border-right: 1px solid #ddd;"><a>投放结束广告</a></li>
+                </ul>
+            </div>
+            <div class="col-md-5 col-md-offset-3">
+                <div class="row">
+                    <div class="col-md-8">
+                        <input type="text" class="search form-control" ng-model="AdName" style="height: 37px;" ng-focus="searchDis()" ng-blur="searchShow()" />
+                        <img src="imgs/searchIcon.png" alt="Alternate Text" style="position: absolute; top: 11px; left: 24px;cursor:pointer;" class="searchIcon" />
+                        <!--<span class="glyphicon glyphicon-search" aria-hidden="true" style="position: absolute; left: 25px; top: 11px; color: #ccc; cursor: pointer;"></span>-->
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-default btn-daasadg" ng-click="searchAD()">搜索</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="bold">序号</th>
+                    <th class="bold">广告名称</th>
+                    <th class="bold">广告编号</th>
+                    <th class="bold">展示数(已使用/总数)</th>
+                    <th class="bold">点击数(已使用/总数)</th>
+                    <th class="bold">转化率(点击数/展示数)</th>
+                    <!--  <th>
+                        <select class="table-select" ng-model="AD_STATUS" ng-change="statusSelect()">
+                            <option value="">全部状态</option>
+                            <option value="0">投放中</option>
+                            <option value="1">已暂停</option>
+                            <option value="3">投放结束</option>
+                        </select>
+                    </th>-->
+                </tr>
+            </thead>
+            <tbody style="font-size: 14px;">
+                <tr ng-repeat="cm in advert" ng-click="lineShow(cm.ad_id,$index,cm.CHARGING_TYPE,cm.LastNum)">
+                    <td>{{cm.RowIndex}}</td>
+                    <td>{{cm.ad_desc}}</td>
+                    <td>{{cm.ad_id}}</td>
+                    <td>{{cm.UseNum}}</td>
+                    <td>{{cm.LastNum}}</td>
+                    <td>{{cm.ConvertPer}}</td>
+                    <!--  <td>{{cm.ad_status_text}}</td>-->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- 分页代码 -->
+<div style="overflow: hidden;">
+    <div class="col-md-6 col-sm-6 col-xs-6">
+        <div style="text-align: right; margin: 0 auto;" class="search-right">
+            <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="perItems" max-size="maxSize" ng-change="pageChanged(currentPage, maxSize)"
+                previous-text="上一页" next-text="下一页" class="pagination-sm" boundary-link-numbers="true" rotate="false" num-pages="numPages"></uib-pagination>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6" style="height: 70px; padding-top: 19px;">
+        共<span style="padding: 0 8px;">{{responseData.PageCount}}</span>页，到
+        <input type="text" name="name" value=" " ng-model="ye" style="width: 30px; height: 30px; position: relative; top: -1px; padding: 0;" />
+        <span>页</span>
+        <a class="" ng-click="sure()" style="cursor: pointer; padding-left: 18px;">确定</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

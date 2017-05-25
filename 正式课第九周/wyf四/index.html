@@ -2,9 +2,110 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>看比赛移动端</title>
+    <meta name="keyworks" content=""/>
+    <meta name="description" content=""/>
+    <link type="image/x-icon" rel="icon" href="kbs/icon-logo.png"/>
+    <!--import needed css-->
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet/less" href="css/index.less"/>
+    <script src="js/less-2.5.3.min.js"></script>
+    <script>
+        ~function () {
+            var winW = document.documentElement.clientWidth;
+            //->控制在640以内在计算REM的换算比例,640以外都已设计稿的尺寸为最大值即可,这样在PAD上或者PC上看到的最大尺寸就是设计稿的
+            if (winW <= 640) {
+                document.documentElement.style.fontSize = winW / 640 * 100 + 'px';
+            }
+        }();
+    </script>
+   <!-- <script>
+        document.documentElement.style.fontSize=document.documentElement.clientWidth/640*100+'px';
+    </script>-->
 </head>
 <body>
+<main class="main">
+    <!--header-->
+    <header class="header">
+        <h1 class="logo">
+            <a href="#">腾讯体育</a>
+        </h1>
+        <a href="#" class="type">NBA</a>
+        <a href="javascript:;" class="menu"></a>
+        <a href="#" class="login">登录</a>
+    </header>
+    <!--nav-->
+    <nav class="nav">
+        <ul class="clear">
+            <li><a href="#">NBA</a></li>
+            <li><a href="#">CBA</a></li>
+            <li><a href="#">英超</a></li>
+            <li><a href="#">欧冠</a></li>
+            <li><a href="#">亚冠</a></li>
+            <li><a href="#">西甲</a></li>
+            <li><a href="#">意甲</a></li>
+            <li><a href="#">法甲</a></li>
+            <li><a href="#">德甲</a></li>
+            <li><a href="#">中超</a></li>
+            <li><a href="#">NFL</a></li>
+            <li><a href="#">综合</a></li>
+            <li><a href="#">欧洲</a></li>
+            <li><a href="#">社区</a></li>
+            <li><a href="#">下载</a></li>
+        </ul>
+    </nav>
+    <!--video-->
+    <section class="video">
+        <!--controls-->
+        <video controls preload="none" poster="kbs/poster.jpg"  src="" ></video>
+    </section>
+    <!--match-->
+
+
+    <section class="match">
+        <script type="text/template" id="matchTemplate">
+            <div class="top">
+                <div class="team teamLeft">
+                    <img src="<%=matchInfo.leftBadge%>" alt="<%=matchInfo.leftName%>"/>
+                    <span><%=matchInfo.leftGoal%></span>
+                </div>
+                <div class="startTime"><%=matchInfo.startTime.formatDate('{1}月{2}日 {3}:{4}')%></div>
+                <div class="team teamRight">
+                    <span><%=matchInfo.rightGoal%></span>
+                    <img src="<%=matchInfo.rightBadge%>" alt="<%=matchInfo.rightName%>"/>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="progress"></div>
+            </div>
+            <div class="bottom">
+                <div class="support supportLeft" data-type="1"><%=matchInfo.leftSupport%></div>
+                <div class="descript"><%=matchInfo.matchDesc%></div>
+                <div class="support supportRight" data-type="2"><%=matchInfo.rightSupport%></div>
+            </div>
+
+        </script>
+
+    </section>
+
+    <!--play-->
+    <section class="player">
+        <ul class="wrapper clear">
+            <li><a href="#">
+                <div>
+                    <img src="kbs/poster.jpg" alt=""/>
+                    <span>02:12</span>
+                </div>
+                <p>鹈鹕112-106雄鹿,帕克空砍33分浓眉32分上演冲天暴扣</p>
+            </a></li>
+        </ul>
+    </section>
+</main>
+<script src="js/zepto.min.js"></script>
+<script src="js/iscroll-5.1.3.min.js"></script>
+<script src="js/ejs.min.js"></script>
+<script src="js/index1.js"></script>
 
 </body>
 </html>

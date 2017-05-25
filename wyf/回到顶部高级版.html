@@ -3,8 +3,62 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        body,html{
+            height: 300%;
+            background: -webkit-linear-gradient(top,lightblue,lightblue,lightgreen,lightgoldenrodyellow);
+        }
+        a{
+            display:none;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: chartreuse;
+            border-radius: 50%;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
+<a href="javascript:;">回到顶部</a>
+<script src="js/utils.js"></script>
+<script>
+    var oBtn=document.getElementsByTagName('a')[0];
+    var timer=null;
+    var bOk=false;
+    window.onscroll=computedDisplay;
+    function computedDisplay(){
+        if(bOk)clearInterval(timer);
+        bOk=true;
+        if(utils.win("scrollTop")>utils.win("clientHeight")){
+            oBtn.style.display='block';
+        }else{
+            oBtn.style.display='none';
+        }
+    }
+    oBtn.onclick=function(){
+        this.style.display='none';
+        //window.onscroll=null;
+        var target=utils.win("scrollTop");
+        var duration=1000;
+        var interval=30;
+        var step=target/duration*interval;
+        timer=setInterval(function(){
+            var curTop=utils.win('scrollTop');
+            curTop-=step;
+            if(curTop<=0){
+                clearInterval(timer);
+               // window.onscroll=computedDisplay;
+                return;
+            }
+            utils.win("scrollTop",curTop);
+            bOk=false;
+        },interval)
+    }
+</script>
 
 </body>
 </html>

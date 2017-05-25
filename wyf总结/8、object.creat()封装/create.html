@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Object.prototype.myCreate=function (obj) {
+        function Tmp(){};
+        Tmp.prototype=obj;
+        return new Tmp;
+    }
+    /*function myCreate(obj){
+        function Tmp(){};
+        Tmp.prototype=obj;
+        return new Tmp;
+    }*/
+    var obj={name:"aa"};
+    var obj1=Object.myCreate(obj);
+    console.log(obj1);
+</script>
+</body>
+</html>

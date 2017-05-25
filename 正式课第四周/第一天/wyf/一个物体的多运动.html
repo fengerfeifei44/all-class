@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        input{
+            width: 100px;
+            height: 40px;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left: 0;
+            top: 60px;
+        }
+        .box2{
+            width: 1px;
+            height: 300px;
+            background: black;
+            position: absolute;
+            left: 1000px;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<div class="box2"></div>
+<script src="js/utils.js"></script>
+<script src="js/move.js"></script>
+<script>
+    var oDiv=document.getElementById('box1');
+    inamate(oDiv,{
+        left:1000,
+        top:400
+    },function(){
+        this.style.background='green'
+    })
+</script>
+
+</body>
+</html>

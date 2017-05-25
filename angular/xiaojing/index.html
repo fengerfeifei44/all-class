@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<!--表示将对应的模板插入到此div中-->
+<!--navbar-inverse:黑色  nav-divider:灰色-->
+<div class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!--商标-->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#!/home">BookStore</a>
+        </div>
+        <!--导航-->
+        <div>
+            <ul class="navbar-nav nav">
+                <li><a href="#!/home">首页</a></li>
+                <li><a href="#!/list">列表页</a></li>
+                <li><a href="#!/add">新增图书</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div ng-view class="container"></div>
+<!--先引用jQuery 再引用bootstrap.js-->
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<!--angular angular-resource angular-route-->
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+
+<script>
+    var app=angular.module('appModule',["ngResource","ngRoute"]);
+
+    app.factory('Books',function($resource){
+        return $resource('/books/:bid',null,{
+            update:{
+                method:'PUT'
+            }
+        })
+    });
+    //route是基于配置的
+    //angular单页的， 不跳转页面 而且还要改变路径 hash 会产生历史管理
+    //默认锚点 不会被Chrome引擎抓取 #!可以被抓取
+    app.config(function($routeProvider){//配置一个服务在与原有的服务后面加Provider;
+        $routeProvider.when('/home',{
+            templateUrl:'tmpl/home.html',//通过ajax拿到对应的页面
+            controller:'homeCtrl'
+        }).when('/list',{
+            templateUrl:'tmpl/list.html',
+            controller:'listCtrl'
+        }).when('/detail/:id',{//会在当前的控制器里生成一个参数 $routeParams{{bid:2}}
+            templateUrl:'tmpl/detail.html',
+            controller:'detailCtrl'
+        }).when('/add',{
+            templateUrl:'tmpl/add.html',
+            controller:'addCtrl'
+        }).otherwise('/home');//404页面
+
+    });
+    app.controller('detailCtrl',function($routeParams,Books,$scope,$location){
+        var id=$routeParams.id;
+        $scope.book=Books.get({bid:id});
+        $scope.flag=true;
+        $scope.remove=function(){
+            Books.delete({bid:id}).$promise.then(function(){
+                $location.path('/list')
+            })
+        };
+        $scope.change=function(){
+            $scope.flag=false;
+        };
+        $scope.update=function(){
+            $scope.flag=true;
+            Books.update({bid:id},$scope.book).$promise.then(function(){
+                $scope.flag=true;
+            })
+        }
+    });
+    app.controller('addCtrl',function($scope,Books,$location){//$location
+        $scope.add=function(){//保存
+            Books.save($scope.book).$promise.then(function(){
+                $location.path('list');
+            });
+        }
+    });
+    app.controller('listCtrl',function($scope,Books){
+        $scope.books=Books.query();//查询图书
+    });
+    app.controller('homeCtrl',function($scope,$sce){
+        $scope.home=$sce.trustAsHtml('<h1>欢迎来购书</h1>');
+        $('.carousel').carousel();
+    });
+
+</script>
+</body>
+</html>

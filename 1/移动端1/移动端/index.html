@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .ui-bar-a, .ui-page-theme-a .ui-bar-inherit, html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit, html body .ui-group-theme-a .ui-bar-inherit{
+            background-color: #15619d;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div data-role="page" data-theme="a">
+    <div data-role="header">
+        <h1>账户</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <form method="post" action="demo_form.php">
+            <div class="ui-field-contain">
+                <label for="id">用户ID：</label>
+                <input type="text" name="fullname" id="id">
+                <label for="symptoms">症状：</label>
+                <input type="text" name="fullname" id="symptoms">
+                <label for="serial">问诊编号：</label>
+                <input type="text" name="fullname" id="serial">
+                <label for="startDate">开始时间：</label>
+                <input type="date" name="bday" id="startDate">
+                <label for="endDate">结束时间：</label>
+                <input type="date" name="bday" id="endDate">
+            </div>
+            <div data-role="content">
+                <button>按钮</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

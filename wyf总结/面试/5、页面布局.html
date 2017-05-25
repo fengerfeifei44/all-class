@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .left{
+            float: left;
+            width: 200px;
+            height: 100%;
+            background: red;
+        }
+        .right{
+            margin-left: 200px;
+            height: 100%;
+            background: blue;
+        }
+    </style>-->
+    <style>
+        html,body,.parent{
+            width: 100%;
+            height: 100%;
+
+        }
+       /* .parent{display:flex;}*/
+       /* .left{width: 100px;background: red}
+        .center{flex: 1;background: yellow}
+        .right{width: 100px;background: blue}*/
+       /* .left{
+            float: left;
+            height: 100%;
+            background: yellow;
+        }
+        .right{
+            overflow: hidden;
+            background: red;
+        }*/
+        .parent{
+            display: flex;
+        }
+        .left{
+            width: 100px;
+            background: yellow;
+        }
+        .right{
+            flex: 1;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="left"></div>
+    <div class="center"></div>
+    <div class="right"></div>
+</div>
+</body>
+</html>

@@ -2,9 +2,58 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>魔方</title>
+    <link rel="stylesheet" href="css/reset.min.css"/>
+    <link rel="stylesheet/less" href="css/index.less"/>
+    <script src="less-2.5.3.min.js"></script>
+    <script>
+        document.documentElement.style.fontSize=document.documentElement.clientWidth/640*100+'px';
+    </script>
 </head>
 <body>
+<section class="cube">
+    <ul class="cubeBox" id="cubeBox">
+        <li><img src="cube/zf_cube1.png" alt=""/></li>
+        <li><img src="cube/zf_cube2.png" alt=""/></li>
+        <li><img src="cube/zf_cube3.png" alt=""/></li>
+        <li><img src="cube/zf_cube4.png" alt=""/></li>
+        <li><img src="cube/zf_cube5.png" alt=""/></li>
+        <li><img src="cube/zf_cube6.png" alt=""/></li>
+    </ul>
+</section>
+<script>
+    var cubeBox=document.getElementById('cubeBox');
+    cubeBox.addEventListener('touchmove',function(e){
+        e.preventDefault();
+    },false)
+    cubeBox['strBox']=null;
+    cubeBox['strY']=null;
+    cubeBox['changeX']=null;
+    cubeBox['changeY']=null;
+    cubeBox['isMove']=false;
+    cubeBox['rotateX']=-35;
+    cubeBox['rotateY']=45;
+    cubeBox.addEventListener('touchstart',function(e){
+        var point= e.touches[0];
+        this['strX']=point.pageX;
+        this['strY']=point.pageY
+    });
+   cubeBox.addEventListener('touchmove',function(e){
+       var point= e.touches[0];
+       this['changeX']=point.pageX-this['strX'];
+       this['changeY']=point.pageY=this['strY'];
+       Math.abs(this['changeX'])>10|| Math.abs(this['changeY'])>10?this['isMove']=true:null;
+   })
+   cubeBox.addEventListener('touchend',function(e){
+       if(!this['isMove']) return;
+       var rotateY=this['rotateY']+this['changeX']/3;
+       var rotateX=this['rotateX']-this['changeY']/3;
+       this.style.webkitTransform='scale(0.6) rotateX('+rotateX+'deg) rotateY('+rotateY+'deg)';
+       this['rotateX']=rotateX;
+       this['rotateY']=rotateY;
+   })
 
+</script>
 </body>
 </html>

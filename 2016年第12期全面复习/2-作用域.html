@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<script type="text/javascript">
+    //    var name = "珠峰培训",
+    //            age = 8;
+    //    var obj = {
+    //        name: "前端培训",
+    //        age: 9,
+    //        fn: (function () {
+    //            this.age++;
+    //            var age = 10;
+    //            return function () {
+    //                this.age++;
+    //                age++;
+    //                console.log(age);
+    //            }
+    //        })()
+    //    };
+    //    var fn = obj.fn;
+    //    fn();
+    //    obj.fn();
+    //    console.log(obj.age, window.age);
+
+    var age = 8;
+    var obj = {
+        age: 9,
+        fn: (function () {
+            this.age++;
+            age = 10;
+            return function () {
+                this.age++;
+                age++;
+                console.log(age);
+            }
+        })()
+    };
+    var fn = obj.fn;
+    fn();
+    obj.fn();
+    console.log(obj.age, window.age);
+</script>
+</body>
+</html>

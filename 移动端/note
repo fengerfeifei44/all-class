@@ -1,0 +1,38 @@
+1、什么是移动端
+安卓手机是谷歌开发的
+所谓移动端，其实指的是手机 安卓手机 iOS手机、平板电脑（安卓）
+作为开发者，我们需要学会手机上的应用（APP）或者（webAPP）
+nativeApp:原生APP
+我们平时在手机上看到的应用都是
+安卓开发
+IOS开发
+有的产品还需要为winPhone或者赛班等系统开发应用
+webApp:H5页面
+在手机浏览器中打开的页面就是H5页面
+在微信朋友圈或者公众号中看到的页面也是H5页面
+现在的native产品中，看到的大部分内容其实也是由H5开发的（hybrid混合开发模式）
+HTML5
+CSS3 less sass
+Javascript及各种框架类库和插件：Angular React Vue Zepto iscroll swiper
+响应式布局开发
+能够根据屏幕的大小进行自适应调整，保证在不同尺寸的设备上都能很好的展示
+（流式布局、rem Flexbox bootstrap MIUI 妹子UI）
+
+使用JS封装nativeApp的框架：React Native phoneGap Apicloude ionic
+会打包工具 webpack gulp grunt fis
+
+怎么学习移动端？
+两本书：HTML5秘籍第二版 图解CSS3（大漠）
+ 经常去一些论坛博客学习：
+ gitHub https://github.com/全世界权威的代码托管平台，我们知道的框架原代码在这里边都有
+ 下载这些原代码
+    直接到网站上下载
+    使用GIT命令下载
+    使用bower下载 和npm类似 npm管理的是NODE后台模块 从npmjs.com下载资源 而bower是专门管理前端开发需要的框架类库的，从github上下载
+    安装bower(使用npm安装) npm install bower-g
+    bower install
+和npm操作一样，我们开始的时候执行
+bower init 在当前项目中生成一个
+
+名人博客 阮一峰 缪学峰 大漠 玉博 张鑫旭 郭永峰
+技术网站 慕课网 极客学院 w3cplus w3cfuns w3school 知乎 w3c英文官网

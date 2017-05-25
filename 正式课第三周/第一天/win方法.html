@@ -4,7 +4,17 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
+<body style="height:2000px;">
+<script>
+    function win(attr,value){
+        if(value===undefined){
+          return  document.documentElement[attr]||document.body[attr];
+        }else{
+            document.documentElement[attr]=document.body[attr]=value;
+        }
+    }
+    win("scrollTop",1000)
+</script>
 
 </body>
 </html>

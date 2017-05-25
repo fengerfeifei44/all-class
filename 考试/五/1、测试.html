@@ -13,7 +13,7 @@
 </head>
 <body>
 <div></div>
-<script src="js/event.js"></script>
+<script src="js/event1.js"></script>
 <script>
     var oDiv=document.getElementsByTagName('div')[0];
     var fn1=function(){ console.log(this==oDiv)}
@@ -27,7 +27,7 @@
     var fn9=function(){ console.log(9)}
     var fn10=function(){ console.log(10)}
     on(oDiv,'click',fn1)
-    bind(oDiv,'click',fn2)
+    on(oDiv,'click',fn2)
     on(oDiv,'click',fn3)
     on(oDiv,'click',fn4)
     on(oDiv,'click',fn5)
@@ -36,7 +36,7 @@
     on(oDiv,'click',fn8)
     on(oDiv,'click',fn9)
     on(oDiv,'click',fn10)
-
+    //off(oDiv,'click',fn2)
     off(oDiv,'click',fn6)
 
 </script>

@@ -5,6 +5,23 @@
     <title></title>
 </head>
 <body>
+<script>
+    function average(){
+        //类数组转数组
+        var ary=Array.prototype.slice.call(arguments);
+        //排序
+        ary.sort(function(a,b){
+            return a-b;
+        });
+        //掐头去尾
+        ary.shift();
+        ary.pop();
+        //求平均数
+        return (eval(ary.join('+'))/ary.length).toFixed(2)
+    }
+    var res=average(3.33333,5.55555,6.666666,7.44444,8.67676)
+    console.log(res);
+</script>
 
 </body>
 </html>

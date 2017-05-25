@@ -5,6 +5,94 @@
     <title></title>
 </head>
 <body>
+<script>
+    //双重循环
+   /* function goHome(){
+        for(var i=0;i<arguments.length;i++){
+            var cur=arguments[i];
+            for(var j=i+1;j<arguments.length-1;j++){
+                if(cur==arguments[j]){
+
+                }
+            }
+        }
+
+    }*/
+    Array.prototype.removeDup=function () {
+        var obj={};
+        for(var i=0;i<this.length;i++){
+            var cur=this[i];
+            if(obj[cur]==cur){
+                this[i]=this[this.length-1];
+                this.length--;
+                i--;
+                continue;
+            }
+            obj[cur]=cur;
+        }
+
+      return this;
+    }
+    Array.prototype.myDistinct=function(){
+        var obj={};
+        for(var i=0;i<this.length;i++){
+            var cur=this[i];
+            if(obj[cur]==cur){
+                //this.splice(i,1);//->后面的索引都会改变,性能不好
+                this[i]=this[this.length-1];
+                //this.length--; //->虽然优化了性能但是会打乱原来的排列顺序
+                i--;
+                continue;
+            }
+            obj[cur]=cur;
+        }
+        return this;//->为了实现链式写法,JQ中的链式写法的原理
+    }
+    //双重循环
+    Array.prototype.myDistinct1=function () {
+        for(var i=0;i<this.length;i++){
+            for(var j=i+1;j<this.length;j++){
+                if(this[i]==this[j]){
+                    this.splice(i,1);
+                    i--;
+
+                }
+            }
+        }
+        return this;
+    }
+    //sort思想
+    Array.prototype.myDistinct2=function () {
+        this.sort(function (a,b) {return a-b});
+        for (var i=0;i<this.length;i++){
+            if(this[i]===this[i+1]){
+                this.splice(i,1);
+                i--;
+            }
+        }
+
+       return this;
+    }
+    //新数组
+    Array.prototype.myDistinct3=function () {
+        var ary=[];
+        for (var i=0;i<this.length;i++){
+            if(ary.indexOf(this[i])===-1){
+                ary.push(this[i]);
+            }
+
+        }
+
+        console.log(ary);
+        //return this;
+    }
+    var ary=[1,1,3,3,3,4,4,5,5,5,1,1,1,1,1];
+    ary.myDistinct3();
+
+  // ary.removeDup()
+    console.log(ary);
+
+</script>
 
 </body>
 </html>

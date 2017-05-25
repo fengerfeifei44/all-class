@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0
+        }
+        ul{
+            width: 500px;
+            height: 500px;
+            background: pink;
+            display: flex;
+           /* flex-direction: row;
+            flex-wrap: wrap;*/
+            flex-flow:row wrap;/*flex-direction和flex-wrap的复合写法*/
+            justify-content: center;
+           /* align-items:center;*/
+
+
+        }
+        ul li{
+            width: 100px;
+            height: 100px;
+            background: green;
+            margin: 5px;
+            list-style: none;
+            align-items:flex-end;
+        }
+        ul li:nth-child(3){
+            /*align-self: center;/!*作用在子元素上*!/*/
+            order:-1;
+        }
+    </style>
+</head>
+<body>
+<ul class="container">
+    <li style="height:200px;font-size: 40px">1111</li>
+    <li style="height: 100px;font-size: 30px">2222</li>
+    <li style="font-size: 20px">333</li>
+   <!-- <li>444</li>
+    <li>555</li>
+    <li>666</li>
+    <li>777</li>
+    <li>888</li>
+    <li>444</li>
+    <li>555</li>
+    <li>666</li>
+    <li>777</li>-->
+</ul>
+</body>
+</html>

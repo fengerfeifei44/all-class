@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    //    ~function () {
+    //        function jQuery(selector, context) {
+    //            context = context || document;
+    //            return new jQuery.fn.init(selector, context);
+    //        }
+    //
+    //        jQuery.fn = jQuery.prototype = {
+    //            constructor: jQuery,
+    //            init: function () {
+    //
+    //            }
+    //        };
+    //          jQuery.extend({
+    //              ajax:function () {
+    //
+    //              }
+    //          });
+    //
+    //        window.jQuery = window.$ = jQuery;
+    //    }();
+
+    //->JQ选择器:创建JQ类的一个实例(JQ对象=>类数组 )
+    //    {
+    //        0:xxx
+    //        context:document,
+    //        length:1
+    //    }
+    //$('#div1')===$('#div1') =>false，是两个不同的实例
+    //var $div = $('#div1');
+    //$div.children();
+    //$div.addClass(); 把通过使用选择器获取的JQ对象存储起来,以后再使用的时候就不要在重新的获取了,降低JQ性能的消耗
+
+    //->"类"：JQ的原型上定义了很多的方法,这些方法统一供JQ实例来使用
+    //$([selector]).xxx()
+    // - add：向现有的JQ对象中追加新的内容,最后合并成为一个新的JQ对象
+    // - remove：在页面的DOM结构中移除自己，等同于原生JS中的removeChild，例如:$('body').remove() 页面中就没有BODY元素了
+    // - addClass / removeClass / hasClass / toggleClass 操作样式类名
+
+    // - animate 动画,类似于我们自己的TWEEN算法动画库，例如：
+    //    $('.box').stop().animate({
+    //        top: 10,
+    //        left: 20
+    //    }, 1000, 'linear', function () {
+    //
+    //    });
+    // - stop / finish 结束当前正在运行的动画,stop是停留在当前位置,finish是立马运动到目标的位置
+    // - fadeIn / fadeOut / fadeToggle
+    // - show / hide / toggle
+    // - slideUp / slideDown / slideToggle  =>'slow'、'fast'、[time]
+
+    // - append / appendTo : 向末尾追加 容器.append(元素)  元素.appendTo(容器)
+    // - prepend / prependTo：向开头追加
+    // - insertBefore / insertAfter：追加到某一个元素之前和某一个元素之后
+    // - after / before ：想当前元素的后面或者前面追加内容
+
+    // - attr：设置(批量设置)或者获取元素的自定义属性,获取的值都是字符串  removeAttr
+    // - prop：设置(批量设置)或者获取元素的内置属性，一般操作表单元素的属性，回去后思考：使用JQ实现全选和非全选等操作功能，以及获取所有被选中的表单等 removeProp
+
+    // - bind / unbind / trigger
+    // - click / mouseover / mouseout / mousemove / blur / focus ...
+    // - on / off ->以上所有的事件绑定方式都认为是快捷绑定方式，最后实现的原理都是基于on/off两个方法来实现的，而且采用的是DOM2事件处理，解决了THIS、重复、顺序等兼容问题
+
+    // - children ：在子代中进行查找
+    // - find ：在后代中进行查找
+    // - filter：在一个集合(同级)中进行二次筛选 $links.filter("[href='#']")
+    // - prev / prevAll / next / nextAll / siblings / parent / parents
+
+    // - css：设置(批量设置)或者获取元素的所有经过计算的CSS样式
+
+    // - each：
+    //[$.fn]
+    //-->循环JQ对象中的每一个元素 $links.each(function(index,item){});
+    //[$]
+    //-->循环数组、对象、类数组的工具方法 $.each(ary,function(index,item){});
+    //[内部机制]
+    //-->JQ原型上的所有方法基本上都自带循环机制，例如：$links.css('top',30) $links集合中有几项,JQ会分别把这几项都设置对应的样式,不需要自己写循环处理
+
+    // - empty：清空一个元素中的内容
+
+    // - eq：通过索引获取指定位置的元素，返回的结果依然是JQ对象
+    // - get：通过索引获取指定位置的元素，返回的结果是原生JS对象 => $links[n]
+
+    // - extend
+    //[$.fn]
+    //-->向JQ的原型上扩展方法,例如：$.fn.extend({fn:function(){}})，此时相当于在原型上追加了一个fn方法,使用的时候$([sel]).fn()执行即可 "扩展插件"
+    //[$]
+    //-->向JQ这个普通对象上扩展方法，例如：$.extend({example:function(){}})，此时调用这个方法需要使用 $.example() 即可 "类库的扩展,提供一些常用的方法"
+
+    // - html / val / text : innerHTML、value、innerText,val一般获取的是表单元素中的内容，其余的获取的是非表单元素中的内容，除了可以获取内容，如果方法执行的时候传递参数值，也是在设置内容，例如：$inp.val()获取  $inp.val('zf')设置
+
+    // - index：获取当前元素的索引
+
+    // - innerHeight / innerWidth：client系列的
+    // - outerHeight / outerWidth：offset系列的
+    // - offset：获取当前元素距离BODY的偏移距离{top:xxx,left:xxx}
+    // - position：获取当前元素距离父级参照物的偏移距离
+    // - offsetParent：获取父级参照物
+    // - width / height：获取或者设置元素的宽高
+
+    // - serialize / serializeArray 表单序列化
+
+
+    //->"普通对象"：在对象上还定义了很多的方法，这些方法不是给实例用的，也和类没什么关系，把他理解为一个OBJ对象，提供了一些供我们操作的常用方法即可
+    // - Callbacks：发布订阅模式
+    //    var $plan = $.Callbacks();
+    //    $plan.add(function (n) {
+    //        //->n:100
+    //        console.log(n);
+    //    });
+    //    $plan.fire(100);
+
+    // - ajax
+    //    $.ajax('[url]', {
+    //        //url:''
+    //        method: 'get',//->type：get、post、delete、put、head... [GET系列请求和POST系列请求的区别]
+    //        data: null,//->设置请求主体的内容,但是在GET系列下,也会把其转换为xxx=xxx&xxx=xxx的字符串,然后以问好传递参数的方式传递给服务器
+    //        dataType: 'json',//->预设返回的数据类型,但是记住,他控住不了服务器返回的数据(服务器一般返回的是字符串),他只能把返回的内容进行二次加工,处理成为我们需要的 json\text\xml...
+    //        async: true,
+    //        cache: true,//->false：清除缓存,在GET请求下在请求URL末尾追加随机数
+    //        //timeout:3000, //->设置超时时间
+    //        //context:obj, //->设置回调函数中的THIS指向
+    //        success: function (result) {
+    //            //->result从服务获取的结果
+    //        },
+    //        error: function () {
+    //
+    //        },
+    //        complete: function () {
+    //            //->不管成功还是失败,只要完成AJAX就会触发这个函数
+    //        }
+    //    });
+
+    //    $.ajax('[url]', {
+    //        method: 'get',//->JSONP只能使用GET请求方式,因为JSONP的原理就是动态的创建SCRIPT标签来完成的
+    //        data: null,
+    //        dataType: 'jsonp',//->设置jsonp就变为了跨域请求
+    //        jsonp: 'callback',//->设置传递给服务器函数名称的那个参数的名字,默认都是callback，百度搜索需要我们传递的是cb，我们在单独的设置即可
+    //        jsonpCallback: '',//->设置传递给服务器的函数名,如果不设置的话,JQ会默认生成一个随机的函数名
+    //        success: function (result) {
+    //            //->result从服务获取的结果
+    //        }
+    //    });
+
+    //    $.get()
+    //    $.post() 这些只是快捷方法,最后调取的依然是AJAX这个方法库
+
+
+    // - isArray / isEmptyObject / isFunction / isNumeric / isPlainObject / isWindow / isXMLDoc /
+
+    // - makeArray
+    // - unique
+    // - trim
+
+    // - noConflict 转移$的使用权
+    //    var j = $.noConflict(true);//->传递TRUE是深度转让,以后$和jQuery都不是JQ了，以后使用j代表JQ
+    //    j();
+    //    j.ajax();
+</script>
+</body>
+</html>

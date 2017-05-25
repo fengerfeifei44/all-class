@@ -3,8 +3,40 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        div{
+            margin: 50px;
+            width: 200px;
+            height: 200px;
+            padding: 50px;
+            border: 1px solid #ccc;
+            background: lightblue;
+        }
+    </style>
 </head>
 <body>
+<div></div>
+<script>
+    function offset(ele){
+        var par=ele.offsetParent;
+        var l=ele.offsetLeft;
+        var t=ele.offsetTop;
+        while(par){
+            if(window.navigator.userAgent.indexOf('MSIE 8')==-1){
+                l+=par.clientLeft;
+                t+=par.clientTop;
+            }
+            l+=par.offsetLeft;
+            t+=par.offsetTop;
+            par=par.offsetParent;
+        }
+        return{l:l,t:t}
+    }
+    var oDiv=document.getElementsByTagName('div')[0];
+    var {l,t}=offset(oDiv);
+    console.log(l);
+    console.log(t)
+</script>
 
 </body>
 </html>

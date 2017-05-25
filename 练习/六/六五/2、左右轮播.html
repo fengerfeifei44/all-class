@@ -26,6 +26,7 @@
             float: left;
             width: 1000px;
             height: 300px;
+            background: url("img/default.gif") center no-repeat #cccccc;
         }
         .box .banner img{
             width: 100%;
@@ -74,22 +75,28 @@
 <body>
 <div class="box" id="box">
     <div class="banner">
-        <div><img src="img/banner1.jpg" alt=""/></div>
+        <!--<div><img src="img/banner1.jpg" alt=""/></div>
         <div><img src="img/banner2.jpg" alt=""/></div>
         <div><img src="img/banner3.jpg" alt=""/></div>
-        <div><img src="img/banner4.jpg" alt=""/></div>
+        <div><img src="img/banner4.jpg" alt=""/></div>-->
     </div>
     <ul>
-        <li class="on"></li>
+       <!-- <li class="on"></li>
         <li></li>
         <li></li>
-        <li></li>
+        <li></li>-->
     </ul>
     <a href="javascript:;" id="left"></a>
     <a href="javascript:;" id="right"></a>
 </div>
 <script src="js/utils.js"></script>
-<script src="js/"></script>
+<script src="js/move.js"></script>
+<script src="js/lunbo.js"></script>
+<script>
+    var tab=new Tab({
+        id:"box"
+    })
+</script>
 
 </body>
 </html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<ul id="ul"></ul>
+<script>
+
+    function jsonParse(str){
+        return "JSON" in window?JSON.parse(str):eval("("+str+")");
+    }
+    var oUl=document.getElementById('ul');
+    var date=null;
+    getDate();
+    function getDate(){
+        var xml=new XMLHttpRequest;
+        xml.open("get","data.txt",false);
+        xml.onreadystatechange=function(){
+            if(xml.readyState==4&&/^2\d{2}$/.test(xml.status)){
+                date=jsonParse(xml.responseText);
+            }
+        };
+        xml.send();
+    }
+    bind();
+    function bind(){
+        var str='';
+        for(var i=0;i<date.length;i++){
+            str+="<li>"+date[i].name+"</li>";
+        }
+        return str;
+    }
+    oUl.innerHTML+=str;
+
+</script>
+
+</body>
+</html>

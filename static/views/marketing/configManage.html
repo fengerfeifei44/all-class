@@ -1,0 +1,213 @@
+﻿
+<style type="text/css">
+    .configItem div.configList {        
+        padding:10px 20px 6px ;
+        height: auto;
+        /*background: #f0f0f0;*/
+        margin-top: 10px;
+        border-radius:5px;
+        border-bottom:1px solid #ccc;
+    }
+    .bluelabel
+    {
+        font-size:14px;
+        color:#3ea6ff;
+        margin-right:50px;
+    }
+    .inputshort
+    {
+        width:100px;
+    }
+    .port
+    {
+        margin-right:10px;
+    }
+    .buttonMenu a{
+        margin-right:22px;
+        vertical-align: middle;
+    }
+    .buttonMenu a img{
+        margin-right:10px;
+        vertical-align: middle;
+    }
+    .form-inline input.formInput {
+        display: inline-block;
+        width: 100px;
+        vertical-align: middle;
+    }
+    .form-inline select.formSelect {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
+    .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 25px;
+        vertical-align: middle;
+    }
+    .configList .form-inline{
+        margin-bottom:16px;
+    }
+    .configList .form-inline select{
+        margin-left: 30px;
+    }
+        .configList .form-inline .form-group {
+            margin-left: 30px;
+        }
+        /*.configList .form-inline .form-group label{
+            margin-right: 20px;
+        }*/
+    .configList .form-inline .save{
+        margin-right:20px;
+    }
+
+    
+</style>
+<div class="configItem">
+    <div  class="configList">
+        <form class="form-inline">
+            <div class="form-group" style="margin-bottom:20px;">
+                <label for="Text1" class="bluelabel">广告投放间隔</label>
+                <input type="text" class="form-control formInput" id="Text1" placeholder="{{adInterval}}" ng-model="adInterval">
+                <label class="bluelabel" for="Text1">秒</label>
+            </div>
+             <div class="form-group" style="float:right;margin-bottom:20px;">
+                <button type="submit" class="btn btn-primary save" style="background: #3da7ff;width:120px;" ng-click="adSubmit()">提交</button>
+            </div>  
+            <br />
+             <div class="form-group">
+                <label  class="bluelabel" for="Text2">黑名单有效期</label>
+                 <input type="text" class="form-control formInput" id="Text2" placeholder="{{effective}}" ng-model="effective">
+                <label class="bluelabel" for="Text2">天</label>
+            </div>
+             <div class="form-group" style="float:right;">
+                <button type="submit" class="btn btn-primary save" style="background: #3da7ff;width:120px;" ng-click="blackSubmit()">提交</button>
+            </div>          
+        </form>      
+    </div>
+    <div  class="configList">
+        <form class="form-inline">
+            <div class="form-group">
+                <label class="bluelabel" style="font-size:16px;">IP/PORT变更配置</label>             
+            </div>
+            <div class="form-group" style="float:right;margin-right:20px;">
+            <a href="javascript:void(0);">
+                <img src="imgs/configActive.png" alt="Alternate Text" />全部激活
+            </a></div>
+            <br />  
+            <div class="form-group">
+                <label class="bluelabel">图片服务</label>
+                <label for="Text3">IP</label>
+                <input type="text" class="form-control formInput" style="width:150px;margin-left:10px;" id="Text3" placeholder="168.157.1.229" ng-model="picIP" ng-readonly="!picShow">
+            </div>
+            <div class="form-group">
+                <label for="Text14" class="port">端口</label>
+                <input type="text" class="form-control formInput" id="Text14" placeholder="106" ng-model="picPort" ng-readonly="!picShow">
+            </div>
+
+            <div class="form-group" ng-show="picShow">
+                <button type="submit" class="btn btn-primary save" style="background: #3da7ff;width:120px;" ng-click="save(1)">保存</button>
+                <button type="submit" class="btn btn-default cancel" style="width: 120px; background: #ccc;" ng-click="cancle(1)">取消</button>
+            </div> 
+            <div style="float:right;" class=" form-group buttonMenu ">
+            <a href="javascript:void(0);" ng-click="edit(1)">
+                <img src="imgs/configEdit.png" alt="Alternate Text" />修改
+            </a>
+            <a href="javascript:void(0);" ng-click="active(1)">
+                <img src="imgs/configActive.png" alt="Alternate Text" />激活
+            </a>
+            </div> 
+             <br />  
+            <div class="form-group">
+                <label class="bluelabel">内容服务</label>
+                <label for="Text4">IP</label>
+                <input type="text" class="form-control formInput" style="width:150px;margin-left:10px;" id="Text4" placeholder="168.157.1.229" ng-model="monitorIP" ng-readonly="!monitorShow">
+            </div>
+            <div class="form-group">
+                <label for="Text13" class="port">端口</label>
+                <input type="text" class="form-control formInput" id="Text13" placeholder="106" ng-model="monitorPort" ng-readonly="!monitorShow">
+            </div>
+
+            <div class="form-group" ng-show="monitorShow" >
+                <button type="submit" class="btn btn-primary save" style="background: #3da7ff;width:120px;" ng-click="save(2)">保存</button>
+                <button type="submit" class="btn btn-default cancel" style="width: 120px; background: #ccc;" ng-click="cancle(2)">取消</button>
+            </div> 
+            <div style="float:right;" class="buttonMenu form-group">
+            <a href="javascript:void(0);" ng-click="edit(2)">
+                <img src="imgs/configEdit.png" alt="Alternate Text" />修改
+            </a>
+            <a href="javascript:void(0);" ng-click="active(2)">
+                <img src="imgs/configActive.png" alt="Alternate Text" />激活
+            </a>
+            </div>  
+            <br />  
+            <div class="form-group">
+                <label class="bluelabel">代理服务</label>
+                <label for="Text5">IP</label>
+                <input type="text" class="form-control formInput" style="width:150px;margin-left:10px;" id="Text5" placeholder="168.157.1.229" ng-model="agentIP" ng-readonly="!agentShow">
+            </div>
+            <div class="form-group">
+                <label for="Text12" class="port">端口</label>
+                <input type="text" class="form-control formInput" id="Text12" placeholder="106" ng-model="agentPort" ng-readonly="!agentShow">
+            </div>
+
+            <div class="form-group" ng-show="agentShow" >
+                <button type="submit" class="btn btn-primary save" style="background: #3da7ff;width:120px;" ng-click="save(3)">保存</button>
+                <button type="submit" class="btn btn-default cancel" style="width: 120px; background: #ccc;" ng-click="cancle(3)">取消</button>
+            </div> 
+           <div style="float:right;" class="buttonMenu form-group">
+            <a href="javascript:void(0);" ng-click="edit(3)">
+                <img src="imgs/configEdit.png" alt="Alternate Text" />修改
+            </a>
+            <a href="javascript:void(0);" ng-click="active(3)">
+                <img src="imgs/configActive.png" alt="Alternate Text" />激活
+            </a>
+            </div>  
+            <br />  
+            <div class="form-group">
+                <label class="bluelabel">Redis服务</label>
+                <label for="Text6" style="margin-left:-10px;">IP</label>
+                <input type="text" class="form-control formInput" style="width:150px;margin-left:10px;" id="Text6" placeholder="168.157.1.229" ng-model="redisIP" ng-readonly="!redisShow">
+            </div>
+            <div class="form-group">
+                <label for="Text11" class="port">端口</label>
+                <input type="text" class="form-control formInput" id="Text11" placeholder="106" ng-model="redisPort" ng-readonly="!redisShow">
+            </div>
+
+            <div class="form-group" ng-show="redisShow" >
+                <button type="submit" class="btn btn-primary save" style="background: #3da7ff;width:120px;" ng-click="save(4)">保存</button>
+                <button type="submit" class="btn btn-default cancel" style="width: 120px; background: #ccc;" ng-click="cancle(4)">取消</button>
+            </div> 
+            <div style="float:right;" class="buttonMenu form-group">
+            <a href="javascript:void(0);" ng-click="edit(4)">
+                <img src="imgs/configEdit.png" alt="Alternate Text" />修改
+            </a>
+            <a href="javascript:void(0);" ng-click="active(4)">
+                <img src="imgs/configActive.png" alt="Alternate Text" />激活
+            </a>
+            </div>     
+        </form>
+    </div>
+    <div  class="configList">
+        <form class="form-inline">
+            <div class="form-group" style="margin-bottom:20px;">
+                <label class="bluelabel">基础价格配置</label>
+            </div>
+            <br />
+             <div class="form-group" style="margin-bottom:20px;">
+                <label for="Text9">1000次展示 = </label>
+                 <input type="text" class="form-control formInput" id="Text7" placeholder="5" ng-model="dollarNum">
+                <label for="Text7">元 = </label>
+                  
+                 <input type="text" class="form-control formInput" id="Text10" placeholder="1000" ng-model="clickNum">
+                <label for="Text10">次点击  </label>
+            </div>
+             <div class="form-group" style="float:right;margin-bottom:20px;">
+                <button type="submit" class="btn btn-primary save" style="background: #3da7ff;width:120px;" ng-click="baseSet()">提交</button>
+            </div>  
+           
+        </form>      
+    </div>
+</div>
+
+

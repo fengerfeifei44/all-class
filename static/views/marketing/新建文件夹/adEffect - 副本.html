@@ -1,0 +1,142 @@
+﻿<style type="text/css">
+    /*.table-responsive>table.table-striped > tbody > tr.orange {
+        background: #ffcea6;
+    }
+    .table-responsive > table.table-striped > tbody > tr {
+       cursor:pointer;
+    }*/
+</style>
+
+<div class="main-head">
+    <div class="col-md-8 time-choice col-sm-8 col-xs-8" style="min-width: 544px;">
+        <form class="form-inline">
+            <div class="form-group" ng-show="true" style="display: inline-block; margin-bottom: 0; vertical-align: middle;">
+                <span>选择时间</span>
+                <!--<input id="date1" ng-model="datastart" type="button" name="name" value=" " style="cursor:pointer;"/>-->
+                <input kendo-date-picker ng-model="datastart" k-format="MyDateFormat" k-options="DateSelectorOptions" k-rebind="DateSelectorOptions"
+                       k-ng-model="datastart" id="date1" type="button" class="form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 152px;" />
+            </div>
+            <div class="form-group" style="display: inline-block; margin-bottom: 0; vertical-align: middle;">
+                <span>至</span>
+                <!--<input id="date2" ng-model="dataend" type="button" name="name" value=" " style="cursor:pointer;" />-->
+                <input kendo-date-picker ng-model="dataend" k-format="MyDateFormat" k-options="DateSelectorOptions" k-rebind="DateSelectorOptions"
+                       k-ng-model="dataend" id="date2" type="button" class="form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 152px;" />
+            </div>
+            <button class="search" ng-click="searchClick()" style="border:0;background:#3f9df7;"><i class="fa fa-search"></i>查询</button>
+            </form>
+</div>
+  <div class="col-md-4 col-sm-4 col-xs-4" style="padding-top: 4px; position: relative;min-width:277px;">
+      <input type="text" placeholder="广告内容" class="search form-control" ng-model="AdName" />
+      <span class="glyphicon glyphicon-search" aria-hidden="true" style="position: absolute; right: 25px; top: 11px; color: #ccc; font-size: 20px;cursor:pointer;" ng-click="searchAD()"></span>
+    </div>
+
+</div>
+<!--<form class="form-inline">
+    <div class="form-group" ng-show="true">
+        <label class="control-label colorBlue">选择时间:</label>
+        <input kendo-date-picker ng-model="strDateTime" k-format="MyDateFormat" k-options="DateSelectorOptions" k-rebind="DateSelectorOptions"
+               k-ng-model="strDateTime" id="dateLabel" type="button" class="form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 152px;" />
+    </div>
+    <div class="form-group">
+        <label class="control-label colorBlue">至</label>
+        <input kendo-date-picker ng-model="strDateTimeEnd" k-format="MyDateFormat" k-options="DateSelectorOptions" k-rebind="DateSelectorOptions"
+               k-ng-model="strDateTimeEnd" id="dateLabel1" type="button" class="form-control" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 152px;" />
+    </div>
+    <a href="javascript:void(0);" class="inquire" ng-click="inquire()" style="position: relative; top: 5px; left: 17px;">
+        <img src="imgs/inquireIcon.png" alt="Alternate Text" style=" margin-top: -4px;" />
+        <span class="colorBlue" style="font-size: 20px; margin-top: 6px; display: inline-block;">查询</span>
+
+    </a>
+</form>-->
+
+
+<div class="container-fluid" ng-init="isHour = false">
+    <div class="row-fluid" id="pieConfig" style="height: 400px;">
+        <ng-echarts class="col-md-12" ec-config="pieConfig" ec-option="pieOption" style="height: 400px;"></ng-echarts>
+    </div>
+</div>
+
+
+<div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                   
+                    <th>序号</th>
+                    <th>广告名称</th>
+                    <th>广告编号</th>
+                    
+                    <th>展示数(已使用/总数)</th>
+                    <th>点击数(已使用/总数)</th>
+                    <th>
+                        <select class="table-select" ng-model="AD_STATUS" ng-change="statusSelect()">
+                            <option value="">全部状态</option>
+                            <!--<option value="4">待审核</option>
+                            <option value="5">审核不通过</option>
+                            <option value="2">待投放</option>-->
+                            <option value="0">投放中</option>
+                            <option value="1">已暂停</option>
+                            <option value="3">投放结束</option>
+                        </select>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cm in advert" ng-click="lineShow(cm.ad_id,$index,cm.CHARGING_TYPE)">
+                    <!--<td>{{$index}}</td>-->
+                    <td>{{cm.RowIndex}}</td>
+
+                    <td>{{cm.ad_desc}}</td>
+                    <td>{{cm.ad_id}}</td>
+                    <td>{{cm.UseNum}}</td>
+
+                    <td>{{cm.LastNum}}</td>
+
+                    <!--<td>{{cm.ad_status}}</td>-->
+                    <td>{{cm.ad_status_text}}</td>
+                </tr>
+
+               
+              
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div style=" text-align: right; margin: 0 auto;" class="search-right">
+    <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="perItems" max-size="maxSize" ng-change="pageChanged(currentPage, maxSize)"
+                    previous-text="上一页" next-text="下一页" class="pagination-sm" boundary-link-numbers="true" rotate="false" num-pages="numPages"></uib-pagination>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

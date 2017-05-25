@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            margin: 50px auto;
+            width: 400px;
+        }
+        ul li{
+            display: inline-block;
+            width:50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin: 10px;
+            background: orange;
+        }
+        ul :nth-child(2){
+            background: green;
+        }
+        .a+li{
+            background: pink;
+        }
+        .a~li{
+            background: yellow;
+        }
+        ul :nth-child(2n){
+
+        }
+        div{
+            width: 500px;
+            height: 30px;
+            background: yellow;
+        }
+        div :only-of-type{
+            background: green;
+        }
+        ul li:first-of-type{
+            background: red;
+        }
+        div:empty{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <p>我</p>
+    <li>2</li>
+    <li class="a">3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+<div class="div1">
+    <p>1111</p>
+</div>
+<div class="div2">
+    <p>22222</p>
+    <span>3333</span>
+</div>
+<div></div>
+</body>
+</html>

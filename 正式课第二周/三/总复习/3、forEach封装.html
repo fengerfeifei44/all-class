@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    Array.prototype.myForEach=function(callback,context){
+        context=context||window;
+        if("forEach" in window){
+            this.forEach(callback,context);
+            return;
+        }
+        for(var i=0;i<this.length;i++){
+            callback.call(context,this[i],i,this);
+        }
+    }
+    Array.prototype.myMap=function(callback,context){
+        context=context||window;
+        if("map" in window){
+           return this.map(callback,context);
+
+        }
+        var ary=[];
+        for(var i=0;i<this.length;i++){
+           var res=callback.call(context,this[i],i,this);
+            ary.push(res);
+        }
+        return ary;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        [ng-cloak]{
+            display: none;
+        }
+        table{
+            width:600px;
+            margin:40px auto;
+            border:1px solid saddlebrown;
+        }
+
+        th{
+            background: red;
+            width:100px;
+            text-align: center;
+        }
+        ul{
+            padding: 0;
+            overflow: hidden;
+        }
+        li{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            float: left;
+            width:100px;
+            text-align: center;
+        }
+
+        input{
+            width:100px;
+        }
+    </style>
+</head>
+<body ng-cloak ng-controller="cartCtrl">
+<table cellpadding="0" cellspacing="0">
+    <tr>
+        <th>商品</th>
+        <th>数量</th>
+        <th>单价</th>
+        <th>总价</th>
+    </tr>
+    <tr ng-repeat="val in products">
+        <td>{{val.proName}}</td>
+        <td><input type="text" ng-model="val.proCount"></td>
+        <td>{{val.proPrice}}</td>
+        <td>{{val.proPrice*val.proCount}}</td>
+    </tr>
+</table>
+</body>
+<script src="node_modules/angular/angular.min.js"></script>
+<script>
+    var app=angular.module('appModule',[]);
+    app.controller('cartCtrl',['$scope',function($scope){
+        $scope.products=[
+            {proName:'小鱼',proPrice:59,proCount:1},
+            {proName:'苹果',proPrice:3,proCount:2},
+            {proName:'香蕉',proPrice:3.9,proCount:3}
+        ]
+    }])
+</script>
+<html/>
