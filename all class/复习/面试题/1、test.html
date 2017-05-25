@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   /* (function () {
+        var a=b=3;
+    })();
+
+    console.log(b);
+    console.log(typeof a!=='undefined');
+    console.log(typeof b!=='undefined');
+    console.log(b);
+    console.log(typeof a);*/
+   var arr1='john'.split('');
+   var arr2=arr1.reverse();
+   var arr3='jones'.split('');
+   arr2.push(arr3);
+   console.log(arr1)
+   console.log(arr2)
+   console.log(arr3)
+   console.log("array 1:length="+arr1.length+"last="+arr1.slice(-1));
+   console.log("array 2:length="+arr2.length+"last="+arr2.slice(-1));
+  /* var arr=[1,2,3,4];
+   var res=arr.slice(-2);
+   console.log(res);*/
+
+
+   var arr = new Array(3)
+   arr[0] = "George"
+   arr[1] = "John"
+   arr[2] = "Thomas"
+
+   //document.write(arr + "<br />")
+   //document.write(arr.reverse())
+  var res=arr.reverse();
+   console.log(arr);
+   console.log(res);
+   (function () {
+      var a=b=3;
+      console.log(a,b)
+   })()
+console.log(a,b);
+
+
+</script>
+</body>
+</html>
